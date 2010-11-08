@@ -1,0 +1,506 @@
+<HTML>
+<HEAD>
+<TITLE>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables</TITLE>
+<META name="HTML-Generator" content="Dymola">
+<style type="text/css">
+*       { font-size: 10pt; font-family: Arial,sans-serif; }
+pre     { font-size:  9pt; font-family: Courier,monospace;}
+h4      { font-size: 10pt; font-weight: bold; color: green; }
+h3      { font-size: 11pt; font-weight: bold; color: green; }
+h2      { font-size: 13pt; font-weight: bold; color: green; }
+address {                  font-weight: normal}
+td      { solid #000; vertical-align:top; }
+th      { solid #000; vertical-align:top; font-weight: bold; }
+table   { solid #000; border-collapse: collapse;}
+</style>
+</HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Tables<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables"></A><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal</A>.Tables</H2>
+<P><H3>Package Content</H3><p>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2 >
+<TR><TH >Name</TH><TH>Description</TH></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.StartTableS.png" ALT="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.StartTable" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Tables.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.StartTable"
+>StartTable</A>
+</TD><TD>Generates cars that are sent on to the production line</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.EndTableS.png" ALT="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.EndTable" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Tables.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.EndTable"
+>EndTable</A>
+</TD><TD>Ends the line</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TableVerticalS.png" ALT="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TableVertical" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Tables.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TableVertical"
+>TableVertical</A>
+</TD><TD>Vertical table operating in southbound direction</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TurnTableRightS.png" ALT="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TurnTableRight" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Tables.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TurnTableRight"
+>TurnTableRight</A>
+</TD><TD>Table which turns the track direction southbound</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TableHorizontalS.png" ALT="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TableHorizontal" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Tables.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TableHorizontal"
+>TableHorizontal</A>
+</TD><TD>Horizontal table operating in eastbound direction</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TurnTableLeftS.png" ALT="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TurnTableLeft" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Tables.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TurnTableLeft"
+>TurnTableLeft</A>
+</TD><TD>Table which turns the track direction eastbound</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE StartTable<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.StartTableI.png" ALT="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.StartTable" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.StartTable"></A><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Tables.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables</A>.StartTable</H2>
+<B>Generates cars that are sent on to the production line</B><p>
+<IMG SRC="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.StartTableD.png" ALT="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.StartTable">
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComNext"
+>TableComNext</A></TD><TD>tableComNext</TD><TD>&nbsp;</TD></TR>
+<TR><TD>input <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInput"
+>BooleanInput</A></TD><TD>next_ready</TD><TD>&nbsp;</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>next_idle</TD><TD>&nbsp;</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>next_transport</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> StartTable <font color="darkgreen">
+  &quot;Generates cars that are sent on to the production line&quot;</font>
+
+<textblock type="annotcomp" expanded="false">  <A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComNext"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComNext</A>
+  tableComNext;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInput"
+>Modelica.Blocks.Interfaces.BooleanInput</A> next_ready;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>Modelica.Blocks.Interfaces.BooleanOutput</A> next_idle;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>Modelica.Blocks.Interfaces.BooleanOutput</A> next_transport;</textblock>
+<font color="blue">equation </font>
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(next_ready, tableComNext.Ready);
+  <font color="red">connect</font>(next_idle, tableComNext.Idle);
+  <font color="red">connect</font>(next_transport, tableComNext.Transport);</textblock>
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>StartTable;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE EndTable<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.EndTableI.png" ALT="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.EndTable" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.EndTable"></A><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Tables.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables</A>.EndTable</H2>
+<B>Ends the line</B><p>
+<IMG SRC="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.EndTableD.png" ALT="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.EndTable">
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComPrev"
+>TableComPrev</A></TD><TD>tableComPrev</TD><TD>&nbsp;</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>prev_ready</TD><TD>&nbsp;</TD></TR>
+<TR><TD>input <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInput"
+>BooleanInput</A></TD><TD>prev_idle</TD><TD>&nbsp;</TD></TR>
+<TR><TD>input <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInput"
+>BooleanInput</A></TD><TD>prev_transport</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> EndTable <font color="darkgreen">&quot;Ends the line&quot;</font>
+
+<textblock type="annotcomp" expanded="false">  <A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComPrev"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComPrev</A>
+  tableComPrev;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>Modelica.Blocks.Interfaces.BooleanOutput</A> prev_ready;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInput"
+>Modelica.Blocks.Interfaces.BooleanInput</A> prev_idle;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInput"
+>Modelica.Blocks.Interfaces.BooleanInput</A> prev_transport;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Not"
+>Modelica.Blocks.Logical.Not</A> Not;</textblock>
+<font color="blue">equation </font>
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(prev_ready, tableComPrev.Ready);
+  <font color="red">connect</font>(prev_idle, tableComPrev.Idle);
+  <font color="red">connect</font>(Not.y, tableComPrev.Transport);
+  <font color="red">connect</font>(Not.u, prev_transport);</textblock>
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>EndTable;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE TableVertical<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TableVerticalI.png" ALT="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TableVertical" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TableVertical"></A><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Tables.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables</A>.TableVertical</H2>
+<B>Vertical table operating in southbound direction</B><p>
+<IMG SRC="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TableVerticalD.png" ALT="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TableVertical">
+<P><H3>Information</H3></P>
+Extends from <A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Interfaces.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Interfaces.Table"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Interfaces.Table</A> (Table Logic).
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>String</TD><TD>processor</TD><TD>&quot;&quot;</TD><TD>The processor that will execute the task</TD></TR>
+<TR><TD>String</TD><TD>container</TD><TD>&quot;&quot;</TD><TD>The task in which the controller will run</TD></TR>
+<TR><TD>Integer</TD><TD>priority</TD><TD>1</TD><TD>Priority of the task</TD></TR>
+<TR><TD>Real</TD><TD>sampleTime</TD><TD>0.01</TD><TD>Sample time of the task</TD></TR>
+<TR><TD>Real</TD><TD>phase</TD><TD>0</TD><TD>Phase of the task</TD></TR>
+<TR><TD>Real</TD><TD>transportLength</TD><TD>2*100</TD><TD>Length of the table in pixels</TD></TR>
+<TR><TD>Real</TD><TD>transportTime</TD><TD>4</TD><TD>Desired time to travel through table length</TD></TR>
+<TR><TD>Real</TD><TD>carLength</TD><TD>100</TD><TD>Length of the car</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.RobotComTable"
+>RobotComTable</A></TD><TD>robotComTable</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComNext"
+>TableComNext</A></TD><TD>tableComNext</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComPrev"
+>TableComPrev</A></TD><TD>tableComPrev</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> TableVertical <font color="darkgreen">
+  &quot;Vertical table operating in southbound direction&quot;</font>
+  <font color="blue">extends </font><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Interfaces.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Interfaces.Table"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Interfaces.Table</A>
+    (
+    Prev_Ready(y=tableComPrev.Ready),
+    CarInPosition(y=carInPosition),
+    Robot_WorkDone(y=robotComTable.WorkDone),
+    Next_Idle(y=tableComNext.Idle),
+    Next_Transport(y=tableComNext.Transport));
+<textblock type="annotcomp" expanded="false">  <A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.RobotComTable"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.RobotComTable</A>
+  robotComTable;
+  <A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComNext"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComNext</A>
+  tableComNext;
+  <A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComPrev"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComPrev</A>
+  tableComPrev;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> Prev_Transport(y=InTransport.active);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> OutTransport_active(y=OutTransport.active);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Or"
+>Modelica.Blocks.Logical.Or</A> or1;
+  <A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.ShowValue"
+>Modelica_StateGraph2.Blocks.MathBoolean.ShowValue</A> indicatorLamp;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> Prev_Idle(y=Empty.active);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> Robot_StartWork(y=Occupied.active);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> Next_Ready(y=Waiting.active);</textblock>
+<font color="blue">equation </font>
+  carInPosition = pos &gt;= -0.5<font color="blue"> and </font>pos &lt; 0.5;
+  <font color="blue">if </font>InTransport.active<font color="blue">  or </font>OutTransport.active<font color="blue"> then</font>
+    <font color="red">der</font>(pos) = transportLength/transportTime;
+  <font color="blue">else</font>
+    <font color="red">der</font>(pos) = 0;
+  <font color="blue">end if</font>;
+
+  <font color="blue">if </font>Empty.active<font color="blue"> then</font>
+    newPoints=[<font color="red">zeros</font>(4),<font color="red">zeros</font>(4)];
+  <font color="blue">else</font>
+    newPoints = {{25,-50},{-25,-50},{-25,50},{25,50}} - pos*[<font color="red">zeros</font>(4),<font color="red">ones</font>(4)];
+  <font color="blue">end if</font>;
+
+  <font color="blue">when </font>Empty.active<font color="blue"> then</font>
+    <font color="red">reinit</font>(pos,-transportLength);
+  <font color="blue">end when</font>;
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(Prev_Idle.y, tableComPrev.Idle);
+  <font color="red">connect</font>(Prev_Transport.y, tableComPrev.Transport);
+  <font color="red">connect</font>(or1.u1, OutTransport_active.y);
+  <font color="red">connect</font>(or1.u2, Prev_Transport.y);
+  <font color="red">connect</font>(Robot_StartWork.y, robotComTable.StartWork);
+  <font color="red">connect</font>(Next_Ready.y, tableComNext.Ready);
+<font color="red">connect</font>(indicatorLamp.activePort, or1.y);</textblock>
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>TableVertical;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE TurnTableRight<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TurnTableRightI.png" ALT="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TurnTableRight" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TurnTableRight"></A><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Tables.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables</A>.TurnTableRight</H2>
+<B>Table which turns the track direction southbound</B><p>
+<IMG SRC="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TurnTableRightD.png" ALT="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TurnTableRight">
+<P><H3>Information</H3></P>
+Extends from <A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Interfaces.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Interfaces.TurnTable"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Interfaces.TurnTable</A> (Table which turns the track).
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>String</TD><TD>processor</TD><TD>&quot;&quot;</TD><TD>The processor that will execute the task</TD></TR>
+<TR><TD>String</TD><TD>container</TD><TD>&quot;&quot;</TD><TD>The task in which the controller will run</TD></TR>
+<TR><TD>Integer</TD><TD>priority</TD><TD>1</TD><TD>Priority of the task</TD></TR>
+<TR><TD>Real</TD><TD>sampleTime</TD><TD>0.01</TD><TD>Sample time of the task</TD></TR>
+<TR><TD>Real</TD><TD>phase</TD><TD>0</TD><TD>Phase of the task</TD></TR>
+<TR><TD>Real</TD><TD>transportLength</TD><TD>2*100</TD><TD>Length of the track in pixels</TD></TR>
+<TR><TD>Real</TD><TD>transportTime</TD><TD>4</TD><TD>Desired time to travel through table length</TD></TR>
+<TR><TD>Real</TD><TD>carLength</TD><TD>286</TD><TD>Length of the car</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComNext"
+>TableComNext</A></TD><TD>tableComNext</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComPrev"
+>TableComPrev</A></TD><TD>tableComPrev</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> TurnTableRight <font color="darkgreen">
+  &quot;Table which turns the track direction southbound&quot;</font>
+  <font color="blue">extends </font><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Interfaces.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Interfaces.TurnTable"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Interfaces.TurnTable</A>;
+<textblock type="annotcomp" expanded="false">  <A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComPrev"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComPrev</A>
+  tableComPrev;
+  <A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComNext"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComNext</A>
+  tableComNext;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> Prev_Idle(y=Empty.active);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> Next_Ready(y=Waiting.active);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> Prev_Transport(y=InTransport.active);
+  <A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.ShowValue"
+>Modelica_StateGraph2.Blocks.MathBoolean.ShowValue</A> indicatorLamp <font color="darkgreen">&quot;Motor&quot;</font>;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> OutTransport_Active(y=OutTransport.active);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Or"
+>Modelica.Blocks.Logical.Or</A> or1;</textblock>
+<font color="blue">equation </font>
+  carInPosition = pos &gt;= -0.5<font color="blue"> and </font>pos &lt; 0.5;
+
+  <font color="blue">if </font>InTransport.active<font color="blue"> or </font>OutTransport.active<font color="blue"> then</font>
+    <font color="red">der</font>(pos) = transportLength/transportTime;
+  <font color="blue">else</font>
+    <font color="red">der</font>(pos) = 0;
+  <font color="blue">end if</font>;
+
+  <font color="blue">if </font>Empty.active<font color="blue"> then</font>
+    rectangle1 = {{-46,100},{46,-100}};
+    rectangle2 = {{-100,46},{100,-46}};
+    newPoints = [<font color="red">zeros</font>(4),<font color="red">zeros</font>(4)];
+  <font color="blue">elseif </font>Occupied.active<font color="blue"> or </font>OutTransport.active<font color="blue"> then</font>
+    rectangle1 = {{-100,46},{100,-46}};
+    rectangle2 = {{-46,100},{46,-100}};
+    newPoints = {{25,-50},{-25,-50},{-25,50},{25,50}} - pos*[<font color="red">zeros</font>(4),<font color="red"> ones</font>(4)];
+  <font color="blue">else</font>
+    newPoints = {{-50,25},{-50,-25},{50,-25},{50,25}} + pos*[<font color="red">ones</font>(4),<font color="red"> zeros</font>(4)];
+    rectangle1 = {{-46,100},{46,-100}};
+    rectangle2 = {{-100,46},{100,-46}};
+  <font color="blue">end if</font>;
+
+  <font color="blue">when </font>Empty.active<font color="blue"> then</font>
+    <font color="red">reinit</font>(pos, -transportLength);
+  <font color="blue">end when</font>;
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(Next_Ready.y, tableComNext.Ready);
+  <font color="red">connect</font>(Prev_Idle.y, tableComPrev.Idle);
+  <font color="red">connect</font>(Prev_Transport.y, tableComPrev.Transport);
+  <font color="red">connect</font>(or1.u1, Prev_Transport.y);
+  <font color="red">connect</font>(OutTransport_Active.y, or1.u2);
+<font color="red">connect</font>(indicatorLamp.activePort, or1.y);</textblock>
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>TurnTableRight;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE TableHorizontal<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TableHorizontalI.png" ALT="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TableHorizontal" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TableHorizontal"></A><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Tables.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables</A>.TableHorizontal</H2>
+<B>Horizontal table operating in eastbound direction</B><p>
+<IMG SRC="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TableHorizontalD.png" ALT="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TableHorizontal">
+<P><H3>Information</H3></P>
+Extends from <A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Interfaces.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Interfaces.Table"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Interfaces.Table</A> (Table Logic).
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>String</TD><TD>processor</TD><TD>&quot;&quot;</TD><TD>The processor that will execute the task</TD></TR>
+<TR><TD>String</TD><TD>container</TD><TD>&quot;&quot;</TD><TD>The task in which the controller will run</TD></TR>
+<TR><TD>Integer</TD><TD>priority</TD><TD>1</TD><TD>Priority of the task</TD></TR>
+<TR><TD>Real</TD><TD>sampleTime</TD><TD>0.01</TD><TD>Sample time of the task</TD></TR>
+<TR><TD>Real</TD><TD>phase</TD><TD>0</TD><TD>Phase of the task</TD></TR>
+<TR><TD>Real</TD><TD>transportLength</TD><TD>2*100</TD><TD>Length of the table in pixels</TD></TR>
+<TR><TD>Real</TD><TD>transportTime</TD><TD>4</TD><TD>Desired time to travel through table length</TD></TR>
+<TR><TD>Real</TD><TD>carLength</TD><TD>100</TD><TD>Length of the car</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComPrev"
+>TableComPrev</A></TD><TD>tableComPrev</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.RobotComTable"
+>RobotComTable</A></TD><TD>robotComTable</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComNext"
+>TableComNext</A></TD><TD>tableComNext</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> TableHorizontal <font color="darkgreen">
+  &quot;Horizontal table operating in eastbound direction&quot;</font>
+  <font color="blue">extends </font><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Interfaces.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Interfaces.Table"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Interfaces.Table</A>
+    (
+    Occupied(use_activePort=false),
+    Prev_Ready(y=tableComPrev.Ready),
+    CarInPosition(y=carInPosition),
+    Next_Transport(y=tableComNext.Transport),
+    Robot_WorkDone(y=robotComTable.WorkDone),
+    Next_Idle(y=tableComNext.Idle));
+
+<textblock type="annotcomp" expanded="false">  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> OutTransport_active(y=OutTransport.active);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> Prev_Transport(y=InTransport.active);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> Prev_Idle(y=Empty.active);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> Robot_StartWork(y=Occupied.active);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> Next_Ready(y=Waiting.active);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Or"
+>Modelica.Blocks.Logical.Or</A> or1;
+  <A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.ShowValue"
+>Modelica_StateGraph2.Blocks.MathBoolean.ShowValue</A> indicatorLamp;
+  <A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComPrev"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComPrev</A>
+  tableComPrev;
+  <A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.RobotComTable"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.RobotComTable</A>
+  robotComTable;
+  <A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComNext"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComNext</A>
+  tableComNext;</textblock>
+<font color="blue">equation </font>
+  carInPosition = pos &gt;= -0.5<font color="blue"> and </font>pos &lt; 0.5;
+
+  <font color="blue">if </font>InTransport.active<font color="blue"> or </font>OutTransport.active<font color="blue"> then</font>
+    <font color="red">der</font>(pos) = transportLength/transportTime;
+  <font color="blue">else</font>
+    <font color="red">der</font>(pos) = 0;
+  <font color="blue">end if</font>;
+
+  <font color="blue">if </font>Empty.active<font color="blue"> then</font>
+    newPoints = [<font color="red">zeros</font>(4),<font color="red">zeros</font>(4)];
+  <font color="blue">else</font>
+    newPoints = {{-50,25},{-50,-25},{50,-25},{50,25}} + pos*[<font color="red">ones</font>(4),<font color="red"> zeros</font>(4)];
+  <font color="blue">end if</font>;
+
+  <font color="blue">when </font>Empty.active<font color="blue"> then</font>
+    <font color="red">reinit</font>(pos, -transportLength);
+  <font color="blue">end when</font>;
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(Next_Ready.y, tableComNext.Ready);
+  <font color="red">connect</font>(Robot_StartWork.y, robotComTable.StartWork);
+  <font color="red">connect</font>(Prev_Idle.y, tableComPrev.Idle);
+  <font color="red">connect</font>(Prev_Transport.y, tableComPrev.Transport);
+  <font color="red">connect</font>(or1.u1, OutTransport_active.y);
+  <font color="red">connect</font>(Prev_Transport.y, or1.u2);
+<font color="red">connect</font>(indicatorLamp.activePort, or1.y);</textblock>
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>TableHorizontal;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE TurnTableLeft<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TurnTableLeftI.png" ALT="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TurnTableLeft" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TurnTableLeft"></A><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Tables.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables</A>.TurnTableLeft</H2>
+<B>Table which turns the track direction eastbound</B><p>
+<IMG SRC="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TurnTableLeftD.png" ALT="Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Tables.TurnTableLeft">
+<P><H3>Information</H3></P>
+Extends from <A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Interfaces.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Interfaces.TurnTable"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Interfaces.TurnTable</A> (Table which turns the track).
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>String</TD><TD>processor</TD><TD>&quot;&quot;</TD><TD>The processor that will execute the task</TD></TR>
+<TR><TD>String</TD><TD>container</TD><TD>&quot;&quot;</TD><TD>The task in which the controller will run</TD></TR>
+<TR><TD>Integer</TD><TD>priority</TD><TD>1</TD><TD>Priority of the task</TD></TR>
+<TR><TD>Real</TD><TD>sampleTime</TD><TD>0.01</TD><TD>Sample time of the task</TD></TR>
+<TR><TD>Real</TD><TD>phase</TD><TD>0</TD><TD>Phase of the task</TD></TR>
+<TR><TD>Real</TD><TD>transportLength</TD><TD>2*100</TD><TD>Length of the track in pixels</TD></TR>
+<TR><TD>Real</TD><TD>transportTime</TD><TD>4</TD><TD>Desired time to travel through table length</TD></TR>
+<TR><TD>Real</TD><TD>carLength</TD><TD>286</TD><TD>Length of the car</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComNext"
+>TableComNext</A></TD><TD>tableComNext</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComPrev"
+>TableComPrev</A></TD><TD>tableComPrev</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> TurnTableLeft <font color="darkgreen">&quot;Table which turns the track direction eastbound&quot;</font>
+  <font color="blue">extends </font><A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Interfaces.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Interfaces.TurnTable"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Interfaces.TurnTable</A>;
+<textblock type="annotcomp" expanded="false">  <A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComPrev"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComPrev</A>
+  tableComPrev;
+  <A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine_Internal_Connectors.html#Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComNext"
+>Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComNext</A>
+  tableComNext;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> Prev_Idle(y=Empty.active);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> Next_Ready(y=Waiting.active);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> Prev_Transport(y=InTransport.active);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Or"
+>Modelica.Blocks.Logical.Or</A> or1;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> OutTransport_Active(y=OutTransport.active);
+<A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.ShowValue"
+>Modelica_StateGraph2.Blocks.MathBoolean.ShowValue</A> showValue;</textblock>
+<font color="blue">equation </font>
+  carInPosition = pos &gt;= -0.5<font color="blue"> and </font>pos &lt; 0.5;
+
+  <font color="blue">if </font>InTransport.active<font color="blue"> or </font>OutTransport.active<font color="blue"> then</font>
+    <font color="red">der</font>(pos) = transportLength/transportTime;
+  <font color="blue">else</font>
+    <font color="red">der</font>(pos) = 0;
+  <font color="blue">end if</font>;
+
+  <font color="blue">if </font>Empty.active<font color="blue"> then</font>
+    rectangle1 = {{-100,46},{100,-46}};
+    rectangle2 = {{-46,100},{46,-100}};
+    newPoints = [<font color="red">zeros</font>(4),<font color="red">zeros</font>(4)];
+  <font color="blue">elseif </font>Occupied.active<font color="blue"> or </font>OutTransport.active<font color="blue"> then</font>
+    rectangle1 = {{-46,100},{46,-100}};
+    rectangle2 = {{-100,46},{100,-46}};
+    newPoints = {{-50,25},{-50,-25},{50,-25},{50,25}} + pos*[<font color="red">ones</font>(4),<font color="red"> zeros</font>(4)];
+  <font color="blue">else</font>
+    rectangle1 = {{-100,46},{100,-46}};
+    rectangle2 = {{-46,100},{46,-100}};
+    newPoints = {{25,-50},{-25,-50},{-25,50},{25,50}} - pos*[<font color="red">zeros</font>(4),<font color="red"> ones</font>(4)];
+  <font color="blue">end if</font>;
+
+  <font color="blue">when </font>Empty.active<font color="blue"> then</font>
+    <font color="red">reinit</font>(pos, -transportLength);
+  <font color="blue">end when</font>;
+<textblock type="annotconnect" expanded="false"><font color="red">connect</font>(OutTransport_Active.y, or1.u1);
+<font color="red">connect</font>(Prev_Transport.y, or1.u2);
+<font color="red">connect</font>(Next_Ready.y, tableComNext.Ready);</textblock>
+
+<textblock type="annotconnect" expanded="false"><font color="red">connect</font>(showValue.activePort, or1.y);
+<font color="red">connect</font>(Prev_Idle.y, tableComPrev.Idle);
+<font color="red">connect</font>(Prev_Transport.y, tableComPrev.Transport);</textblock>
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>TurnTableLeft;
+</PRE>
+<HR>
+<address><a href="http://www.3ds.com/">Automatically generated</a> Fri Nov 12 17:26:54 2010.
+</address></BODY>
+</HTML>

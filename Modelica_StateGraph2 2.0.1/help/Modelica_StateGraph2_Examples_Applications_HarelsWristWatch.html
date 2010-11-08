@@ -1,0 +1,1540 @@
+<HTML>
+<HEAD>
+<TITLE>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch</TITLE>
+<META name="HTML-Generator" content="Dymola">
+<style type="text/css">
+*       { font-size: 10pt; font-family: Arial,sans-serif; }
+pre     { font-size:  9pt; font-family: Courier,monospace;}
+h4      { font-size: 10pt; font-weight: bold; color: green; }
+h3      { font-size: 11pt; font-weight: bold; color: green; }
+h2      { font-size: 13pt; font-weight: bold; color: green; }
+address {                  font-weight: normal}
+td      { solid #000; vertical-align:top; }
+th      { solid #000; vertical-align:top; font-weight: bold; }
+table   { solid #000; border-collapse: collapse;}
+</style>
+</HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE HarelsWristWatch<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch"></A><A HREF="Modelica_StateGraph2_Examples_Applications.html#Modelica_StateGraph2.Examples.Applications"
+>Modelica_StateGraph2.Examples.Applications</A>.HarelsWristWatch</H2>
+<P><H3>Package Content</H3><p>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2 >
+<TR><TH >Name</TH><TH>Description</TH></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.WristWatchS.png" ALT="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.WristWatch" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.WristWatch"
+>WristWatch</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.RegularS.png" ALT="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Regular" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Regular"
+>Regular</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.OutS.png" ALT="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Out" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Out"
+>Out</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.StopwatchS.png" ALT="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Stopwatch" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Stopwatch"
+>Stopwatch</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.UtilitiesS.png" ALT="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities"
+>Utilities</A>
+</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE WristWatch<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.WristWatchI.png" ALT="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.WristWatch" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.WristWatch"></A><A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch</A>.WristWatch</H2>
+<IMG SRC="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.WristWatchD.png" ALT="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.WristWatch">
+<P><H3>Information</H3></P>
+<PRE></pre>
+<p>This example is a StateGraph2 implementation of David Harel&apos;s Wristwatch presented in &QUOT;Statecharts: A Visual Formalism for Complex Systems&QUOT;, see <A HREF="Modelica_StateGraph2_UsersGuide.html#Modelica_StateGraph2.UsersGuide.Literature"
+>literature</a>.</p>
+<p>As an application example, D. Harel used a Citizen Quartz Multi-Alarm III wristwatch as a case study to prove that his new formalism was flexible and powerful enough to describe a behavior that contains numerous modes with only four input signals coming from the buttons of the watch. </p>
+<p>The watch display comprises six different displays showing time, 12/24h time setting, AM/PM setting, alarm on/off, chime on/offand stop watch indication. It is operated by four buttons: A, B, C and D. The watch can display time and date (day of month, weekday, date, month, year). It has a chime function, display back-light for improved illumination, low-battery warning, a stop watch with lap/reg mode options and two alarms.</p>
+<p>Button A works as a switch between display modes of the watch. The different display modes are: Time (default), alarm1, alarm2, and stopwatch. In each of these, button C will enter update mode where the current time or the alarm time can be set. Inside the update modes, C will flip through different time entities and finally return from update mode. Button B is used to exit update regardless of which internal state being active. In stopwatch mode, button B is used as on/off switch. Additionally, the illumination is turned on every time B is pressed down, and shut off on release. Button D serves as an on/off switch of the current active display mode. If in time mode, pressing button D will result in display of the current date. In stopwatch mode, button D works as a selector between reg/lap display mode.</p>
+<p>To run model interactively, enable Realtime in the Experiment setup and set load result interval to 0.01.</p>
+<pre></PRE><P>
+Extends from <A HREF="../../Modelica 3.2/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</A> (Icon for runnable examples).
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> WristWatch
+
+    <font color="blue">extends </font><A HREF="../../Modelica 3.2/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</A>;
+<textblock type="annotcomp" expanded="false">  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Parallel"
+>Parallel</A> main(
+    use_outPort=true,
+    use_suspend=true,
+    nExit=1,
+    nOut=1,
+    nIn=1,
+    nEntry=6,
+    nSuspend=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> dead(
+    initialStep=true,
+    nOut=1,
+    nIn=2,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> battery_removed(
+                                                use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Parallel"
+>Parallel</A> alarms_beep(
+    use_suspend=true,
+    nEntry=1,
+    initialStep=false,
+    use_inPort=true,
+    nIn=1,
+    nSuspend=2);
+  <A HREF="Modelica_StateGraph2_Blocks_Interactive.html#Modelica_StateGraph2.Blocks.Interactive.TrigButton"
+>Modelica_StateGraph2.Blocks.Interactive.TrigButton</A> insert_battery(
+                                                            label=
+        &quot;Insert Battery&quot;);
+  <A HREF="Modelica_StateGraph2_Blocks_Interactive.html#Modelica_StateGraph2.Blocks.Interactive.TrigButton"
+>Modelica_StateGraph2.Blocks.Interactive.TrigButton</A> remove_battery(
+                                                            label=
+        &quot;Remove Battery&quot;);
+  <A HREF="Modelica_StateGraph2_Blocks_Interactive.html#Modelica_StateGraph2.Blocks.Interactive.TrigButton"
+>Modelica_StateGraph2.Blocks.Interactive.TrigButton</A> kill_battery(
+                                                          label=
+        &quot;Kill Battery&quot;);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> alarm1_beeps(           nIn=1, use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> alarm1_status_disabled(           nOut=1, nIn=2);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> alarm1_status_enabled(           nOut=1, nIn=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> alarm1_disabled_d(
+                            use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> alarm1_enabled_d(
+                            use_conditionPort=true, loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> alarm2_beeps(           nIn=1, use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> both_beep(           nIn=1, use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> t_hits_t2_p2(           use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> t_hits_t1_p(           use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> choose_alarm(           nIn=1, nOut=3);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> p_or_p1_or_p2(           use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> any_button_pressed(
+    delayedTransition=false,
+    loopCheck=false,
+  condition=<font color="red">edge</font>(A.y)<font color="blue"> or </font><font color="red">edge</font>(B.y)<font color="blue"> or </font><font color="red">edge</font>(C.y)<font color="blue"> or </font><font color="red">edge</font>(D.y));
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> thirty_secs_in_alarms_beep(
+      delayedTransition=true, waitTime=30);
+  <A HREF="Modelica_StateGraph2_Blocks_Interactive.html#Modelica_StateGraph2.Blocks.Interactive.TrigButton"
+>Modelica_StateGraph2.Blocks.Interactive.TrigButton</A> weaken_battery(
+                                                            label=
+        &quot;Weaken Battery&quot;);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> alarm2_status_disabled(           nOut=1, nIn=2);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> alarm2_status_enabled(           nOut=1, nIn=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> alarm2_disabled_d(
+                            use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> alarm2_enabled_d(
+                            use_conditionPort=true, loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> light_off(           nOut=1, nIn=2,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> light_on(           nOut=1, nIn=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> light_off_b_down(
+                            use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> light_on_b_up(
+              use_conditionPort=true, loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> chime_enabled_quiet(           nOut=1, nIn=2);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> chime_enabled_beep(           nOut=1, nIn=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> chime_enabled_quiet_t_is_whole_hour(
+      use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> two_secs_in_chime_enabled_beeps(
+    delayedTransition=true,
+    waitTime=2,
+    loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Parallel"
+>Parallel</A> chime_enabled(
+    nEntry=1,
+    nIn=1,
+    use_suspend=true,
+    nSuspend=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> chime_disabled(           nOut=1, nIn=2);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> chime_disabled_d(
+                            use_conditionPort=true,
+    delayedTransition=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> chime_enabled_d(
+             use_conditionPort=true,
+    delayedTransition=false,
+    loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> power_ok(           nOut=1, nIn=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> power_blink(           nIn=1, nOut=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> power_ok_battery_weakens(
+                            use_conditionPort=true, loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> battery_dies(           use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Parallel"
+>Parallel</A> displays(
+    use_outPort=false,
+    use_suspend=true,
+    nSuspend=1,
+    nResume=2,
+    initialStep=false,
+    use_inPort=true,
+    nIn=1,
+    nEntry=1);
+  <A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Regular"
+>Regular</A> regular(                                           nOut=1, nIn=4,
+    nSuspend=1,
+    nResume=1,
+    time_setting(y_start=3600*5 + 60*59 + 30),
+    date_setting(y_start=625),
+    year_setting(y_start=2009));
+  <A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Out"
+>Out</A> out(
+    nIn=1,
+    nSuspend=1,
+    nOut=1,
+    alarm1_setting(y_start=3600*6));
+  <A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Stopwatch"
+>Stopwatch</A> stopwatch(
+      nResume=1, nSuspend=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> regular_a(           use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> two_min_in_out(           delayedTransition=true,
+      waitTime=120);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> out_a(           use_conditionPort=true,
+      loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> stopwatch_a(           use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2_Blocks_Interactive.html#Modelica_StateGraph2.Blocks.Interactive.PressButton"
+>Modelica_StateGraph2.Blocks.Interactive.PressButton</A> C(
+                                               label=&quot;C&quot;);
+  <A HREF="Modelica_StateGraph2_Blocks_Interactive.html#Modelica_StateGraph2.Blocks.Interactive.PressButton"
+>Modelica_StateGraph2.Blocks.Interactive.PressButton</A> D(
+                                               label=&quot;D&quot;);
+  <A HREF="Modelica_StateGraph2_Blocks_Interactive.html#Modelica_StateGraph2.Blocks.Interactive.PressButton"
+>Modelica_StateGraph2.Blocks.Interactive.PressButton</A> B(
+                                               label=&quot;B&quot;);
+  <A HREF="Modelica_StateGraph2_Blocks_Interactive.html#Modelica_StateGraph2.Blocks.Interactive.PressButton"
+>Modelica_StateGraph2.Blocks.Interactive.PressButton</A> A(
+                                               label=&quot;A&quot;);
+<font color="blue">protected </font>
+  <font color="blue">inner </font><A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus</A>
+  signalBus;
+<font color="blue">public </font>
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> battery_inserted(           use_conditionPort=true,
+      loopCheck=false);
+<font color="blue">protected </font>
+  <A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus</A>
+  displays_bus_node;
+<font color="blue">public </font>
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> t_hits_t1(           use_conditionPort=true);
+<font color="blue">protected </font>
+  <A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus</A>
+  top_level_bus_node;
+  <A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus</A>
+  main_bus_node;
+  <A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus</A>
+  alarms_bus_node;
+<font color="blue">public </font>
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.And"
+>Modelica.Blocks.Logical.And</A> and1;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.And"
+>Modelica.Blocks.Logical.And</A> and2;
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> regular_time_c(
+    use_conditionPort=true,
+    delayedTransition=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> wait(           nIn=1, nOut=2);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> two_sec_in_wait(
+    delayedTransition=true,
+    use_conditionPort=false,
+    waitTime=2);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> wait_c_up_1(
+    delayedTransition=true,
+    use_conditionPort=true,
+    waitTime=0.01);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Not"
+>Modelica.Blocks.Logical.Not</A> not1;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.And"
+>Modelica.Blocks.Logical.And</A> and3;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge1;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Pre"
+>Modelica.Blocks.Logical.Pre</A> pre1;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge2;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge3;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Not"
+>Modelica.Blocks.Logical.Not</A> not2;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge4;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.And"
+>Modelica.Blocks.Logical.And</A> and4;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.And"
+>Modelica.Blocks.Logical.And</A> and5;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.And"
+>Modelica.Blocks.Logical.And</A> and6;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.And"
+>Modelica.Blocks.Logical.And</A> and7;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge5;
+  <A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.WatchDisplay"
+>Utilities.WatchDisplay</A> watchDisplay;
+  <A HREF="Modelica_StateGraph2_Blocks_MathInteger.html#Modelica_StateGraph2.Blocks.MathInteger.MultiSwitch"
+>Modelica_StateGraph2.Blocks.MathInteger.MultiSwitch</A> set_illumination(
+    nu=2,
+    expr={1,2},
+    y_default=0,
+    use_pre_as_default=false);
+<font color="blue">public </font>
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge6;
+  <A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.AlarmTrigger"
+>Utilities.AlarmTrigger</A> alarmTrigger;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge7;
+  <A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.WatchController"
+>Utilities.WatchController</A> watchController;
+  <A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.ShowValue"
+>Modelica_StateGraph2.Blocks.MathBoolean.ShowValue</A> showValue;
+  <A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.ShowValue"
+>Modelica_StateGraph2.Blocks.MathBoolean.ShowValue</A> showValue1;
+  <A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.ShowValue"
+>Modelica_StateGraph2.Blocks.MathBoolean.ShowValue</A> showValue2;
+  <A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.ShowValue"
+>Modelica_StateGraph2.Blocks.MathBoolean.ShowValue</A> showValue3;
+  <A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.ShowValue"
+>Modelica_StateGraph2.Blocks.MathBoolean.ShowValue</A> showValue4;
+<font color="blue">protected </font>
+  <A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus</A>
+  top_level_bus_node1;
+<font color="blue">public </font>
+  <A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.Or"
+>Modelica_StateGraph2.Blocks.MathBoolean.Or</A> or1(
+                                nu=2);
+<font color="blue">public </font>
+  <A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.Or"
+>Modelica_StateGraph2.Blocks.MathBoolean.Or</A> or2(
+                                nu=2);</textblock>
+<font color="blue">equation </font>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(alarm1_enabled_d.inPort, alarm1_status_enabled.outPort[1]);
+  <font color="red">connect</font>(alarm1_status_enabled.inPort[1], alarm1_disabled_d.outPort);
+  <font color="red">connect</font>(alarm1_disabled_d.inPort, alarm1_status_disabled.outPort[1]);
+  <font color="red">connect</font>(t_hits_t1_p.outPort, both_beep.inPort[1]);
+  <font color="red">connect</font>(t_hits_t2_p2.outPort, alarm2_beeps.inPort[1]);
+  <font color="red">connect</font>(alarms_beep.entry[1], choose_alarm.inPort[1]);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(alarm2_enabled_d.inPort, alarm2_status_enabled.outPort[1]);
+  <font color="red">connect</font>(alarm2_status_enabled.inPort[1], alarm2_disabled_d.outPort);
+  <font color="red">connect</font>(alarm2_disabled_d.inPort, alarm2_status_disabled.outPort[1]);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(light_on_b_up.inPort, light_on.outPort[1]);
+  <font color="red">connect</font>(light_on.inPort[1], light_off_b_down.outPort);
+  <font color="red">connect</font>(light_off_b_down.inPort, light_off.outPort[1]);
+  <font color="red">connect</font>(two_secs_in_chime_enabled_beeps.inPort, chime_enabled_beep.outPort[
+    1]);
+  <font color="red">connect</font>(chime_enabled_beep.inPort[1], chime_enabled_quiet_t_is_whole_hour.outPort);
+  <font color="red">connect</font>(chime_enabled_quiet_t_is_whole_hour.inPort, chime_enabled_quiet.outPort[
+    1]);
+  <font color="red">connect</font>(chime_enabled.entry[1], chime_enabled_quiet.inPort[1]);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(two_secs_in_chime_enabled_beeps.outPort, chime_enabled_quiet.inPort[
+    2]);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(chime_disabled.outPort[1], chime_disabled_d.inPort);
+  <font color="red">connect</font>(chime_disabled_d.outPort, chime_enabled.inPort[1]);
+  <font color="red">connect</font>(chime_enabled_d.inPort, chime_enabled.suspend[1]);
+  <font color="red">connect</font>(chime_enabled_d.outPort, chime_disabled.inPort[1]);
+  <font color="red">connect</font>(power_blink.inPort[1], power_ok_battery_weakens.outPort);
+  <font color="red">connect</font>(power_ok_battery_weakens.inPort, power_ok.outPort[1]);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(power_blink.outPort[1], main.exit[1]);
+  <font color="red">connect</font>(battery_dies.inPort, main.outPort[1]);
+  <font color="red">connect</font>(regular_a.inPort, regular.outPort[1]);
+  <font color="red">connect</font>(regular_a.outPort, out.inPort[1]);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(two_min_in_out.inPort, out.suspend[1]);
+  <font color="red">connect</font>(out.outPort[1], out_a.inPort);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(out_a.outPort, stopwatch.resume[1]);
+  <font color="red">connect</font>(stopwatch_a.inPort, stopwatch.suspend[1]);
+  <font color="red">connect</font>(p_or_p1_or_p2.inPort, displays.suspend[1]);
+  <font color="red">connect</font>(p_or_p1_or_p2.outPort, alarms_beep.inPort[1]);
+  <font color="red">connect</font>(any_button_pressed.inPort, alarms_beep.suspend[1]);
+  <font color="red">connect</font>(thirty_secs_in_alarms_beep.inPort, alarms_beep.suspend[2]);
+  <font color="red">connect</font>(any_button_pressed.outPort, displays.resume[1]);
+  <font color="red">connect</font>(thirty_secs_in_alarms_beep.outPort, displays.resume[2]);
+  <font color="red">connect</font>(A.y,signalBus. a);
+  <font color="red">connect</font>(B.y,signalBus. b);
+  <font color="red">connect</font>(C.y,signalBus. c);
+  <font color="red">connect</font>(D.y,signalBus. d);
+  <font color="red">connect</font>(battery_inserted.outPort, main.inPort[1]);
+  <font color="red">connect</font>(dead.outPort[1], battery_inserted.inPort);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(displays.inPort[1], main.entry[1]);
+  <font color="red">connect</font>(main.entry[2], alarm1_status_disabled.inPort[1]);
+  <font color="red">connect</font>(alarm1_enabled_d.outPort, alarm1_status_disabled.inPort[2]);
+  <font color="red">connect</font>(alarm2_status_disabled.inPort[1], main.entry[3]);
+  <font color="red">connect</font>(alarm2_enabled_d.outPort, alarm2_status_disabled.inPort[2]);
+  <font color="red">connect</font>(main.entry[4], chime_disabled.inPort[2]);
+  <font color="red">connect</font>(main.entry[5], light_off.inPort[1]);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(light_on_b_up.outPort, light_off.inPort[2]);
+  <font color="red">connect</font>(main.entry[6], power_ok.inPort[1]);
+  <font color="red">connect</font>(stopwatch_a.conditionPort, regular_a.conditionPort);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(out_a.conditionPort, stopwatch_a.conditionPort);
+  <font color="red">connect</font>(two_min_in_out.outPort, regular.inPort[1]);
+  <font color="red">connect</font>(stopwatch_a.outPort, regular.inPort[2]);
+  <font color="red">connect</font>(choose_alarm.outPort[1], t_hits_t1_p.inPort);
+  <font color="red">connect</font>(t_hits_t1.outPort, alarm1_beeps.inPort[1]);
+  <font color="red">connect</font>(choose_alarm.outPort[2], t_hits_t2_p2.inPort);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(choose_alarm.outPort[3], t_hits_t1.inPort);
+  <font color="red">connect</font>(battery_removed.inPort, main.suspend[1]);
+  <font color="red">connect</font>(battery_removed.outPort, dead.inPort[2]);
+  <font color="red">connect</font>(battery_dies.outPort, dead.inPort[1]);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(insert_battery.y, signalBus.insert_battery);
+  <font color="red">connect</font>(remove_battery.y, signalBus.remove_battery);
+  <font color="red">connect</font>(kill_battery.y, signalBus.kill_battery);
+  <font color="red">connect</font>(weaken_battery.y, signalBus.weaken_battery);
+  <font color="red">connect</font>(signalBus, top_level_bus_node);
+  <font color="red">connect</font>(top_level_bus_node, displays_bus_node);
+  <font color="red">connect</font>(top_level_bus_node, main_bus_node);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(alarms_bus_node, main_bus_node);
+  <font color="red">connect</font>(light_off_b_down.conditionPort, main_bus_node.b);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(power_ok_battery_weakens.conditionPort, main_bus_node.weaken_battery);
+  <font color="red">connect</font>(battery_inserted.conditionPort, top_level_bus_node.insert_battery);
+  <font color="red">connect</font>(battery_removed.conditionPort, top_level_bus_node.remove_battery);
+  <font color="red">connect</font>(chime_enabled_quiet_t_is_whole_hour.conditionPort,
+    alarms_bus_node.T_is_whole_hour);
+  <font color="red">connect</font>(chime_disabled_d.conditionPort, and1.y);
+  <font color="red">connect</font>(and2.y, chime_enabled_d.conditionPort);
+  <font color="red">connect</font>(and2.u1, main_bus_node.chime_on);
+  <font color="red">connect</font>(regular_time_c.inPort, regular.suspend[1]);
+  <font color="red">connect</font>(wait.inPort[1], regular_time_c.outPort);
+  <font color="red">connect</font>(two_sec_in_wait.outPort, regular.resume[1]);
+  <font color="red">connect</font>(wait_c_up_1.outPort, regular.inPort[3]);
+  <font color="red">connect</font>(displays.entry[1], regular.inPort[4]);
+  <font color="red">connect</font>(wait_c_up_1.inPort, wait.outPort[1]);
+  <font color="red">connect</font>(two_sec_in_wait.inPort, wait.outPort[2]);
+  <font color="red">connect</font>(pre1.y, regular_time_c.conditionPort);
+  <font color="red">connect</font>(and3.y, pre1.u);
+  <font color="red">connect</font>(edge1.y, and3.u2);
+  <font color="red">connect</font>(edge1.u, top_level_bus_node.c);
+  <font color="red">connect</font>(and3.u1, top_level_bus_node.time_active);
+  <font color="red">connect</font>(not1.u, edge1.u);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(not1.y, wait_c_up_1.conditionPort);
+  <font color="red">connect</font>(and1.u2, main_bus_node.chime_off);
+  <font color="red">connect</font>(edge2.y, and2.u2);
+  <font color="red">connect</font>(edge2.u, main_bus_node.d);
+  <font color="red">connect</font>(edge3.y, and1.u1);
+  <font color="red">connect</font>(edge3.u, main_bus_node.d);
+  <font color="red">connect</font>(not2.u, light_off_b_down.conditionPort);
+  <font color="red">connect</font>(not2.y, light_on_b_up.conditionPort);
+  <font color="red">connect</font>(edge4.u, alarms_bus_node.d);
+  <font color="red">connect</font>(edge4.y, and5.u2);
+  <font color="red">connect</font>(and5.y, alarm2_enabled_d.conditionPort);
+  <font color="red">connect</font>(and4.y, alarm2_disabled_d.conditionPort);
+  <font color="red">connect</font>(and7.y, alarm1_disabled_d.conditionPort);
+  <font color="red">connect</font>(and6.y, alarm1_enabled_d.conditionPort);
+  <font color="red">connect</font>(and4.u2, edge4.y);
+  <font color="red">connect</font>(and6.u2, and4.u2);
+  <font color="red">connect</font>(and7.u2, and6.u2);
+  <font color="red">connect</font>(and5.u1, alarms_bus_node.alarm2_on);
+  <font color="red">connect</font>(and4.u1, alarms_bus_node.alarm2_off);
+  <font color="red">connect</font>(and6.u1, alarms_bus_node.alarm1_on);
+  <font color="red">connect</font>(and7.u1, alarms_bus_node.alarm1_off);
+  <font color="red">connect</font>(battery_dies.conditionPort, alarms_bus_node.kill_battery);
+  <font color="red">connect</font>(edge5.y, regular_a.conditionPort);
+  <font color="red">connect</font>(edge5.u, displays_bus_node.a);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(light_off.activePort, set_illumination.u[1]);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(set_illumination.y, watchDisplay.illumination);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(alarmTrigger.alarm1_enabled, alarm1_status_enabled.activePort);
+  <font color="red">connect</font>(alarmTrigger.alarm2_enabled, alarm2_status_enabled.activePort);
+  <font color="red">connect</font>(alarmTrigger.T1, alarms_bus_node.T1);
+  <font color="red">connect</font>(alarmTrigger.T2, alarms_bus_node.T2);
+  <font color="red">connect</font>(edge7.y, p_or_p1_or_p2.conditionPort);
+  <font color="red">connect</font>(alarmTrigger.T_hits_T1, alarms_bus_node.T_hits_T1);
+  <font color="red">connect</font>(alarmTrigger.T_hits_T2, alarms_bus_node.T_hits_T2);
+  <font color="red">connect</font>(t_hits_t1.conditionPort, alarmTrigger.P1);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(t_hits_t2_p2.conditionPort, alarmTrigger.P2);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(t_hits_t1_p.conditionPort, alarmTrigger.P);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(alarmTrigger.alarms_beep, edge7.u);
+  <font color="red">connect</font>(set_illumination.u[2], light_on.activePort);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(stopwatch.activePort, displays_bus_node.stopwatch_mode);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(watchController.large_digit1, watchDisplay.large_digit1);
+  <font color="red">connect</font>(watchController.large_digit2, watchDisplay.large_digit2);
+  <font color="red">connect</font>(watchController.large_digit3, watchDisplay.large_digit3);
+  <font color="red">connect</font>(watchController.large_digit4, watchDisplay.large_digit4);
+  <font color="red">connect</font>(watchController.small_digit, watchDisplay.small_digit);
+  <font color="red">connect</font>(watchController.text_digit, watchDisplay.text_digit);
+  <font color="red">connect</font>(dead.activePort, edge6.u);
+  <font color="red">connect</font>(edge6.y, top_level_bus_node.dead_active);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(watchController.display_node, top_level_bus_node);
+  <font color="red">connect</font>(alarm1_beeps.activePort, displays_bus_node.alarm1_beeps);
+  <font color="red">connect</font>(alarm2_beeps.activePort, displays_bus_node.alarm2_beeps);
+  <font color="red">connect</font>(both_beep.activePort, displays_bus_node.both_beep);
+  <font color="red">connect</font>(top_level_bus_node1, top_level_bus_node);
+  <font color="red">connect</font>(or1.y, showValue4.activePort);
+  <font color="red">connect</font>(or1.u[1], top_level_bus_node1.alarm2_beeps);
+  <font color="red">connect</font>(or1.u[2], top_level_bus_node1.both_beep);
+  <font color="red">connect</font>(or2.y, showValue3.activePort);
+  <font color="red">connect</font>(or2.u[1], top_level_bus_node1.alarm1_beeps);
+  <font color="red">connect</font>(or2.u[2], top_level_bus_node1.both_beep);
+  <font color="red">connect</font>(showValue2.activePort, top_level_bus_node1.chime_on);
+  <font color="red">connect</font>(alarm2_status_enabled.activePort, alarms_bus_node.alarm2_enabled);
+  <font color="red">connect</font>(alarm1_status_enabled.activePort, alarms_bus_node.alarm1_enabled);
+  <font color="red">connect</font>(showValue.activePort, top_level_bus_node1.alarm1_enabled);
+  <font color="red">connect</font>(showValue1.activePort, top_level_bus_node1.alarm2_enabled);</textblock>
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>WristWatch;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Regular<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.RegularI.png" ALT="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Regular" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Regular"></A><A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch</A>.Regular</H2>
+<IMG SRC="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.RegularD.png" ALT="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Regular">
+<P><H3>Information</H3></P>
+Extends from <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.PartialParallel"
+>Modelica_StateGraph2.PartialParallel</A> (Partial compont to construct a parallel submodel via inheritance).
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Boolean</TD><TD>initialStep</TD><TD>false</TD><TD>=true, if initial step (start state machine at entry ports of Parallel)</TD></TR>
+<TR><TD>Boolean</TD><TD>use_inPort</TD><TD>true</TD><TD>=true, if inPort enabled</TD></TR>
+<TR><TD>Boolean</TD><TD>use_outPort</TD><TD>true</TD><TD>=true, if outPort enabled</TD></TR>
+<TR><TD>Boolean</TD><TD>use_suspend</TD><TD>true</TD><TD>=true, if suspend and resume ports enabled</TD></TR>
+<TR><TD>Boolean</TD><TD>use_activePort</TD><TD>false</TD><TD>=true, if activePort enabled</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Step_in"
+>Step_in</A></TD><TD>inPort[nIn]</TD><TD>If enabled, port for one or more input transitions</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Step_out"
+>Step_out</A></TD><TD>outPort[nOut]</TD><TD>If enabled, port for one or more output transitions</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Composite_resume"
+>Composite_resume</A></TD><TD>resume[nResume]</TD><TD>If enabled, port for zero, one or more resume transitions</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Composite_suspend"
+>Composite_suspend</A></TD><TD>suspend[nSuspend]</TD><TD>If enabled, port for zero, one or more suspend transitions</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>activePort</TD><TD>= true if Parallel component is active, otherwise it is not active</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> Regular
+  <font color="blue">extends </font><A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.PartialParallel"
+>Modelica_StateGraph2.PartialParallel</A>(           nEntry=2,nExit=1);
+<textblock type="annotcomp" expanded="false">  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> time_(
+    initialStep=false,
+    nIn=6,
+    use_activePort=true,
+    nOut=3);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Parallel"
+>Parallel</A> update(
+    use_outPort=true,
+    nExit=1,
+    nEntry=1,
+    nResume=1,
+    use_suspend=true,
+    nOut=1,
+    nSuspend=3,
+    nIn=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> time_c_down(
+    delayedTransition=false,
+    use_conditionPort=true,
+    loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> mode_c(
+    delayedTransition=false,
+    use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> second(
+                                 nOut=1, nIn=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> minute(
+                                 nIn=1, nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> ten_minutes(
+                                      nIn=1, nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> second_c(
+                          use_conditionPort=true, loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> minute_c(
+                          use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> ten_minutes_c(
+                          use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> hour(
+                               nOut=1,
+    use_activePort=true,
+    nIn=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> month(
+                                nIn=1,
+    use_activePort=true,
+    nOut=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> hour_c(
+                          use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> month_c(
+                          use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> date_c(
+                          use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> day(
+                              nOut=1,
+    use_activePort=true,
+    nIn=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> year(
+                               nIn=1, nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> mode(
+                               nIn=1, nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> day_c(
+                          use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> year_c(
+                          use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2_Blocks_MathInteger.html#Modelica_StateGraph2.Blocks.MathInteger.MultiSwitch"
+>Modelica_StateGraph2.Blocks.MathInteger.MultiSwitch</A> time_quantity(
+    nu=4,
+    use_pre_as_default=false,
+    expr={1,60,60*10,60*60});
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> perform_increment(
+    use_firePort=true,
+    use_conditionPort=true,
+    loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> date(      nOut=1,
+    nIn=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> two_min_in_update(
+    use_conditionPort=false,
+    delayedTransition=true,
+    waitTime=120);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> IO(           nIn=2, nOut=2);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> OO(           nOut=2, nIn=3);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> OO_b_down(
+                            use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> OO_d_down(
+                            use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> OI(           nIn=2, nOut=2);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> beep(           nOut=2, nIn=2);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> IO_d_down(
+                            use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> OI_b_down(
+                            use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> beep_d_up(
+    delayedTransition=true,
+    waitTime=0.5,
+    use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> beep_b_up(
+    delayedTransition=true,
+    waitTime=0.5,
+    use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> IO_b_up(
+    delayedTransition=true,
+    waitTime=0.5,
+    use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> OI_d_up(
+    delayedTransition=true,
+    waitTime=0.5,
+    use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> date_(           nOut=2, nIn=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> time_d_b_up(           use_conditionPort=true,
+      loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> two_min_in_date(
+      delayedTransition=true, waitTime=120);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> date_d(         use_conditionPort=true);
+<font color="blue">protected </font>
+  <font color="blue">outer </font><A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus</A>
+  signalBus;
+<font color="blue">public </font>
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.And"
+>Modelica.Blocks.Logical.And</A> and1;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge1;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Not"
+>Modelica.Blocks.Logical.Not</A> not1;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Not"
+>Modelica.Blocks.Logical.Not</A> not2;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Not"
+>Modelica.Blocks.Logical.Not</A> not3;
+<font color="blue">protected </font>
+  <A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus</A>
+  bus_node1;
+  <A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus</A>
+  bus_node2;
+<font color="blue">public </font>
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Not"
+>Modelica.Blocks.Logical.Not</A> not4;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Not"
+>Modelica.Blocks.Logical.Not</A> not5;
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T2(
+                            use_conditionPort=true);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> pre1;
+  <A HREF="Modelica_StateGraph2_Blocks_MathInteger.html#Modelica_StateGraph2.Blocks.MathInteger.TriggeredAdd"
+>Modelica_StateGraph2.Blocks.MathInteger.TriggeredAdd</A> time_setting(
+      use_reset=true);
+  <A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.Or"
+>Modelica_StateGraph2.Blocks.MathBoolean.Or</A> show_time(    nu=5);
+  <A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.Or"
+>Modelica_StateGraph2.Blocks.MathBoolean.Or</A> show_date(    nu=3);
+  <A HREF="Modelica_StateGraph2_Blocks_MathInteger.html#Modelica_StateGraph2.Blocks.MathInteger.MultiSwitch"
+>Modelica_StateGraph2.Blocks.MathInteger.MultiSwitch</A> date_quantity(
+    nu=2,
+    use_pre_as_default=false,
+    expr={100,1});
+  <A HREF="Modelica_StateGraph2_Blocks_MathInteger.html#Modelica_StateGraph2.Blocks.MathInteger.TriggeredAdd"
+>Modelica_StateGraph2.Blocks.MathInteger.TriggeredAdd</A> date_setting(
+      use_reset=true);
+  <A HREF="Modelica_StateGraph2_Blocks_MathInteger.html#Modelica_StateGraph2.Blocks.MathInteger.MultiSwitch"
+>Modelica_StateGraph2.Blocks.MathInteger.MultiSwitch</A> mode_quantity(
+    nu=1,
+    use_pre_as_default=false,
+    expr={1});
+  <A HREF="Modelica_StateGraph2_Blocks_MathInteger.html#Modelica_StateGraph2.Blocks.MathInteger.TriggeredAdd"
+>Modelica_StateGraph2.Blocks.MathInteger.TriggeredAdd</A> mode_setting(
+      use_reset=true);
+  <A HREF="Modelica_StateGraph2_Blocks_MathInteger.html#Modelica_StateGraph2.Blocks.MathInteger.MultiSwitch"
+>Modelica_StateGraph2.Blocks.MathInteger.MultiSwitch</A> year_quantity(
+    nu=1,
+    use_pre_as_default=false,
+    expr={1});
+  <A HREF="Modelica_StateGraph2_Blocks_MathInteger.html#Modelica_StateGraph2.Blocks.MathInteger.TriggeredAdd"
+>Modelica_StateGraph2.Blocks.MathInteger.TriggeredAdd</A> year_setting(
+      use_reset=true);
+  <A HREF="Modelica_StateGraph2_Blocks_MathInteger.html#Modelica_StateGraph2.Blocks.MathInteger.MultiSwitch"
+>Modelica_StateGraph2.Blocks.MathInteger.MultiSwitch</A> day_quantity(
+    nu=1,
+    use_pre_as_default=false,
+    expr={1});
+  <A HREF="Modelica_StateGraph2_Blocks_MathInteger.html#Modelica_StateGraph2.Blocks.MathInteger.TriggeredAdd"
+>Modelica_StateGraph2.Blocks.MathInteger.TriggeredAdd</A> day_setting(    use_reset=
+       true);
+<font color="blue">protected </font>
+  <A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus</A>
+  bus_node3;
+<font color="blue">public </font>
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> pre2;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge2;</textblock>
+<font color="blue">equation </font>
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(second_c.inPort,second. outPort[1]);
+  <font color="red">connect</font>(second_c.outPort,minute. inPort[1]);
+  <font color="red">connect</font>(minute_c.inPort,minute. outPort[1]);
+  <font color="red">connect</font>(minute_c.outPort,ten_minutes. inPort[1]);
+  <font color="red">connect</font>(ten_minutes_c.inPort,ten_minutes. outPort[1]);
+  <font color="red">connect</font>(hour_c.inPort,hour. outPort[1]);
+  <font color="red">connect</font>(hour_c.outPort,month. inPort[1]);
+  <font color="red">connect</font>(day_c.outPort,year. inPort[1]);
+  <font color="red">connect</font>(year_c.inPort,year. outPort[1]);
+  <font color="red">connect</font>(year_c.outPort,mode. inPort[1]);
+  <font color="red">connect</font>(date_c.inPort,date. outPort[1]);
+  <font color="red">connect</font>(update.entry[1],second. inPort[1]);
+  <font color="red">connect</font>(day_c.inPort,day. outPort[1]);
+  <font color="red">connect</font>(update.resume[1],perform_increment. outPort);
+  <font color="red">connect</font>(mode.outPort[1],update. exit[1]);
+  <font color="red">connect</font>(two_min_in_update.outPort, time_.inPort[1]);
+  <font color="red">connect</font>(mode_c.outPort,time_. inPort[2]);
+  <font color="red">connect</font>(OO.outPort[1],OO_b_down. inPort);
+  <font color="red">connect</font>(beep_d_up.inPort,beep. outPort[1]);
+  <font color="red">connect</font>(beep_d_up.outPort,IO. inPort[1]);
+  <font color="red">connect</font>(OO_b_down.outPort,IO. inPort[2]);
+  <font color="red">connect</font>(OO_d_down.outPort,OI. inPort[1]);
+  <font color="red">connect</font>(IO.outPort[1],IO_b_up. inPort);
+  <font color="red">connect</font>(IO.outPort[2],IO_d_down. inPort);
+  <font color="red">connect</font>(two_min_in_date.outPort,time_. inPort[3]);
+  <font color="red">connect</font>(IO_d_down.outPort,beep. inPort[1]);
+  <font color="red">connect</font>(OI_b_down.outPort,beep. inPort[2]);
+  <font color="red">connect</font>(beep_b_up.inPort,beep. outPort[2]);
+  <font color="red">connect</font>(beep_b_up.outPort,OI. inPort[2]);
+  <font color="red">connect</font>(OI.outPort[1],OI_b_down. inPort);
+  <font color="red">connect</font>(OI_d_up.inPort,OI. outPort[2]);
+  <font color="red">connect</font>(OO.outPort[2],OO_d_down. inPort);
+  <font color="red">connect</font>(mode_c.inPort,update. outPort[1]);
+  <font color="red">connect</font>(month.outPort[1],month_c. inPort);
+  <font color="red">connect</font>(month_c.outPort,date. inPort[1]);
+  <font color="red">connect</font>(date_c.outPort,day. inPort[1]);
+  <font color="red">connect</font>(ten_minutes_c.outPort,hour. inPort[1]);
+  <font color="red">connect</font>(second.activePort, time_quantity.u[1]);
+  <font color="red">connect</font>(minute.activePort, time_quantity.u[2]);
+  <font color="red">connect</font>(ten_minutes.activePort, time_quantity.u[3]);
+  <font color="red">connect</font>(hour.activePort, time_quantity.u[4]);
+  <font color="red">connect</font>(IO_b_up.outPort,OO. inPort[1]);
+  <font color="red">connect</font>(entry[2],OO. inPort[2]);
+  <font color="red">connect</font>(OI_d_up.outPort,OO. inPort[3]);
+  <font color="red">connect</font>(date_.outPort[1],date_d. inPort);
+  <font color="red">connect</font>(time_d_b_up.outPort,date_. inPort[1]);
+  <font color="red">connect</font>(date_.outPort[2],two_min_in_date. inPort);
+  <font color="red">connect</font>(entry[1], time_.inPort[4]);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(ten_minutes_c.conditionPort, minute_c.conditionPort);
+  <font color="red">connect</font>(minute_c.conditionPort, second_c.conditionPort);
+  <font color="red">connect</font>(second_c.conditionPort, hour_c.conditionPort);
+  <font color="red">connect</font>(hour_c.conditionPort, month_c.conditionPort);
+  <font color="red">connect</font>(month_c.conditionPort, date_c.conditionPort);
+  <font color="red">connect</font>(hour_c.conditionPort, day_c.conditionPort);
+  <font color="red">connect</font>(day_c.conditionPort, year_c.conditionPort);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(mode_c.conditionPort, year_c.conditionPort);
+  <font color="red">connect</font>(and1.y, time_d_b_up.conditionPort);
+  <font color="red">connect</font>(not1.y, and1.u1);
+  <font color="red">connect</font>(not2.u, signalBus.b);
+  <font color="red">connect</font>(not2.y, beep_b_up.conditionPort);
+  <font color="red">connect</font>(not2.u, OI_b_down.conditionPort);
+  <font color="red">connect</font>(not3.y, beep_d_up.conditionPort);
+  <font color="red">connect</font>(not3.u, IO_d_down.conditionPort);
+  <font color="red">connect</font>(not3.u, signalBus.d);
+  <font color="red">connect</font>(signalBus, bus_node2);
+  <font color="red">connect</font>(not4.u, bus_node1.b);
+  <font color="red">connect</font>(not4.y, IO_b_up.conditionPort);
+  <font color="red">connect</font>(OO_b_down.conditionPort, not4.u);
+  <font color="red">connect</font>(not5.u, bus_node1.d);
+  <font color="red">connect</font>(not5.y, OI_d_up.conditionPort);
+  <font color="red">connect</font>(OO_d_down.conditionPort, not5.u);
+  <font color="red">connect</font>(T2.inPort, update.suspend[1]);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(two_min_in_update.inPort, update.suspend[2]);
+  <font color="red">connect</font>(perform_increment.inPort, update.suspend[3]);
+  <font color="red">connect</font>(T2.conditionPort, bus_node2.b);
+  <font color="red">connect</font>(T2.outPort, time_.inPort[5]);
+  <font color="red">connect</font>(not4.u, not1.u);
+  <font color="red">connect</font>(time_.activePort, bus_node1.time_active);
+  <font color="red">connect</font>(pre1.u, bus_node2.c);
+  <font color="red">connect</font>(pre1.y, ten_minutes_c.conditionPort);
+  <font color="red">connect</font>(time_setting.u, time_quantity.y);
+  <font color="red">connect</font>(time_setting.trigger, perform_increment.firePort);
+  <font color="red">connect</font>(time_setting.y, signalBus.update_time);
+  <font color="red">connect</font>(second.activePort, show_time.u[1]);
+  <font color="red">connect</font>(minute.activePort, show_time.u[2]);
+  <font color="red">connect</font>(ten_minutes.activePort, show_time.u[3]);
+  <font color="red">connect</font>(hour.activePort, show_time.u[4]);
+  <font color="red">connect</font>(month.activePort, show_date.u[1]);
+  <font color="red">connect</font>(date.activePort, show_date.u[2]);
+  <font color="red">connect</font>(day.activePort, show_date.u[3]);
+  <font color="red">connect</font>(show_date.y, signalBus.show_date);
+  <font color="red">connect</font>(show_time.y, signalBus.show_time);
+  <font color="red">connect</font>(year.activePort, signalBus.show_year);
+  <font color="red">connect</font>(mode.activePort, signalBus.mode_active);
+  <font color="red">connect</font>(time_.outPort[1], time_c_down.inPort);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(edge1.y, and1.u2);
+  <font color="red">connect</font>(date_d.outPort, time_.inPort[6]);
+  <font color="red">connect</font>(date_setting.u, date_quantity.y);
+  <font color="red">connect</font>(mode_setting.u, mode_quantity.y);
+  <font color="red">connect</font>(year_setting.u, year_quantity.y);
+  <font color="red">connect</font>(time_setting.trigger, date_setting.trigger);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(date_setting.trigger, mode_setting.trigger);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(mode_setting.trigger, year_setting.trigger);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(time_c_down.conditionPort, day_c.conditionPort);
+  <font color="red">connect</font>(year_setting.trigger, day_setting.trigger);
+  <font color="red">connect</font>(day.activePort, day_quantity.u[1]);
+  <font color="red">connect</font>(year_quantity.u[1], year.activePort);
+  <font color="red">connect</font>(mode_quantity.u[1], mode.activePort);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(bus_node3, signalBus);
+  <font color="red">connect</font>(bus_node3, bus_node1);
+  <font color="red">connect</font>(day_setting.y, bus_node3.day_setting);
+  <font color="red">connect</font>(year_setting.y, bus_node3.year_setting);
+  <font color="red">connect</font>(day_quantity.y, day_setting.u);
+  <font color="red">connect</font>(date_setting.y, bus_node3.date_setting);
+  <font color="red">connect</font>(time_c_down.outPort, update.inPort[1]);
+  <font color="red">connect</font>(time_.outPort[2], exit[1]);
+  <font color="red">connect</font>(time_.outPort[3], time_d_b_up.inPort);
+  <font color="red">connect</font>(mode_setting.y, bus_node3.mode_setting);
+  <font color="red">connect</font>(pre2.y, perform_increment.conditionPort);
+  <font color="red">connect</font>(pre2.u, bus_node2.d);
+  <font color="red">connect</font>(update.activePort, bus_node3.update_active);
+  <font color="red">connect</font>(time_setting.reset, bus_node3.dead_active);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(date_setting.reset, time_setting.reset);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(date_setting.reset, mode_setting.reset);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(mode_setting.reset, year_setting.reset);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(year_setting.reset, day_setting.reset);
+  <font color="red">connect</font>(edge2.u, bus_node1.d);
+  <font color="red">connect</font>(edge2.y, date_d.conditionPort);
+  <font color="red">connect</font>(edge2.y, edge1.u);
+  <font color="red">connect</font>(month.activePort, date_quantity.u[1]);
+  <font color="red">connect</font>(date.activePort, date_quantity.u[2]);
+  <font color="red">connect</font>(date_.activePort, bus_node3.date_active);
+  <font color="red">connect</font>(mode.activePort, show_time.u[5]);</textblock>
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>Regular;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Out<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.OutI.png" ALT="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Out" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Out"></A><A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch</A>.Out</H2>
+<IMG SRC="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.OutD.png" ALT="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Out">
+<P><H3>Information</H3></P>
+Extends from <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.PartialParallel"
+>Modelica_StateGraph2.PartialParallel</A> (Partial compont to construct a parallel submodel via inheritance).
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Boolean</TD><TD>initialStep</TD><TD>false</TD><TD>=true, if initial step (start state machine at entry ports of Parallel)</TD></TR>
+<TR><TD>Boolean</TD><TD>use_inPort</TD><TD>true</TD><TD>=true, if inPort enabled</TD></TR>
+<TR><TD>Boolean</TD><TD>use_outPort</TD><TD>true</TD><TD>=true, if outPort enabled</TD></TR>
+<TR><TD>Boolean</TD><TD>use_suspend</TD><TD>true</TD><TD>=true, if suspend and resume ports enabled</TD></TR>
+<TR><TD>Boolean</TD><TD>use_activePort</TD><TD>false</TD><TD>=true, if activePort enabled</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Step_in"
+>Step_in</A></TD><TD>inPort[nIn]</TD><TD>If enabled, port for one or more input transitions</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Step_out"
+>Step_out</A></TD><TD>outPort[nOut]</TD><TD>If enabled, port for one or more output transitions</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Composite_resume"
+>Composite_resume</A></TD><TD>resume[nResume]</TD><TD>If enabled, port for zero, one or more resume transitions</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Composite_suspend"
+>Composite_suspend</A></TD><TD>suspend[nSuspend]</TD><TD>If enabled, port for zero, one or more suspend transitions</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>activePort</TD><TD>= true if Parallel component is active, otherwise it is not active</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> Out
+  <font color="blue">extends </font><A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.PartialParallel"
+>Modelica_StateGraph2.PartialParallel</A>(           nEntry=1, nExit=1);
+<textblock type="annotcomp" expanded="false">  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Parallel"
+>Parallel</A> chime(
+    nEntry=1,
+    use_suspend=true,
+    nResume=1,
+    use_inPort=false,
+    nSuspend=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> chime_off(
+                                    nIn=2, nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> chime_off_d(
+              use_conditionPort=true,
+    use_firePort=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> chime_on(
+    nIn=1,
+    nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> chime_on_d(
+              use_conditionPort=true,
+    use_firePort=false,
+    loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Parallel"
+>Parallel</A> alarm1(
+    nEntry=1,
+    use_suspend=true,
+    nSuspend=2,
+    nResume=3,
+    use_inPort=false,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> alarm1_off(
+                                     nIn=2, nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> alarm1_off_d(
+    use_conditionPort=true,
+    use_firePort=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> alarm1_on(
+    nIn=1,
+    nOut=1,
+    initialStep=false,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> alarm1_on_d(
+    use_conditionPort=true,
+    use_firePort=false,
+    loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Parallel"
+>Parallel</A> update1(
+    use_outPort=true,
+    use_suspend=true,
+    nEntry=1,
+    nExit=1,
+    nIn=1,
+    nSuspend=2,
+    nResume=1,
+    nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> update1_hour(
+    nIn=1,
+    nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> update1_hour_c(
+                            use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> update1_ten_min(
+    nIn=1,
+    nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> update1_ten_min_c(
+                            use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> update1_min(
+    nIn=1,
+    use_activePort=true,
+    nOut=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> update1_d(
+    use_firePort=true,
+    use_conditionPort=true,
+    loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> update1_b(
+              use_conditionPort=true, loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> update1_c(
+              use_conditionPort=true, loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Parallel"
+>Parallel</A> alarm2(
+    nEntry=1,
+    use_suspend=true,
+    nSuspend=2,
+    nResume=3,
+    use_inPort=false,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> alarm2_off(
+                                     nIn=2, nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> alarm2_off_d(
+    use_conditionPort=true,
+    use_firePort=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> alarm2_on(
+    nIn=1,
+    nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> alarm2_on_d(
+    use_conditionPort=true,
+    use_firePort=false,
+    loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Parallel"
+>Parallel</A> update2(
+    use_outPort=true,
+    use_suspend=true,
+    nEntry=1,
+    nExit=1,
+    nIn=1,
+    nSuspend=2,
+    nResume=1,
+    nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> update2_hour(
+    nIn=1,
+    nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> update2_hour_c(
+                            use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> update2_ten_min(
+    nIn=1,
+    nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> update2_ten_min_c(
+                            use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> update2_min(
+    nOut=1,
+    nIn=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> update2_d(
+    use_firePort=true,
+    use_conditionPort=true,
+    loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> update2_b(
+    use_conditionPort=true, loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> update2_c(
+              use_conditionPort=true, loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> alarm1_c(
+              use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> alarm1_a(
+              use_conditionPort=true, loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> alarm2_a(
+    use_conditionPort=true, loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> alarm2_c(
+              use_conditionPort=true, loopCheck=false);
+<font color="blue">protected </font>
+  <font color="blue">outer </font><A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus</A>
+  signalBus;
+<font color="blue">public </font>
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge2;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge3;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge4;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge5;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge6;
+<font color="blue">protected </font>
+  <A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus</A>
+  update2_bus_node;
+<font color="blue">public </font>
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge8;
+<font color="blue">protected </font>
+  <A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus</A>
+  alarm2_bus_node;
+<font color="blue">public </font>
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge9;
+<font color="blue">protected </font>
+  <A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus</A>
+  chime_bus_node;
+<font color="blue">protected </font>
+  <A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus</A>
+  alarm1_bus_node;
+<font color="blue">public </font>
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge10;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge7;
+<font color="blue">protected </font>
+  <A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus</A>
+  alarm1_bus_node1;
+<font color="blue">public </font>
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge1;
+  <A HREF="Modelica_StateGraph2_Blocks_MathInteger.html#Modelica_StateGraph2.Blocks.MathInteger.MultiSwitch"
+>Modelica_StateGraph2.Blocks.MathInteger.MultiSwitch</A> quantity2(    expr={60*60,
+        60*10,60}, nu=3,
+    use_pre_as_default=false);
+  <A HREF="Modelica_StateGraph2_Blocks_MathInteger.html#Modelica_StateGraph2.Blocks.MathInteger.TriggeredAdd"
+>Modelica_StateGraph2.Blocks.MathInteger.TriggeredAdd</A> alarm2_setting;
+  <A HREF="Modelica_StateGraph2_Blocks_MathInteger.html#Modelica_StateGraph2.Blocks.MathInteger.MultiSwitch"
+>Modelica_StateGraph2.Blocks.MathInteger.MultiSwitch</A> quantity1(    expr={60*60,
+        60*10,60}, nu=3,
+    use_pre_as_default=false);
+  <A HREF="Modelica_StateGraph2_Blocks_MathInteger.html#Modelica_StateGraph2.Blocks.MathInteger.TriggeredAdd"
+>Modelica_StateGraph2.Blocks.MathInteger.TriggeredAdd</A> alarm1_setting;
+  <A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.Or"
+>Modelica_StateGraph2.Blocks.MathBoolean.Or</A> or1(    nu=2);
+  <A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.Or"
+>Modelica_StateGraph2.Blocks.MathBoolean.Or</A> or2(    nu=2);</textblock>
+<font color="blue">equation </font>
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(chime_off.inPort[1],chime. entry[1]);
+  <font color="red">connect</font>(chime_off_d.inPort,chime_off. outPort[1]);
+  <font color="red">connect</font>(chime_on.inPort[1],chime_off_d. outPort);
+  <font color="red">connect</font>(chime_on_d.inPort,chime_on. outPort[1]);
+  <font color="red">connect</font>(chime_on_d.outPort,chime_off. inPort[2]);
+  <font color="red">connect</font>(alarm1_off.inPort[1],alarm1. entry[1]);
+  <font color="red">connect</font>(alarm1_off_d.inPort,alarm1_off. outPort[1]);
+  <font color="red">connect</font>(alarm1_on_d.outPort,alarm1_off. inPort[2]);
+  <font color="red">connect</font>(update1.entry[1],update1_hour. inPort[1]);
+  <font color="red">connect</font>(update1_hour.outPort[1],update1_hour_c. inPort);
+  <font color="red">connect</font>(update1_hour_c.outPort,update1_ten_min. inPort[1]);
+  <font color="red">connect</font>(update1_ten_min_c.outPort,update1_min. inPort[1]);
+  <font color="red">connect</font>(update1_ten_min.outPort[1],update1_ten_min_c. inPort);
+  <font color="red">connect</font>(update1_d.outPort,update1. resume[1]);
+  <font color="red">connect</font>(update1.suspend[1],update1_d. inPort);
+  <font color="red">connect</font>(update1.suspend[2],update1_b. inPort);
+  <font color="red">connect</font>(update1_b.outPort,alarm1. resume[1]);
+  <font color="red">connect</font>(alarm1.resume[2],update1_c. outPort);
+  <font color="red">connect</font>(update1_c.inPort,update1. outPort[1]);
+  <font color="red">connect</font>(alarm2_off.inPort[1],alarm2. entry[1]);
+  <font color="red">connect</font>(alarm2_off_d.inPort,alarm2_off. outPort[1]);
+  <font color="red">connect</font>(alarm2_on.inPort[1],alarm2_off_d. outPort);
+  <font color="red">connect</font>(alarm2_on_d.inPort,alarm2_on. outPort[1]);
+  <font color="red">connect</font>(alarm2_on_d.outPort,alarm2_off. inPort[2]);
+  <font color="red">connect</font>(update2.entry[1],update2_hour. inPort[1]);
+  <font color="red">connect</font>(update2_hour.outPort[1],update2_hour_c. inPort);
+  <font color="red">connect</font>(update2_hour_c.outPort,update2_ten_min. inPort[1]);
+  <font color="red">connect</font>(update2_min.outPort[1], update2.exit[1]);
+  <font color="red">connect</font>(update2_ten_min_c.outPort, update2_min.inPort[1]);
+  <font color="red">connect</font>(update2_ten_min.outPort[1],update2_ten_min_c. inPort);
+  <font color="red">connect</font>(update2_d.outPort,update2. resume[1]);
+  <font color="red">connect</font>(update2.suspend[1],update2_d. inPort);
+  <font color="red">connect</font>(update2.suspend[2],update2_b. inPort);
+  <font color="red">connect</font>(update2_b.outPort,alarm2. resume[1]);
+  <font color="red">connect</font>(alarm2.resume[2],update2_c. outPort);
+  <font color="red">connect</font>(update2_c.inPort,update2. outPort[1]);
+  <font color="red">connect</font>(alarm1.suspend[1],alarm1_c. inPort);
+  <font color="red">connect</font>(alarm1_c.outPort,update1. inPort[1]);
+  <font color="red">connect</font>(alarm1_a.inPort,alarm1. suspend[2]);
+  <font color="red">connect</font>(alarm1_a.outPort,alarm2. resume[3]);
+  <font color="red">connect</font>(alarm2_a.inPort,alarm2. suspend[1]);
+  <font color="red">connect</font>(alarm2_a.outPort,chime. resume[1]);
+  <font color="red">connect</font>(alarm2_c.inPort,alarm2. suspend[2]);
+  <font color="red">connect</font>(alarm2_c.outPort,update2. inPort[1]);
+  <font color="red">connect</font>(alarm1_on.outPort[1],alarm1_on_d. inPort);
+  <font color="red">connect</font>(alarm1_off_d.outPort,alarm1_on. inPort[1]);
+  <font color="red">connect</font>(entry[1], alarm1.resume[3]);
+  <font color="red">connect</font>(chime.suspend[1], exit[1]);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(chime_off_d.conditionPort, chime_on_d.conditionPort);
+  <font color="red">connect</font>(alarm2_off_d.conditionPort, alarm2_on_d.conditionPort);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(alarm1_off_d.conditionPort, alarm1_on_d.conditionPort);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(update2_ten_min_c.conditionPort, update2_hour_c.conditionPort);
+  <font color="red">connect</font>(update1_hour_c.conditionPort, update1_ten_min_c.conditionPort);
+  <font color="red">connect</font>(update2_ten_min_c.conditionPort, update2_c.conditionPort);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(alarm1_c.conditionPort, alarm2_c.conditionPort);
+  <font color="red">connect</font>(edge2.u, signalBus.c);
+  <font color="red">connect</font>(edge2.y, alarm2_c.conditionPort);
+  <font color="red">connect</font>(edge3.y, alarm1_a.conditionPort);
+  <font color="red">connect</font>(edge4.u, signalBus.a);
+  <font color="red">connect</font>(edge4.y, alarm2_a.conditionPort);
+  <font color="red">connect</font>(edge5.u, signalBus.d);
+  <font color="red">connect</font>(edge5.y, chime_off_d.conditionPort);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(edge6.u, alarm2_bus_node.d);
+  <font color="red">connect</font>(edge6.y, alarm2_on_d.conditionPort);
+  <font color="red">connect</font>(alarm2_off.activePort, alarm2_bus_node.alarm2_off);
+  <font color="red">connect</font>(alarm2_on.activePort, alarm2_bus_node.alarm2_on);
+  <font color="red">connect</font>(edge6.y, update2_d.conditionPort);
+  <font color="red">connect</font>(edge9.u, alarm2_bus_node.b);
+  <font color="red">connect</font>(update2_b.conditionPort, edge9.y);
+  <font color="red">connect</font>(chime_off.activePort, chime_bus_node.chime_off);
+  <font color="red">connect</font>(chime_on.activePort, chime_bus_node.chime_on);
+  <font color="red">connect</font>(signalBus, chime_bus_node);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(alarm2_bus_node, chime_bus_node);
+  <font color="red">connect</font>(update2_bus_node, alarm2_bus_node);
+  <font color="red">connect</font>(alarm1_on.activePort, alarm1_bus_node.alarm1_on);
+  <font color="red">connect</font>(alarm1_off.activePort, alarm1_bus_node.alarm1_off);
+  <font color="red">connect</font>(edge10.u, alarm1_bus_node.d);
+  <font color="red">connect</font>(edge10.y, alarm1_on_d.conditionPort);
+  <font color="red">connect</font>(edge10.y, update1_d.conditionPort);
+  <font color="red">connect</font>(edge7.u, alarm1_bus_node.b);
+  <font color="red">connect</font>(edge7.y, update1_b.conditionPort);
+  <font color="red">connect</font>(update2_bus_node, alarm1_bus_node);
+  <font color="red">connect</font>(alarm1_bus_node, alarm1_bus_node1);
+  <font color="red">connect</font>(update1_min.outPort[1], update1.exit[1]);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(edge3.u, update2_bus_node.a);
+  <font color="red">connect</font>(edge8.u, update2_bus_node.c);
+  <font color="red">connect</font>(edge8.y, update2_ten_min_c.conditionPort);
+  <font color="red">connect</font>(update2_hour.activePort, quantity2.u[1]);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(update2_ten_min.activePort, quantity2.u[2]);
+  <font color="red">connect</font>(update2_min.activePort, quantity2.u[3]);
+  <font color="red">connect</font>(alarm2_setting.u, quantity2.y);
+  <font color="red">connect</font>(alarm2_setting.trigger, update2_d.firePort);
+  <font color="red">connect</font>(edge1.u, alarm1_bus_node1.c);
+  <font color="red">connect</font>(edge1.y, update1_ten_min_c.conditionPort);
+  <font color="red">connect</font>(update1_c.conditionPort, edge1.y);
+  <font color="red">connect</font>(alarm1_setting.u, quantity1.y);
+  <font color="red">connect</font>(quantity1.u[1], update1_hour.activePort);
+  <font color="red">connect</font>(update1_ten_min.activePort, quantity1.u[2]);
+  <font color="red">connect</font>(update1_min.activePort, quantity1.u[3]);
+  <font color="red">connect</font>(update1_d.firePort, alarm1_setting.trigger);
+  <font color="red">connect</font>(alarm1_setting.y, alarm1_bus_node1.T1);
+  <font color="red">connect</font>(alarm2_setting.y, update2_bus_node.T2);
+  <font color="red">connect</font>(alarm2.activePort, or1.u[1]);
+  <font color="red">connect</font>(update2.activePort, or1.u[2]);
+  <font color="red">connect</font>(or1.y, update2_bus_node.in_alarm2);
+  <font color="red">connect</font>(or2.u[1], alarm1.activePort);
+  <font color="red">connect</font>(update1.activePort, or2.u[2]);
+  <font color="red">connect</font>(or2.y, alarm1_bus_node1.in_alarm1);
+  <font color="red">connect</font>(chime.activePort, chime_bus_node.in_chime);</textblock>
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>Out;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Stopwatch<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.StopwatchI.png" ALT="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Stopwatch" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Stopwatch"></A><A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch</A>.Stopwatch</H2>
+<IMG SRC="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.StopwatchD.png" ALT="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Stopwatch">
+<P><H3>Information</H3></P>
+Extends from <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.PartialParallel"
+>Modelica_StateGraph2.PartialParallel</A> (Partial compont to construct a parallel submodel via inheritance).
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Boolean</TD><TD>initialStep</TD><TD>false</TD><TD>=true, if initial step (start state machine at entry ports of Parallel)</TD></TR>
+<TR><TD>Boolean</TD><TD>use_inPort</TD><TD>true</TD><TD>=true, if inPort enabled</TD></TR>
+<TR><TD>Boolean</TD><TD>use_outPort</TD><TD>false</TD><TD>=true, if outPort enabled</TD></TR>
+<TR><TD>Boolean</TD><TD>use_suspend</TD><TD>true</TD><TD>=true, if suspend and resume ports enabled</TD></TR>
+<TR><TD>Boolean</TD><TD>use_activePort</TD><TD>false</TD><TD>=true, if activePort enabled</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Step_in"
+>Step_in</A></TD><TD>inPort[nIn]</TD><TD>If enabled, port for one or more input transitions</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Step_out"
+>Step_out</A></TD><TD>outPort[nOut]</TD><TD>If enabled, port for one or more output transitions</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Composite_resume"
+>Composite_resume</A></TD><TD>resume[nResume]</TD><TD>If enabled, port for zero, one or more resume transitions</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Composite_suspend"
+>Composite_suspend</A></TD><TD>suspend[nSuspend]</TD><TD>If enabled, port for zero, one or more suspend transitions</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>activePort</TD><TD>= true if Parallel component is active, otherwise it is not active</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> Stopwatch
+  <font color="blue">extends </font><A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.PartialParallel"
+>Modelica_StateGraph2.PartialParallel</A>(           nEntry=1, use_outPort=false);
+<textblock type="annotcomp" expanded="false">  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Parallel"
+>Parallel</A> displayrun(
+    nIn=1,
+    nEntry=2,
+    use_outPort=true,
+    nExit=2,
+    nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> reg(
+                              nIn=2,
+  use_activePort=true,
+  nOut=2);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> lap(
+                              nIn=1, nOut=1,
+  use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> on(
+                             nIn=2, nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> off(
+                              nIn=1, nOut=2);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> reg_d(
+    use_conditionPort=true,
+    delayedTransition=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> lap_d(
+    use_conditionPort=true,
+    delayedTransition=false,
+    loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> zero(      nOut=1, nIn=2,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> zero_b(
+    use_conditionPort=true,
+    delayedTransition=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> on_b(
+    use_conditionPort=true,
+    delayedTransition=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> off_b(
+    use_conditionPort=true,
+    delayedTransition=false,
+    loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> displayrun_d(           use_conditionPort=
+        true, delayedTransition=false,
+    loopCheck=false);
+<font color="blue">protected </font>
+  <font color="blue">outer </font><A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch_Utilities.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus"
+>Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.Utilities.SignalBus</A>
+  signalBus;
+<font color="blue">public </font>
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge1;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.Edge"
+>Modelica.Blocks.Logical.Edge</A> edge2;
+  <A HREF="Modelica_StateGraph2_Blocks_MathInteger.html#Modelica_StateGraph2.Blocks.MathInteger.TriggeredAdd"
+>Modelica_StateGraph2.Blocks.MathInteger.TriggeredAdd</A> stopwatch_clock(
+    use_reset=true);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.IntegerConstant"
+>Modelica.Blocks.Sources.IntegerConstant</A> unit_second(k=1);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.SampleTrigger"
+>Modelica.Blocks.Sources.SampleTrigger</A> time_increment_trigger;
+  <A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.And"
+>Modelica_StateGraph2.Blocks.MathBoolean.And</A> increment_time(nu=2);
+<A HREF="Modelica_StateGraph2_Blocks_MathInteger.html#Modelica_StateGraph2.Blocks.MathInteger.MultiSwitch"
+>Blocks.MathInteger.MultiSwitch</A> select_display_of_time_or_lap_time(nu=3,
+    expr={stopwatch_clock.y,stopwatch_lap.y,0});
+<A HREF="Modelica_StateGraph2_Blocks_MathInteger.html#Modelica_StateGraph2.Blocks.MathInteger.TriggeredAdd"
+>Blocks.MathInteger.TriggeredAdd</A> stopwatch_lap(use_reset=true, use_set=
+      true);
+  <A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.And"
+>Modelica_StateGraph2.Blocks.MathBoolean.And</A> freeze_time(nu=2);</textblock>
+<font color="blue">equation </font>
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(reg.inPort[1],displayrun. entry[1]);
+  <font color="red">connect</font>(zero_b.inPort,zero. outPort[1]);
+  <font color="red">connect</font>(zero_b.outPort,displayrun. inPort[1]);
+  <font color="red">connect</font>(reg_d.outPort,lap. inPort[1]);
+  <font color="red">connect</font>(on.inPort[1],displayrun. entry[2]);
+  <font color="red">connect</font>(on_b.inPort,on. outPort[1]);
+  <font color="red">connect</font>(on_b.outPort,off. inPort[1]);
+  <font color="red">connect</font>(lap_d.inPort,lap. outPort[1]);
+  <font color="red">connect</font>(lap_d.outPort,reg. inPort[2]);
+  <font color="red">connect</font>(off_b.outPort,on. inPort[2]);
+  <font color="red">connect</font>(displayrun_d.inPort, displayrun.outPort[1]);
+  <font color="red">connect</font>(zero.inPort[1], entry[1]);
+  <font color="red">connect</font>(displayrun_d.outPort, zero.inPort[2]);
+  <font color="red">connect</font>(on_b.conditionPort, off_b.conditionPort);
+  <font color="red">connect</font>(lap_d.conditionPort, reg_d.conditionPort);
+  <font color="red">connect</font>(displayrun_d.conditionPort, reg_d.conditionPort);
+  <font color="red">connect</font>(edge1.u, signalBus.b);
+  <font color="red">connect</font>(edge1.y, zero_b.conditionPort);
+  <font color="red">connect</font>(edge2.y, reg_d.conditionPort);
+  <font color="red">connect</font>(edge2.u, signalBus.d);
+  <font color="red">connect</font>(displayrun.activePort, signalBus.show_stopwatch);
+<font color="red">connect</font>(unit_second.y, stopwatch_clock.u);
+<font color="red">connect</font>(time_increment_trigger.y, increment_time.u[1]);
+<font color="red">connect</font>(on.activePort, increment_time.u[2]);
+<font color="red">connect</font>(increment_time.y, stopwatch_clock.trigger);
+<font color="red">connect</font>(zero.activePort, stopwatch_clock.reset);
+<font color="red">connect</font>(freeze_time.u[1], on.activePort);</textblock>
+
+<textblock type="annotconnect" expanded="false"><font color="red">connect</font>(stopwatch_lap.trigger, freeze_time.y);
+<font color="red">connect</font>(stopwatch_lap.u, stopwatch_clock.u);</textblock>
+
+<textblock type="annotconnect" expanded="false"><font color="red">connect</font>(stopwatch_clock.y, stopwatch_lap.set);
+<font color="red">connect</font>(reg.activePort, select_display_of_time_or_lap_time.u[1]);
+<font color="red">connect</font>(lap.activePort, select_display_of_time_or_lap_time.u[2]);
+<font color="red">connect</font>(select_display_of_time_or_lap_time.y, signalBus.stopwatch_time);
+<font color="red">connect</font>(reg.outPort[1], displayrun.exit[1]);
+<font color="red">connect</font>(off.outPort[1], displayrun.exit[2]);
+<font color="red">connect</font>(off.outPort[2], off_b.inPort);
+<font color="red">connect</font>(reg.outPort[2], reg_d.inPort);
+<font color="red">connect</font>(zero_b.conditionPort, on_b.conditionPort);
+<font color="red">connect</font>(reg.activePort, freeze_time.u[2]);
+<font color="red">connect</font>(lap.activePort, stopwatch_lap.reset);
+<font color="red">connect</font>(zero.activePort, select_display_of_time_or_lap_time.u[3]);</textblock>
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>Stopwatch;
+</PRE>
+<HR>
+<address><a href="http://www.3ds.com/">Automatically generated</a> Fri Nov 12 17:27:03 2010.
+</address></BODY>
+</HTML>

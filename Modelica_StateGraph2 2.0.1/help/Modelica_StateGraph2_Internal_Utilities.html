@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+<TITLE>Modelica_StateGraph2.Internal.Utilities</TITLE>
+<META name="HTML-Generator" content="Dymola">
+<META name="description" content="&quot;Utility functions used to implement a Modelica_StateGraph2&quot;">
+<style type="text/css">
+*       { font-size: 10pt; font-family: Arial,sans-serif; }
+pre     { font-size:  9pt; font-family: Courier,monospace;}
+h4      { font-size: 10pt; font-weight: bold; color: green; }
+h3      { font-size: 11pt; font-weight: bold; color: green; }
+h2      { font-size: 13pt; font-weight: bold; color: green; }
+address {                  font-weight: normal}
+td      { solid #000; vertical-align:top; }
+th      { solid #000; vertical-align:top; font-weight: bold; }
+table   { solid #000; border-collapse: collapse;}
+</style>
+</HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Utilities<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="Modelica_StateGraph2.Internal.Utilities"></A><A HREF="Modelica_StateGraph2_Internal.html#Modelica_StateGraph2.Internal"
+>Modelica_StateGraph2.Internal</A>.Utilities</H2>
+<B>Utility functions used to implement a Modelica_StateGraph2</B>
+<P>
+<P><H3>Package Content</H3><p>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2 >
+<TR><TH >Name</TH><TH>Description</TH></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Internal.Utilities.initializeLoopCheckS.png" ALT="Modelica_StateGraph2.Internal.Utilities.initializeLoopCheck" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Internal_Utilities.html#Modelica_StateGraph2.Internal.Utilities.initializeLoopCheck"
+>initializeLoopCheck</A>
+</TD><TD>Return dummy Boolean for the detection of algebraic loops (in order to avoid that the tool can perform symbolic manipulations)</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Internal.Utilities.propagateLoopCheckS.png" ALT="Modelica_StateGraph2.Internal.Utilities.propagateLoopCheck" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Internal_Utilities.html#Modelica_StateGraph2.Internal.Utilities.propagateLoopCheck"
+>propagateLoopCheck</A>
+</TD><TD>Propagate flag to check loop</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE initializeLoopCheck<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="Modelica_StateGraph2.Internal.Utilities.initializeLoopCheck"></A><A HREF="Modelica_StateGraph2_Internal_Utilities.html#Modelica_StateGraph2.Internal.Utilities"
+>Modelica_StateGraph2.Internal.Utilities</A>.initializeLoopCheck</H2>
+<B>Return dummy Boolean for the detection of algebraic loops (in order to avoid that the tool can perform symbolic manipulations)</B><p>
+<P><H3>Outputs</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>Boolean</TD><TD>result</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">function</font> initializeLoopCheck <font color="darkgreen">
+  &quot;Return dummy Boolean for the detection of algebraic loops (in order to avoid that the tool can perform symbolic manipulations)&quot;</font>
+  <font color="blue">output </font>Boolean result;
+<font color="blue">protected </font>
+  Integer dummy;
+<font color="blue">algorithm </font>
+  dummy := 0;
+  result :=true;
+<font color="blue">end </font>initializeLoopCheck;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE propagateLoopCheck<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Internal.Utilities.propagateLoopCheckI.png" ALT="Modelica_StateGraph2.Internal.Utilities.propagateLoopCheck" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Internal.Utilities.propagateLoopCheck"></A><A HREF="Modelica_StateGraph2_Internal_Utilities.html#Modelica_StateGraph2.Internal.Utilities"
+>Modelica_StateGraph2.Internal.Utilities</A>.propagateLoopCheck</H2>
+<B>Propagate flag to check loop</B><p>
+<P><H3>Information</H3></P>
+Extends from <A HREF="../../Modelica 3.2/help/Modelica_Icons.html#Modelica.Icons.Function"
+>Modelica.Icons.Function</A> (Icon for functions).
+<P><H3>Inputs</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Boolean</TD><TD>b[:]</TD><TD>&nbsp;</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Outputs</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>Boolean</TD><TD>result</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">function</font> propagateLoopCheck <font color="darkgreen">&quot;Propagate flag to check loop&quot;</font>
+  <font color="blue">extends </font><A HREF="../../Modelica 3.2/help/Modelica_Icons.html#Modelica.Icons.Function"
+>Modelica.Icons.Function</A>;
+  <font color="blue">input </font>Boolean b[:];
+  <font color="blue">output </font>Boolean result;
+<font color="blue">protected </font>
+  Integer dummy;
+<font color="blue">algorithm </font>
+  dummy := 0;
+  result := true;
+<font color="blue">end </font>propagateLoopCheck;
+</PRE>
+<HR>
+<address><a href="http://www.3ds.com/">Automatically generated</a> Fri Nov 12 17:27:08 2010.
+</address></BODY>
+</HTML>

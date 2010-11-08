@@ -1,0 +1,869 @@
+<HTML>
+<HEAD>
+<TITLE>Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal</TITLE>
+<META name="HTML-Generator" content="Dymola">
+<META name="description" content="&quot;Utility components for the examples&quot;">
+<style type="text/css">
+*       { font-size: 10pt; font-family: Arial,sans-serif; }
+pre     { font-size:  9pt; font-family: Courier,monospace;}
+h4      { font-size: 10pt; font-weight: bold; color: green; }
+h3      { font-size: 11pt; font-weight: bold; color: green; }
+h2      { font-size: 13pt; font-weight: bold; color: green; }
+address {                  font-weight: normal}
+td      { solid #000; vertical-align:top; }
+th      { solid #000; vertical-align:top; font-weight: bold; }
+table   { solid #000; border-collapse: collapse;}
+</style>
+</HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Internal<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal"></A><A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks"
+>Modelica_StateGraph2.Examples.Applications.ControlledTanks</A>.Internal</H2>
+<B>Utility components for the examples</B>
+<P>
+<P><H3>Package Content</H3><p>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2 >
+<TR><TH >Name</TH><TH>Description</TH></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.PartialControlledTankS.png" ALT="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.PartialControlledTank" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.PartialControlledTank"
+>PartialControlledTank</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.TankController1S.png" ALT="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.TankController1" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.TankController1"
+>TankController1</A>
+</TD><TD>Controller 1 for tank system (using expressions to control the valves)</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.TankController2S.png" ALT="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.TankController2" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.TankController2"
+>TankController2</A>
+</TD><TD>Controller 2 for tank system (using expressions to control the valves)</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.MakeProductS.png" ALT="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.MakeProduct" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.MakeProduct"
+>MakeProduct</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.ShutStepS.png" ALT="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.ShutStep" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.ShutStep"
+>ShutStep</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.SignalBusS.png" ALT="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.SignalBus" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.SignalBus"
+>SignalBus</A>
+</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE PartialControlledTank<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.PartialControlledTankI.png" ALT="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.PartialControlledTank" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.PartialControlledTank"></A><A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal"
+>Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal</A>.PartialControlledTank</H2>
+<IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.PartialControlledTankD.png" ALT="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.PartialControlledTank">
+<P><H3>Information</H3></P>
+Extends from <A HREF="../../Modelica 3.2/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</A> (Icon for runnable examples).
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">model</font> PartialControlledTank
+  <font color="blue">extends </font><A HREF="../../Modelica 3.2/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</A>;
+  <font color="blue">package</font> Medium = <A HREF="../../Modelica 3.2/help/Modelica_Media_Water_ConstantPropertyLiquidWater.html#Modelica.Media.Water.ConstantPropertyLiquidWater"
+>Modelica.Media.Water.ConstantPropertyLiquidWater</A>;
+<textblock type="annotcomp" expanded="false">  <A HREF="../../Modelica 3.2/help/Modelica_Fluid_Valves.html#Modelica.Fluid.Valves.ValveDiscrete"
+>Modelica.Fluid.Valves.ValveDiscrete</A> valve1(                     <font color="blue">redeclare </font><font color="blue">
+      package</font> Medium = Medium,
+    m_flow_nominal=40,
+    dp_nominal=100000);
+  <A HREF="../../Modelica 3.2/help/Modelica_Fluid_Vessels.html#Modelica.Fluid.Vessels.OpenTank"
+>Modelica.Fluid.Vessels.OpenTank</A> tank1(
+    level_start=0.05,
+    <font color="blue">redeclare </font><font color="blue">package</font> Medium = Medium,
+    crossArea=6,
+    height=4,
+    nPorts=2,
+    portsData={<font color="red">Modelica.Fluid.Vessels.BaseClasses.VesselPortsData</font>(
+          diameter=0.2,
+          height=4,
+          zeta_out=0,
+          zeta_in=1),<font color="red">Modelica.Fluid.Vessels.BaseClasses.VesselPortsData</font>(
+          diameter=0.2,
+          height=0,
+          zeta_out=0,
+          zeta_in=1)},
+  T_start=system.T_ambient,
+  energyDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial,
+  massDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial);
+  <A HREF="../../Modelica 3.2/help/Modelica_Fluid_Valves.html#Modelica.Fluid.Valves.ValveDiscrete"
+>Modelica.Fluid.Valves.ValveDiscrete</A> valve2(        <font color="blue">redeclare </font><font color="blue">package</font> Medium
+      = Medium,
+    dp_nominal(displayUnit=&quot;Pa&quot;) = 1,
+    m_flow_nominal=100);
+  <A HREF="../../Modelica 3.2/help/Modelica_Fluid_Valves.html#Modelica.Fluid.Valves.ValveDiscrete"
+>Modelica.Fluid.Valves.ValveDiscrete</A> valve3(        <font color="blue">redeclare </font><font color="blue">package</font> Medium
+      = Medium,
+    dp_nominal(displayUnit=&quot;Pa&quot;) = 1,
+    m_flow_nominal=10);
+  <A HREF="../../Modelica 3.2/help/Modelica_Fluid_Vessels.html#Modelica.Fluid.Vessels.OpenTank"
+>Modelica.Fluid.Vessels.OpenTank</A> tank2(
+    level_start=0.05,
+    <font color="blue">redeclare </font><font color="blue">package</font> Medium = Medium,
+    height=5,
+    crossArea=6,
+    nPorts=2,
+    portsData={<font color="red">Modelica.Fluid.Vessels.BaseClasses.VesselPortsData</font>(
+          diameter=0.2,
+          height=5,
+          zeta_out=0,
+          zeta_in=1),<font color="red">Modelica.Fluid.Vessels.BaseClasses.VesselPortsData</font>(
+          diameter=0.2,
+          height=0,
+          zeta_out=0,
+          zeta_in=1)},
+  T_start=system.T_ambient,
+  energyDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial,
+  massDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial);
+  <A HREF="../../Modelica 3.2/help/Modelica_Fluid_Sources.html#Modelica.Fluid.Sources.Boundary_pT"
+>Modelica.Fluid.Sources.Boundary_pT</A> ambient(
+  <font color="blue">redeclare </font><font color="blue">package</font> Medium = Medium,
+  nPorts=1,
+  p=system.p_ambient,
+  T=system.T_ambient);
+  <A HREF="../../Modelica 3.2/help/Modelica_Fluid_Sources.html#Modelica.Fluid.Sources.Boundary_pT"
+>Modelica.Fluid.Sources.Boundary_pT</A> reservoir(
+  <font color="blue">redeclare </font><font color="blue">package</font> Medium = Medium,
+  nPorts=1,
+  T=system.T_ambient,
+  p=2500000);
+  <font color="blue">inner </font><A HREF="../../Modelica 3.2/help/Modelica_Fluid.html#Modelica.Fluid.System"
+>Modelica.Fluid.System</A> system;</textblock>
+<font color="blue">equation </font>
+<textblock type="annotconnect" expanded="false"><font color="red">connect</font>(reservoir.ports[1], valve1.port_a);
+<font color="red">connect</font>(valve3.port_b, ambient.ports[1]);
+  <font color="red">connect</font>(tank2.ports[2],valve3. port_a);
+  <font color="red">connect</font>(valve2.port_b,tank2. ports[1]);
+  <font color="red">connect</font>(valve1.port_b,tank1. ports[1]);
+  <font color="red">connect</font>(tank1.ports[2],valve2. port_a);</textblock>
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>PartialControlledTank;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE TankController1<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.TankController1I.png" ALT="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.TankController1" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.TankController1"></A><A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal"
+>Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal</A>.TankController1</H2>
+<B>Controller 1 for tank system (using expressions to control the valves)</B><p>
+<IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.TankController1D.png" ALT="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.TankController1">
+<P><H3>Information</H3></P>
+Extends from <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BlockIcon"
+>Modelica.Blocks.Interfaces.BlockIcon</A> (Basic graphical layout of input/output block).
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Height</A></TD><TD>limit1</TD><TD>0.98</TD><TD>Maximum level of tank 1 [m]</TD></TR>
+<TR><TD><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Height</A></TD><TD>limit2</TD><TD>0.98</TD><TD>Maximum level of tank 2 [m]</TD></TR>
+<TR><TD><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Height</A></TD><TD>minLevel</TD><TD>0.01</TD><TD>Minimum fill level of a tank [m]</TD></TR>
+<TR><TD><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>Time</A></TD><TD>waitTime</TD><TD>3</TD><TD>Wait time to newly open a valve [s]</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>input <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInput"
+>BooleanInput</A></TD><TD>start</TD><TD>&nbsp;</TD></TR>
+<TR><TD>input <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInput"
+>BooleanInput</A></TD><TD>stop</TD><TD>&nbsp;</TD></TR>
+<TR><TD>input <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInput"
+>BooleanInput</A></TD><TD>shut</TD><TD>&nbsp;</TD></TR>
+<TR><TD>input <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>RealInput</A></TD><TD>level1</TD><TD>&nbsp;</TD></TR>
+<TR><TD>input <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>RealInput</A></TD><TD>level2</TD><TD>&nbsp;</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>valve1</TD><TD>&nbsp;</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>valve2</TD><TD>&nbsp;</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>valve3</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> TankController1 <font color="darkgreen">
+  &quot;Controller 1 for tank system (using expressions to control the valves)&quot;</font>
+  <font color="blue">extends </font><A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BlockIcon"
+>Modelica.Blocks.Interfaces.BlockIcon</A>;
+  <font color="blue">parameter </font><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Modelica.SIunits.Height</A> limit1(min=0) = 0.98 <font color="darkgreen">
+    &quot;Maximum level of tank 1&quot;</font>;
+  <font color="blue">parameter </font><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Modelica.SIunits.Height</A> limit2(min=0) = 0.98 <font color="darkgreen">
+    &quot;Maximum level of tank 2&quot;</font>;
+  <font color="blue">parameter </font><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Modelica.SIunits.Height</A> minLevel(min=0) = 0.01 <font color="darkgreen">
+    &quot;Minimum fill level of a tank&quot;</font>;
+
+  <font color="blue">parameter </font><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>Modelica.SIunits.Time</A> waitTime=3 <font color="darkgreen">&quot;Wait time to newly open a valve&quot;</font>;
+
+<textblock type="annotcomp" expanded="false">  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInput"
+>Modelica.Blocks.Interfaces.BooleanInput</A> start;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInput"
+>Modelica.Blocks.Interfaces.BooleanInput</A> stop;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInput"
+>Modelica.Blocks.Interfaces.BooleanInput</A> shut;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>Modelica.Blocks.Interfaces.RealInput</A> level1;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>Modelica.Blocks.Interfaces.RealInput</A> level2;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>Modelica.Blocks.Interfaces.BooleanOutput</A> valve1;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>Modelica.Blocks.Interfaces.BooleanOutput</A> valve2;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>Modelica.Blocks.Interfaces.BooleanOutput</A> valve3;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> setValve1(y=fillTank1.active<font color="blue">
+           and </font>level1 &lt;= 1.01*limit1);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> setValve2(y=(fillTank2.active<font color="blue">
+         or </font>emptyTanks.active<font color="blue"> or </font>shutTank1.active)<font color="blue"> and </font>level2 &lt;= 1.01*
+        limit2);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> setValve3(y=emptyTanks.active<font color="blue">
+         or </font>shutTank2.active);</textblock>
+
+<textblock type="annotcomp" expanded="false">  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Parallel"
+>Parallel</A> makeProduct(
+    use_suspend=true,
+    nIn=2,
+    nEntry=1,
+    nExit=0,
+    nOut=0,
+    use_outPort=false,
+    use_inPort=true,
+    nSuspend=1,
+  nResume=1,
+  initialStep=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> startStep(
+                 nOut=1, nIn=2);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T1(
+                use_conditionPort=true,
+    waitTime=0.01,
+    delayedTransition=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> fillTank1(
+                 nIn=1, nOut=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T2(
+                condition=level1 &gt; limit1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> wait1(
+             nIn=1, nOut=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> fillTank2(
+                 nIn=1, nOut=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T3(
+                delayedTransition=true, waitTime=waitTime);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T4(
+                condition=level1 &lt; minLevel);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> wait2(
+             nIn=1, nOut=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T5(
+                delayedTransition=true, waitTime=waitTime);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> emptyTanks(
+                  nIn=1, nOut=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T6(
+                condition=level2 &lt; minLevel);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> initialStep(
+                   initialStep=true, nOut=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T7;
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> stopStep1(
+                 nIn=1, nOut=2);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T8(
+                use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T9(
+                use_conditionPort=true, delayedTransition=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T10(
+    use_conditionPort=true, delayedTransition=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> shutTank1(
+                 nIn=1, nOut=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T13(
+                 delayedTransition=false, condition=level1 &lt; minLevel);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Parallel"
+>Parallel</A> shutStep(
+    use_inPort=true,
+    use_outPort=true,
+    use_suspend=true,
+    nEntry=2,
+    nExit=2,
+    nOut=1,
+    nSuspend=1,
+    use_activePort=false,
+  initialStep=false,
+  nIn=1,
+  nResume=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> shutTank2(
+                 nIn=1, nOut=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> tank1Empty(
+                  nIn=1, nOut=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> tank2Empty(
+                  nIn=1, nOut=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T11(
+                 condition=level2 &lt; minLevel, delayedTransition=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T12(
+                 delayedTransition=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T14(
+                 use_conditionPort=true, delayedTransition=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> stopStep2(
+                 nIn=1, nOut=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T15(
+    use_conditionPort=true,
+  delayedTransition=false,
+  waitTime=0);
+<A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> startWait(
+                          nOut=1, nIn=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T16(
+    delayedTransition=true,
+    waitTime=0.01,
+  use_conditionPort=false);
+<A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> shutWait(
+                         nOut=1, nIn=1);
+<A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T17(
+                          delayedTransition=true, waitTime=0.01);
+<A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> shutWait2(
+                          nOut=1, nIn=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T18(
+    waitTime=0.01,
+    delayedTransition=true,
+  use_conditionPort=false);</textblock>
+<font color="blue">equation </font>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(start, T1.conditionPort);
+  <font color="red">connect</font>(fillTank1.outPort[1], T2.inPort);
+  <font color="red">connect</font>(T2.outPort, wait1.inPort[1]);
+  <font color="red">connect</font>(wait1.outPort[1], T3.inPort);
+  <font color="red">connect</font>(T3.outPort, fillTank2.inPort[1]);
+  <font color="red">connect</font>(fillTank2.outPort[1], T4.inPort);
+  <font color="red">connect</font>(T4.outPort, wait2.inPort[1]);
+  <font color="red">connect</font>(wait2.outPort[1], T5.inPort);
+  <font color="red">connect</font>(T5.outPort, emptyTanks.inPort[1]);
+  <font color="red">connect</font>(emptyTanks.outPort[1], T6.inPort);
+  <font color="red">connect</font>(T1.outPort, fillTank1.inPort[1]);
+  <font color="red">connect</font>(startStep.inPort[1], makeProduct.entry[1]);
+  <font color="red">connect</font>(startStep.outPort[1], T1.inPort);
+  <font color="red">connect</font>(T6.outPort, startStep.inPort[2]);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(T7.outPort, makeProduct.inPort[1]);
+  <font color="red">connect</font>(T8.outPort, stopStep1.inPort[1]);
+  <font color="red">connect</font>(makeProduct.suspend[1], T8.inPort);
+  <font color="red">connect</font>(stop, T8.conditionPort);
+  <font color="red">connect</font>(initialStep.outPort[1], T7.inPort);
+  <font color="red">connect</font>(stopStep1.outPort[1], T9.inPort);
+  <font color="red">connect</font>(T10.inPort, stopStep1.outPort[2]);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(setValve1.y, valve1);
+  <font color="red">connect</font>(setValve2.y, valve2);
+  <font color="red">connect</font>(setValve3.y, valve3);
+  <font color="red">connect</font>(start, T10.conditionPort);
+  <font color="red">connect</font>(shutStep.entry[1], shutTank1.inPort[1]);
+  <font color="red">connect</font>(shutStep.entry[2], shutTank2.inPort[1]);
+  <font color="red">connect</font>(shutTank1.outPort[1], T13.inPort);
+  <font color="red">connect</font>(T13.outPort, tank1Empty.inPort[1]);
+  <font color="red">connect</font>(shutTank2.outPort[1], T11.inPort);
+  <font color="red">connect</font>(T11.outPort, tank2Empty.inPort[1]);
+  <font color="red">connect</font>(tank1Empty.outPort[1], shutStep.exit[1]);
+  <font color="red">connect</font>(tank2Empty.outPort[1], shutStep.exit[2]);
+  <font color="red">connect</font>(shutStep.outPort[1], T12.inPort);
+  <font color="red">connect</font>(shutStep.suspend[1], T14.inPort);
+  <font color="red">connect</font>(T14.outPort, stopStep2.inPort[1]);
+  <font color="red">connect</font>(stopStep2.outPort[1], T15.inPort);
+  <font color="red">connect</font>(T12.outPort, makeProduct.inPort[2]);
+  <font color="red">connect</font>(shut, T9.conditionPort);
+  <font color="red">connect</font>(stop, T14.conditionPort);
+  <font color="red">connect</font>(shut, T15.conditionPort);
+<font color="red">connect</font>(startWait.outPort[1], T16.inPort);
+<font color="red">connect</font>(T16.outPort, makeProduct.resume[1]);
+<font color="red">connect</font>(T10.outPort, startWait.inPort[1]);
+<font color="red">connect</font>(T9.outPort, shutWait.inPort[1]);
+<font color="red">connect</font>(shutWait.outPort[1], T17.inPort);
+<font color="red">connect</font>(T17.outPort, shutStep.inPort[1]);
+<font color="red">connect</font>(T15.outPort, shutWait2.inPort[1]);
+<font color="red">connect</font>(shutWait2.outPort[1], T18.inPort);
+<font color="red">connect</font>(T18.outPort, shutStep.resume[1]);</textblock>
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>TankController1;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE TankController2<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.TankController2I.png" ALT="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.TankController2" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.TankController2"></A><A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal"
+>Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal</A>.TankController2</H2>
+<B>Controller 2 for tank system (using expressions to control the valves)</B><p>
+<IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.TankController2D.png" ALT="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.TankController2">
+<P><H3>Information</H3></P>
+Extends from <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BlockIcon"
+>Modelica.Blocks.Interfaces.BlockIcon</A> (Basic graphical layout of input/output block).
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Height</A></TD><TD>limit1</TD><TD>0.98</TD><TD>Maximum level of tank 1 [m]</TD></TR>
+<TR><TD><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Height</A></TD><TD>limit2</TD><TD>0.98</TD><TD>Maximum level of tank 2 [m]</TD></TR>
+<TR><TD><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Height</A></TD><TD>minLevel</TD><TD>0.01</TD><TD>Minimum fill level of a tank [m]</TD></TR>
+<TR><TD><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>Time</A></TD><TD>waitTime</TD><TD>3</TD><TD>Wait time to newly open a valve [s]</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.SignalBus"
+>SignalBus</A></TD><TD>bus</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> TankController2 <font color="darkgreen">
+  &quot;Controller 2 for tank system (using expressions to control the valves)&quot;</font>
+  <font color="blue">extends </font><A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BlockIcon"
+>Modelica.Blocks.Interfaces.BlockIcon</A>;
+  <font color="blue">parameter </font><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Modelica.SIunits.Height</A> limit1(min=0) = 0.98 <font color="darkgreen">
+    &quot;Maximum level of tank 1&quot;</font>;
+  <font color="blue">parameter </font><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Modelica.SIunits.Height</A> limit2(min=0) = 0.98 <font color="darkgreen">
+    &quot;Maximum level of tank 2&quot;</font>;
+  <font color="blue">parameter </font><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Modelica.SIunits.Height</A> minLevel(min=0) = 0.01 <font color="darkgreen">
+    &quot;Minimum fill level of a tank&quot;</font>;
+  <font color="blue">parameter </font><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>Modelica.SIunits.Time</A> waitTime=3 <font color="darkgreen">&quot;Wait time to newly open a valve&quot;</font>;
+
+<textblock type="annotcomp" expanded="false">  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> stopStep1(
+                 nIn=1, nOut=2);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T8(           use_conditionPort=
+      false, condition=bus.stop);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T9(
+  use_conditionPort=false,
+  condition=bus.shut,
+  delayedTransition=false,
+  waitTime=0);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T10(
+  use_conditionPort=false,
+  condition=bus.start,
+  waitTime=0,
+  delayedTransition=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T12(
+                 delayedTransition=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T14(    delayedTransition=false,
+  use_conditionPort=false,
+  condition=bus.stop);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> stopStep2(
+                 nIn=1, nOut=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T15(
+  use_conditionPort=false,
+  condition=bus.shut,
+  delayedTransition=false,
+  waitTime=0);
+  <A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.MakeProduct"
+>MakeProduct</A> makeProduct(nIn=1,
+    nSuspend=1,
+    limit1=limit1,
+    limit2=limit2,
+    waitTime=waitTime,
+  initialStep=true,
+  minLevel=minLevel,
+  nResume=1);
+  <A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.ShutStep"
+>ShutStep</A> shutStep(
+    nSuspend=1,
+    nOut=1,
+  initialStep=false,
+  nIn=1,
+  nResume=1,
+  minLevel=minLevel);
+  <A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.SignalBus"
+>SignalBus</A> bus;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> setValve1(y=makeProduct.valve1<font color="blue">
+       and </font>bus.level1 &lt;= 1.01*limit1);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.BooleanExpression"
+>Modelica.Blocks.Sources.BooleanExpression</A> setValve2(y=(makeProduct.valve2<font color="blue">
+       or </font>shutStep.valve2)<font color="blue"> and </font>bus.level2 &lt;= 1.01*limit2);
+<A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.Or"
+>Modelica_StateGraph2.Blocks.MathBoolean.Or</A> setValve3(    nu=2);
+<A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> waitShut(
+                         nIn=1, nOut=1);
+<A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T1(
+                         delayedTransition=true, waitTime=0.01);
+<A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> waitStop(
+                         nIn=1, nOut=1);
+<A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T2(
+                         delayedTransition=true, waitTime=0.01);
+<A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> waitShut2(
+                          nIn=1, nOut=1);
+<A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T3(
+                         delayedTransition=true, waitTime=0.01);</textblock>
+<font color="blue">equation </font>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(T8.outPort, stopStep1.inPort[1]);
+  <font color="red">connect</font>(stopStep1.outPort[1], T9.inPort);
+  <font color="red">connect</font>(T10.inPort, stopStep1.outPort[2]);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(T14.outPort, stopStep2.inPort[1]);
+  <font color="red">connect</font>(stopStep2.outPort[1], T15.inPort);
+  <font color="red">connect</font>(makeProduct.suspend[1], T8.inPort);
+  <font color="red">connect</font>(shutStep.suspend[1], T14.inPort);
+  <font color="red">connect</font>(shutStep.outPort[1], T12.inPort);
+  <font color="red">connect</font>(T12.outPort, makeProduct.inPort[1]);</textblock>
+
+<textblock type="annotconnect" expanded="false"><font color="red">connect</font>(T9.outPort, waitShut.inPort[1]);
+<font color="red">connect</font>(waitShut.outPort[1], T1.inPort);
+<font color="red">connect</font>(T1.outPort, shutStep.inPort[1]);
+<font color="red">connect</font>(T10.outPort, waitStop.inPort[1]);
+<font color="red">connect</font>(waitStop.outPort[1], T2.inPort);
+<font color="red">connect</font>(T2.outPort, makeProduct.resume[1]);
+<font color="red">connect</font>(T15.outPort, waitShut2.inPort[1]);
+<font color="red">connect</font>(waitShut2.outPort[1], T3.inPort);
+<font color="red">connect</font>(T3.outPort, shutStep.resume[1]);
+<font color="red">connect</font>(makeProduct.valve3, setValve3.u[1]);
+<font color="red">connect</font>(shutStep.valve3, setValve3.u[2]);
+<font color="red">connect</font>(setValve3.y, bus.valve3);
+<font color="red">connect</font>(setValve1.y, bus.valve1);
+<font color="red">connect</font>(setValve2.y, bus.valve2);
+  <font color="red">connect</font>(shutStep.bus, bus);
+  <font color="red">connect</font>(makeProduct.bus, bus);</textblock>
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>TankController2;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE MakeProduct<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.MakeProductI.png" ALT="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.MakeProduct" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.MakeProduct"></A><A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal"
+>Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal</A>.MakeProduct</H2>
+<IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.MakeProductD.png" ALT="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.MakeProduct">
+<P><H3>Information</H3></P>
+Extends from <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.PartialParallel"
+>Modelica_StateGraph2.PartialParallel</A> (Partial compont to construct a parallel submodel via inheritance).
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Boolean</TD><TD>initialStep</TD><TD>false</TD><TD>=true, if initial step (start state machine at entry ports of Parallel)</TD></TR>
+<TR><TD>Boolean</TD><TD>use_inPort</TD><TD>true</TD><TD>=true, if inPort enabled</TD></TR>
+<TR><TD>Boolean</TD><TD>use_outPort</TD><TD>false</TD><TD>=true, if outPort enabled</TD></TR>
+<TR><TD>Boolean</TD><TD>use_suspend</TD><TD>true</TD><TD>=true, if suspend and resume ports enabled</TD></TR>
+<TR><TD>Boolean</TD><TD>use_activePort</TD><TD>false</TD><TD>=true, if activePort enabled</TD></TR>
+<TR><TD><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Height</A></TD><TD>limit1</TD><TD>0.98</TD><TD>Maximum level of tank 1 [m]</TD></TR>
+<TR><TD><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Height</A></TD><TD>limit2</TD><TD>0.98</TD><TD>Maximum level of tank 2 [m]</TD></TR>
+<TR><TD><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Height</A></TD><TD>minLevel</TD><TD>0.01</TD><TD>Minimum fill level of a tank [m]</TD></TR>
+<TR><TD><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>Time</A></TD><TD>waitTime</TD><TD>3</TD><TD>Wait time to newly open a valve [s]</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Step_in"
+>Step_in</A></TD><TD>inPort[nIn]</TD><TD>If enabled, port for one or more input transitions</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Step_out"
+>Step_out</A></TD><TD>outPort[nOut]</TD><TD>If enabled, port for one or more output transitions</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Composite_resume"
+>Composite_resume</A></TD><TD>resume[nResume]</TD><TD>If enabled, port for zero, one or more resume transitions</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Composite_suspend"
+>Composite_suspend</A></TD><TD>suspend[nSuspend]</TD><TD>If enabled, port for zero, one or more suspend transitions</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>activePort</TD><TD>= true if Parallel component is active, otherwise it is not active</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.SignalBus"
+>SignalBus</A></TD><TD>bus</TD><TD>&nbsp;</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>valve1</TD><TD>Value of Boolean output</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>valve2</TD><TD>Value of Boolean output</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>valve3</TD><TD>Value of Boolean output</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> MakeProduct
+  <font color="blue">extends </font><A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.PartialParallel"
+>Modelica_StateGraph2.PartialParallel</A>(
+                          <font color="blue">final </font>use_inPort=true, <font color="blue">final </font>use_suspend=true,
+      <font color="blue">final </font>use_activePort = false,
+      <font color="blue">final </font>use_outPort = false,
+      nEntry=1,nExit=1);
+  <font color="blue">parameter </font><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Modelica.SIunits.Height</A> limit1(min=0) = 0.98 <font color="darkgreen">
+    &quot;Maximum level of tank 1&quot;</font>;
+  <font color="blue">parameter </font><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Modelica.SIunits.Height</A> limit2(min=0) = 0.98 <font color="darkgreen">
+    &quot;Maximum level of tank 2&quot;</font>;
+  <font color="blue">parameter </font><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Modelica.SIunits.Height</A> minLevel(min=0) = 0.01 <font color="darkgreen">
+    &quot;Minimum fill level of a tank&quot;</font>;
+  <font color="blue">parameter </font><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>Modelica.SIunits.Time</A> waitTime=3 <font color="darkgreen">&quot;Wait time to newly open a valve&quot;</font>;
+
+<textblock type="annotcomp" expanded="false">  <A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.SignalBus"
+>SignalBus</A> bus;
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> startStep(
+                 nOut=1, nIn=2);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T1(
+    waitTime=0.01,
+    delayedTransition=false,
+  use_conditionPort=false,
+  condition=bus.start);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> fillTank1(
+                 nIn=1, nOut=1,
+  use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T2(           condition=bus.level1
+       &gt; limit1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> wait1(
+             nIn=1, nOut=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> fillTank2(
+                 nIn=1, nOut=1,
+  use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T3(
+                delayedTransition=true, waitTime=waitTime);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T4(           condition=bus.level1
+       &lt; minLevel);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> wait2(
+             nIn=1, nOut=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T5(
+                delayedTransition=true, waitTime=waitTime);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> emptyTanks(
+                  nIn=1, nOut=1,
+  use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T6(           condition=bus.level2
+       &lt; minLevel);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>Modelica.Blocks.Interfaces.BooleanOutput</A> valve1 <font color="darkgreen">&quot;Value of Boolean output&quot;</font>;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>Modelica.Blocks.Interfaces.BooleanOutput</A> valve2 <font color="darkgreen">&quot;Value of Boolean output&quot;</font>;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>Modelica.Blocks.Interfaces.BooleanOutput</A> valve3 <font color="darkgreen">&quot;Value of Boolean output&quot;</font>;
+<A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.Or"
+>Modelica_StateGraph2.Blocks.MathBoolean.Or</A> or1(
+                      nu=2);</textblock>
+<font color="blue">equation </font>
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(fillTank1.outPort[1],T2. inPort);
+  <font color="red">connect</font>(T2.outPort,wait1. inPort[1]);
+  <font color="red">connect</font>(wait1.outPort[1],T3. inPort);
+  <font color="red">connect</font>(T3.outPort,fillTank2. inPort[1]);
+  <font color="red">connect</font>(fillTank2.outPort[1],T4. inPort);
+  <font color="red">connect</font>(T4.outPort,wait2. inPort[1]);
+  <font color="red">connect</font>(wait2.outPort[1],T5. inPort);
+  <font color="red">connect</font>(T5.outPort,emptyTanks. inPort[1]);
+  <font color="red">connect</font>(emptyTanks.outPort[1],T6. inPort);
+  <font color="red">connect</font>(T1.outPort,fillTank1. inPort[1]);
+  <font color="red">connect</font>(startStep.outPort[1],T1. inPort);
+  <font color="red">connect</font>(T6.outPort,startStep.inPort[2]);
+  <font color="red">connect</font>(entry[1], startStep.inPort[1]);</textblock>
+
+<textblock type="annotconnect" expanded="false"><font color="red">connect</font>(fillTank1.activePort, valve1);
+<font color="red">connect</font>(emptyTanks.activePort, valve3);
+<font color="red">connect</font>(or1.y, valve2);
+<font color="red">connect</font>(fillTank2.activePort, or1.u[1]);
+<font color="red">connect</font>(emptyTanks.activePort, or1.u[2]);</textblock>
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>MakeProduct;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE ShutStep<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.ShutStepI.png" ALT="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.ShutStep" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.ShutStep"></A><A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal"
+>Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal</A>.ShutStep</H2>
+<IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.ShutStepD.png" ALT="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.ShutStep">
+<P><H3>Information</H3></P>
+Extends from <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.PartialParallel"
+>Modelica_StateGraph2.PartialParallel</A> (Partial compont to construct a parallel submodel via inheritance).
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Boolean</TD><TD>initialStep</TD><TD>false</TD><TD>=true, if initial step (start state machine at entry ports of Parallel)</TD></TR>
+<TR><TD>Boolean</TD><TD>use_inPort</TD><TD>true</TD><TD>=true, if inPort enabled</TD></TR>
+<TR><TD>Boolean</TD><TD>use_outPort</TD><TD>true</TD><TD>=true, if outPort enabled</TD></TR>
+<TR><TD>Boolean</TD><TD>use_suspend</TD><TD>true</TD><TD>=true, if suspend and resume ports enabled</TD></TR>
+<TR><TD>Boolean</TD><TD>use_activePort</TD><TD>false</TD><TD>=true, if activePort enabled</TD></TR>
+<TR><TD><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Height</A></TD><TD>minLevel</TD><TD>0.01</TD><TD>Minimum fill level of a tank [m]</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Step_in"
+>Step_in</A></TD><TD>inPort[nIn]</TD><TD>If enabled, port for one or more input transitions</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Step_out"
+>Step_out</A></TD><TD>outPort[nOut]</TD><TD>If enabled, port for one or more output transitions</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Composite_resume"
+>Composite_resume</A></TD><TD>resume[nResume]</TD><TD>If enabled, port for zero, one or more resume transitions</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.Composite_suspend"
+>Composite_suspend</A></TD><TD>suspend[nSuspend]</TD><TD>If enabled, port for zero, one or more suspend transitions</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>activePort</TD><TD>= true if Parallel component is active, otherwise it is not active</TD></TR>
+<TR><TD><A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.SignalBus"
+>SignalBus</A></TD><TD>bus</TD><TD>&nbsp;</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>valve2</TD><TD>Value of Boolean output</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>valve3</TD><TD>Value of Boolean output</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> ShutStep
+
+  <font color="blue">extends </font><A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.PartialParallel"
+>Modelica_StateGraph2.PartialParallel</A>(
+      <font color="blue">final </font>use_suspend=true,
+      <font color="blue">final </font>use_activePort = false,
+      <font color="blue">final </font>use_inPort = true,
+      <font color="blue">final </font>use_outPort = true,
+      <font color="blue">final </font>nEntry=2, <font color="blue">final </font>nExit=2);
+  <font color="blue">parameter </font><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Height"
+>Modelica.SIunits.Height</A> minLevel(min=0) = 0.01 <font color="darkgreen">
+    &quot;Minimum fill level of a tank&quot;</font>;
+
+<textblock type="annotcomp" expanded="false">  <A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.SignalBus"
+>SignalBus</A> bus;
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> shutTank1(
+                 nIn=1, nOut=1,
+  use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T13(
+                 delayedTransition=false, condition=bus.level1 &lt; minLevel);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> shutTank2(
+                 nIn=1, nOut=1,
+  initialStep=false,
+  use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> tank1Empty(
+                  nIn=1, nOut=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> tank2Empty(
+                  nIn=1, nOut=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> T11(      delayedTransition=false, condition=
+        bus.level2 &lt; minLevel);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>Modelica.Blocks.Interfaces.BooleanOutput</A> valve2 <font color="darkgreen">&quot;Value of Boolean output&quot;</font>;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>Modelica.Blocks.Interfaces.BooleanOutput</A> valve3 <font color="darkgreen">&quot;Value of Boolean output&quot;</font>;</textblock>
+<font color="blue">equation </font>
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(shutTank1.outPort[1],T13. inPort);
+  <font color="red">connect</font>(T13.outPort,tank1Empty.inPort[1]);
+  <font color="red">connect</font>(shutTank2.outPort[1],T11.inPort);
+  <font color="red">connect</font>(T11.outPort,tank2Empty.inPort[1]);
+  <font color="red">connect</font>(shutTank1.inPort[1], entry[1]);
+  <font color="red">connect</font>(shutTank2.inPort[1], entry[2]);
+  <font color="red">connect</font>(tank1Empty.outPort[1], exit[1]);
+  <font color="red">connect</font>(tank2Empty.outPort[1], exit[2]);
+<font color="red">connect</font>(shutTank1.activePort, valve2);
+<font color="red">connect</font>(shutTank2.activePort, valve3);</textblock>
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>ShutStep;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE SignalBus<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.SignalBusI.png" ALT="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.SignalBus" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.SignalBus"></A><A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks_Internal.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal"
+>Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal</A>.SignalBus</H2>
+<IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.SignalBusD.png" ALT="Modelica_StateGraph2.Examples.Applications.ControlledTanks.Internal.SignalBus">
+<P><H3>Information</H3></P>
+Extends from <A HREF="../../Modelica 3.2/help/Modelica_Icons.html#Modelica.Icons.SignalBus"
+>Modelica.Icons.SignalBus</A> (Icon for signal bus).
+<P><H3>Contents</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>Boolean</TD><TD>valve1</TD><TD>&nbsp;</TD></TR>
+<TR><TD>Boolean</TD><TD>valve2</TD><TD>&nbsp;</TD></TR>
+<TR><TD>Boolean</TD><TD>valve3</TD><TD>&nbsp;</TD></TR>
+<TR><TD>Boolean</TD><TD>start</TD><TD>&nbsp;</TD></TR>
+<TR><TD>Boolean</TD><TD>stop</TD><TD>&nbsp;</TD></TR>
+<TR><TD>Boolean</TD><TD>shut</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Length"
+>Length</A></TD><TD>level1</TD><TD>[m]</TD></TR>
+<TR><TD><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Length"
+>Length</A></TD><TD>level2</TD><TD>[m]</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">expandable connector</font> SignalBus
+  <font color="blue">extends </font><A HREF="../../Modelica 3.2/help/Modelica_Icons.html#Modelica.Icons.SignalBus"
+>Modelica.Icons.SignalBus</A>;
+  Boolean valve1;
+  Boolean valve2;
+  Boolean valve3;
+  Boolean start;
+  Boolean stop;
+  Boolean shut;
+  <A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Length"
+>Modelica.SIunits.Length</A> level1;
+  <A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Length"
+>Modelica.SIunits.Length</A> level2;
+
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>SignalBus;
+</PRE>
+<HR>
+<address><a href="http://www.3ds.com/">Automatically generated</a> Fri Nov 12 17:26:52 2010.
+</address></BODY>
+</HTML>

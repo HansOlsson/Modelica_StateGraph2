@@ -2,6 +2,8 @@
 
 Free library providing components to model discrete event, reactive and hybrid systems in a convenient way with deterministic hierarchical state diagrams.
 
+*Warning: Modelica_StateGraph2 is not fully Modelica compliant and will never be, since a better solution is now available with Modelica 3.3*
+
 ## Library description
 
 The `Modelica_StateGraph2` library is a free Modelica package providing components to model discrete event, reactive and hybrid systems in a convenient way with deterministic hierarchical state diagrams. For convenience, the abbreviation "StateGraph2" will be often used for this library. An example model constructed with this library is shown in the figure to the right.
@@ -10,11 +12,13 @@ This library is inspired by Grafcet/Sequential Function Charts (SFC), Statechart
 
 ## Current release
 
-Download [Modelica_StateGrap2 v2.0 (2009-08-10)](../../archive/v2.0.zip)
+Download [Modelica_StateGrap2 v2.0.1 (2010-11-08)](../../archive/v2.0.1.zip)
 
 #### Release notes
-*  [Version v2.0 (2009-08-10)](../../archive/v2.0.zip)
- * First version of the `Modelica_StateGraph2` library based on `Modelica.StateGraph` and the prototype `ModeGraph` library from Martin Malmheden.
+*  [Version v2.0.1 (2010-11-08)](../../archive/v2.0.1.zip)
+  * Uses Modelica Standard Library 3.2
+*  [Version v2.0 (2009-08-10)](../../archive/v2.0.1.zip)
+  * First version of the `Modelica_StateGraph2` library based on `Modelica.StateGraph` and the prototype `ModeGraph` library from Martin Malmheden.
 
 ## License
 

@@ -1,0 +1,249 @@
+<HTML>
+<HEAD>
+<TITLE>Modelica_StateGraph2.Examples.Applications</TITLE>
+<META name="HTML-Generator" content="Dymola">
+<META name="description" content="&quot;Examples demonstrating realistic applications with Modelica_StateGraph2&quot;">
+<style type="text/css">
+*       { font-size: 10pt; font-family: Arial,sans-serif; }
+pre     { font-size:  9pt; font-family: Courier,monospace;}
+h4      { font-size: 10pt; font-weight: bold; color: green; }
+h3      { font-size: 11pt; font-weight: bold; color: green; }
+h2      { font-size: 13pt; font-weight: bold; color: green; }
+address {                  font-weight: normal}
+td      { solid #000; vertical-align:top; }
+th      { solid #000; vertical-align:top; font-weight: bold; }
+table   { solid #000; border-collapse: collapse;}
+</style>
+</HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Applications<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="Modelica_StateGraph2.Examples.Applications"></A><A HREF="Modelica_StateGraph2_Examples.html#Modelica_StateGraph2.Examples"
+>Modelica_StateGraph2.Examples</A>.Applications</H2>
+<B>Examples demonstrating realistic applications with Modelica_StateGraph2</B>
+<P>
+<P><H3>Package Content</H3><p>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2 >
+<TR><TH >Name</TH><TH>Description</TH></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanksS.png" ALT="Modelica_StateGraph2.Examples.Applications.ControlledTanks" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_ControlledTanks.html#Modelica_StateGraph2.Examples.Applications.ControlledTanks"
+>ControlledTanks</A>
+</TD><TD>Control system to fill and empty a two tank system</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanksS.png" ALT="Modelica_StateGraph2.Examples.Applications.ProductionLine" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_ProductionLine.html#Modelica_StateGraph2.Examples.Applications.ProductionLine"
+>ProductionLine</A>
+</TD><TD>Production line with simple robots</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.ControlledTanksS.png" ALT="Modelica_StateGraph2.Examples.Applications.HarelsWristWatch" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications_HarelsWristWatch.html#Modelica_StateGraph2.Examples.Applications.HarelsWristWatch"
+>HarelsWristWatch</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examples.Applications.DeadlockS.png" ALT="Modelica_StateGraph2.Examples.Applications.Deadlock" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_Applications.html#Modelica_StateGraph2.Examples.Applications.Deadlock"
+>Deadlock</A>
+</TD><TD>Example with two processes sharing two resources ending up in a deadlock situation after 5 seconds</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Deadlock<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Examples.Applications.DeadlockI.png" ALT="Modelica_StateGraph2.Examples.Applications.Deadlock" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.Applications.Deadlock"></A><A HREF="Modelica_StateGraph2_Examples_Applications.html#Modelica_StateGraph2.Examples.Applications"
+>Modelica_StateGraph2.Examples.Applications</A>.Deadlock</H2>
+<B>Example with two processes sharing two resources ending up in a deadlock situation after 5 seconds</B><p>
+<IMG SRC="Modelica_StateGraph2.Examples.Applications.DeadlockD.png" ALT="Modelica_StateGraph2.Examples.Applications.Deadlock">
+<P><H3>Information</H3></P>
+Extends from <A HREF="../../Modelica 3.2/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</A> (Icon for runnable examples).
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> Deadlock <font color="darkgreen">
+  &quot;Example with two processes sharing two resources ending up in a deadlock situation after 5 seconds&quot;</font>
+    <font color="blue">extends </font><A HREF="../../Modelica 3.2/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</A>;
+
+<textblock type="annotcomp" expanded="false">  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> free1(
+    nOut=2,
+    nIn=2,
+    initialStep=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> s1(           nOut=1, nIn=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> request1(           use_conditionPort=true,
+    waitTime=0.001,
+    loopCheck=true,
+    delayedTransition=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> requesting1(
+    nIn=1,
+    nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> requesting3(
+    nIn=1,
+    nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> s2(           nOut=1, nIn=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> request2(           use_conditionPort=true,
+    waitTime=0.001,
+    loopCheck=true,
+    delayedTransition=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> release2(
+    use_conditionPort=true,
+    delayedTransition=false,
+    loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> release1(
+    use_conditionPort=true,
+    delayedTransition=false,
+    loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> free2(
+    nOut=2,
+    nIn=2,
+    initialStep=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> s3(           nOut=1, nIn=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> reqest3(           use_conditionPort=true,
+      use_firePort=false,
+    waitTime=0.001,
+    loopCheck=true,
+    delayedTransition=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> s4(           nOut=1, nIn=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> request4(           use_conditionPort=true,
+      use_firePort=false,
+    waitTime=0.001,
+    loopCheck=true,
+    delayedTransition=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> release4(
+    use_conditionPort=true,
+    delayedTransition=false,
+    loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> release3(
+    use_conditionPort=true,
+    delayedTransition=false,
+    loopCheck=false);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> busy1(
+    nIn=1,
+    nOut=1,
+    initialStep=false,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> start1(           delayedTransition=true, waitTime=
+       1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> reserved1(           use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> reserved3(           use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> ready1(
+    delayedTransition=true,
+    use_firePort=false,
+    waitTime=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> idle1(
+    nIn=1,
+    nOut=1,
+    initialStep=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> requesting2(
+    nIn=1,
+    nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> requesting4(
+    nIn=1,
+    nOut=1,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> busy2(
+    nIn=1,
+    nOut=1,
+    initialStep=false,
+    use_activePort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> start2(           delayedTransition=true,
+      waitTime=2);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> reserved2(           use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> reserved4(           use_conditionPort=true);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Modelica_StateGraph2.Transition</A> ready2(
+    delayedTransition=true,
+    use_firePort=false,
+    waitTime=1);
+  <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Modelica_StateGraph2.Step</A> idle2(
+    nIn=1,
+    nOut=1,
+    initialStep=true);
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.FallingEdge"
+>Modelica.Blocks.Logical.FallingEdge</A> fallingEdge;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Logical.html#Modelica.Blocks.Logical.FallingEdge"
+>Modelica.Blocks.Logical.FallingEdge</A> fallingEdge1;</textblock>
+<font color="blue">equation </font>
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(request1.inPort, free1.outPort[1]);
+  <font color="red">connect</font>(request2.inPort, free1.outPort[2]);
+  <font color="red">connect</font>(request2.outPort, s2.inPort[1]);
+  <font color="red">connect</font>(request1.outPort, s1.inPort[1]);
+  <font color="red">connect</font>(release1.inPort, s1.outPort[1]);
+  <font color="red">connect</font>(release2.inPort, s2.outPort[1]);
+  <font color="red">connect</font>(release1.outPort, free1.inPort[1]);
+  <font color="red">connect</font>(release2.outPort, free1.inPort[2]);
+  <font color="red">connect</font>(reqest3.inPort, free2.outPort[1]);
+  <font color="red">connect</font>(request4.inPort, free2.outPort[2]);
+  <font color="red">connect</font>(reqest3.outPort, s3.inPort[1]);
+  <font color="red">connect</font>(release3.inPort, s3.outPort[1]);
+  <font color="red">connect</font>(release3.outPort, free2.inPort[1]);
+  <font color="red">connect</font>(release4.outPort, free2.inPort[2]);
+  <font color="red">connect</font>(idle1.outPort[1], start1.inPort);
+  <font color="red">connect</font>(start1.outPort, requesting1.inPort[1]);
+  <font color="red">connect</font>(requesting1.outPort[1], reserved1.inPort);
+  <font color="red">connect</font>(reserved1.outPort, requesting3.inPort[1]);
+  <font color="red">connect</font>(requesting3.outPort[1], reserved3.inPort);
+  <font color="red">connect</font>(reserved3.outPort, busy1.inPort[1]);
+  <font color="red">connect</font>(busy1.outPort[1], ready1.inPort);
+  <font color="red">connect</font>(ready1.outPort, idle1.inPort[1]);
+  <font color="red">connect</font>(idle2.outPort[1], start2.inPort);
+  <font color="red">connect</font>(start2.outPort, requesting2.inPort[1]);
+  <font color="red">connect</font>(requesting2.outPort[1], reserved2.inPort);
+  <font color="red">connect</font>(reserved2.outPort, requesting4.inPort[1]);
+  <font color="red">connect</font>(requesting4.outPort[1], reserved4.inPort);
+  <font color="red">connect</font>(reserved4.outPort, busy2.inPort[1]);
+  <font color="red">connect</font>(busy2.outPort[1], ready2.inPort);
+  <font color="red">connect</font>(ready2.outPort, idle2.inPort[1]);
+  <font color="red">connect</font>(requesting1.activePort, request1.conditionPort);
+  <font color="red">connect</font>(request4.outPort, s4.inPort[1]);
+  <font color="red">connect</font>(s4.outPort[1], release4.inPort);
+  <font color="red">connect</font>(requesting3.activePort, reqest3.conditionPort);
+  <font color="red">connect</font>(s1.activePort, reserved1.conditionPort);
+  <font color="red">connect</font>(s3.activePort, reserved3.conditionPort);
+  <font color="red">connect</font>(fallingEdge.u, busy1.activePort);
+  <font color="red">connect</font>(fallingEdge.y, release3.conditionPort);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(fallingEdge.y, release1.conditionPort);
+  <font color="red">connect</font>(fallingEdge1.u, busy2.activePort);
+  <font color="red">connect</font>(requesting2.activePort, request4.conditionPort);</textblock>
+
+<textblock type="annotconnect" expanded="false">  <font color="red">connect</font>(s4.activePort, reserved2.conditionPort);
+  <font color="red">connect</font>(requesting4.activePort, request2.conditionPort);
+  <font color="red">connect</font>(reserved4.conditionPort, s2.activePort);
+  <font color="red">connect</font>(fallingEdge1.y, release2.conditionPort);
+  <font color="red">connect</font>(fallingEdge1.y, release4.conditionPort);</textblock>
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>Deadlock;
+</PRE>
+<HR>
+<address><a href="http://www.3ds.com/">Automatically generated</a> Fri Nov 12 17:26:50 2010.
+</address></BODY>
+</HTML>

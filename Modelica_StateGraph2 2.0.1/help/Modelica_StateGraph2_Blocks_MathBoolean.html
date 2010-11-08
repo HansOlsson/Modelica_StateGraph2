@@ -1,0 +1,548 @@
+<HTML>
+<HEAD>
+<TITLE>Modelica_StateGraph2.Blocks.MathBoolean</TITLE>
+<META name="HTML-Generator" content="Dymola">
+<META name="description" content="&quot;Blocks with input and output signals of type Boolean&quot;">
+<style type="text/css">
+*       { font-size: 10pt; font-family: Arial,sans-serif; }
+pre     { font-size:  9pt; font-family: Courier,monospace;}
+h4      { font-size: 10pt; font-weight: bold; color: green; }
+h3      { font-size: 11pt; font-weight: bold; color: green; }
+h2      { font-size: 13pt; font-weight: bold; color: green; }
+address {                  font-weight: normal}
+td      { solid #000; vertical-align:top; }
+th      { solid #000; vertical-align:top; font-weight: bold; }
+table   { solid #000; border-collapse: collapse;}
+</style>
+</HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE MathBoolean<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="Modelica_StateGraph2.Blocks.MathBoolean"></A><A HREF="Modelica_StateGraph2_Blocks.html#Modelica_StateGraph2.Blocks"
+>Modelica_StateGraph2.Blocks</A>.MathBoolean</H2>
+<B>Blocks with input and output signals of type Boolean</B>
+<P>
+<P><H3>Package Content</H3><p>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2 >
+<TR><TH >Name</TH><TH>Description</TH></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.ShowValueS.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.ShowValue" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.ShowValue"
+>ShowValue</A>
+</TD><TD>Show Integer value from numberPort or from number input field in diagram layer dynamically</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.AndS.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.And" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.And"
+>And</A>
+</TD><TD>Logical &#39;and&#39;: y = u[1] and u[2] and ... and u[nu]</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.OrS.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.Or" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.Or"
+>Or</A>
+</TD><TD>Logical &#39;or&#39;: y = u[1] or u[2] or ... or u[nu]</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.XorS.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.Xor" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.Xor"
+>Xor</A>
+</TD><TD>Logical &#39;xor&#39;: y = oneTrue(u)  (y is true, if exactly one element of u is true, otherwise it is false)</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.XorS.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.Nand" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.Nand"
+>Nand</A>
+</TD><TD>Logical &#39;nand&#39;: y = not ( u[1] and u[2] and ... and u[nu] )</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.XorS.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.Nor" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.Nor"
+>Nor</A>
+</TD><TD>Logical &#39;nor&#39;: y = not ( u[1] or u[2] or ... or u[nu] )</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.RisingEdgeS.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.RisingEdge" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.RisingEdge"
+>RisingEdge</A>
+</TD><TD>Output y is true, if the input u has a rising edge, otherwise it is false (y = edge(u))</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.FallingEdgeS.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.FallingEdge" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.FallingEdge"
+>FallingEdge</A>
+</TD><TD>Output y is true, if the input u has a falling edge, otherwise it is false (y = edge(not u))</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.ChangingEdgeS.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.ChangingEdge" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.ChangingEdge"
+>ChangingEdge</A>
+</TD><TD>Output y is true, if the input u has either a rising or a falling edge and otherwise it is false (y=change(u))</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.MultiSwitchS.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.MultiSwitch" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.MultiSwitch"
+>MultiSwitch</A>
+</TD><TD>Set Boolean expression that is associated with the first active input signal</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.OnDelayS.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.OnDelay" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.OnDelay"
+>OnDelay</A>
+</TD><TD>Delay a rising edge of the input, but do not delay a falling edge.</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE ShowValue<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.ShowValueI.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.ShowValue" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Blocks.MathBoolean.ShowValue"></A><A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean"
+>Modelica_StateGraph2.Blocks.MathBoolean</A>.ShowValue</H2>
+<B>Show Integer value from numberPort or from number input field in diagram layer dynamically</B><p>
+<IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.ShowValueD.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.ShowValue">
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Boolean</TD><TD>use_activePort</TD><TD>true</TD><TD>= true, if activePort enabled</TD></TR>
+<TR><TD>Boolean</TD><TD>active</TD><TD>false</TD><TD>Boolean variable to visualize if use_activePort=false (time varying)</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>input <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInput"
+>BooleanInput</A></TD><TD>activePort</TD><TD>Boolean variable to be shown in diagram layer if use_activePort = true</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>active2</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> ShowValue <font color="darkgreen">
+  &quot;Show Integer value from numberPort or from number input field in diagram layer dynamically&quot;</font>
+  <font color="blue">parameter </font>Boolean use_activePort = true <font color="darkgreen">&quot;= true, if activePort enabled&quot;</font>;
+  <font color="blue">input </font>Boolean active=false <font color="darkgreen">
+    &quot;Boolean variable to visualize if use_activePort=false (time varying)&quot;</font>;
+<textblock type="annotcomp" expanded="false">  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInput"
+>Modelica.Blocks.Interfaces.BooleanInput</A> activePort <font color="blue">if </font>use_activePort <font color="darkgreen">
+    &quot;Boolean variable to be shown in diagram layer if use_activePort = true&quot;</font>;</textblock>
+
+   <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>Modelica.Blocks.Interfaces.BooleanOutput</A> active2;
+<font color="blue">equation </font>
+  <font color="blue">if </font>use_activePort<font color="blue"> then</font>
+    <font color="red"> connect</font>(activePort, active2);
+  <font color="blue">else</font>
+     active2 = active;
+  <font color="blue">end if</font>;
+
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>ShowValue;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE And<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.AndI.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.And" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Blocks.MathBoolean.And"></A><A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean"
+>Modelica_StateGraph2.Blocks.MathBoolean</A>.And</H2>
+<B>Logical &#39;and&#39;: y = u[1] and u[2] and ... and u[nu]</B><p>
+<IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.AndD.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.And">
+<P><H3>Information</H3></P>
+Extends from <A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO"
+>Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO</A> (Partial block with a BooleanVectorInput and a BooleanOutput signal).
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>input <A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.BooleanVectorInput"
+>BooleanVectorInput</A></TD><TD>u[nu]</TD><TD>&nbsp;</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>y</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> And <font color="darkgreen">
+  &quot;Logical &#39;and&#39;: y = u[1] and u[2] and ... and u[nu]&quot;</font>
+  <font color="blue">extends </font><A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO"
+>Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO</A>;
+
+<font color="blue">equation </font>
+  y =<font color="red"> Modelica_StateGraph2.Blocks.BooleanFunctions.allTrue</font>(u);
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>And;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Or<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.OrI.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.Or" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Blocks.MathBoolean.Or"></A><A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean"
+>Modelica_StateGraph2.Blocks.MathBoolean</A>.Or</H2>
+<B>Logical &#39;or&#39;: y = u[1] or u[2] or ... or u[nu]</B><p>
+<IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.AndD.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.Or">
+<P><H3>Information</H3></P>
+Extends from <A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO"
+>Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO</A> (Partial block with a BooleanVectorInput and a BooleanOutput signal).
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>input <A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.BooleanVectorInput"
+>BooleanVectorInput</A></TD><TD>u[nu]</TD><TD>&nbsp;</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>y</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> Or <font color="darkgreen">&quot;Logical &#39;or&#39;: y = u[1] or u[2] or ... or u[nu]&quot;</font>
+  <font color="blue">extends </font><A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO"
+>Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO</A>;
+
+<font color="blue">equation </font>
+  y =<font color="red"> Modelica_StateGraph2.Blocks.BooleanFunctions.anyTrue</font>(u);
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>Or;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Xor<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.XorI.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.Xor" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Blocks.MathBoolean.Xor"></A><A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean"
+>Modelica_StateGraph2.Blocks.MathBoolean</A>.Xor</H2>
+<B>Logical &#39;xor&#39;: y = oneTrue(u)  (y is true, if exactly one element of u is true, otherwise it is false)</B><p>
+<IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.AndD.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.Xor">
+<P><H3>Information</H3></P>
+Extends from <A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO"
+>Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO</A> (Partial block with a BooleanVectorInput and a BooleanOutput signal).
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>input <A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.BooleanVectorInput"
+>BooleanVectorInput</A></TD><TD>u[nu]</TD><TD>&nbsp;</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>y</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> Xor <font color="darkgreen">
+  &quot;Logical &#39;xor&#39;: y = oneTrue(u)  (y is true, if exactly one element of u is true, otherwise it is false)&quot;</font>
+  <font color="blue">extends </font><A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO"
+>Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO</A>;
+
+<font color="blue">equation </font>
+  y =<font color="red"> Modelica_StateGraph2.Blocks.BooleanFunctions.oneTrue</font>(u);
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>Xor;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Nand<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.NandI.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.Nand" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Blocks.MathBoolean.Nand"></A><A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean"
+>Modelica_StateGraph2.Blocks.MathBoolean</A>.Nand</H2>
+<B>Logical &#39;nand&#39;: y = not ( u[1] and u[2] and ... and u[nu] )</B><p>
+<IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.AndD.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.Nand">
+<P><H3>Information</H3></P>
+Extends from <A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO"
+>Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO</A> (Partial block with a BooleanVectorInput and a BooleanOutput signal).
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>input <A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.BooleanVectorInput"
+>BooleanVectorInput</A></TD><TD>u[nu]</TD><TD>&nbsp;</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>y</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> Nand <font color="darkgreen">
+  &quot;Logical &#39;nand&#39;: y = not ( u[1] and u[2] and ... and u[nu] )&quot;</font>
+  <font color="blue">extends </font><A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO"
+>Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO</A>;
+
+<font color="blue">equation </font>
+  y = <font color="blue">not </font><font color="red">Modelica_StateGraph2.Blocks.BooleanFunctions.allTrue</font>(u);
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>Nand;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Nor<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.NorI.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.Nor" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Blocks.MathBoolean.Nor"></A><A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean"
+>Modelica_StateGraph2.Blocks.MathBoolean</A>.Nor</H2>
+<B>Logical &#39;nor&#39;: y = not ( u[1] or u[2] or ... or u[nu] )</B><p>
+<IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.AndD.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.Nor">
+<P><H3>Information</H3></P>
+Extends from <A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO"
+>Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO</A> (Partial block with a BooleanVectorInput and a BooleanOutput signal).
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>input <A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.BooleanVectorInput"
+>BooleanVectorInput</A></TD><TD>u[nu]</TD><TD>&nbsp;</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>y</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> Nor <font color="darkgreen">
+  &quot;Logical &#39;nor&#39;: y = not ( u[1] or u[2] or ... or u[nu] )&quot;</font>
+  <font color="blue">extends </font><A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO"
+>Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO</A>;
+
+<font color="blue">equation </font>
+  y = <font color="blue">not </font><font color="red">Modelica_StateGraph2.Blocks.BooleanFunctions.anyTrue</font>(u);
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>Nor;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE RisingEdge<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.RisingEdgeI.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.RisingEdge" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Blocks.MathBoolean.RisingEdge"></A><A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean"
+>Modelica_StateGraph2.Blocks.MathBoolean</A>.RisingEdge</H2>
+<B>Output y is true, if the input u has a rising edge, otherwise it is false (y = edge(u))</B><p>
+<IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.RisingEdgeD.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.RisingEdge">
+<P><H3>Information</H3></P>
+<PRE></pre>
+<p>
+A rising edge of the Boolean input u results in y = <b>true</b> at this
+time instant. At all other time instants, y = <b>false</b>.
+</p>
+
+<pre></PRE><P>
+Extends from <A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanSISO"
+>Interfaces.PartialBooleanSISO</A> (Partial block with a BooleanInput and a BooleanOutput signal).
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Boolean</TD><TD>pre_u_start</TD><TD>false</TD><TD>Value of pre(u) at initial time</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>y</TD><TD>&nbsp;</TD></TR>
+<TR><TD>input <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInput"
+>BooleanInput</A></TD><TD>u</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> RisingEdge <font color="darkgreen">
+  &quot;Output y is true, if the input u has a rising edge, otherwise it is false (y = edge(u))&quot;</font>
+   <font color="blue">parameter </font>Boolean pre_u_start = false <font color="darkgreen">&quot;Value of pre(u) at initial time&quot;</font>;
+   <font color="blue">extends </font><A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanSISO"
+>Interfaces.PartialBooleanSISO</A>;
+<font color="blue">initial </font><font color="blue">equation </font>
+  <font color="red">pre</font>(u) = pre_u_start;
+<font color="blue">equation </font>
+  y =<font color="red"> edge</font>(u);
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>RisingEdge;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE FallingEdge<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.FallingEdgeI.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.FallingEdge" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Blocks.MathBoolean.FallingEdge"></A><A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean"
+>Modelica_StateGraph2.Blocks.MathBoolean</A>.FallingEdge</H2>
+<B>Output y is true, if the input u has a falling edge, otherwise it is false (y = edge(not u))</B><p>
+<IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.RisingEdgeD.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.FallingEdge">
+<P><H3>Information</H3></P>
+<PRE></pre>
+<p>
+A falling edge of the Boolean input u results in y = <b>true</b> at this
+time instant. At all other time instants, y = <b>false</b>.
+</p>
+
+<pre></PRE><P>
+Extends from <A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanSISO"
+>Interfaces.PartialBooleanSISO</A> (Partial block with a BooleanInput and a BooleanOutput signal).
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Boolean</TD><TD>pre_u_start</TD><TD>false</TD><TD>Value of pre(u) at initial time</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>y</TD><TD>&nbsp;</TD></TR>
+<TR><TD>input <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInput"
+>BooleanInput</A></TD><TD>u</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> FallingEdge <font color="darkgreen">
+  &quot;Output y is true, if the input u has a falling edge, otherwise it is false (y = edge(not u))&quot;</font>
+   <font color="blue">parameter </font>Boolean pre_u_start = false <font color="darkgreen">&quot;Value of pre(u) at initial time&quot;</font>;
+   <font color="blue">extends </font><A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanSISO"
+>Interfaces.PartialBooleanSISO</A>;
+<font color="blue">protected </font>
+  Boolean not_u = <font color="blue">not </font>u;
+<font color="blue">initial </font><font color="blue">equation </font>
+  <font color="red">pre</font>(not_u) = <font color="blue">not </font>pre_u_start;
+<font color="blue">equation </font>
+  y =<font color="red"> edge</font>(not_u);
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>FallingEdge;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE ChangingEdge<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.ChangingEdgeI.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.ChangingEdge" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Blocks.MathBoolean.ChangingEdge"></A><A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean"
+>Modelica_StateGraph2.Blocks.MathBoolean</A>.ChangingEdge</H2>
+<B>Output y is true, if the input u has either a rising or a falling edge and otherwise it is false (y=change(u))</B><p>
+<IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.RisingEdgeD.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.ChangingEdge">
+<P><H3>Information</H3></P>
+<PRE></pre>
+<p>
+A changing edge, i.e., either rising or falling,
+of the Boolean input u results in y = <b>true</b> at this
+time instant. At all other time instants, y = <b>false</b>.
+</p>
+
+<pre></PRE><P>
+Extends from <A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanSISO"
+>Interfaces.PartialBooleanSISO</A> (Partial block with a BooleanInput and a BooleanOutput signal).
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Boolean</TD><TD>pre_u_start</TD><TD>false</TD><TD>Value of pre(u) at initial time</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>y</TD><TD>&nbsp;</TD></TR>
+<TR><TD>input <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInput"
+>BooleanInput</A></TD><TD>u</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> ChangingEdge <font color="darkgreen">
+  &quot;Output y is true, if the input u has either a rising or a falling edge and otherwise it is false (y=change(u))&quot;</font>
+   <font color="blue">parameter </font>Boolean pre_u_start = false <font color="darkgreen">&quot;Value of pre(u) at initial time&quot;</font>;
+   <font color="blue">extends </font><A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanSISO"
+>Interfaces.PartialBooleanSISO</A>;
+<font color="blue">initial </font><font color="blue">equation </font>
+  <font color="red">pre</font>(u) = pre_u_start;
+<font color="blue">equation </font>
+  y =<font color="red"> change</font>(u);
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>ChangingEdge;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE MultiSwitch<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.MultiSwitchI.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.MultiSwitch" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Blocks.MathBoolean.MultiSwitch"></A><A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean"
+>Modelica_StateGraph2.Blocks.MathBoolean</A>.MultiSwitch</H2>
+<B>Set Boolean expression that is associated with the first active input signal</B><p>
+<IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.MultiSwitchD.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.MultiSwitch">
+<P><H3>Information</H3></P>
+<PRE></pre>
+<p>
+The block has a vector of Boolean input signals u[nu] and a vector of
+(time varying) Boolean expressions expr[:]. The output signal y is
+set to expr[i], if i is the first element in the input vector u that is true. If all input signals are
+false, y is set to parameter "y_default" or to pre(y) depending on the parameter use_pre_as_default:
+</p>
+
+<pre>
+  // Conceptual equation (not valid Modelica)
+  i = 'first element of u[:] that is true';
+  y = <b>if</b> i==0 <b>then</b> <b>if</b> use_pre_as_default <b>then</b> pre(y) <b>else</b> y_default <b>else</b> expr[i];
+</pre>
+
+<pre></PRE><P>
+
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Boolean</TD><TD>expr[nu]</TD><TD>fill(false, nu)</TD><TD>y = if u[i] then expr[i] else y_default (time varying)</TD></TR>
+<TR><TD>Boolean</TD><TD>use_pre_as_default</TD><TD>true</TD><TD>set true to hold last value as default (y_default = pre(y))</TD></TR>
+<TR><TD>Boolean</TD><TD>y_default</TD><TD>false</TD><TD>Default value of output y if all u[i] = false</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>input <A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.BooleanVectorInput"
+>BooleanVectorInput</A></TD><TD>u[nu]</TD><TD>Set y = expr[i], if u[i] = true</TD></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>y</TD><TD>Output depending on expression</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> MultiSwitch <font color="darkgreen">
+  &quot;Set Boolean expression that is associated with the first active input signal&quot;</font>
+
+  <font color="blue">input </font>Boolean expr[nu]=<font color="red">fill</font>(false, nu) <font color="darkgreen">
+    &quot;y = if u[i] then expr[i] else y_default (time varying)&quot;</font>;
+  <font color="blue">parameter </font>Boolean use_pre_as_default=true <font color="darkgreen">
+    &quot;set true to hold last value as default (y_default = pre(y))&quot;</font>;
+  <font color="blue">parameter </font>Boolean y_default=false <font color="darkgreen">
+    &quot;Default value of output y if all u[i] = false&quot;</font>;
+
+  <font color="blue">parameter </font>Integer nu(min=0) = 0 <font color="darkgreen">&quot;Number of input connections&quot;</font>;
+
+<textblock type="annotcomp" expanded="false">  <A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.BooleanVectorInput"
+>Modelica_StateGraph2.Blocks.Interfaces.BooleanVectorInput</A> u[nu] <font color="darkgreen">
+    &quot;Set y = expr[i], if u[i] = true&quot;</font>;
+  <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>Modelica.Blocks.Interfaces.BooleanOutput</A> y(start=y_default,fixed=true) <font color="darkgreen">
+    &quot;Output depending on expression&quot;</font>;</textblock>
+
+<font color="blue">protected </font>
+  Integer firstActiveIndex;
+<font color="blue">equation </font>
+   firstActiveIndex =<font color="red"> BooleanFunctions.firstTrueIndex</font>(u);
+   y = <font color="blue">if </font>firstActiveIndex == 0<font color="blue"> then </font>(<font color="blue">if </font>use_pre_as_default<font color="blue"> then </font><font color="red">pre</font>(y)<font color="blue"> else </font>y_default)<font color="blue"> else </font>
+                                     expr[firstActiveIndex];
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>MultiSwitch;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE OnDelay<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.OnDelayI.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.OnDelay" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Blocks.MathBoolean.OnDelay"></A><A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean"
+>Modelica_StateGraph2.Blocks.MathBoolean</A>.OnDelay</H2>
+<B>Delay a rising edge of the input, but do not delay a falling edge.</B><p>
+<IMG SRC="Modelica_StateGraph2.Blocks.MathBoolean.OnDelayD.png" ALT="Modelica_StateGraph2.Blocks.MathBoolean.OnDelay">
+<P><H3>Information</H3></P>
+<PRE></pre>
+<p>
+A rising edge of the Boolean input u gives a delayed output.
+A falling edge of the input is immediately given to the output.
+</p>
+
+<p>
+Simulation results of a typical example with a delay time of 0.1 s
+is shown in the next figure.
+</p>
+
+<p><blockquote>
+<img src="../Images/StateGraph/Actions/OnDelay1.png"><br>
+<img src="../Images/StateGraph/Actions/OnDelay2.png">
+</blockquote></p>
+
+<pre></PRE><P>
+Extends from <A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanSISO"
+>Interfaces.PartialBooleanSISO</A> (Partial block with a BooleanInput and a BooleanOutput signal).
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>Time</A></TD><TD>delayTime</TD><TD>&nbsp;</TD><TD>Delay time [s]</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Type</TH><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>output <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutput"
+>BooleanOutput</A></TD><TD>y</TD><TD>&nbsp;</TD></TR>
+<TR><TD>input <A HREF="../../Modelica 3.2/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInput"
+>BooleanInput</A></TD><TD>u</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> OnDelay <font color="darkgreen">
+  &quot;Delay a rising edge of the input, but do not delay a falling edge.&quot;</font>
+      <font color="blue">extends </font><A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanSISO"
+>Interfaces.PartialBooleanSISO</A>;
+      <font color="blue">parameter </font><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>Modelica.SIunits.Time</A> delayTime <font color="darkgreen">&quot;Delay time&quot;</font>;
+
+<font color="blue">protected </font>
+      Boolean delaySignal(start=false,fixed=true);
+      <font color="blue">discrete </font><A HREF="../../Modelica 3.2/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>Modelica.SIunits.Time</A> t_next;
+<font color="blue">initial </font><font color="blue">equation </font>
+  <font color="red">    pre</font>(u) = false;
+  <font color="red">    pre</font>(t_next) = time - 1;
+<font color="blue">algorithm </font>
+      <font color="blue">when </font>u<font color="blue"> then</font>
+         delaySignal := true;
+         t_next := time + delayTime;
+      <font color="blue">elsewhen </font><font color="blue">not </font>u<font color="blue"> then</font>
+         delaySignal := false;
+         t_next := time - 1;
+      <font color="blue">end when</font>;
+<font color="blue">equation </font>
+      <font color="blue">if </font>delaySignal<font color="blue"> then</font>
+         y = time &gt;= t_next;
+      <font color="blue">else</font>
+         y = false;
+      <font color="blue">end if</font>;
+<textblock type="annotcomp" expanded="false"><font color="blue">end </font>OnDelay;
+</PRE>
+<HR>
+<address><a href="http://www.3ds.com/">Automatically generated</a> Fri Nov 12 17:27:07 2010.
+</address></BODY>
+</HTML>
