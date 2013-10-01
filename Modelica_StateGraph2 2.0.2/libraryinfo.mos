@@ -1,0 +1,10 @@
+
+LibraryInfoMenuCommand(
+  category="libraries",
+  text="Modelica_StateGraph2",
+  reference="Modelica_StateGraph2",
+  version="2.0.2",
+  isModel=true,
+  description="Modelica_StateGraph Library (2.0.2)",
+  ModelicaVersion="3.2.1",
+  pos=102)

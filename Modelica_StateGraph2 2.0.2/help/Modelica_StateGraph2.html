@@ -1,0 +1,557 @@
+<HTML>
+<HEAD>
+<TITLE>Modelica_StateGraph2</TITLE>
+<META name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+*       { font-size: 10pt; font-family: Arial,sans-serif; }
+pre     { font-size:  9pt; font-family: Courier,monospace;}
+h4      { font-size: 10pt; font-weight: bold; color: green; }
+h3      { font-size: 11pt; font-weight: bold; color: green; }
+h2      { font-size: 13pt; font-weight: bold; color: green; }
+address {                  font-weight: normal} 
+td      { solid #000; vertical-align:top; }
+th      { solid #000; vertical-align:top; font-weight: bold; }
+table   { solid #000; border-collapse: collapse;}
+</style>
+</HEAD>
+<BODY><P></P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Modelica_StateGraph2<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="Modelica_StateGraph2"></A>Modelica_StateGraph2</H2>
+<P></P><H3>Information</H3>
+<PRE></pre>
+<p>
+<img src="../Images/StateGraph/UsersGuide/StateGraphElements.png" align="right">
+Library <b>Modelica_StateGraph2</b> is a <b>free</b> Modelica package providing
+components to model <b>discrete event</b>, <b>reactive</b> and
+<b>hybrid</b> systems in a convenient way with <b>deterministic hierarchical state diagrams</b>.
+For convenience, the abbreviation "StateGraph2" will be
+often used for this library. An example model constructed with this
+library is shown in the figure to the right.
+</p>
+
+<p>
+This library is inspired by Grafcet/Sequential Function Charts (SFC), Statecharts,
+Safe State Machines (SSM) and Mode Automata, and utilizes Modelica as action language.
+It has a similar modeling power as
+these formalisms, e.g. synchronization of parallel executing branches
+as in SFC (not easy in Statecharts), or suspending a hierarchical subgraph with one
+transition and resuming at the same states afterwards when entering it again, as in Statechart (not possible in SFC). A StateGraph2 model is always deterministic due to
+Modelicas "single assignment rule". Via special blocks in subpackage "Blocks",
+actions can be defined in a graphical way depending on the active step.
+</p>
+
+<p>
+In order to construct a new state machine, exactly one instance of either "Step"
+or of "Parallel" must have parameter "initialStep = <b>true</b>".
+The "Parallel" component is both used as "composite step" (so only one branch),
+as well as "parallel step" (so several execution branches). The branches can be
+synchronized (if parameter use_outPort = <b>true</b>) or can run unsynchronized
+to each other (if parameter use_outPort = <b>false</b>).
+</p>
+
+<p>
+For an introduction, have especially a look at:
+</p>
+
+<ul>
+<li><A HREF="Modelica_StateGraph2_UsersGuide_Tutorial.html#Modelica_StateGraph2.UsersGuide.Tutorial"
+>Tutorial</a>
+     provides an overview of the library inside the User's Guide.</li>
+<li><A HREF="Modelica_StateGraph2_Examples.html#Modelica_StateGraph2.Examples"
+>Examples</a>
+     provides simple introductory examples as well as involved application examples.</li>
+<li> <A HREF="Modelica_StateGraph2_UsersGuide.html#Modelica_StateGraph2.UsersGuide.ComparisonWithStateGraph1"
+>ComparisonWithStateGraph1</a>
+     summarizes the enhancements with respect to the previous version of
+     Modelica.StateGraph.</li>
+</ul>
+
+<p>
+This library is implemented with Modelica 3.1 and utilizes non-standard extensions to Modelica 3.1 as summarized
+<A HREF="Modelica_StateGraph2_UsersGuide.html#Modelica_StateGraph2.UsersGuide.UsedModelicaExtensions"
+>here</a>.
+</p>
+
+<p>
+<b>Licensed by DLR and Dynasim under the Modelica License 2</b><br>
+Copyright &copy; 2003-2013, DLR and 2007-2009, Dynasim AB
+</p>
+
+<p>
+<i>This Modelica package is <u>free</u> software and
+the use is completely at <u>your own risk</u>;
+it can be redistributed and/or modified under the terms of the
+Modelica license 2, see the license conditions (including the
+disclaimer of warranty)
+<A HREF="Modelica_StateGraph2_UsersGuide.html#Modelica_StateGraph2.UsersGuide.ModelicaLicense2"
+>here</a></u>
+or at
+<a href="http://www.Modelica.org/licenses/ModelicaLicense2">
+http://www.Modelica.org/licenses/ModelicaLicense2</a>.</i>
+</p>
+
+<pre></PRE><P></P>
+
+<P></P><H3>Package Content</H3>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2 >
+<TR><TH >Name</TH><TH>Description</TH></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.UsersGuideS.png" ALT="Modelica_StateGraph2.UsersGuide" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_UsersGuide.html#Modelica_StateGraph2.UsersGuide"
+>UsersGuide</A>
+</TD><TD>User&#39;s Guide</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.ExamplesS.png" ALT="Modelica_StateGraph2.Examples" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples.html#Modelica_StateGraph2.Examples"
+>Examples</A>
+</TD><TD>Examples to demonstrate the usage of the Modelica_StateGraph2 library</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.StepS.png" ALT="Modelica_StateGraph2.Step" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Step"
+>Step</A>
+</TD><TD>Step (optionally with initial step and/or activePort)</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.TransitionS.png" ALT="Modelica_StateGraph2.Transition" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Transition</A>
+</TD><TD>Transition between steps (optionally with delayed transition and/or condition input port)</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Loop0962d25a32e14f65itionS.png" ALT="Modelica_StateGraph2.LoopBreakingTransition" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.LoopBreakingTransition"
+>LoopBreakingTransition</A>
+</TD><TD>Transition to break loops by introducing an artificial time delay (immediately fire and then wait)</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.ParallelS.png" ALT="Modelica_StateGraph2.Parallel" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Parallel"
+>Parallel</A>
+</TD><TD>Composite or parallel step</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.PartialParallelS.png" ALT="Modelica_StateGraph2.PartialParallel" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.PartialParallel"
+>PartialParallel</A>
+</TD><TD>Partial compont to construct a parallel submodel via inheritance</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.BlocksS.png" ALT="Modelica_StateGraph2.Blocks" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks.html#Modelica_StateGraph2.Blocks"
+>Blocks</A>
+</TD><TD>Input/output blocks that are designed for StateGraph2 but shall be included in the Modelica Standard Library</TD></TR>
+</TABLE>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Step<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.StepI.png" ALT="Modelica_StateGraph2.Step" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Step"></A><A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2"
+>Modelica_StateGraph2</A>.Step</H2>
+<B>Step (optionally with initial step and/or activePort)</B><p></P>
+<P></P><H3>Information</H3>
+<PRE></pre>
+<p>
+A Step is the graphical representation of a state and is said to be either
+active or not active. A StateGraph2 model is comprised of one or more
+steps that may or may not change their states during execution.
+The input port of a Step (inPort) can only be connected to the output port
+of a Transition, and the output port of a Step (outPort) can only be connected
+to the input of a Transition. An arbitrary number of input and/or output
+Transitions can be connected to these ports.
+</p>
+
+<p>
+The state of a step is available via the output variable <b>active</b> that can
+be used in action blocks (e.g. "step.active"). Alternatively, via parameter
+"use_activePort" the Boolean output port "activePort" can be enabled.
+When the step is active, activePort = <b>true</b>, otherwise it is <b>false</b>. This port can
+be connected to Boolean action blocks, e.g., from
+<A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean"
+>Modelica_StateGraph2.Blocks.MathBoolean</a>.
+</p>
+
+<p>
+Every StateGraph2 graph
+must have exactly one initial step. An initial step is defined by setting parameter initialStep
+at one Step or one Parallel component to true. The initial step is visualized by a
+small arrow pointing to this step.
+</p>
+
+<p>
+In the following table different configurations of a Step are shown:
+</p>
+
+<blockquote>
+<table cellspacing="0" cellpadding="4" border="1" width="600">
+<tr><th>Parameter setting</th>
+    <th>Icon</th>
+    <th>Description</th>
+    </tr>
+
+<tr><td> Default step</td>
+    <td><img src="../Images/StateGraph/Elements/Step-default.png"></td>
+    <td> If the step is active, the public Step variable &quot;active&quot; is <b>true</b>
+         otherwise, it is <b>false</b>. An active Step is visualized by a green
+         fill color in diagram animation.</td>
+    </tr>
+
+<tr><td> use_activePort = <b>true</b></td>
+    <td><img src="../Images/StateGraph/Elements/Step-use_activePort.png"></td>
+    <td>If the step is active, the connector &quot;activePort&quot; is <b>true</b>
+        otherwise, it is <b>false</b> (the activePort is the small, violet, triangle
+        at the rigth side of the Step icon). Actions may be triggered, e.g., by connecting block
+        <A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.MultiSwitch"
+>MultiSwitch</a>
+        to the activePort.</td></tr>
+
+<tr><td> initialStep = <b>true</b></td>
+    <td><img src="../Images/StateGraph/Elements/Step-initial.png"></td>
+    <td> Exactly <u>one</u> Step or Parallel component in a StateGraph2 graph
+         must have &quot;initialStep = <b>true</b>&quot;. At the first model evaluation
+         during initialization, &quot;active&quot; is set to <b>true</b> for
+         the initial Step or the initial Parallel component, i.e.,
+         the respective component is activated.</td>
+    </tr>
+</table>
+</blockquote>
+
+<p>
+The inPort and the outPort connectors of a Step are &quot;vectors of connectors&quot;.
+How connections to these ports are automatically handled in a convenient way is sketched
+<A HREF="Modelica_StateGraph2_UsersGuide_Tutorial.html#Modelica_StateGraph2.UsersGuide.Tutorial.VectorsOfConnectors"
+>here</a>
+in the tutorial.
+</p>
+
+<pre></PRE><P></P>
+
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>initialStep</TD><TD>=true, if initial step (graph starts at this step)</TD></TR>
+<TR><TD>use_activePort</TD><TD>=true, if activePort enabled</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>inPort[nIn]</TD><TD>Port for zero, one, or more input transitions</TD></TR>
+<TR><TD>outPort[nOut]</TD><TD>Port for zero, one, or more output transitions</TD></TR>
+<TR><TD>activePort</TD><TD>= true if step is active, otherwise the step is not active</TD></TR>
+</TABLE>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Transition<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.TransitionI.png" ALT="Modelica_StateGraph2.Transition" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Transition"></A><A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2"
+>Modelica_StateGraph2</A>.Transition</H2>
+<B>Transition between steps (optionally with delayed transition and/or condition input port)</B><p></P>
+<P></P><H3>Information</H3>
+<PRE></pre>
+<p>
+<img src="../Images/StateGraph/Elements/SimpleStateGraph.png" align="right">
+To define a possible change of states, a Transition is connected to the output of the preceding Step and to the input of the succeeding Step, see figure to the right, where Transition t1 defines the transition from Step s1 to Step s2. Note: A Transition has exactly one preceding and one succeeding Step. A Transition is said to be enabled if the preceding step is active. An enabled transition is said to be fireable when the Boolean condition defined in the parameter menu of the transition is evaluated to <b>true</b>. This condition is also called <u>Transition condition</u> and is displayed in the icon of the Transition (e.g., &quot;time &gt; 1&quot; is the condition of Transition t1). When parameter <u>use_conditionPort</u> is set, the Transition condition is alternatively defined by a Boolean signal that is connected to the enabled <u>conditionPort</u>.
+</p>
+
+<p>
+A fireable transition will fire immediately. In the figure to the right, t1 fires when s1 is active and time is greater than one, i.e., s1 becomes inactive and s2 becomes active.
+The firing of a transition can optionally also be delayed for a certain period of time defined by parameter &quot;waitTime&quot;. See, e.g., t2 in the figure to right, that is delayed for one second before it may fire, given that the condition remains true and the preceding Step remains active during the entire delay time.
+</p>
+
+<p>
+In the following table different configurations of a Transition are shown:
+</p>
+
+<blockquote>
+<table cellspacing="0" cellpadding="4" border="1" width="600">
+<tr><th>Parameter setting</th>
+    <th>Icon</th>
+    <th>Description</th></tr>
+
+<tr><td>Default transition</td>
+    <td><img src="../Images/StateGraph/Elements/Transition-default.png"></td>
+    <td>The transition fires when the preceding step is active
+        and the expression &quot;condition&quot; in the parameter menu is <b>true</b>.</td>
+    </tr>
+
+<tr><td>use_conditionPort = <b>true</b></td>
+    <td><img src="../Images/StateGraph/Elements/Transition-use_conditionPort.png"></td>
+    <td>The transition fires when the preceding step is active
+        and connector &quot;conditionPort&quot; is <b>true</b>.</td>
+    </tr>
+
+<tr><td>delayedTransition = <b>true</b></td>
+    <td><img src="../Images/StateGraph/Elements/Transition-delayedTransition.png"></td>
+    <td>The transition fires after the delay time &quot;waitTime&quot; (here: 1.23 s),
+        if the preceding step was active, and &quot;condition = <b>true</b>&quot;
+        during the entire delay time.</td>
+    </tr>
+
+<tr><td>use_firePort = <b>true</b></td>
+    <td><img src="../Images/StateGraph/Elements/Transition-use_firePort.png"></td>
+    <td>Connector &quot;firePort&quot; is <b>true</b> when the transition fires.
+        Actions may be triggered, e.g., by connecting block
+        <A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.MultiSwitch"
+>MultiSwitch</a>
+        to the firePort.</td>
+    </tr>
+
+<tr><td>loopCheck = <b>false</b><br>
+        (in &quot;Advanced&quot; tab)</td>
+    <td><img src="../Images/StateGraph/Elements/Transition-noLoopCheck.png"></td>
+    <td>It is <u>not</u> checked whether the loop in which this Transition
+        is used, has at least one delayed transition.
+        Use this option only, if you are completley sure that
+        infinite event looping is not possible in this loop.
+        Consider to use
+        <A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.LoopBreakingTransition"
+>LoopBreakingTransition</a>
+        instead!</td>
+    </tr>
+
+</table>
+</blockquote>
+
+<p>
+<img src="../Images/StateGraph/Elements/SimpleInfiniteLoop.png" align="right">
+At an event instant, an iteration occurs, due to the Modelica semantics (= whenever a new event occurs, the model is re-evaluated). This means that Transitions keep firing along a connected graph, as long as the firing conditions are true. In principal, it is therefore possible that infinite event looping occurs.
+A simple example of this kind is shown in the figure to the right. Here, all Transition conditions are true and therefore all Transitions would fire forever at the initial time. This is, however, no valid StateGraph2 model and will result in a translation error, since it is required that a StateGraph2 model has at least one delayed Transition per loop.
+This means that one of T1, T2, or T3, must have parameter delayedTransition=<b>true</b>. Since event iteration stops at a delayed Transition, infinite event looping cannot occur. This also means that at one time instant every Transition can fire at most once and therefore the number of model evaluations at an event instant is bounded by the number of Transition components.
+</p>
+
+<p>
+If you have to artifically introduce a delay time in order to fulfill the requirement above, it is recommended to use the special
+<A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.LoopBreakingTransition"
+>LoopBreakingTransition</a>
+that is designed for this case.
+</p>
+
+<p>
+Note, it is still possible that infinite event looping occurs due to <u>model errors</u> in other parts of the model. For example, if a user introduces an equation of the form &quot;J = <b>pre</b>(J) + 1&quot; outside of a when-clause, event iteration does not stop.
+</p>
+
+<p>
+There are rare situations, where infinite event looping cannot occur even if there is no delayed transition in a loop. When you do not want to introduce an artifical time delay in a loop in this case, you can switch off the loop check by setting parameter &quot;loopCheck = <b>false</b>&quot; in the &quot;Advanced&quot; tab of the parameter menu of one Transition in this loop.
+</p>
+
+<pre></PRE><P></P>
+
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>use_conditionPort</TD><TD>= true, if conditionPort enabled</TD></TR>
+<TR><TD>condition</TD><TD>Fire condition (time varying Boolean expression)</TD></TR>
+<TR><TD>delayedTransition</TD><TD>= true, if transition fires after waitTime</TD></TR>
+<TR><TD>waitTime</TD><TD>Wait time before transition fires (&gt; 0 required) [s]</TD></TR>
+<TR><TD>use_firePort</TD><TD>= true, if firePort enabled</TD></TR>
+<TR bgcolor="#c0c0c0"><TD colspan=2><B>Advanced</B></TD></TR>
+<TR><TD>loopCheck</TD><TD>= true, if one delayed transition per loop required</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>inPort</TD><TD>Input port of transition (exactly one connection to this port is required)</TD></TR>
+<TR><TD>outPort</TD><TD>Output port of transition (exactly one connection from this port is required)</TD></TR>
+<TR><TD>conditionPort</TD><TD>Fire condition as Boolean input.</TD></TR>
+<TR><TD>firePort</TD><TD>= true, if transition fires</TD></TR>
+</TABLE>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE LoopBreakingTransition<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Loop0962d25a32e14f65itionI.png" ALT="Modelica_StateGraph2.LoopBreakingTransition" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.LoopBreakingTransition"></A><A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2"
+>Modelica_StateGraph2</A>.LoopBreakingTransition</H2>
+<B>Transition to break loops by introducing an artificial time delay (immediately fire and then wait)</B><p></P>
+<P></P><H3>Information</H3>
+<PRE></pre>
+<p>
+Every loop in a StateGraph2 model needs to have at least one delayed
+transition. If this is not the case, a delay needs to be introduced
+at one transition of a loop. The "<u>LoopBreakingTransition</u>" is
+designed to replace an (immediate)
+<A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Transition"
+>Transition</a>
+by a Transition that
+fires immediately, and then waits in an internal step for the defined
+delay time. The semantics is therefore slightly different if a Transition
+with "delayedTransition = true" is used. In the latter case, the transition
+only fires after the delay time and the fire condition must remain true
+during this time period.
+</p>
+
+<p>
+A LoopBreakingTransition is just a convenient short hand notation
+for the combination of a Transition, a Step, and a delayed Transition
+as shown in the following table:
+</p>
+
+<blockquote>
+<table cellspacing="0" cellpadding="4" border="1">
+<tr><th>LoopBreakingTransition</th>
+    <th>Equivalent system</th>
+    </tr>
+<tr><td align="center" valign="middle">
+    <img src="../Images/StateGraph/Elements/LoopBreakingTransition.png"></td>
+    <td>
+    <img src="../Images/StateGraph/Elements/LoopBreakingTransition-details.png"></td>
+    </tr>
+</table>
+</blockquote>
+
+<p>
+In the following table different configurations of a LoopBreakingTransition are shown:
+</p>
+
+<blockquote>
+<table cellspacing="0" cellpadding="4" border="1" width="600">
+<tr><th>Parameter setting</th>
+    <th>Icon</th>
+    <th>Description</th></tr>
+
+<tr><td>Default transition</td>
+    <td><img src="../Images/StateGraph/Elements/LoopBreakingTransition-default.png"></td>
+    <td>The LoopBreakingTransition fires when the preceding step is active
+        and the expression &quot;condition&quot; in the parameter menu is <b>true</b>.
+        After a &quot;waitTime&quot; (here: 0.001&nbsp;s) the succeding step is activated.</td>
+    </tr>
+
+<tr><td>use_conditionPort = <b>true</b></td>
+    <td><img src="../Images/StateGraph/Elements/LoopBreakingTransition-use_conditionPort.png"></td>
+    <td>The LoopBreakingTransition fires when the preceding step is active
+        and connector &quot;conditionPort&quot; is <b>true</b>.
+        After a &quot;waitTime&quot; (here: 0.001&nbsp;s) the succeding step is activated.</td>
+    </tr>
+
+<tr><td>use_firePort = <b>true</b></td>
+    <td><img src="../Images/StateGraph/Elements/LoopBreakingTransition-use_firePort.png"></td>
+    <td>Connector &quot;firePort&quot; is <b>true</b> when the LoopBreakingTransition fires
+        and the internal Step of this element is activated.
+        Actions may be triggered, e.g., by connecting block
+        <A HREF="Modelica_StateGraph2_Blocks_MathBoolean.html#Modelica_StateGraph2.Blocks.MathBoolean.MultiSwitch"
+>MultiSwitch</a>
+        to the firePort.</td>
+    </tr>
+
+</table>
+</blockquote>
+
+<pre></PRE><P></P>
+
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>use_conditionPort</TD><TD>= true, if conditionPort enabled</TD></TR>
+<TR><TD>use_firePort</TD><TD>= true, if firePort enabled</TD></TR>
+<TR><TD>condition</TD><TD>Fire condition (time varying Boolean expression)</TD></TR>
+<TR><TD>waitTime</TD><TD>Time to wait in internal step after transition fired [s]</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>inPort</TD><TD>Input port of transition (exactly one connection to this port is required)</TD></TR>
+<TR><TD>outPort</TD><TD>Output port of transition (exactly one connection from this port is required)</TD></TR>
+<TR><TD>conditionPort</TD><TD>Fire condition as Boolean input.</TD></TR>
+<TR><TD>firePort</TD><TD>= true, if transition fires</TD></TR>
+</TABLE>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Parallel<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.ParallelI.png" ALT="Modelica_StateGraph2.Parallel" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Parallel"></A><A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2"
+>Modelica_StateGraph2</A>.Parallel</H2>
+<B>Composite or parallel step</B><p></P>
+<P></P><H3>Information</H3>
+<PRE></pre>
+<p>
+This component acts both as a composite step (having just <u>one branch</u>) and as a Step that has <u>parallel branches</u> that are executed in parallel to each other.
+The details are summarized
+<A HREF="Modelica_StateGraph2_UsersGuide_Tutorial.html#Modelica_StateGraph2.UsersGuide.Tutorial.Parallel"
+>here</a>
+in the tutorial. A typical example for the usage
+is shown in the next Figure (component &quot;p&quot;):
+</p>
+
+
+<blockquote>
+<img src="../Images/StateGraph/Elements/Parallel.png">
+</blockquote>
+
+<p>
+In the following table different configurations of a Parallel component are shown:
+</p>
+
+<blockquote>
+<table cellspacing="0" cellpadding="4" border="1" width="400">
+<tr><td>use_inPort=<b>true</b><br>&nbsp;<br>
+        <img src="../Images/StateGraph/Elements/Parallel-inPort.png"></td>
+    <td>use_inPort=<b>true</b><br>
+        use_outPort=<b>true</b><br>&nbsp;<br>
+        <img src="../Images/StateGraph/Elements/Parallel-inPort-and-outPort.png"></td>
+    </tr>
+
+<tr><td>use_inPort=<b>true</b><br>
+        use_suspend=<b>true</b><br>
+        use_activePort=<b>true</b><br>&nbsp;<br>
+        <img src="../Images/StateGraph/Elements/Parallel-suspend-use_activePort.png"></td>
+    <td>initialStep=<b>true</b><br>&nbsp;<br>
+        <img src="../Images/StateGraph/Elements/Parallel-initialStep.png"></td>
+    </tr>
+</table>
+</blockquote>
+
+<pre></PRE><P></P>
+Extends from <A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.PartialParallelBase"
+>Modelica_StateGraph2.Internal.Interfaces.PartialParallelBase</A> (Base class of a parallel component (including a composite step as special case)).
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>initialStep</TD><TD>=true, if initial step (start state machine at entry ports of Parallel)</TD></TR>
+<TR><TD>use_inPort</TD><TD>=true, if inPort enabled</TD></TR>
+<TR><TD>use_outPort</TD><TD>=true, if outPort enabled</TD></TR>
+<TR><TD>use_suspend</TD><TD>=true, if suspend and resume ports enabled</TD></TR>
+<TR><TD>use_activePort</TD><TD>=true, if activePort enabled</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>inPort[nIn]</TD><TD>If enabled, port for one or more input transitions</TD></TR>
+<TR><TD>outPort[nOut]</TD><TD>If enabled, port for one or more output transitions</TD></TR>
+<TR><TD>suspend[nSuspend]</TD><TD>If enabled, port for zero, one or more suspend transitions</TD></TR>
+<TR><TD>resume[nResume]</TD><TD>If enabled, port for zero, one or more resume transitions</TD></TR>
+<TR><TD>entry[nEntry]</TD><TD>Entry port for one or more branches (Step or Parallel components must be connected to this port)</TD></TR>
+<TR><TD>exit[nExit]</TD><TD>If enabled, synchronization port for one or more branches (Step or Parallel components must be connected to this port)</TD></TR>
+<TR><TD>activePort</TD><TD>= true if Parallel component is active, otherwise it is not active</TD></TR>
+</TABLE>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE PartialParallel<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.PartialParallelI.png" ALT="Modelica_StateGraph2.PartialParallel" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.PartialParallel"></A><A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2"
+>Modelica_StateGraph2</A>.PartialParallel</H2>
+<B>Partial compont to construct a parallel submodel via inheritance</B><p></P>
+<P></P><H3>Information</H3>
+<PRE></pre>
+<p>
+This is a variant of the
+<A HREF="Modelica_StateGraph2.html#Modelica_StateGraph2.Parallel"
+>Parallel</a>
+component. The essential difference is that this
+is a "partial" model. It is therefore not allowed to drag it. The only purpose of this
+model is to inherit from it in order to construct a new model that is a special
+Parallel component.
+</p>
+
+<p>
+The Figure below shows a component (&quot;s2&quot;) built from a PartialParallel component. As the diagram and the icon layer of the PartialParallel component does not need to be the same size, the user can benefit from collecting large subsystems in smaller closed Parallel components to improve overview and modularization of the full system.
+</p>
+
+<blockquote>
+<img src="../Images/StateGraph/Elements/PartialParallel.png">
+</blockquote>
+
+
+<pre></PRE><P></P>
+Extends from <A HREF="Modelica_StateGraph2_Internal_Interfaces.html#Modelica_StateGraph2.Internal.Interfaces.PartialParallelBase"
+>Modelica_StateGraph2.Internal.Interfaces.PartialParallelBase</A> (Base class of a parallel component (including a composite step as special case)).
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>initialStep</TD><TD>=true, if initial step (start state machine at entry ports of Parallel)</TD></TR>
+<TR><TD>use_inPort</TD><TD>=true, if inPort enabled</TD></TR>
+<TR><TD>use_outPort</TD><TD>=true, if outPort enabled</TD></TR>
+<TR><TD>use_suspend</TD><TD>=true, if suspend and resume ports enabled</TD></TR>
+<TR><TD>use_activePort</TD><TD>=true, if activePort enabled</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>inPort[nIn]</TD><TD>If enabled, port for one or more input transitions</TD></TR>
+<TR><TD>outPort[nOut]</TD><TD>If enabled, port for one or more output transitions</TD></TR>
+<TR><TD>resume[nResume]</TD><TD>If enabled, port for zero, one or more resume transitions</TD></TR>
+<TR><TD>suspend[nSuspend]</TD><TD>If enabled, port for zero, one or more suspend transitions</TD></TR>
+<TR><TD>activePort</TD><TD>= true if Parallel component is active, otherwise it is not active</TD></TR>
+</TABLE>
+<address><a href="http://www.3ds.com/">Automatically generated</a> Tue Oct 01 16:04:22 2013.
+</address></BODY>
+</HTML>

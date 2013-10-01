@@ -1,0 +1,148 @@
+<HTML>
+<HEAD>
+<TITLE>Modelica_StateGraph2.Blocks.MathReal</TITLE>
+<META name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="description" content="&quot;Blocks with input and output signals of type Real&quot;">
+<style type="text/css">
+*       { font-size: 10pt; font-family: Arial,sans-serif; }
+pre     { font-size:  9pt; font-family: Courier,monospace;}
+h4      { font-size: 10pt; font-weight: bold; color: green; }
+h3      { font-size: 11pt; font-weight: bold; color: green; }
+h2      { font-size: 13pt; font-weight: bold; color: green; }
+address {                  font-weight: normal} 
+td      { solid #000; vertical-align:top; }
+th      { solid #000; vertical-align:top; font-weight: bold; }
+table   { solid #000; border-collapse: collapse;}
+</style>
+</HEAD>
+<BODY><P></P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE MathReal<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="Modelica_StateGraph2.Blocks.MathReal"></A><A HREF="Modelica_StateGraph2_Blocks.html#Modelica_StateGraph2.Blocks"
+>Modelica_StateGraph2.Blocks</A>.MathReal</H2>
+<B>Blocks with input and output signals of type Real</B>
+<P></P>
+<P></P><H3>Package Content</H3>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2 >
+<TR><TH >Name</TH><TH>Description</TH></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Blocd1be3bd2e60a4b83ValueS.png" ALT="Modelica_StateGraph2.Blocks.MathReal.ShowValue" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks_MathReal.html#Modelica_StateGraph2.Blocks.MathReal.ShowValue"
+>ShowValue</A>
+</TD><TD>Show Real value from numberPort or from number input field in diagram layer dynamically</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Blocks.MathReal.SumS.png" ALT="Modelica_StateGraph2.Blocks.MathReal.Sum" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks_MathReal.html#Modelica_StateGraph2.Blocks.MathReal.Sum"
+>Sum</A>
+</TD><TD>Sum of Reals: y = k[1]*u[1] + k[2]*u[2] + ... + k[n]*u[n]</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Bloc5d871c3585b08ec9oductS.png" ALT="Modelica_StateGraph2.Blocks.MathReal.Product" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks_MathReal.html#Modelica_StateGraph2.Blocks.MathReal.Product"
+>Product</A>
+</TD><TD>Product of Reals: y = u[1]*u[2]* ... *u[n]</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Bloc3862730f8cf5e487witchS.png" ALT="Modelica_StateGraph2.Blocks.MathReal.MultiSwitch" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks_MathReal.html#Modelica_StateGraph2.Blocks.MathReal.MultiSwitch"
+>MultiSwitch</A>
+</TD><TD>Set Real expression that is associated with the first active input signal</TD></TR>
+</TABLE>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE ShowValue<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Blocd1be3bd2e60a4b83ValueI.png" ALT="Modelica_StateGraph2.Blocks.MathReal.ShowValue" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Blocks.MathReal.ShowValue"></A><A HREF="Modelica_StateGraph2_Blocks_MathReal.html#Modelica_StateGraph2.Blocks.MathReal"
+>Modelica_StateGraph2.Blocks.MathReal</A>.ShowValue</H2>
+<B>Show Real value from numberPort or from number input field in diagram layer dynamically</B><p></P>
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>use_numberPort</TD><TD>= true, if numberPort enabled</TD></TR>
+<TR><TD>number</TD><TD>Number to visualize if use_numberPort=false (time varying)</TD></TR>
+<TR><TD>precision</TD><TD>Number of significant digits to be shown</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>numberPort</TD><TD>Number to be shown in diagram layer if use_numberPort = true</TD></TR>
+<TR><TD>number2</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Sum<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Blocks.MathReal.SumI.png" ALT="Modelica_StateGraph2.Blocks.MathReal.Sum" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Blocks.MathReal.Sum"></A><A HREF="Modelica_StateGraph2_Blocks_MathReal.html#Modelica_StateGraph2.Blocks.MathReal"
+>Modelica_StateGraph2.Blocks.MathReal</A>.Sum</H2>
+<B>Sum of Reals: y = k[1]*u[1] + k[2]*u[2] + ... + k[n]*u[n]</B><p></P>
+<P></P><H3>Information</H3>
+Extends from <A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialRealMISO"
+>Modelica_StateGraph2.Blocks.Interfaces.PartialRealMISO</A> (Partial block with a RealVectorInput and a RealOutput signal).
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>k[nu]</TD><TD>Input gains</TD></TR>
+<TR bgcolor="#c0c0c0"><TD colspan=2><B>Advanced</B></TD></TR>
+<TR><TD>precision</TD><TD>Number of significant digits to be shown in dynamic diagram layer for y</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>u[nu]</TD><TD>&nbsp;</TD></TR>
+<TR><TD>y</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Product<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Bloc5d871c3585b08ec9oductI.png" ALT="Modelica_StateGraph2.Blocks.MathReal.Product" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Blocks.MathReal.Product"></A><A HREF="Modelica_StateGraph2_Blocks_MathReal.html#Modelica_StateGraph2.Blocks.MathReal"
+>Modelica_StateGraph2.Blocks.MathReal</A>.Product</H2>
+<B>Product of Reals: y = u[1]*u[2]* ... *u[n]</B><p></P>
+<P></P><H3>Information</H3>
+Extends from <A HREF="Modelica_StateGraph2_Blocks_Interfaces.html#Modelica_StateGraph2.Blocks.Interfaces.PartialRealMISO"
+>Modelica_StateGraph2.Blocks.Interfaces.PartialRealMISO</A> (Partial block with a RealVectorInput and a RealOutput signal).
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR bgcolor="#c0c0c0"><TD colspan=2><B>Advanced</B></TD></TR>
+<TR><TD>precision</TD><TD>Number of significant digits to be shown in dynamic diagram layer for y</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>u[nu]</TD><TD>&nbsp;</TD></TR>
+<TR><TD>y</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE MultiSwitch<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Bloc3862730f8cf5e487witchI.png" ALT="Modelica_StateGraph2.Blocks.MathReal.MultiSwitch" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Blocks.MathReal.MultiSwitch"></A><A HREF="Modelica_StateGraph2_Blocks_MathReal.html#Modelica_StateGraph2.Blocks.MathReal"
+>Modelica_StateGraph2.Blocks.MathReal</A>.MultiSwitch</H2>
+<B>Set Real expression that is associated with the first active input signal</B><p></P>
+<P></P><H3>Information</H3>
+<PRE></pre>
+<p>
+The block has a vector of Boolean input signals u[nu] and a vector of
+(time varying) Real expressions expr[:]. The output signal y is
+set to expr[i], if i is the first element in the input vector u that is true. If all input signals are
+false, y is set to parameter "y_default":
+</p>
+
+<pre>
+  // Conceptual equation (not valid Modelica)
+  i = 'first element of u[:] that is true';
+  y = <b>if</b> i==0 <b>then</b> y_default <b>else</b> expr[i];
+</pre>
+
+<pre></PRE><P></P>
+
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>expr[nu]</TD><TD>y = if u[i] then expr[i] else y_default (time varying)</TD></TR>
+<TR><TD>y_default</TD><TD>Default value of output y if all u[i] = false</TD></TR>
+<TR bgcolor="#c0c0c0"><TD colspan=2><B>Advanced</B></TD></TR>
+<TR><TD>precision</TD><TD>Number of significant digits to be shown in dynamic diagram layer for y</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>u[nu]</TD><TD>Set y = expr[i], if u[i] = true</TD></TR>
+<TR><TD>y</TD><TD>Output depending on expression</TD></TR>
+</TABLE>
+<address><a href="http://www.3ds.com/">Automatically generated</a> Tue Oct 01 16:04:22 2013.
+</address></BODY>
+</HTML>

@@ -1,0 +1,182 @@
+<HTML>
+<HEAD>
+<TITLE>Modelica_StateGraph2.Blocks.Interactive</TITLE>
+<META name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="description" content="&quot;Interactive components&quot;">
+<style type="text/css">
+*       { font-size: 10pt; font-family: Arial,sans-serif; }
+pre     { font-size:  9pt; font-family: Courier,monospace;}
+h4      { font-size: 10pt; font-weight: bold; color: green; }
+h3      { font-size: 11pt; font-weight: bold; color: green; }
+h2      { font-size: 13pt; font-weight: bold; color: green; }
+address {                  font-weight: normal} 
+td      { solid #000; vertical-align:top; }
+th      { solid #000; vertical-align:top; font-weight: bold; }
+table   { solid #000; border-collapse: collapse;}
+</style>
+</HEAD>
+<BODY><P></P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Interactive<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="Modelica_StateGraph2.Blocks.Interactive"></A><A HREF="Modelica_StateGraph2_Blocks.html#Modelica_StateGraph2.Blocks"
+>Modelica_StateGraph2.Blocks</A>.Interactive</H2>
+<B>Interactive components</B>
+<P></P>
+<P></P><H3>Package Content</H3>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2 >
+<TR><TH >Name</TH><TH>Description</TH></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Blocab52fa828f46fce9ourceS.png" ALT="Modelica_StateGraph2.Blocks.Interactive.RadioButtonSource" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks_Interactive.html#Modelica_StateGraph2.Blocks.Interactive.RadioButtonSource"
+>RadioButtonSource</A>
+</TD><TD>Boolean signal source that mimis a radio button</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Blocdde73abc0081e714uttonS.png" ALT="Modelica_StateGraph2.Blocks.Interactive.TrigButton" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks_Interactive.html#Modelica_StateGraph2.Blocks.Interactive.TrigButton"
+>TrigButton</A>
+</TD><TD>Button that sets its output y to true when pressing starts and otherwise sets its output to false</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Blocdde73abc0081e714uttonS.png" ALT="Modelica_StateGraph2.Blocks.Interactive.PressButton" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks_Interactive.html#Modelica_StateGraph2.Blocks.Interactive.PressButton"
+>PressButton</A>
+</TD><TD>Button that sets its output y to true when pressed down and changed to false when button is released</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Blocdde73abc0081e714uttonS.png" ALT="Modelica_StateGraph2.Blocks.Interactive.ToggleButton" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Blocks_Interactive.html#Modelica_StateGraph2.Blocks.Interactive.ToggleButton"
+>ToggleButton</A>
+</TD><TD>Button that sets its value to the opposite of its previous value when pressed down and then keeps this value until pressed anew</TD></TR>
+</TABLE>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE RadioButtonSource<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Blocab52fa828f46fce9ourceI.png" ALT="Modelica_StateGraph2.Blocks.Interactive.RadioButtonSource" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Blocks.Interactive.RadioButtonSource"></A><A HREF="Modelica_StateGraph2_Blocks_Interactive.html#Modelica_StateGraph2.Blocks.Interactive"
+>Modelica_StateGraph2.Blocks.Interactive</A>.RadioButtonSource</H2>
+<B>Boolean signal source that mimis a radio button</B><p></P>
+<P></P><H3>Information</H3>
+<PRE></pre>
+<p>
+Boolean signal source that mimics a radio button:
+Via a table, a radio button is pressed (i.e., the output 'on' is set to true) and is reset when an element of the Boolean vector
+'reset' becomes true. If both appear at the same time instant, setting
+the button according to the table has a higher priority as reseting
+the button. Example:
+</p>
+
+<pre>
+  RadioButtonSource start(buttonTimeTable={1,3}, reset={stop.on});
+  RadioButtonSource stop (buttonTimeTable={2,4}, reset={start.on});
+</pre>
+
+<p>
+The "start" button is pressed at time=1 s and time=3 s,
+whereas the "stop" button is pressed at time=2 s and time=4 s.
+This gives the following result:
+</p>
+
+<table border=1 cellspacing=2 >
+<tr><th>time [s]</th>
+    <th> start.on </th>
+    <th> stop.on </th>
+    </tr>
+<tr><td> 0 </td>
+    <td> false </td>
+    <td> false </td>
+    </tr>
+<tr><td> 1 </td>
+    <td> false </td>
+    <td> false </td>
+    </tr>
+<tr><td> 1 </td>
+    <td> true </td>
+    <td> false </td>
+    </tr>
+<tr><td> 2 </td>
+    <td> true </td>
+    <td> false </td>
+    </tr>
+<tr><td> 2 </td>
+    <td> false </td>
+    <td> true </td>
+    </tr>
+<tr><td> 3 </td>
+    <td> false </td>
+    <td> true </td>
+    </tr>
+<tr><td> 3 </td>
+    <td> true </td>
+    <td> false </td>
+    </tr>
+<tr><td> 4 </td>
+    <td> true </td>
+    <td> false </td>
+    </tr>
+<tr><td> 4 </td>
+    <td> false </td>
+    <td> true </td>
+    </tr>
+</table>
+<pre></PRE><P></P>
+
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>buttonTimeTable[:]</TD><TD>Time instants where button is pressed [s]</TD></TR>
+<TR bgcolor="#e0e0e0"><TD colspan=2>Time varying expressions</TD></TR>
+<TR><TD>reset[:]</TD><TD>Reset button to false, if an element of reset becomes true</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>on</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE TrigButton<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Blocdde73abc0081e714uttonI.png" ALT="Modelica_StateGraph2.Blocks.Interactive.TrigButton" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Blocks.Interactive.TrigButton"></A><A HREF="Modelica_StateGraph2_Blocks_Interactive.html#Modelica_StateGraph2.Blocks.Interactive"
+>Modelica_StateGraph2.Blocks.Interactive</A>.TrigButton</H2>
+<B>Button that sets its output y to true when pressing starts and otherwise sets its output to false</B><p></P>
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>label</TD><TD>&nbsp;</TD></TR>
+<TR><TD>useGraphicalOutput</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>y</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE PressButton<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Blocdde73abc0081e714uttonI.png" ALT="Modelica_StateGraph2.Blocks.Interactive.PressButton" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Blocks.Interactive.PressButton"></A><A HREF="Modelica_StateGraph2_Blocks_Interactive.html#Modelica_StateGraph2.Blocks.Interactive"
+>Modelica_StateGraph2.Blocks.Interactive</A>.PressButton</H2>
+<B>Button that sets its output y to true when pressed down and changed to false when button is released</B><p></P>
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>label</TD><TD>&nbsp;</TD></TR>
+<TR><TD>useGraphicalOutput</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>y</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE ToggleButton<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Blocdde73abc0081e714uttonI.png" ALT="Modelica_StateGraph2.Blocks.Interactive.ToggleButton" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Blocks.Interactive.ToggleButton"></A><A HREF="Modelica_StateGraph2_Blocks_Interactive.html#Modelica_StateGraph2.Blocks.Interactive"
+>Modelica_StateGraph2.Blocks.Interactive</A>.ToggleButton</H2>
+<B>Button that sets its value to the opposite of its previous value when pressed down and then keeps this value until pressed anew</B><p></P>
+<P><H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>label</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<P><H3>Connectors</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD>y</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<address><a href="http://www.3ds.com/">Automatically generated</a> Tue Oct 01 16:04:22 2013.
+</address></BODY>
+</HTML>

@@ -1,0 +1,231 @@
+<HTML>
+<HEAD>
+<TITLE>Modelica_StateGraph2.Examples.BasicStateGraphs</TITLE>
+<META name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="description" content="&quot;Examples demonstrating the various modeling possibilities with Modelica_StateGraph2 components&quot;">
+<style type="text/css">
+*       { font-size: 10pt; font-family: Arial,sans-serif; }
+pre     { font-size:  9pt; font-family: Courier,monospace;}
+h4      { font-size: 10pt; font-weight: bold; color: green; }
+h3      { font-size: 11pt; font-weight: bold; color: green; }
+h2      { font-size: 13pt; font-weight: bold; color: green; }
+address {                  font-weight: normal} 
+td      { solid #000; vertical-align:top; }
+th      { solid #000; vertical-align:top; font-weight: bold; }
+table   { solid #000; border-collapse: collapse;}
+</style>
+</HEAD>
+<BODY><P></P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE BasicStateGraphs<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="Modelica_StateGraph2.Examples.BasicStateGraphs"></A><A HREF="Modelica_StateGraph2_Examples.html#Modelica_StateGraph2.Examples"
+>Modelica_StateGraph2.Examples</A>.BasicStateGraphs</H2>
+<B>Examples demonstrating the various modeling possibilities with Modelica_StateGraph2 components</B>
+<P></P>
+<P></P><H3>Package Content</H3>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2 >
+<TR><TH >Name</TH><TH>Description</TH></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleS.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.FirstExample" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs.FirstExample"
+>FirstExample</A>
+</TD><TD>A first simple Modelica_StateGraph2 example</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleS.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.FirstExample_Variant2" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs.FirstExample_Variant2"
+>FirstExample_Variant2</A>
+</TD><TD>Same as FirstExample, but using an autonomous Parallel step to start the graph and not an initial step</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleS.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.FirstExample_Variant3" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs.FirstExample_Variant3"
+>FirstExample_Variant3</A>
+</TD><TD>Same as FirstExample, but formulating the transition condition of T2 with logical blocks</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleS.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.FirstExample_Variant4" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs.FirstExample_Variant4"
+>FirstExample_Variant4</A>
+</TD><TD>Same as FirstExample_Variant3, but without a delayed transition (by switching the check off)</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleS.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.Sequence" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs.Sequence"
+>Sequence</A>
+</TD><TD>Example to demonstrate a sequence of simple steps</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleS.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.Composite1" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs.Composite1"
+>Composite1</A>
+</TD><TD>Example of a composite step</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleS.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.Composite2" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs.Composite2"
+>Composite2</A>
+</TD><TD>Example of a composite step as submodel</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleS.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelBranches" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelBranches"
+>ParallelBranches</A>
+</TD><TD>Example to demonstrate parallel execution paths</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleS.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelWithSuspendAndNoResume" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelWithSuspendAndNoResume"
+>ParallelWithSuspendAndNoResume</A>
+</TD><TD>Same as example ParallelBranches, but the parallel execution path is suspended and then resumed from the inPort</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleS.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelInsideDelay" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelInsideDelay"
+>ParallelInsideDelay</A>
+</TD><TD>Demonstrates that a delay in one branch of a Parallel is sufficient so that no infinite event looping occurs</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleS.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelOutsideDelay" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelOutsideDelay"
+>ParallelOutsideDelay</A>
+</TD><TD>Demonstrates that a delay outside of a Parallel is sufficient so that no infinite event looping occurs</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleS.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelAutonomous" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelAutonomous"
+>ParallelAutonomous</A>
+</TD><TD>Demonstrates Parallel that runs autonomously</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleS.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.Actions1" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs.Actions1"
+>Actions1</A>
+</TD><TD>Demonstrates MultiSwitch and ShowValue</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleS.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.Actions2" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs.Actions2"
+>Actions2</A>
+</TD><TD>Demonstrates rising and falling edge action blocks</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleS.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.Actions3" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs.Actions3"
+>Actions3</A>
+</TD><TD>Demonstrates usage of TriggeredAdd action block</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleS.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelWithActions" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelWithActions"
+>ParallelWithActions</A>
+</TD><TD>Demonstrates usage of MultiSwitch block for branches executing in parallel</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Examff4216371d039828itiesS.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.Utilities" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs_Utilities.html#Modelica_StateGraph2.Examples.BasicStateGraphs.Utilities"
+>Utilities</A>
+</TD><TD>Utility models used in the examples</TD></TR>
+</TABLE>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE FirstExample<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleI.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.FirstExample" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.BasicStateGraphs.FirstExample"></A><A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs"
+>Modelica_StateGraph2.Examples.BasicStateGraphs</A>.FirstExample</H2>
+<B>A first simple Modelica_StateGraph2 example</B><p></P>
+<P></P><H3>Information</H3>
+<PRE></pre>
+
+<pre></PRE><P></P>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE FirstExample_Variant2<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleI.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.FirstExample_Variant2" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.BasicStateGraphs.FirstExample_Variant2"></A><A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs"
+>Modelica_StateGraph2.Examples.BasicStateGraphs</A>.FirstExample_Variant2</H2>
+<B>Same as FirstExample, but using an autonomous Parallel step to start the graph and not an initial step</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE FirstExample_Variant3<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleI.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.FirstExample_Variant3" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.BasicStateGraphs.FirstExample_Variant3"></A><A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs"
+>Modelica_StateGraph2.Examples.BasicStateGraphs</A>.FirstExample_Variant3</H2>
+<B>Same as FirstExample, but formulating the transition condition of T2 with logical blocks</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE FirstExample_Variant4<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleI.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.FirstExample_Variant4" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.BasicStateGraphs.FirstExample_Variant4"></A><A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs"
+>Modelica_StateGraph2.Examples.BasicStateGraphs</A>.FirstExample_Variant4</H2>
+<B>Same as FirstExample_Variant3, but without a delayed transition (by switching the check off)</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Sequence<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleI.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.Sequence" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.BasicStateGraphs.Sequence"></A><A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs"
+>Modelica_StateGraph2.Examples.BasicStateGraphs</A>.Sequence</H2>
+<B>Example to demonstrate a sequence of simple steps</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Composite1<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleI.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.Composite1" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.BasicStateGraphs.Composite1"></A><A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs"
+>Modelica_StateGraph2.Examples.BasicStateGraphs</A>.Composite1</H2>
+<B>Example of a composite step</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Composite2<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleI.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.Composite2" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.BasicStateGraphs.Composite2"></A><A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs"
+>Modelica_StateGraph2.Examples.BasicStateGraphs</A>.Composite2</H2>
+<B>Example of a composite step as submodel</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE ParallelBranches<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleI.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelBranches" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelBranches"></A><A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs"
+>Modelica_StateGraph2.Examples.BasicStateGraphs</A>.ParallelBranches</H2>
+<B>Example to demonstrate parallel execution paths</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE ParallelWithSuspendAndNoResume<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleI.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelWithSuspendAndNoResume" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelWithSuspendAndNoResume"></A><A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs"
+>Modelica_StateGraph2.Examples.BasicStateGraphs</A>.ParallelWithSuspendAndNoResume</H2>
+<B>Same as example ParallelBranches, but the parallel execution path is suspended and then resumed from the inPort</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE ParallelInsideDelay<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleI.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelInsideDelay" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelInsideDelay"></A><A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs"
+>Modelica_StateGraph2.Examples.BasicStateGraphs</A>.ParallelInsideDelay</H2>
+<B>Demonstrates that a delay in one branch of a Parallel is sufficient so that no infinite event looping occurs</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE ParallelOutsideDelay<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleI.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelOutsideDelay" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelOutsideDelay"></A><A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs"
+>Modelica_StateGraph2.Examples.BasicStateGraphs</A>.ParallelOutsideDelay</H2>
+<B>Demonstrates that a delay outside of a Parallel is sufficient so that no infinite event looping occurs</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE ParallelAutonomous<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleI.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelAutonomous" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelAutonomous"></A><A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs"
+>Modelica_StateGraph2.Examples.BasicStateGraphs</A>.ParallelAutonomous</H2>
+<B>Demonstrates Parallel that runs autonomously</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Actions1<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleI.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.Actions1" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.BasicStateGraphs.Actions1"></A><A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs"
+>Modelica_StateGraph2.Examples.BasicStateGraphs</A>.Actions1</H2>
+<B>Demonstrates MultiSwitch and ShowValue</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Actions2<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleI.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.Actions2" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.BasicStateGraphs.Actions2"></A><A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs"
+>Modelica_StateGraph2.Examples.BasicStateGraphs</A>.Actions2</H2>
+<B>Demonstrates rising and falling edge action blocks</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Actions3<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleI.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.Actions3" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.BasicStateGraphs.Actions3"></A><A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs"
+>Modelica_StateGraph2.Examples.BasicStateGraphs</A>.Actions3</H2>
+<B>Demonstrates usage of TriggeredAdd action block</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE ParallelWithActions<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam348f51c9a7adbd00ampleI.png" ALT="Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelWithActions" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.BasicStateGraphs.ParallelWithActions"></A><A HREF="Modelica_StateGraph2_Examples_BasicStateGraphs.html#Modelica_StateGraph2.Examples.BasicStateGraphs"
+>Modelica_StateGraph2.Examples.BasicStateGraphs</A>.ParallelWithActions</H2>
+<B>Demonstrates usage of MultiSwitch block for branches executing in parallel</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<address><a href="http://www.3ds.com/">Automatically generated</a> Tue Oct 01 16:04:22 2013.
+</address></BODY>
+</HTML>

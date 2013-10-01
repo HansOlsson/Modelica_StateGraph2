@@ -1,0 +1,216 @@
+<HTML>
+<HEAD>
+<TITLE>Modelica_StateGraph2.Examples.WrongStateGraphs</TITLE>
+<META name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="description" content="&quot;Examples demonstrating wrong Modelica_StateGraph2s and the error messages that appear in such cases&quot;">
+<style type="text/css">
+*       { font-size: 10pt; font-family: Arial,sans-serif; }
+pre     { font-size:  9pt; font-family: Courier,monospace;}
+h4      { font-size: 10pt; font-weight: bold; color: green; }
+h3      { font-size: 11pt; font-weight: bold; color: green; }
+h2      { font-size: 13pt; font-weight: bold; color: green; }
+address {                  font-weight: normal} 
+td      { solid #000; vertical-align:top; }
+th      { solid #000; vertical-align:top; font-weight: bold; }
+table   { solid #000; border-collapse: collapse;}
+</style>
+</HEAD>
+<BODY><P></P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE WrongStateGraphs<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="Modelica_StateGraph2.Examples.WrongStateGraphs"></A><A HREF="Modelica_StateGraph2_Examples.html#Modelica_StateGraph2.Examples"
+>Modelica_StateGraph2.Examples</A>.WrongStateGraphs</H2>
+<B>Examples demonstrating wrong Modelica_StateGraph2s and the error messages that appear in such cases</B>
+<P></P>
+<P></P><H3>Package Content</H3>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2 >
+<TR><TH >Name</TH><TH>Description</TH></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopS.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.SimpleInfiniteLoop" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs.SimpleInfiniteLoop"
+>SimpleInfiniteLoop</A>
+</TD><TD>A wrong Modelica_StateGraph2 that has an infinite loop (translates with an error)</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopS.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.SeveralInfiniteLoops" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs.SeveralInfiniteLoops"
+>SeveralInfiniteLoops</A>
+</TD><TD>Several loops that have wrongly only one delayed transition in one of the loops, but not in all</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopS.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.InfiniteLoop" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs.InfiniteLoop"
+>InfiniteLoop</A>
+</TD><TD>A wrong Modelica_StateGraph2 with infinite looping of a composite step (translates with an error)</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopS.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.ParallelWithInfiniteLoop" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs.ParallelWithInfiniteLoop"
+>ParallelWithInfiniteLoop</A>
+</TD><TD>A wrong Modelica_StateGraph2 to demonstrate parallel execution paths with infinite looping ((translates with an error))</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopS.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.NoInitialStep" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs.NoInitialStep"
+>NoInitialStep</A>
+</TD><TD>An initial step is missing</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopS.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.AutonomousWithSuspendAndNoInitialStep" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs.AutonomousWithSuspendAndNoInitialStep"
+>AutonomousWithSuspendAndNoInitialStep</A>
+</TD><TD>Autonomous parallel with suspend/resume (either the parallel should have initialStep= true or an initial step is missing in the resume branch)</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopS.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.TwoInitialSteps" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs.TwoInitialSteps"
+>TwoInitialSteps</A>
+</TD><TD>A wrong Modelica_StateGraph2 that has two initial steps (gives an error during initialization)</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopS.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.ParallelWithTwoInitialSteps" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs.ParallelWithTwoInitialSteps"
+>ParallelWithTwoInitialSteps</A>
+</TD><TD>Wrong Modelica_StateGraph2 with two initial steps</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopS.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel1" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel1"
+>UnsafeParallel1</A>
+</TD><TD>Wrong Modelica_StateGraph2 that branches out of the parallel step (gives error during initialization)</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopS.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel2" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel2"
+>UnsafeParallel2</A>
+</TD><TD>Wrong Modelica_StateGraph2 where not all parallel paths are synchronized (gives translation error)</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopS.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel3" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel3"
+>UnsafeParallel3</A>
+</TD><TD>Wrong Modelica_StateGraph2 where not all parallel paths are synchronized (gives translation error)</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopS.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel4" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel4"
+>UnsafeParallel4</A>
+</TD><TD>Wrong Modelica_StateGraph2 where not all parallel paths are synchronized and a wrong initial step is added to compensate for this (gives an error during initialization)</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopS.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel5" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel5"
+>UnsafeParallel5</A>
+</TD><TD>Wrong Modelica_StateGraph2 where an initial step is placed in a parallel (gives translation error)</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopS.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.NoUnaryConnection1" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs.NoUnaryConnection1"
+>NoUnaryConnection1</A>
+</TD><TD>Two steps are wrongly connected to the same outPort of a transition</TD></TR>
+<TR><TD><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopS.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.NoUnaryConnection2" WIDTH=20  HEIGHT=20 ALIGN = TOP >&nbsp;<A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs.NoUnaryConnection2"
+>NoUnaryConnection2</A>
+</TD><TD>Two steps are wrongly connected to one element of an entry port</TD></TR>
+</TABLE>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE SimpleInfiniteLoop<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopI.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.SimpleInfiniteLoop" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.WrongStateGraphs.SimpleInfiniteLoop"></A><A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs"
+>Modelica_StateGraph2.Examples.WrongStateGraphs</A>.SimpleInfiniteLoop</H2>
+<B>A wrong Modelica_StateGraph2 that has an infinite loop (translates with an error)</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE SeveralInfiniteLoops<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopI.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.SeveralInfiniteLoops" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.WrongStateGraphs.SeveralInfiniteLoops"></A><A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs"
+>Modelica_StateGraph2.Examples.WrongStateGraphs</A>.SeveralInfiniteLoops</H2>
+<B>Several loops that have wrongly only one delayed transition in one of the loops, but not in all</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE InfiniteLoop<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopI.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.InfiniteLoop" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.WrongStateGraphs.InfiniteLoop"></A><A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs"
+>Modelica_StateGraph2.Examples.WrongStateGraphs</A>.InfiniteLoop</H2>
+<B>A wrong Modelica_StateGraph2 with infinite looping of a composite step (translates with an error)</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE ParallelWithInfiniteLoop<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopI.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.ParallelWithInfiniteLoop" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.WrongStateGraphs.ParallelWithInfiniteLoop"></A><A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs"
+>Modelica_StateGraph2.Examples.WrongStateGraphs</A>.ParallelWithInfiniteLoop</H2>
+<B>A wrong Modelica_StateGraph2 to demonstrate parallel execution paths with infinite looping ((translates with an error))</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE NoInitialStep<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopI.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.NoInitialStep" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.WrongStateGraphs.NoInitialStep"></A><A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs"
+>Modelica_StateGraph2.Examples.WrongStateGraphs</A>.NoInitialStep</H2>
+<B>An initial step is missing</B><p></P>
+<P></P><H3>Information</H3>
+<PRE></pre>
+
+<pre></PRE><P></P>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE AutonomousWithSuspendAndNoInitialStep<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopI.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.AutonomousWithSuspendAndNoInitialStep" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.WrongStateGraphs.AutonomousWithSuspendAndNoInitialStep"></A><A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs"
+>Modelica_StateGraph2.Examples.WrongStateGraphs</A>.AutonomousWithSuspendAndNoInitialStep</H2>
+<B>Autonomous parallel with suspend/resume (either the parallel should have initialStep= true or an initial step is missing in the resume branch)</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE TwoInitialSteps<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopI.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.TwoInitialSteps" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.WrongStateGraphs.TwoInitialSteps"></A><A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs"
+>Modelica_StateGraph2.Examples.WrongStateGraphs</A>.TwoInitialSteps</H2>
+<B>A wrong Modelica_StateGraph2 that has two initial steps (gives an error during initialization)</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE ParallelWithTwoInitialSteps<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopI.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.ParallelWithTwoInitialSteps" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.WrongStateGraphs.ParallelWithTwoInitialSteps"></A><A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs"
+>Modelica_StateGraph2.Examples.WrongStateGraphs</A>.ParallelWithTwoInitialSteps</H2>
+<B>Wrong Modelica_StateGraph2 with two initial steps</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE UnsafeParallel1<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopI.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel1" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel1"></A><A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs"
+>Modelica_StateGraph2.Examples.WrongStateGraphs</A>.UnsafeParallel1</H2>
+<B>Wrong Modelica_StateGraph2 that branches out of the parallel step (gives error during initialization)</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE UnsafeParallel2<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopI.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel2" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel2"></A><A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs"
+>Modelica_StateGraph2.Examples.WrongStateGraphs</A>.UnsafeParallel2</H2>
+<B>Wrong Modelica_StateGraph2 where not all parallel paths are synchronized (gives translation error)</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE UnsafeParallel3<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopI.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel3" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel3"></A><A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs"
+>Modelica_StateGraph2.Examples.WrongStateGraphs</A>.UnsafeParallel3</H2>
+<B>Wrong Modelica_StateGraph2 where not all parallel paths are synchronized (gives translation error)</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE UnsafeParallel4<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopI.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel4" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel4"></A><A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs"
+>Modelica_StateGraph2.Examples.WrongStateGraphs</A>.UnsafeParallel4</H2>
+<B>Wrong Modelica_StateGraph2 where not all parallel paths are synchronized and a wrong initial step is added to compensate for this (gives an error during initialization)</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE UnsafeParallel5<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopI.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel5" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.WrongStateGraphs.UnsafeParallel5"></A><A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs"
+>Modelica_StateGraph2.Examples.WrongStateGraphs</A>.UnsafeParallel5</H2>
+<B>Wrong Modelica_StateGraph2 where an initial step is placed in a parallel (gives translation error)</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE NoUnaryConnection1<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopI.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.NoUnaryConnection1" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.WrongStateGraphs.NoUnaryConnection1"></A><A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs"
+>Modelica_StateGraph2.Examples.WrongStateGraphs</A>.NoUnaryConnection1</H2>
+<B>Two steps are wrongly connected to the same outPort of a transition</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE NoUnaryConnection2<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="Modelica_StateGraph2.Exam9175de8ce481060deLoopI.png" ALT="Modelica_StateGraph2.Examples.WrongStateGraphs.NoUnaryConnection2" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="Modelica_StateGraph2.Examples.WrongStateGraphs.NoUnaryConnection2"></A><A HREF="Modelica_StateGraph2_Examples_WrongStateGraphs.html#Modelica_StateGraph2.Examples.WrongStateGraphs"
+>Modelica_StateGraph2.Examples.WrongStateGraphs</A>.NoUnaryConnection2</H2>
+<B>Two steps are wrongly connected to one element of an entry port</B><p></P>
+<P></P><H3>Information</H3>
+Extends from Modelica.Icons.Example (Icon for runnable examples).
+<address><a href="http://www.3ds.com/">Automatically generated</a> Tue Oct 01 16:04:22 2013.
+</address></BODY>
+</HTML>
