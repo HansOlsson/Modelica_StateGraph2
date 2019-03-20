@@ -1,5 +1,5 @@
-within ;
-package Modelica_StateGraph2 
+ï»¿within ;
+package Modelica_StateGraph2 "Modelica_StateGraph2 (Version 2.0.3) - Modeling of continuous-time state machines"
 
 package UsersGuide "User's Guide"
 
@@ -16,7 +16,7 @@ An example is shown in the next Figure:
 </p>
 
 <blockquote>
-<img src=\"../Images/StateGraph/UsersGuide/StepAndTransition1.png\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/UsersGuide/StepAndTransition1.png\">
 </blockquote>
 
 <p>
@@ -37,7 +37,7 @@ parameter &quot;initialStep = <b>true</b>&quot; in a Step, see next Figure.
 </p>
 
 <blockquote>
-<img src=\"../Images/StateGraph/UsersGuide/StepAndTransition1b.png\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/UsersGuide/StepAndTransition1b.png\">
 </blockquote>
 
 <p>
@@ -56,7 +56,7 @@ the above Figure, results in the following menu:
 </p>
 
 <blockquote>
-<img src=\"../Images/StateGraph/UsersGuide/StepAndTransition2.png\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/UsersGuide/StepAndTransition2.png\">
 </blockquote>
 
 <p>
@@ -106,7 +106,7 @@ Figure:
 </p>
 
 <blockquote>
-<img src=\"../Images/StateGraph/UsersGuide/StepAndTransition3.png\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/UsersGuide/StepAndTransition3.png\">
 </blockquote>
 
 <p>
@@ -177,7 +177,7 @@ The Parallel component allows the user to place any StateGraph2 element inside i
 </p>
 
 <blockquote>
-<img src=\"../Images/StateGraph/Elements/Parallel.png\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/Parallel.png\">
 </blockquote>
 
 <p>
@@ -195,7 +195,7 @@ To achieve the StateGraph2 above, parameters <b>use_inPort</b>, <b>use_outPort</
 </p>
 
 <blockquote>
-<img src=\"../Images/StateGraph/UsersGuide/Parallel2.png\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/UsersGuide/Parallel2.png\">
 </blockquote>
 
 <p>
@@ -277,12 +277,12 @@ These block select one of N (Boolean, Integer, or Real) expressions depending on
 </p>
 
 <p>
-<img src=\"../Images/StateGraph/Elements/MultiSwitch.png\" align=\"right\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/MultiSwitch.png\" align=\"right\">
 In the Figure to the right, the MultiSwitch component will output the value y = 1 if Step s1 is active, and will output y = 2 if s2 is active as the expression array is defined as {1,2}. If none of the Boolean array inputs is true, the &quot;else&quot; value will be used instead that is defined in the parameter menu of the MultiSwitch component and is displayed below the icon. Consider the Figure when Step s3 is active - this will set the output of component &quot;multiSwitch&quot; to the &quot;else&quot; value &quot;3&quot;. Alternatively, in the parameter menu of the MultiSwitch component it can be defined to keep its previous value, i.e., y = <b>pre</b>(y). If this option would be selected for the Figure to the right, then multiSwitch.y = 2 when Step s3 is active.
 </p>
 
 <p>
-The MultiSwitch block is inspired by &quot;Modes&quot; from Mode Automata (Maraninchi and Rémond 2002, see
+The MultiSwitch block is inspired by &quot;Modes&quot; from Mode Automata (Maraninchi and RÃ©mond 2002, see
 <a href=\"modelica://Modelica_StateGraph2.UsersGuide.Literature\">Literature</a>): Variable multiSwitch.y has always a unique value, and this value depends on the expressions that are associated with mutually exclusive active steps. The advantages of MultiSwitch are that (1) the definition is performed in a purely graphical way, (2) it can also be used for mutually non-exclusive active steps in a Parallel component, and (3) it can be implemented in Modelica in a very simple way. The drawback is that the expressions in the MultiSwitch block might no longer be so easy associated with Steps, compared to the alternative where the expressions are defined directly in the respective Steps. This latter approach would, however, require non-trivial extensions to the Modelica language.
 </p>
 
@@ -295,7 +295,7 @@ components can be used to generate &quot;pulse&quot; signals depending on the ri
 </p>
 
 <blockquote>
-<img src=\"../Images/StateGraph/Elements/RisingEdge.png\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/RisingEdge.png\">
 </blockquote>
 </html>
 "));
@@ -317,7 +317,7 @@ For example, the model of the next Figure gives a translation error, because it 
 </p>
 
 <blockquote>
-<img src=\"../Images/StateGraph/UsersGuide/WrongInitialSteps.png\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/UsersGuide/WrongInitialSteps.png\">
 </blockquote>
 
 <p>
@@ -326,7 +326,7 @@ of the Parallel component branches wrongly out of the component.
 </p>
 
 <blockquote>
-<img src=\"../Images/StateGraph/UsersGuide/WrongParallel.png\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/UsersGuide/WrongParallel.png\">
 </blockquote>
 
 <p>
@@ -387,7 +387,7 @@ and the question is which value openValve.y will have, if both steps fill1 and f
 </p>
 
 <blockquote>
-<img src=\"../Images/StateGraph/UsersGuide/ActionsWithPriority.png\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/UsersGuide/ActionsWithPriority.png\">
 </blockquote>
 
 
@@ -399,7 +399,7 @@ and the question is which value openValve.y will have, if both steps fill1 and f
 
         annotation (Documentation(info="<html>
 <p>
-<img src=\"../Images/StateGraph/UsersGuide/WrongInfiniteLooping.png\" align=\"right\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/UsersGuide/WrongInfiniteLooping.png\" align=\"right\">
 At an event instant, an iteration occurs, due to the Modelica semantics (= whenever a new event occurs, the model is re-evaluated). This means that Transitions keep firing along a connected graph, as long as the firing conditions are true. The question therefore arises, whether infinite event looping is possible? A simple example of this kind is shown in the Figure to the right.
 Here, all Transition conditions are true and therefore all Transitions fire forever. This is no valid StateGraph model and will result in a translation error.
 </p>
@@ -447,7 +447,7 @@ are &quot;safe&quot;. This section consists of the following sub-sections:
 
       annotation (Documentation(info="<html>
 <p>
-<img src=\"../Images/StateGraph/Elements/Step-default.png\" align=\"right\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/Step-default.png\" align=\"right\">
 The &quot;inPort&quot; (= ellipse at the top part of a Step; see Figure to the right),
 the &quot;resume&quot; port (= ellipse at the left part of a Parallel component),
 the &quot;outPort&quot; (= triangle at the bottom part of a Step and of a Parallel
@@ -491,7 +491,7 @@ This model is available from
 </p>
 
 <blockquote>
-<img src=\"../Images/StateGraph/Examples/ControlledTanks1.png\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Examples/ControlledTanks1.png\">
 </blockquote>
 
 <p>
@@ -546,7 +546,7 @@ The implementation of the <b>tankController</b> is shown in
 the next figure:
 </p>
 <p align=\"center\">
-<img src=\"../Images/StateGraph/Examples/ControlledTanks2.png\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Examples/ControlledTanks2.png\">
 </p>
 <p>
 When the \"<b>start</b>\" button is pressed, the Modelica_StateGraph2 is
@@ -600,7 +600,7 @@ is shown in the following figure:
 </p>
 
 <blockquote>
-<img src=\"../Images/StateGraph/Examples/ControlledTanks3.png\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Examples/ControlledTanks3.png\">
 </blockquote>
 
 <p>
@@ -733,6 +733,11 @@ library:
   class ReleaseNotes "Release notes"
 
     annotation (Documentation(info="<html>
+<h4>Version 2.0.3, 2016-03-11</h4>
+<p>
+Uses Modelica Standard Library 3.2.3
+</p>
+
 <h4>Version 2.0.2, 2013-10-01</h4>
 <p>
 Uses Modelica Standard Library 3.2.1
@@ -765,7 +770,7 @@ The Modelica_StateGraph2 library is described in detail in
 based on the following references:
 </p>
 <dl>
-<dt>André, C. (2003):</dt>
+<dt>AndrÃ©, C. (2003):</dt>
 <dd><a href=\"http://www.i3s.unice.fr/~map/WEBSPORTS/Documents/2003a2005/SSMsemantics.pdf\">
      Semantics of S.S.M (Safe State Machine).</a>.
      I3S Laboratory, UMR 6070 University of Nice-Sophia Antipolis / CNRS.<br>&nbsp;</dd>
@@ -805,7 +810,7 @@ based on the following references:
       Modelica'2008 Conference, March 3-4, 2008.<br>&nbsp;
      </dd>
 
-<dt>Maraninchi F., Rémond, Y. (2002):</dt>
+<dt>Maraninchi F., RÃ©mond, Y. (2002):</dt>
 <dd> <a href=\"http://www-verimag.imag.fr/~maraninx/SCP2002.htm\">Mode-Automata:
      A New Domain-Specific Construct for the Development of Safe Critical Systems</a>.<br>&nbsp;
      </dd>
@@ -1452,7 +1457,7 @@ end ModelicaLicense2;
 <td valign=\"middle\">&nbsp;&nbsp;and&nbsp;&nbsp;</td>
 <td>
     Martin Malmheden and Hilding Elmqvist<br>
-    Dynasim AB (a Dassault Systèmes company)<br>
+    Dynasim AB (a Dassault SystÃ¨mes company)<br>
     Ideon Science Park<br>
     SE-223 70 Lund<br>
     Sweden<br>
@@ -1498,7 +1503,7 @@ his master thesis and for this article.
 </p>
 
 <p>
-Partial financial support of DLR by BMBF (BMBF Förderkennzeichen: 01IS07022F)
+Partial financial support of DLR by BMBF (BMBF FÃ¶rderkennzeichen: 01IS07022F)
 for the development of the Modelica_StateGraph2 library within the
 <a href=\"http://www.itea2.org\">ITEA2</a> project
 <a href=\"http://www.itea2.org/public/project_leaflets/EUROSYSLIB_profile_oct-07.pdf\">EUROSYSLIB</a>
@@ -1508,7 +1513,6 @@ is highly appreciated.</p>
 "));
 
   end Contact;
-
   annotation (__Dymola_DocumentationClass=true, Documentation(info="<html>
 <p>
 Library <b>Modelica_StateGraph2</b> is a <b>free</b> Modelica package providing
@@ -1539,7 +1543,6 @@ the library and has the following content:
 </ol>
 </html>"));
 end UsersGuide;
-
 
   package Examples
   "Examples to demonstrate the usage of the Modelica_StateGraph2 library"
@@ -1581,9 +1584,9 @@ end UsersGuide;
           smooth=Smooth.None));
       connect(step3.outPort[1], T3.inPort) annotation (Line(
           points={{0,-24.6},{0,-36},{15.0879,-36},{30,-36},{30,-19.1543},{30,10}},
-
           color={0,0,0},
           smooth=Smooth.Bezier));
+
       connect(T3.outPort, initialStep.inPort[1]) annotation (Line(
           points={{30,19},{30,52.6436},{30,66},{16,66},{0,66},{0,52}},
           color={0,0,0},
@@ -2728,9 +2731,9 @@ end UsersGuide;
           smooth=Smooth.Bezier));
       connect(step3.activePort, multiSwitch2.u[1]) annotation (Line(
           points={{-55.28,-2},{-34,-2},{-10,-2},{-10,-24},{-10,-34.5},{-1,-34.5}},
-
           color={255,0,255},
           smooth=Smooth.Bezier));
+
       connect(step5.activePort, multiSwitch2.u[2]) annotation (Line(
           points={{-55.28,-74},{-38,-74},{-12,-74},{-12,-48.8706},{-12,-37.5},{
               -1,-37.5}},
@@ -2738,9 +2741,9 @@ end UsersGuide;
           smooth=Smooth.Bezier));
       connect(step2.activePort, multiSwitch3.u[1]) annotation (Line(
           points={{-55.28,34},{-40,34},{-24,34},{-24,19.3364},{-24,4.5},{-1,4.5}},
-
           color={255,0,255},
           smooth=Smooth.Bezier));
+
       connect(step3.activePort, multiSwitch3.u[2]) annotation (Line(
           points={{-55.28,-2},{-21.3772,-2},{-14,-2},{-14,1.5},{-8.18555,1.5},{
               -1,1.5}},
@@ -3198,7 +3201,7 @@ end UsersGuide;
           delayedTransition=false,
           condition=time > 2.5 and time < 4.5)
           annotation (Placement(transformation(extent={{24,14},{32,6}})));
-        equation
+      equation
           connect(step3.outPort[1], T2.inPort) annotation (Line(
               points={{0,23.4},{0,14}},
               color={0,0,0},
@@ -3239,8 +3242,8 @@ end UsersGuide;
                 preserveAspectRatio=true,
                 extent={{-100,-100},{100,100}},
                 grid={1,1})));
-        end Composite2_Subgraph;
-      end Utilities;
+      end Composite2_Subgraph;
+    end Utilities;
     end BasicStateGraphs;
 
     package Interactive
@@ -3258,10 +3261,10 @@ end UsersGuide;
       Modelica_StateGraph2.Blocks.Interactive.RadioButtonSource shut(reset={
             start.on,stop.on}, buttonTimeTable={5}) annotation (Placement(
             transformation(extent={{-60,-20.5},{-40,-0.5}}, rotation=0)));
-      equation
+    equation
 
       annotation (experiment(StopTime=6));
-      end UseRadioButtonSources;
+    end UseRadioButtonSources;
     end Interactive;
 
     package Applications
@@ -3428,7 +3431,7 @@ For this, set in Dymola in the command window:
         Modelica.Blocks.Sources.RealExpression level2(y=tank2.level)
           annotation (Placement(transformation(extent={{-79,-81},{-54,-61}},
                 rotation=0)));
-        equation
+      equation
         connect(level1.y, bus.level1) annotation (Line(
             points={{-51.75,-53},{-34,-53},{-34,-2},{-30,-2},{-30,-1},{-32,-1},
                 {-32,0}},
@@ -3476,7 +3479,6 @@ For this, set in Dymola in the command window:
             smooth=Smooth.None));
         connect(valve3.open, bus.valve3) annotation (Line(
             points={{35,-62},{35,-20},{20,-20},{20,-2},{-31,-2},{-31,0},{-32,0}},
-
             color={255,0,255},
             smooth=Smooth.None));
 
@@ -3506,7 +3508,7 @@ This is the same model as
 <li> The controller is hierarchically structured for the different tasks.</li>
 </ul>
 </html>"));
-        end ControlledTanks2;
+      end ControlledTanks2;
 
       package Internal "Utility components for the examples"
         partial model PartialControlledTank
@@ -3591,7 +3593,7 @@ This is the same model as
                 rotation=0)));
           inner Modelica.Fluid.System system annotation (Placement(
                 transformation(extent={{-73,70},{-53,90}}, rotation=0)));
-          equation
+        equation
           connect(reservoir.ports[1], valve1.port_a) annotation (Line(
               points={{-24,80},{-16,80}},
               color={0,127,255},
@@ -3623,7 +3625,7 @@ This is the same model as
                 preserveAspectRatio=true,
                 extent={{-100,-100},{100,100}},
                 grid={1,1})));
-          end PartialControlledTank;
+        end PartialControlledTank;
 
         model TankController1
           "Controller 1 for tank system (using expressions to control the valves)"
@@ -3793,7 +3795,7 @@ This is the same model as
             delayedTransition=true,
             use_conditionPort=false) annotation (Placement(transformation(
                   extent={{-85,-71},{-77,-63}})));
-          equation
+        equation
 
           connect(start, T1.conditionPort) annotation (Line(
               points={{-120,60},{-85,60},{-70,60},{-70,74},{-70,88},{-54.2656,
@@ -3865,9 +3867,9 @@ This is the same model as
               smooth=Smooth.Bezier));
           connect(makeProduct.suspend[1], T8.inPort) annotation (Line(
               points={{21.75,82.9063},{-10.4644,82.9063},{-29,82.9063},{-29,76}},
-
               color={0,0,0},
               smooth=Smooth.Bezier));
+
           connect(stop, T8.conditionPort) annotation (Line(
               points={{-120,0},{-100,0},{-100,13.2324},{-100,36.7148},{-100,50},
                   {-87.2871,50},{-64.0121,50},{-54,50},{-54,60},{-34,60},{-34,
@@ -3884,7 +3886,6 @@ This is the same model as
               smooth=Smooth.Bezier));
           connect(T10.inPort, stopStep1.outPort[2]) annotation (Line(
               points={{10,34},{10,48},{-2.41211,48},{-21,48},{-28,48},{-28,52.4}},
-
               color={0,0,0},
               smooth=Smooth.Bezier));
 
@@ -3937,14 +3938,14 @@ This is the same model as
               smooth=Smooth.Bezier));
           connect(tank1Empty.outPort[1], shutStep.exit[1]) annotation (Line(
               points={{-46,-47.6},{-46,-52},{-41,-52},{-31.4,-52},{-31.4,-59.9813}},
-
               color={0,0,0},
               smooth=Smooth.Bezier));
+
           connect(tank2Empty.outPort[1], shutStep.exit[2]) annotation (Line(
               points={{-19,-47.6},{-19,-52},{-23.2469,-52},{-28.6,-52},{-28.6,-59.9813}},
-
               color={0,0,0},
               smooth=Smooth.Bezier));
+
           connect(shutStep.outPort[1], T12.inPort) annotation (Line(
               points={{-30,-63.8625},{-30,-74},{-20.0098,-74},{-3.51645,-74},{3,
                   -74},{3,-70}},
@@ -4070,7 +4071,7 @@ This is the same model as
                             extent={{-33,18},{31,-32}},
                             lineColor={0,0,255},
                             textString="1")}));
-          end TankController1;
+        end TankController1;
 
         model TankController2
           "Controller 2 for tank system (using expressions to control the valves)"
@@ -4086,8 +4087,8 @@ This is the same model as
 
           Modelica_StateGraph2.Step stopStep1(nIn=1, nOut=2)
             annotation (Placement(transformation(extent={{-23,4},{-15,12}})));
-          Modelica_StateGraph2.Transition T8(use_conditionPort=false, condition
-              =bus.stop)
+          Modelica_StateGraph2.Transition T8(use_conditionPort=false, condition=
+               bus.stop)
             annotation (Placement(transformation(extent={{-23,19},{-15,27}})));
           Modelica_StateGraph2.Transition T9(
             use_conditionPort=false,
@@ -4161,7 +4162,7 @@ This is the same model as
           Modelica_StateGraph2.Transition T3(delayedTransition=true, waitTime=
                 0.01) annotation (Placement(transformation(extent={{-69,-89},{-61,
                     -81}})));
-          equation
+        equation
 
           connect(T8.outPort, stopStep1.inPort[1]) annotation (Line(
               points={{-19,18},{-19,12}},
@@ -4173,7 +4174,6 @@ This is the same model as
               smooth=Smooth.Bezier));
           connect(T10.inPort, stopStep1.outPort[2]) annotation (Line(
               points={{6,-3},{6,0},{0.510128,0},{-12.4922,0},{-18,0},{-18,3.4}},
-
               color={0,0,0},
               smooth=Smooth.Bezier));
 
@@ -4246,9 +4246,9 @@ This is the same model as
               smooth=Smooth.Bezier));
           connect(makeProduct.valve3, setValve3.u[1]) annotation (Line(
               points={{61,6},{77,6},{77,-30},{40,-30},{40,-55},{51,-55},{51,-53.9}},
-
               color={255,0,255},
               smooth=Smooth.None));
+
           connect(shutStep.valve3, setValve3.u[2]) annotation (Line(
               points={{1,-57.2},{20,-57},{51,-57},{51,-58.1}},
               color={255,0,255},
@@ -4300,7 +4300,7 @@ This is the same model as
                             extent={{-33,18},{31,-32}},
                             lineColor={0,0,255},
                             textString="2")}));
-          end TankController2;
+        end TankController2;
 
         model MakeProduct
           extends Modelica_StateGraph2.PartialParallel(
@@ -4379,7 +4379,7 @@ This is the same model as
                     50},{220,70}})));
           Modelica_StateGraph2.Blocks.MathBoolean.Or or1(nu=2)
             annotation (Placement(transformation(extent={{45,54},{57,66}})));
-          equation
+        equation
           connect(fillTank1.outPort[1], T2.inPort) annotation (Line(
               points={{-20,45.4},{-20,40}},
               color={0,0,0},
@@ -4478,7 +4478,7 @@ This is the same model as
                 preserveAspectRatio=true,
                 extent={{-100,-100},{100,100}},
                 grid={1,1}), graphics));
-          end MakeProduct;
+        end MakeProduct;
 
         model ShutStep
 
@@ -4528,7 +4528,7 @@ This is the same model as
             "Value of Boolean output" annotation (Placement(transformation(
                   extent={{100,40},{120,60}}), iconTransformation(extent={{200,
                     68},{220,88}})));
-          equation
+        equation
           connect(shutTank1.outPort[1], T13.inPort) annotation (Line(
               points={{-16,51.4},{-16,45}},
               color={0,0,0},
@@ -4555,9 +4555,9 @@ This is the same model as
               smooth=Smooth.Bezier));
           connect(tank1Empty.outPort[1], exit[1]) annotation (Line(
               points={{-16,18.4},{-16,-40.8},{-16,-79.483},{-16,-105},{-30,-105}},
-
               color={0,0,0},
               smooth=Smooth.Bezier));
+
           connect(tank2Empty.outPort[1], exit[2]) annotation (Line(
               points={{20,18.4},{20,-79.6934},{20,-105},{30,-105}},
               color={0,0,0},
@@ -4590,7 +4590,7 @@ This is the same model as
                             extent={{-2,120},{140,92}},
                             lineColor={0,0,0},
                             textString="valves")}));
-          end ShutStep;
+        end ShutStep;
 
         expandable connector SignalBus
           extends Modelica.Icons.SignalBus;
@@ -4607,9 +4607,9 @@ This is the same model as
                             extent={{0,0},{0,0}},
                             lineThickness=0.5,
                             lineColor={255,128,0})}));
-          end SignalBus;
+        end SignalBus;
 
-        end Internal;
+      end Internal;
       end ControlledTanks;
 
     package ProductionLine "Production line with simple robots"
@@ -4682,7 +4682,7 @@ This is the same model as
               origin={85,25},
               extent={{-5,-5},{5,5}},
               rotation=180)));
-        equation
+      equation
         connect(startTable.tableComNext, table.tableComPrev) annotation (Line(
               points={{-42,37},{-40,37},{-38,37}}, color={0,0,0}));
         connect(table.robotComTable, robotTermHorizontal.robotComRobot)
@@ -4734,9 +4734,9 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(endTable.prev_transport, trigButton1.y) annotation (Line(
             points={{61.2,36},{64.543,36},{70,36},{70,30.1885},{70,25},{80,25}},
-
             color={255,0,255},
             smooth=Smooth.Bezier));
+
         connect(trigButton3.y, robotComTerm.u) annotation (Line(
             points={{37,-4},{37,12.9}},
             color={255,0,255},
@@ -4773,7 +4773,7 @@ This is the same model as
                         extent={{78,-6},{78,-14}},
                         lineColor={0,0,0},
                         textString="Robot.WorkDone")}));
-        end MainSimple;
+      end MainSimple;
 
       model MainExtended
         extends Modelica.Icons.Example;
@@ -4858,7 +4858,7 @@ This is the same model as
         Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Utilities.RobotHorizontal
           robotHorizontal annotation (Placement(transformation(extent={{-40,54},
                   {-20,80}}, rotation=0)));
-        equation
+      equation
         connect(startTable.tableComNext, table.tableComPrev) annotation (Line(
               points={{-62,57},{-60,57},{-58,57}}, color={0,0,0}));
         connect(table.robotComTable, robotTermHorizontal.robotComRobot)
@@ -4918,9 +4918,9 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(trigButton.y, startTable.next_ready) annotation (Line(
             points={{-90,79},{-86,79},{-86,74},{-86,69.459},{-86,64},{-81.1,64}},
-
             color={255,0,255},
             smooth=Smooth.Bezier));
+
         connect(indicatorLamp.activePort, startTable.next_idle) annotation (
             Line(
             points={{-90.5,60},{-88,60},{-81,60}},
@@ -4967,7 +4967,7 @@ This is the same model as
                         extent={{132,-2},{132,-10}},
                         lineColor={0,0,0},
                         textString="Prev.Ready")}));
-        end MainExtended;
+      end MainExtended;
 
       package Internal
         package Connectors
@@ -4978,13 +4978,13 @@ This is the same model as
               "Receives signal from successor that its table is Idle";
             input Modelica.Blocks.Interfaces.BooleanInput Transport
               "Receives signal from successor when out-transport should be performed";
-            annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent
-                    ={{-100,-100},{100,100}}), graphics={Ellipse(
+            annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent=
+                     {{-100,-100},{100,100}}), graphics={Ellipse(
                                 extent={{-100,100},{100,-100}},
                                 lineColor={0,0,0},
                                 fillColor={0,0,255},
                                 fillPattern=FillPattern.Solid)}));
-            end TableComNext;
+          end TableComNext;
 
           connector TableComPrev "Connects with the predecessor table"
             input Modelica.Blocks.Interfaces.BooleanInput Ready
@@ -4993,13 +4993,13 @@ This is the same model as
               "Sends signal to predecessor that table is Idle";
             output Modelica.Blocks.Interfaces.BooleanOutput Transport
               "Sends signal to predecessor that out-transport should be performed";
-            annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent
-                    ={{-100,-100},{100,100}}), graphics={Ellipse(
+            annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent=
+                     {{-100,-100},{100,100}}), graphics={Ellipse(
                                 extent={{-100,100},{100,-100}},
                                 lineColor={0,0,0},
                                 fillColor={170,85,255},
                                 fillPattern=FillPattern.Solid)}));
-            end TableComPrev;
+          end TableComPrev;
 
           connector RobotComTable "Connects table to robot"
             output Modelica.Blocks.Interfaces.BooleanOutput StartWork
@@ -5014,7 +5014,7 @@ This is the same model as
                                 lineColor={0,0,0},
                                 fillColor={255,255,0},
                                 fillPattern=FillPattern.Solid)}));
-            end RobotComTable;
+          end RobotComTable;
 
           connector RobotComRobot "Connects robot to table"
             input Modelica.Blocks.Interfaces.BooleanInput StartWork
@@ -5029,8 +5029,8 @@ This is the same model as
                                 lineColor={0,0,0},
                                 fillColor={255,255,0},
                                 fillPattern=FillPattern.Solid)}));
-            end RobotComRobot;
-          end Connectors;
+          end RobotComRobot;
+        end Connectors;
 
         package Tables
           model StartTable
@@ -5048,12 +5048,12 @@ This is the same model as
                   origin={-110,-40},
                   extent={{-10,-10},{10,10}},
                   rotation=180)));
-            Modelica.Blocks.Interfaces.BooleanOutput next_transport annotation
-              (Placement(transformation(
+            Modelica.Blocks.Interfaces.BooleanOutput next_transport annotation (
+               Placement(transformation(
                   origin={-110,-80},
                   extent={{-10,-10},{10,10}},
                   rotation=180)));
-            equation
+          equation
             connect(next_ready, tableComNext.Ready) annotation (Line(
                 points={{-111,0},{55.9385,0},{80,0},{80,-22.8428},{80,-69}},
                 color={255,0,255},
@@ -5083,7 +5083,7 @@ This is the same model as
                                 lineColor={95,95,95},
                                 fillColor={135,135,135},
                                 fillPattern=FillPattern.Solid)}));
-            end StartTable;
+          end StartTable;
 
           model EndTable "Ends the line"
 
@@ -5109,12 +5109,12 @@ This is the same model as
                   origin={-10,-80},
                   extent={{-10,-10},{10,10}},
                   rotation=180)));
-            equation
+          equation
             connect(prev_ready, tableComPrev.Ready) annotation (Line(
                 points={{110,0},{-54.3945,0},{-80,0},{-80,-25.6729},{-80,-69}},
-
                 color={255,0,255},
                 smooth=Smooth.Bezier));
+
             connect(prev_idle, tableComPrev.Idle) annotation (Line(
                 points={{112,-40},{-50.375,-40},{-80,-40},{-80,-69}},
                 color={255,0,255},
@@ -5144,7 +5144,7 @@ This is the same model as
                                 lineColor={95,95,95},
                                 fillColor={135,135,135},
                                 fillPattern=FillPattern.Solid)}));
-            end EndTable;
+          end EndTable;
 
           model TableVertical
             "Vertical table operating in southbound direction"
@@ -5186,7 +5186,7 @@ This is the same model as
                       {{-40,-10},{-60,10}})));
             Modelica.Blocks.Sources.BooleanExpression Next_Ready(y=Waiting.active)
               annotation (Placement(transformation(extent={{-40,-90},{-60,-70}})));
-            equation
+          equation
             carInPosition = pos >= -0.5 and pos < 0.5;
             if InTransport.active or OutTransport.active then
               der(pos) = transportLength/transportTime;
@@ -5252,7 +5252,7 @@ This is the same model as
                                 lineColor={0,0,0},
                                 fillColor={255,0,0},
                                 fillPattern=FillPattern.Solid)}));
-            end TableVertical;
+          end TableVertical;
 
           model TurnTableRight
             "Table which turns the track direction southbound"
@@ -5295,7 +5295,7 @@ This is the same model as
                   origin={-78,26},
                   extent={{-4,-4},{8,8}},
                   rotation=90)));
-            equation
+          equation
             carInPosition = pos >= -0.5 and pos < 0.5;
 
             if InTransport.active or OutTransport.active then
@@ -5338,9 +5338,9 @@ This is the same model as
                 smooth=Smooth.Bezier));
             connect(or1.u1, Prev_Transport.y) annotation (Line(
                 points={{-80,20.8},{-80,20.8},{-80,-5.88984},{-80,-30},{-53.6,-30}},
-
                 color={255,0,255},
                 smooth=Smooth.Bezier));
+
             connect(OutTransport_Active.y, or1.u2) annotation (Line(
                 points={{-57.8,-10},{-75.2,-10},{-75.2,8.40781},{-75.2,20.8}},
                 color={255,0,255},
@@ -5378,7 +5378,7 @@ This is the same model as
                                 lineColor={0,0,0},
                                 fillColor={255,0,0},
                                 fillPattern=FillPattern.Solid)}));
-            end TurnTableRight;
+          end TurnTableRight;
 
           model TableHorizontal
             "Horizontal table operating in eastbound direction"
@@ -5422,7 +5422,7 @@ This is the same model as
             Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.TableComNext
               tableComNext annotation (Placement(transformation(extent={{74,-96},
                       {86,-84}}), iconTransformation(extent={{76,-74},{84,-66}})));
-            equation
+          equation
             carInPosition = pos >= -0.5 and pos < 0.5;
 
             if InTransport.active or OutTransport.active then
@@ -5495,7 +5495,7 @@ This is the same model as
                                 lineColor={255,0,0},
                                 fillColor={255,17,0},
                                 fillPattern=FillPattern.Solid)}));
-            end TableHorizontal;
+          end TableHorizontal;
 
           model TurnTableLeft "Table which turns the track direction eastbound"
             extends
@@ -5535,7 +5535,7 @@ This is the same model as
                   extent={{-10,-10},{10,10}},
                   rotation=270,
                   origin={-80,-10})));
-            equation
+          equation
             carInPosition = pos >= -0.5 and pos < 0.5;
 
             if InTransport.active or OutTransport.active then
@@ -5565,16 +5565,15 @@ This is the same model as
             end when;
             connect(OutTransport_Active.y, or1.u1) annotation (Line(
                 points={{-47.3,50},{-47.3,50},{-70.4519,50},{-80,50},{-80,42}},
-
                 color={255,0,255},
                 smooth=Smooth.Bezier));
+
             connect(Prev_Transport.y, or1.u2) annotation (Line(
                 points={{-47.3,70},{-88,70},{-88,42}},
                 color={255,0,255},
                 smooth=Smooth.Bezier));
             connect(Next_Ready.y, tableComNext.Ready) annotation (Line(
                 points={{87.3,-8},{94,-8},{94,-19.5},{94,-72},{94,-80},{80,-80}},
-
                 color={255,0,255},
                 smooth=Smooth.Bezier));
 
@@ -5616,8 +5615,8 @@ This is the same model as
                                 lineColor={0,0,0},
                                 fillColor={255,0,0},
                                 fillPattern=FillPattern.Solid)}));
-            end TurnTableLeft;
-          end Tables;
+          end TurnTableLeft;
+        end Tables;
 
         package Utilities
           model RobotComTerm "Connects to table RobotCom, used for testing"
@@ -5635,7 +5634,7 @@ This is the same model as
                   origin={30,-110},
                   extent={{-10,-10},{10,10}},
                   rotation=270)));
-            equation
+          equation
             connect(y, robotComRobot.StartWork) annotation (Line(
                 points={{30,-110},{30,-50},{50,-50}},
                 color={255,0,255},
@@ -5652,7 +5651,7 @@ This is the same model as
                                 lineColor={0,0,0},
                                 fillColor={0,0,0},
                                 fillPattern=FillPattern.Solid)}));
-            end RobotComTerm;
+          end RobotComTerm;
 
           model RobotHorizontal
             "Robot that can be connected to a horizontal table"
@@ -5666,7 +5665,7 @@ This is the same model as
             Modelica.Blocks.Sources.BooleanExpression Work_Done(y=WorkDone.active)
               annotation (Placement(transformation(extent={{-98,-94},{-40,-66}},
                     rotation=0)));
-            equation
+          equation
 
             if robotComRobot.StartWork then
               PolOnePoints = [-34, 100; -52, 92; 18, 44; 22, 54; -34, 100];
@@ -5724,7 +5723,7 @@ This is the same model as
                                 lineColor={0,0,0},
                                 fillPattern=FillPattern.VerticalCylinder,
                                 fillColor={255,128,0})}));
-            end RobotHorizontal;
+          end RobotHorizontal;
 
           model RobotVertical "Robot than can be connected with vertical table"
             extends
@@ -5739,7 +5738,7 @@ This is the same model as
                   origin={-37,84},
                   extent={{-29,-14},{29,14}},
                   rotation=180)));
-            equation
+          equation
             if robotComRobot.StartWork then
               PolOnePoints = [100, 34; 92, 52; 44, -18; 54, -22; 100, 34];
               PolTwoPoints = [54, -22; 46, -12; 18, -24; 24, -26; 54, -22];
@@ -5797,7 +5796,7 @@ This is the same model as
                                 lineColor={0,0,0},
                                 fillPattern=FillPattern.HorizontalCylinder,
                                 fillColor={255,128,0})}));
-            end RobotVertical;
+          end RobotVertical;
 
           model RobotTermHorizontal
             "Terminator for horizontal tables used solely for transportation"
@@ -5811,7 +5810,7 @@ This is the same model as
             Modelica.Blocks.Sources.BooleanExpression Start_Work(y=
                   robotComRobot.StartWork) annotation (Placement(transformation(
                     extent={{-98,-74},{-40,-46}}, rotation=0)));
-            equation
+          equation
             connect(Start_Work.y, robotComRobot.WorkDone) annotation (Line(
                 points={{-37.1,-60},{-30.0028,-60},{-20,-60},{-20,-68.1719},{-20,
                     -76},{-11.8359,-76},{0,-76}},
@@ -5828,7 +5827,7 @@ This is the same model as
                                 lineColor={0,0,0},
                                 fillColor={255,255,0},
                                 fillPattern=FillPattern.Solid)}));
-            end RobotTermHorizontal;
+          end RobotTermHorizontal;
 
           model RobotTermVertical
             "Terminator for vertical tables used solely for transportation"
@@ -5843,7 +5842,7 @@ This is the same model as
                   origin={9,0},
                   extent={{-29,-14},{29,14}},
                   rotation=180)));
-            equation
+          equation
             connect(Start_Work.y, robotComRobot.WorkDone) annotation (Line(
                 points={{-22.9,5.68298e-015},{-48.45,5.68298e-015},{-48.45,0},{
                     -77,0}},
@@ -5860,8 +5859,8 @@ This is the same model as
                                 lineColor={0,0,0},
                                 fillColor={255,255,0},
                                 fillPattern=FillPattern.Solid)}));
-            end RobotTermVertical;
-          end Utilities;
+          end RobotTermVertical;
+        end Utilities;
 
         package Interfaces
           partial model Table "Table Logic"
@@ -5886,8 +5885,8 @@ This is the same model as
             Modelica.Blocks.Sources.BooleanExpression Robot_WorkDone
               annotation (Placement(transformation(extent={{-10,-10},{20,10}},
                     rotation=0)));
-            Modelica.Blocks.Sources.BooleanExpression CarInPosition annotation
-              (Placement(transformation(extent={{10,24},{40,44}}, rotation=0)));
+            Modelica.Blocks.Sources.BooleanExpression CarInPosition annotation (
+               Placement(transformation(extent={{10,24},{40,44}}, rotation=0)));
             Modelica.Blocks.Logical.Not Not annotation (Placement(
                   transformation(extent={{44,-66},{52,-58}}, rotation=0)));
             Modelica_StateGraph2.Step InTransport(nIn=1, nOut=1)
@@ -5921,7 +5920,7 @@ This is the same model as
             Modelica_StateGraph2.Transition next_transport(use_conditionPort=
                   true) annotation (Placement(transformation(extent={{56,-66},{
                       64,-58}})));
-            equation
+          equation
             connect(prev_ready.outPort, InTransport.inPort[1]) annotation (Line(
                 points={{60,57},{60,52}},
                 color={0,0,0},
@@ -5970,8 +5969,8 @@ This is the same model as
                 points={{60,-44},{60,-39}},
                 color={0,0,0},
                 smooth=Smooth.Bezier));
-            connect(next_transport.inPort, OutTransport.outPort[1]) annotation
-              (Line(
+            connect(next_transport.inPort, OutTransport.outPort[1]) annotation (
+               Line(
                 points={{60,-58},{60,-52.6}},
                 color={0,0,0},
                 smooth=Smooth.Bezier));
@@ -6013,7 +6012,7 @@ This is the same model as
                 smooth=Smooth.Bezier));
             annotation (Diagram(coordinateSystem(preserveAspectRatio=true,
                     extent={{-100,-100},{100,100}}), graphics));
-            end Table;
+          end Table;
 
           partial model TurnTable "Table which turns the track"
             extends Task;
@@ -6084,7 +6083,7 @@ This is the same model as
             Modelica_StateGraph2.Transition next_transport(use_conditionPort=
                   true) annotation (Placement(transformation(extent={{56,-92},{
                       64,-84}})));
-            equation
+          equation
             connect(prev_ready.outPort, InTransport.inPort[1]) annotation (Line(
                 points={{60,57},{60,46}},
                 color={0,0,0},
@@ -6133,8 +6132,8 @@ This is the same model as
                 points={{60,-64},{60,-56},{60,-53}},
                 color={0,0,0},
                 smooth=Smooth.Bezier));
-            connect(next_transport.inPort, OutTransport.outPort[1]) annotation
-              (Line(
+            connect(next_transport.inPort, OutTransport.outPort[1]) annotation (
+               Line(
                 points={{60,-84},{60,-72.6}},
                 color={0,0,0},
                 smooth=Smooth.Bezier));
@@ -6178,7 +6177,7 @@ This is the same model as
 
             annotation (Diagram(coordinateSystem(preserveAspectRatio=false,
                     extent={{-100,-100},{100,100}}), graphics));
-            end TurnTable;
+          end TurnTable;
 
           partial model Robot
             "Robot that can be connected to a horizontal table"
@@ -6213,7 +6212,7 @@ This is the same model as
                 Placement(transformation(extent={{16,-34},{24,-26}})));
             Modelica_StateGraph2.Transition return_to_wait annotation (
                 Placement(transformation(extent={{16,-54},{24,-46}})));
-            equation
+          equation
             connect(Waiting.outPort[1], start_work.inPort) annotation (Line(
                 points={{20,45.4},{20,34}},
                 color={0,0,0},
@@ -6246,14 +6245,14 @@ This is the same model as
                 smooth=Smooth.Bezier));
             annotation (Diagram(coordinateSystem(preserveAspectRatio=true,
                     extent={{-100,-100},{100,100}}), graphics));
-            end Robot;
+          end Robot;
 
           partial model RobotTerm
             "Terminator interface for tables used solely for transportation"
             extends Task;
             Modelica_StateGraph2.Examples.Applications.ProductionLine.Internal.Connectors.RobotComRobot
               robotComRobot;
-            end RobotTerm;
+          end RobotTerm;
 
           partial block Task
             parameter String processor=""
@@ -6263,10 +6262,10 @@ This is the same model as
             parameter Integer priority=1 "Priority of the task";
             parameter Real sampleTime=0.01 "Sample time of the task";
             parameter Real phase=0 "Phase of the task";
-            end Task;
-          end Interfaces;
-        end Internal;
-      end ProductionLine;
+          end Task;
+        end Interfaces;
+      end Internal;
+    end ProductionLine;
 
     package HarelsWristWatch
 
@@ -6301,11 +6300,11 @@ This is the same model as
           nIn=1,
           nSuspend=2)
           annotation (Placement(transformation(extent={{-20,-140},{20,0}})));
-        Modelica_StateGraph2.Blocks.Interactive.TrigButton insert_battery(label
-            ="Insert Battery")
+        Modelica_StateGraph2.Blocks.Interactive.TrigButton insert_battery(label=
+             "Insert Battery")
           annotation (Placement(transformation(extent={{0,220},{-80,240}})));
-        Modelica_StateGraph2.Blocks.Interactive.TrigButton remove_battery(label
-            ="Remove Battery")
+        Modelica_StateGraph2.Blocks.Interactive.TrigButton remove_battery(label=
+             "Remove Battery")
           annotation (Placement(transformation(extent={{0,200},{-80,220}})));
         Modelica_StateGraph2.Blocks.Interactive.TrigButton kill_battery(label=
               "Kill Battery")
@@ -6348,8 +6347,8 @@ This is the same model as
         Modelica_StateGraph2.Transition thirty_secs_in_alarms_beep(
             delayedTransition=true, waitTime=30)
           annotation (Placement(transformation(extent={{-34,-104},{-26,-96}})));
-        Modelica_StateGraph2.Blocks.Interactive.TrigButton weaken_battery(label
-            ="Weaken Battery")
+        Modelica_StateGraph2.Blocks.Interactive.TrigButton weaken_battery(label=
+             "Weaken Battery")
           annotation (Placement(transformation(extent={{0,180},{-80,200}})));
         Modelica_StateGraph2.Step alarm2_status_disabled(nOut=1, nIn=2)
           annotation (Placement(transformation(extent={{76,-94},{84,-86}})));
@@ -6381,8 +6380,8 @@ This is the same model as
           annotation (Placement(transformation(extent={{236,-54},{244,-46}})));
         Modelica_StateGraph2.Step chime_enabled_quiet(nOut=1, nIn=2)
           annotation (Placement(transformation(extent={{156,-68},{164,-60}})));
-        Modelica_StateGraph2.Step chime_enabled_beep(nOut=1, nIn=1) annotation
-          (Placement(transformation(extent={{156,-108},{164,-100}})));
+        Modelica_StateGraph2.Step chime_enabled_beep(nOut=1, nIn=1) annotation (
+           Placement(transformation(extent={{156,-108},{164,-100}})));
         Modelica_StateGraph2.Transition chime_enabled_quiet_t_is_whole_hour(
             use_conditionPort=true)
           annotation (Placement(transformation(extent={{156,-88},{164,-80}})));
@@ -6453,8 +6452,8 @@ This is the same model as
               extent={{-4,-4},{4,4}},
               rotation=180,
               origin={-186,-80})));
-        Modelica_StateGraph2.Transition out_a(use_conditionPort=true, loopCheck
-            =false) annotation (Placement(transformation(extent={{-182,-138},{-190,
+        Modelica_StateGraph2.Transition out_a(use_conditionPort=true, loopCheck=
+             false) annotation (Placement(transformation(extent={{-182,-138},{-190,
                   -146}})));
         Modelica_StateGraph2.Transition stopwatch_a(use_conditionPort=true)
           annotation (Placement(transformation(
@@ -6573,8 +6572,8 @@ This is the same model as
               origin={-26,-18})));
         Utilities.WatchController watchController
           annotation (Placement(transformation(extent={{20,140},{60,180}})));
-        Modelica_StateGraph2.Blocks.MathBoolean.ShowValue showValue annotation
-          (Placement(transformation(extent={{-232,210},{-272,250}})));
+        Modelica_StateGraph2.Blocks.MathBoolean.ShowValue showValue annotation (
+           Placement(transformation(extent={{-232,210},{-272,250}})));
         Modelica_StateGraph2.Blocks.MathBoolean.ShowValue showValue1
           annotation (Placement(transformation(extent={{-232,190},{-272,230}})));
         Modelica_StateGraph2.Blocks.MathBoolean.ShowValue showValue2
@@ -6600,7 +6599,7 @@ This is the same model as
               extent={{-4,-4},{4,4}},
               rotation=180,
               origin={-208,170})));
-        equation
+      equation
 
         connect(alarm1_enabled_d.inPort, alarm1_status_enabled.outPort[1])
           annotation (Line(
@@ -6686,8 +6685,8 @@ This is the same model as
             color={0,0,0},
             smooth=Smooth.Bezier));
 
-        connect(chime_disabled.outPort[1], chime_disabled_d.inPort) annotation
-          (Line(
+        connect(chime_disabled.outPort[1], chime_disabled_d.inPort) annotation (
+           Line(
             points={{170,-6.6},{170,-12}},
             color={0,0,0},
             smooth=Smooth.Bezier));
@@ -6757,9 +6756,9 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(p_or_p1_or_p2.inPort, displays.suspend[1]) annotation (Line(
             points={{-40,-12},{-40,-19},{-48.0859,-19},{-55,-19},{-55,-19.375}},
-
             color={0,0,0},
             smooth=Smooth.Bezier));
+
         connect(p_or_p1_or_p2.outPort, alarms_beep.inPort[1]) annotation (Line(
             points={{-40,-3},{-40,8},{-23,8},{-6,8},{0,8},{0,0}},
             color={0,0,0},
@@ -6845,7 +6844,6 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(main.entry[5], light_off.inPort[1]) annotation (Line(
             points={{14,47},{14,40},{30.3125,40},{209.857,40},{239,40},{239,14}},
-
             color={0,0,0},
             smooth=Smooth.Bezier));
 
@@ -6860,8 +6858,8 @@ This is the same model as
                 250,-86}},
             color={0,0,0},
             smooth=Smooth.Bezier));
-        connect(stopwatch_a.conditionPort, regular_a.conditionPort) annotation
-          (Line(
+        connect(stopwatch_a.conditionPort, regular_a.conditionPort) annotation (
+           Line(
             points={{-189,-90},{-155.888,-90},{-148,-90},{-148,-83.7305},{-148,
                 -78},{-155,-78}},
             color={255,0,255},
@@ -6970,9 +6968,9 @@ This is the same model as
           annotation (Line(
             points={{245,-120},{236.879,-120},{218,-120},{218,-99.73},{218,-22.0937},
                 {218,-16},{212.58,-16},{208,-16},{208,-7.437},{208,0},{210,0}},
-
             color={255,0,255},
             smooth=Smooth.Bezier));
+
         connect(battery_inserted.conditionPort, top_level_bus_node.insert_battery)
           annotation (Line(
             points={{-5,80},{-95.281,80},{-112,80},{-112,90}},
@@ -6988,9 +6986,9 @@ This is the same model as
           alarms_bus_node.T_is_whole_hour) annotation (Line(
             points={{155,-84},{144,-84},{144,-94.4705},{144,-143.898},{144,-166},
                 {123.424,-166},{70.3281,-166},{60,-166},{60,-177.766},{60,-190}},
-
             color={255,0,255},
             smooth=Smooth.Bezier));
+
         connect(chime_disabled_d.conditionPort, and1.y) annotation (Line(
             points={{175,-16},{179.6,-16}},
             color={255,0,255},
@@ -7169,7 +7167,6 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(edge5.u, displays_bus_node.a) annotation (Line(
             points={{-119.2,-78},{-119.2,-78},{-100.209,-78},{-90,-78},{-90,-70}},
-
             color={255,0,255},
             smooth=Smooth.Bezier));
 
@@ -7225,19 +7222,16 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(t_hits_t1.conditionPort, alarmTrigger.P1) annotation (Line(
             points={{5,-38},{31,-38},{31,-63.7046},{31,-143.286},{31.1429,-143.286}},
-
             color={255,0,255},
             smooth=Smooth.Bezier));
 
         connect(t_hits_t2_p2.conditionPort, alarmTrigger.P2) annotation (Line(
             points={{5,-70},{27,-70},{27,-93.6891},{27,-143.286},{26.8571,-143.286}},
-
             color={255,0,255},
             smooth=Smooth.Bezier));
 
         connect(t_hits_t1_p.conditionPort, alarmTrigger.P) annotation (Line(
             points={{5,-110},{23,-110},{23,-130.251},{23,-143.286},{22.7143,-143.286}},
-
             color={255,0,255},
             smooth=Smooth.Bezier));
 
@@ -7313,9 +7307,9 @@ This is the same model as
         connect(alarm1_beeps.activePort, displays_bus_node.alarm1_beeps)
           annotation (Line(
             points={{-4.72,-50},{-4.72,-50},{-74.7595,-50},{-90,-50},{-90,-70}},
-
             color={255,0,255},
             smooth=Smooth.Bezier));
+
         connect(alarm2_beeps.activePort, displays_bus_node.alarm2_beeps)
           annotation (Line(
             points={{-4.72,-90},{-16,-90},{-71.7891,-90},{-90,-90},{-90,-70}},
@@ -7414,7 +7408,7 @@ This is the same model as
 <p>Button A works as a switch between display modes of the watch. The different display modes are: Time (default), alarm1, alarm2, and stopwatch. In each of these, button C will enter update mode where the current time or the alarm time can be set. Inside the update modes, C will flip through different time entities and finally return from update mode. Button B is used to exit update regardless of which internal state being active. In stopwatch mode, button B is used as on/off switch. Additionally, the illumination is turned on every time B is pressed down, and shut off on release. Button D serves as an on/off switch of the current active display mode. If in time mode, pressing button D will result in display of the current date. In stopwatch mode, button D works as a selector between reg/lap display mode.</p>
 <p>To run model interactively, enable Realtime in the Experiment setup and set load result interval to 0.01.</p>
 </html>"));
-        end WristWatch;
+      end WristWatch;
 
       model Regular
         extends Modelica_StateGraph2.PartialParallel(nEntry=2, nExit=1);
@@ -7688,7 +7682,7 @@ This is the same model as
               extent={{-4,-4},{4,4}},
               rotation=180,
               origin={78,90})));
-        equation
+      equation
         connect(second_c.inPort, second.outPort[1]) annotation (Line(
             points={{-120,34},{-120,45.4}},
             color={0,0,0},
@@ -7735,9 +7729,9 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(update.entry[1], second.inPort[1]) annotation (Line(
             points={{-80,72},{-80,72},{-80,68},{-102.969,68},{-120,68},{-120,54}},
-
             color={0,0,0},
             smooth=Smooth.Bezier));
+
         connect(day_c.inPort, day.outPort[1]) annotation (Line(
             points={{-40,34},{-40,45.4}},
             color={0,0,0},
@@ -7837,9 +7831,9 @@ This is the same model as
         connect(date_c.outPort, day.inPort[1]) annotation (Line(
             points={{-80,-53},{-80,-60},{-71.471,-60},{-65.8906,-60},{-52,-60},
                 {-52,-46.1797},{-52,55.4215},{-52,62},{-46,62},{-40,62},{-40,54}},
-
             color={0,0,0},
             smooth=Smooth.Bezier));
+
         connect(ten_minutes_c.outPort, hour.inPort[1]) annotation (Line(
             points={{-120,-55},{-120,-60},{-113.246,-60},{-106,-60},{-92,-60},{
                 -92,-45.9852},{-92,54.6182},{-92,62},{-85.0039,62},{-80,62},{-80,
@@ -7868,9 +7862,9 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(IO_b_up.outPort, OO.inPort[1]) annotation (Line(
             points={{94,23},{94,23},{94,40},{94,70},{122.667,70},{122.667,42}},
-
             color={0,0,0},
             smooth=Smooth.Bezier));
+
         connect(entry[2], OO.inPort[2]) annotation (Line(
             points={{30,100},{30,100},{124,100.8},{124,42}},
             color={0,0,0},
@@ -8024,7 +8018,6 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(T2.inPort, update.suspend[1]) annotation (Line(
             points={{-144,74},{-144,74},{-144,68},{-144,54.3333},{-143,54.3333}},
-
             color={0,0,0},
             smooth=Smooth.Bezier));
 
@@ -8133,9 +8126,9 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(show_time.y, signalBus.show_time) annotation (Line(
             points={{-83.2,-93},{-83.2,-93},{123.652,-93},{140,-93},{140,-80}},
-
             color={255,0,255},
             smooth=Smooth.Bezier));
+
         connect(year.activePort, signalBus.show_year) annotation (Line(
             points={{-35.28,10},{-28,10},{-28,0.25},{-28,-72.1863},{-28,-94},{-4.70313,
                 -94},{126.293,-94},{140,-94},{140,-80}},
@@ -8200,9 +8193,9 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(year_setting.trigger, day_setting.trigger) annotation (Line(
             points={{50.4,-17.2},{50.4,-20},{43,-20},{43,0},{50.4,0},{50.4,2.8}},
-
             color={255,0,255},
             smooth=Smooth.Bezier));
+
         connect(day.activePort, day_quantity.u[1]) annotation (Line(
             points={{-35.28,50},{-26,50},{-26,36},{-26,10},{0,10}},
             color={255,0,255},
@@ -8301,9 +8294,9 @@ This is the same model as
 
         connect(year_setting.reset, day_setting.reset) annotation (Line(
             points={{57.6,-17.2},{57.6,-20},{66,-20},{66,0},{57.6,0},{57.6,2.8}},
-
             color={255,0,255},
             smooth=Smooth.Bezier));
+
         connect(edge2.u, bus_node1.d) annotation (Line(
             points={{82.8,90},{92,90},{92,82.168},{92,70},{90,70}},
             color={255,0,255},
@@ -8336,15 +8329,15 @@ This is the same model as
         connect(mode.activePort, show_time.u[5]) annotation (Line(
             points={{-35.28,-30},{-30,-30},{-30,-37.7363},{-30,-64},{-51.752,-64},
                 {-80.3251,-64},{-104,-64},{-104,-78.0031},{-104,-95.24},{-92,-95.24}},
-
             color={255,0,255},
             smooth=Smooth.Bezier));
+
         annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={
                   {-160,-100},{160,100}}), graphics), Icon(coordinateSystem(
                 preserveAspectRatio=true, extent={{-200,-200},{200,200}}),
               graphics={Bitmap(extent={{-160,160},{160,-160}}, fileName=
                 "Images/StateGraph/Examples/Regular_sm.png")}));
-        end Regular;
+      end Regular;
 
       model Out
         extends Modelica_StateGraph2.PartialParallel(nEntry=1, nExit=1);
@@ -8624,7 +8617,7 @@ This is the same model as
               extent={{-6,-6},{6,6}},
               rotation=270,
               origin={222,-20})));
-        equation
+      equation
         connect(chime_off.inPort[1], chime.entry[1]) annotation (Line(
             points={{-201,44},{-200,44},{-200,55},{-190,55}},
             color={0,0,0},
@@ -8686,9 +8679,9 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(update1_d.outPort, update1.resume[1]) annotation (Line(
             points={{142,13},{142,13},{142,-17.457},{142,-29.375},{150,-29.375}},
-
             color={0,0,0},
             smooth=Smooth.Bezier));
+
         connect(update1.suspend[1], update1_d.inPort) annotation (Line(
             points={{148.5,55.5},{142,55.5},{142,47.7139},{142,22}},
             color={0,0,0},
@@ -8700,9 +8693,9 @@ This is the same model as
         connect(update1_b.outPort, alarm1.resume[1]) annotation (Line(
             points={{130,21},{130,21},{130,4},{130,-23.371},{130,-48},{105.244,
                 -48},{79.35,-48},{52,-48},{52,-31.604},{52,-12.2917},{60,-12.2917}},
-
             color={0,0,0},
             smooth=Smooth.Bezier));
+
         connect(alarm1.resume[2], update1_c.outPort) annotation (Line(
             points={{60,-18.125},{44,-18},{44,-41.977},{44,-67.724},{44,-90},{
                 68.248,-90},{165.594,-90},{180,-90},{180,-79}},
@@ -8731,9 +8724,9 @@ This is the same model as
         connect(alarm2_on_d.outPort, alarm2_off.inPort[2]) annotation (Line(
             points={{-108,-25},{-108,-34},{-96.926,-34},{-88,-34},{-88,-23.516},
                 {-88,-20.289},{-88,44},{-88,50},{-97.723,50},{-107,50},{-107,44}},
-
             color={0,0,0},
             smooth=Smooth.Bezier));
+
         connect(update2.entry[1], update2_hour.inPort[1]) annotation (Line(
             points={{-10,73},{-10,64},{-20,64},{-20,54}},
             color={0,0,0},
@@ -8750,9 +8743,9 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(update2_min.outPort[1], update2.exit[1]) annotation (Line(
             points={{-20,-34.6},{-20,-44},{-14.8145,-44},{-10,-44},{-10,-53.875}},
-
             color={0,0,0},
             smooth=Smooth.Bezier));
+
         connect(update2_ten_min_c.outPort, update2_min.inPort[1]) annotation (
             Line(
             points={{-20,-15},{-20,-15},{-20,-26}},
@@ -8821,9 +8814,9 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(alarm2_c.inPort, alarm2.suspend[2]) annotation (Line(
             points={{-138,56},{-138,56},{-138,46},{-138,33.75},{-129.5,33.75}},
-
             color={0,0,0},
             smooth=Smooth.Bezier));
+
         connect(alarm2_c.outPort, update2.inPort[1]) annotation (Line(
             points={{-138,65},{-138,88},{-109.531,88},{-24.123,88},{-10,88},{-10,
                 80}},
@@ -8864,7 +8857,6 @@ This is the same model as
         connect(alarm1_off_d.conditionPort, alarm1_on_d.conditionPort)
           annotation (Line(
             points={{75,20},{70,20},{70,14.4922},{70,-15.3516},{70,-20},{75,-20}},
-
             color={255,0,255},
             smooth=Smooth.Bezier));
 
@@ -9014,12 +9006,12 @@ This is the same model as
         connect(alarm1_off.activePort, alarm1_bus_node.alarm1_off) annotation (
             Line(
             points={{84.72,40},{106,40},{106,15.0313},{106,6},{106,0},{110,0}},
-
             color={255,0,255},
             smooth=Smooth.Bezier), Text(
             string="%second",
             index=1,
             extent={{6,3},{6,3}}));
+
         connect(edge10.u, alarm1_bus_node.d) annotation (Line(
             points={{112,-9.2},{112,0},{110,0}},
             color={255,0,255},
@@ -9057,12 +9049,11 @@ This is the same model as
         connect(alarm1_bus_node, alarm1_bus_node1) annotation (Line(
             points={{110,0},{110,-2},{106,-2},{106,-6},{106,-78.6836},{106,-98},
                 {125.277,-98},{180.298,-98},{200,-98},{200,-76.4082},{200,-34}},
-
             color={255,128,0},
             smooth=Smooth.Bezier));
+
         connect(update1_min.outPort[1], update1.exit[1]) annotation (Line(
             points={{170,-34.6},{170,-44},{175.322,-44},{180,-44},{180,-53.875}},
-
             color={0,0,0},
             smooth=Smooth.Bezier));
 
@@ -9081,7 +9072,6 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(update2_hour.activePort, quantity2.u[1]) annotation (Line(
             points={{-15.28,50},{-15.28,50},{-8.23785,50},{9,50},{9,34},{9.2,34}},
-
             color={255,0,255},
             smooth=Smooth.Bezier));
 
@@ -9138,9 +9128,9 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(update1_d.firePort, alarm1_setting.trigger) annotation (Line(
             points={{146.2,18},{156,18},{156,9.09961},{156,-1.6},{195.2,-1.6}},
-
             color={255,0,255},
             smooth=Smooth.Bezier));
+
         connect(alarm1_setting.y, alarm1_bus_node1.T1) annotation (Line(
             points={{200,-8.8},{200,-8.8},{200,-34}},
             color={255,127,0},
@@ -9171,9 +9161,9 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(update1.activePort, or2.u[2]) annotation (Line(
             points={{211.25,10},{220,10},{220,-2.11719},{220,-14},{219.9,-14}},
-
             color={255,0,255},
             smooth=Smooth.Bezier));
+
         connect(or2.y, alarm1_bus_node1.in_alarm1) annotation (Line(
             points={{222,-27.2},{222,-34},{211.215,-34},{200,-34}},
             color={255,0,255},
@@ -9190,7 +9180,7 @@ This is the same model as
                 preserveAspectRatio=true, extent={{-200,-200},{200,200}}),
               graphics={Bitmap(extent={{-190,190},{192,-192}}, fileName=
                 "Images/StateGraph/Examples/Out_sm.png")}));
-        end Out;
+      end Out;
 
       model Stopwatch
         extends Modelica_StateGraph2.PartialParallel(nEntry=1, use_outPort=
@@ -9280,7 +9270,7 @@ This is the same model as
           annotation (Placement(transformation(extent={{28,56},{16,68}})));
         Modelica_StateGraph2.Blocks.MathBoolean.And freeze_time(nu=2)
           annotation (Placement(transformation(extent={{50,32},{38,44}})));
-        equation
+      equation
         connect(reg.inPort[1], displayrun.entry[1]) annotation (Line(
             points={{-31,4},{-31,12},{-20,12},{-3,12},{-3,15.4}},
             color={0,0,0},
@@ -9316,9 +9306,9 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(lap_d.outPort, reg.inPort[2]) annotation (Line(
             points={{-10,-15},{-10,-2.5},{-10,10},{-17.985,10},{-29,10},{-29,4}},
-
             color={0,0,0},
             smooth=Smooth.Bezier));
+
         connect(off_b.outPort, on.inPort[2]) annotation (Line(
             points={{50,-15},{50,-2.231},{50,10},{40.834,10},{31,10},{31,4}},
             color={0,0,0},
@@ -9417,7 +9407,6 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(stopwatch_lap.u, stopwatch_clock.u) annotation (Line(
             points={{29.8,62},{29.8,62},{52,62},{52,75.457},{52,84},{45.8,84}},
-
             color={255,127,0},
             smooth=Smooth.Bezier));
 
@@ -9452,9 +9441,9 @@ This is the same model as
             smooth=Smooth.Bezier));
         connect(off.outPort[1], displayrun.exit[2]) annotation (Line(
             points={{29,-44.6},{28,-44.6},{28,-60},{10.959,-60},{3,-60},{3,-67.975}},
-
             color={0,0,0},
             smooth=Smooth.Bezier));
+
         connect(off.outPort[2], off_b.inPort) annotation (Line(
             points={{31,-44.6},{31,-44.6},{31,-45},{31,-50},{38.3291,-50},{50,-50},
                 {50,-36.2129},{50,-24}},
@@ -9490,7 +9479,7 @@ This is the same model as
                 preserveAspectRatio=true, extent={{-200,-200},{200,200}}),
               graphics={Bitmap(extent={{-180,180},{180,-180}}, fileName=
                 "Images/StateGraph/Examples/stopwatch_sm.png")}));
-        end Stopwatch;
+      end Stopwatch;
 
       package Utilities
         expandable connector SignalBus
@@ -9499,7 +9488,7 @@ This is the same model as
           Boolean b;
           Boolean c;
           Boolean d;
-          end SignalBus;
+        end SignalBus;
 
         model WatchDisplay
           parameter Integer precision(min=0) = 0;
@@ -9545,7 +9534,7 @@ This is the same model as
                 extent={{-20,-20},{20,20}},
                 rotation=90,
                 origin={300,-240})));
-          equation
+        equation
 
           annotation (
             Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-620,-220},
@@ -9652,7 +9641,7 @@ This is the same model as
                      then "Ch" else if text_digit == 11 then "SW" else " ")}),
             Documentation(info="<html>
 <p>Displays four large digits, one small digit and one two letter text according to signals provided through the IntegerInputs. The top IntegerInput defines the level of illumination of the display.</p>
-<p><img src=\"../Images/StateGraph/Examples/WatchDisplay.png\"/></p>
+<p><img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Examples/WatchDisplay.png\"/></p>
 <p>Signal inputs are:</p>
 <p><ul>
 <li>Large digits, input at the bottom. Range: 0-9</li>
@@ -9661,7 +9650,7 @@ This is the same model as
 <li>Illumination level at the top. Range 0-2. Signals are decoded as: 0 - dark, 1 - normal, 2 - bright.</li>
 </ul></p>
 </html>"));
-          end WatchDisplay;
+        end WatchDisplay;
 
         model Time
 
@@ -9721,7 +9710,7 @@ This is the same model as
                 extent={{22,-11},{-28,9}},
                 rotation=0,
                 origin={68,-79})));
-          equation
+        equation
 
           connect(clock.u, time_scale.y) annotation (Line(
               points={{-41.8,80},{-41.8,80},{-73,80}},
@@ -9853,7 +9842,7 @@ This is the same model as
             Documentation(info="<html>
 <p>Outputs a time integer signal depending on what mode the watch is currently in. As all four time signals, current time, time setting, alarm1 setting and alarm2 setting should be decoded in the exact same fashion, the output of Time is handled the same in DisplayDecoder. This model also contains the actual clock that makes one tick every second. when a user sets a new time, the discrete state in TriggeredAdd will be reset and the output will re-set to that value and continue ticking.</p>
 </html>"));
-          end Time;
+        end Time;
 
         block DisplayDecoder
 
@@ -9990,7 +9979,7 @@ This is the same model as
           Modelica.Blocks.Sources.BooleanExpression booleanExpression(y=mod(
                 mode_signal, 2) < 0.5)
             annotation (Placement(transformation(extent={{-100,78},{-40,98}})));
-          equation
+        equation
           connect(large_digit_1, digit1_decoder.y) annotation (Line(
               points={{110,80},{91,80}},
               color={255,127,0},
@@ -10174,7 +10163,7 @@ This is the same model as
             Documentation(info="<html>
 <p>Decodes a number of integer signals (input at the bottom) into six digits to be displayed on a LED display according to definition in the WatchDisplay. Depending on the selected mode, the signals are masked in order to show the chosen entity correctly.</p>
 </html>"));
-          end DisplayDecoder;
+        end DisplayDecoder;
 
         block AlarmTrigger
 
@@ -10230,7 +10219,7 @@ This is the same model as
           Modelica.Blocks.Interfaces.BooleanInput T_hits_T2 annotation (
               Placement(transformation(extent={{-140,-20},{-100,20}}),
                 iconTransformation(extent={{-180,-40},{-140,0}})));
-          equation
+        equation
           connect(integerToBoolean.u, sum.y) annotation (Line(
               points={{-56,-60},{-56,-60},{-62.3,-60}},
               color={255,127,0},
@@ -10309,9 +10298,9 @@ This is the same model as
           connect(or3.u[1], and1.y) annotation (Line(
               points={{66,-55.3333},{62,-55.3333},{62,-48},{62,-38},{76.9414,-38},
                   {96,-38},{96,-18.6406},{96,59.0967},{96,80},{76,80},{46,80}},
-
               color={255,0,255},
               smooth=Smooth.Bezier));
+
           connect(or3.u[2], and2.y) annotation (Line(
               points={{66,-60},{60,-60},{60,-48.0703},{60,-36},{76,-36},{94,-36},
                   {94,-15.612},{94,23.8203},{94,40},{68,40}},
@@ -10345,9 +10334,9 @@ This is the same model as
 
           connect(or2.y, and2.u[2]) annotation (Line(
               points={{32,20},{36,20},{36,25.2765},{36,28.8867},{36,40},{46,40}},
-
               color={255,0,255},
               smooth=Smooth.Bezier));
+
           connect(T_hits_T2, and2.u[3]) annotation (Line(
               points={{-120,0},{-96.9688,0},{-88,0},{-88,-6.09766},{-88,-14},{-80.0117,
                   -14},{3.5332,-14},{42,-14},{42,28.2995},{42,35.3333},{46,
@@ -10386,7 +10375,7 @@ This is the same model as
 <p>Alarm 2 will beep when time becomes equal to T2 and P2 is true.</p>
 <p>Both alarms will beep when time becomes equal to T1 and P is true.</p>
 </html>"));
-          end AlarmTrigger;
+        end AlarmTrigger;
 
         model WatchController
           import Modelica_StateGraph2;
@@ -10417,7 +10406,7 @@ This is the same model as
               Placement(transformation(extent={{100,-50},{120,-30}})));
           Modelica.Blocks.Interfaces.IntegerOutput text_digit annotation (
               Placement(transformation(extent={{100,-80},{120,-60}})));
-          equation
+        equation
           connect(time_mode.u[1], display_node.time_active) annotation (Line(
               points={{-18,19.36},{-44,19.36},{-50,40},{-50,62},{-56,62},{-56,
                   64}},
@@ -10451,9 +10440,9 @@ This is the same model as
               smooth=Smooth.Bezier));
           connect(Time.y, displayController.time_signal) annotation (Line(
               points={{-3,-36},{-3,-36},{23.701,-36},{35.25,-36},{35.25,-24.5}},
-
               color={255,127,0},
               smooth=Smooth.Bezier));
+
           connect(date_mode.y, displayController.date_mode) annotation (Line(
               points={{13.2,8},{13.2,8},{31.5,8}},
               color={255,0,255},
@@ -10484,9 +10473,9 @@ This is the same model as
             annotation (Line(
               points={{42.75,-24.5},{42.75,-42},{42,-54},{30.0781,-54},{-48.4011,
                   -54},{-70,-54},{-70,-31.875},{-70,46.3043},{-70,64},{-56,64}},
-
               color={255,127,0},
               smooth=Smooth.Bezier));
+
           connect(displayController.date_signal, display_node.date_setting)
             annotation (Line(
               points={{50.25,-24.5},{50,-42},{50,-58},{34.3122,-58},{-47.3592,-58},
@@ -10498,9 +10487,9 @@ This is the same model as
             annotation (Line(
               points={{57.75,-24.5},{57.75,-24.5},{57.75,-64},{37.9612,-64},{-53.2983,
                   -64},{-82,-64},{-82,-35.875},{-82,45.0784},{-82,64},{-56,64}},
-
               color={255,127,0},
               smooth=Smooth.Bezier));
+
           connect(displayController.stopwatch_signal, display_node.stopwatch_time)
             annotation (Line(
               points={{65.25,-24.5},{65.25,-24.5},{65.25,-70},{31.5417,-70},{0,
@@ -10512,9 +10501,9 @@ This is the same model as
             annotation (Line(
               points={{72.75,-24.5},{72.75,-24.5},{72.75,-76},{34.946,-76},{-66,
                   -76},{-94,-76},{-94,-50.0234},{-94,32.3763},{-94,64},{-56,64}},
-
               color={255,127,0},
               smooth=Smooth.Bezier));
+
           connect(displayController.large_digit_1, large_digit1) annotation (
               Line(
               points={{75.25,13},{80,13},{80,20.8909},{80,59.9785},{80,80},{110,
@@ -10570,9 +10559,9 @@ This is the same model as
             Documentation(info="<html>
 <p>The watch controller contains the clock functionality, gathering of stopwatch signals, time settings and modes from different parts of the wristwatch that are gathered, grouped together and finally decoded into outputs to the LED display.</p>
 </html>"));
-          end WatchController;
-        end Utilities;
-      end HarelsWristWatch;
+        end WatchController;
+      end Utilities;
+    end HarelsWristWatch;
 
     model Deadlock
       "Example with two processes sharing two resources ending up in a deadlock situation after 5 seconds"
@@ -10722,7 +10711,7 @@ This is the same model as
         annotation (Placement(transformation(extent={{-64,-64},{-56,-56}})));
       Modelica.Blocks.Logical.FallingEdge fallingEdge1
         annotation (Placement(transformation(extent={{64,-64},{56,-56}})));
-      equation
+    equation
       connect(request1.inPort, free1.outPort[1]) annotation (Line(
           points={{-20,38},{-20,44},{-1,44},{-1,49.4}},
           color={0,0,0},
@@ -10851,9 +10840,9 @@ This is the same model as
           smooth=Smooth.Bezier));
       connect(requesting1.activePort, request1.conditionPort) annotation (Line(
           points={{-71.28,20},{-71.28,20},{-60,20},{-60,34},{-44.79,34},{-25,34}},
-
           color={255,0,255},
           smooth=Smooth.Bezier));
+
       connect(request4.outPort, s4.inPort[1]) annotation (Line(
           points={{20,-57},{20,-59.5},{20,-62}},
           color={0,0,0},
@@ -10869,9 +10858,9 @@ This is the same model as
           smooth=Smooth.Bezier));
       connect(s1.activePort, reserved1.conditionPort) annotation (Line(
           points={{-24.72,20},{-24.72,20},{-42.6012,20},{-60,20},{-60,4},{-71,4}},
-
           color={255,0,255},
           smooth=Smooth.Bezier));
+
       connect(s3.activePort, reserved3.conditionPort) annotation (Line(
           points={{-24.72,-66},{-24.72,-66},{-44,-66},{-44,-51.6738},{-44,-36},
               {-63.0898,-36},{-71,-36}},
@@ -10898,7 +10887,6 @@ This is the same model as
           smooth=Smooth.Bezier));
       connect(requesting2.activePort, request4.conditionPort) annotation (Line(
           points={{71.28,20},{40,20},{40,-13.3281},{40,-27.1125},{40,-52},{25,-52}},
-
           color={255,0,255},
           smooth=Smooth.Bezier));
 
@@ -10916,14 +10904,14 @@ This is the same model as
           smooth=Smooth.Bezier));
       connect(fallingEdge1.y, release2.conditionPort) annotation (Line(
           points={{55.6,-60},{48,-60},{48,-39.0564},{48,-12.4063},{48,6},{25,6}},
-
           color={255,0,255},
           smooth=Smooth.Bezier));
+
       connect(fallingEdge1.y, release4.conditionPort) annotation (Line(
           points={{55.6,-60},{50,-60},{50,-70},{50,-80},{37.8662,-80},{25,-80}},
-
           color={255,0,255},
           smooth=Smooth.Bezier));
+
       annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
                 -100},{100,100}}), graphics={Text(
                     extent={{-74,94},{-74,82}},
@@ -10938,7 +10926,7 @@ This is the same model as
                     extent={{0,-6},{0,-18}},
                     lineColor={0,0,0},
                     textString="Resource 2")}), experiment(StopTime=10));
-      end Deadlock;
+    end Deadlock;
 
     end Applications;
 
@@ -10965,7 +10953,7 @@ This is the same model as
       Modelica_StateGraph2.Transition T3
         annotation (Placement(transformation(extent={{2,4},{10,-4}})));
 
-      equation
+    equation
       connect(step1.outPort[1], T1.inPort) annotation (Line(
           points={{-20,29.4},{-20,20}},
           color={0,0,0},
@@ -10990,7 +10978,7 @@ This is the same model as
           points={{6,5},{6,38},{6,50},{-6,50},{-20,50},{-20,38}},
           color={0,0,0},
           smooth=Smooth.Bezier));
-      end SimpleInfiniteLoop;
+    end SimpleInfiniteLoop;
 
     model SeveralInfiniteLoops
       "Several loops that have wrongly only one delayed transition in one of the loops, but not in all"
@@ -11027,7 +11015,7 @@ This is the same model as
         annotation (Placement(transformation(extent={{12,34},{20,26}})));
       Modelica_StateGraph2.Transition T8(waitTime=1, delayedTransition=false)
         annotation (Placement(transformation(extent={{38,34},{46,26}})));
-      equation
+    equation
 
       connect(initialStep.outPort[1], T1.inPort) annotation (Line(
           points={{-40,27.4},{-40,18}},
@@ -11101,7 +11089,7 @@ This is the same model as
           smooth=Smooth.Bezier));
       annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
                 -100},{100,100}}), graphics));
-      end SeveralInfiniteLoops;
+    end SeveralInfiniteLoops;
 
     model InfiniteLoop
       "A wrong Modelica_StateGraph2 with infinite looping of a composite step (translates with an error)"
@@ -11132,7 +11120,7 @@ This is the same model as
         use_conditionPort=false,
         delayedTransition=false)
         annotation (Placement(transformation(extent={{46,4},{54,-4}})));
-      equation
+    equation
       connect(step1.outPort[1], T1.inPort) annotation (Line(
           points={{-6,65.4},{-6,60}},
           color={0,0,0},
@@ -11169,7 +11157,7 @@ This is the same model as
           smooth=Smooth.Bezier));
       annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
                 -100},{100,100}}), graphics));
-      end InfiniteLoop;
+    end InfiniteLoop;
 
     model ParallelWithInfiniteLoop
       "A wrong Modelica_StateGraph2 to demonstrate parallel execution paths with infinite looping ((translates with an error))"
@@ -11202,7 +11190,7 @@ This is the same model as
         use_conditionPort=false,
         delayedTransition=false)
         annotation (Placement(transformation(extent={{52,6},{60,-2}})));
-      equation
+    equation
       connect(step1.outPort[1], T1.inPort) annotation (Line(
           points={{0,67.4},{0,62}},
           color={0,0,0},
@@ -11249,7 +11237,7 @@ This is the same model as
           smooth=Smooth.Bezier));
       annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
                 -100},{100,100}}), graphics));
-      end ParallelWithInfiniteLoop;
+    end ParallelWithInfiniteLoop;
 
     model NoInitialStep "An initial step is missing"
       extends Modelica.Icons.Example;
@@ -11268,7 +11256,7 @@ This is the same model as
         annotation (Placement(transformation(extent={{-4,-24},{4,-16}})));
       Modelica_StateGraph2.Transition T3(delayedTransition=true, waitTime=1)
         annotation (Placement(transformation(extent={{26,18},{34,10}})));
-      equation
+    equation
 
       connect(initialStep.outPort[1], T1.inPort) annotation (Line(
           points={{0,43.4},{0,34}},
@@ -11303,7 +11291,7 @@ This is the same model as
         Documentation(info="<html>
 
 </html>"));
-      end NoInitialStep;
+    end NoInitialStep;
 
     model AutonomousWithSuspendAndNoInitialStep
       "Autonomous parallel with suspend/resume (either the parallel should have initialStep= true or an initial step is missing in the resume branch)"
@@ -11345,7 +11333,7 @@ This is the same model as
             origin={-66,-12})));
       Modelica_StateGraph2.Transition T6(delayedTransition=true, waitTime=1)
         annotation (Placement(transformation(extent={{-4,-26},{4,-18}})));
-      equation
+    equation
       connect(step3.outPort[1], T2.inPort) annotation (Line(
           points={{0,17.4},{0,12}},
           color={0,0,0},
@@ -11377,9 +11365,9 @@ This is the same model as
           smooth=Smooth.None));
       connect(T5.outPort, parallel.resume[1]) annotation (Line(
           points={{-66,-17},{-66,-17},{-66,-26.125},{-57.3594,-26.125},{-38,-26.125}},
-
           color={0,0,0},
           smooth=Smooth.Bezier));
+
       connect(T6.outPort, step3.inPort[2]) annotation (Line(
           points={{0,-27},{0,-27},{0,-38},{9.76428,-38},{14.8789,-38},{26,-38},
               {26,-27.1695},{26,25.7383},{26,36},{15.3409,36},{9.12988,36},{1,
@@ -11389,7 +11377,7 @@ This is the same model as
       annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
               preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
             graphics));
-      end AutonomousWithSuspendAndNoInitialStep;
+    end AutonomousWithSuspendAndNoInitialStep;
 
     model TwoInitialSteps
       "A wrong Modelica_StateGraph2 that has two initial steps (gives an error during initialization)"
@@ -11413,7 +11401,7 @@ This is the same model as
         annotation (Placement(transformation(extent={{-24,-38},{-16,-30}})));
       Modelica_StateGraph2.Transition T3(delayedTransition=true, waitTime=1)
         annotation (Placement(transformation(extent={{16,4},{24,-4}})));
-      equation
+    equation
       connect(step1.outPort[1], T1.inPort) annotation (Line(
           points={{-20,29.4},{-20,20}},
           color={0,0,0},
@@ -11443,7 +11431,7 @@ This is the same model as
       annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
               preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
             graphics));
-      end TwoInitialSteps;
+    end TwoInitialSteps;
 
     model ParallelWithTwoInitialSteps
       "Wrong Modelica_StateGraph2 with two initial steps"
@@ -11472,7 +11460,7 @@ This is the same model as
         annotation (Placement(transformation(extent={{6,-34},{14,-26}})));
       Modelica_StateGraph2.Transition T3(delayedTransition=true, waitTime=1)
         annotation (Placement(transformation(extent={{-24,-16},{-16,-8}})));
-      equation
+    equation
       connect(step3.outPort[1], T2.inPort) annotation (Line(
           points={{10,13.4},{10,6}},
           color={0,0,0},
@@ -11511,7 +11499,7 @@ This is the same model as
       annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
               preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
             graphics));
-      end ParallelWithTwoInitialSteps;
+    end ParallelWithTwoInitialSteps;
 
     model UnsafeParallel1
       "Wrong Modelica_StateGraph2 that branches out of the parallel step (gives error during initialization)"
@@ -11548,7 +11536,7 @@ This is the same model as
         annotation (Placement(transformation(extent={{-10,50},{-2,58}})));
       Modelica_StateGraph2.Transition T5(waitTime=1, delayedTransition=false)
         annotation (Placement(transformation(extent={{48,-2},{56,-10}})));
-      equation
+    equation
       connect(step3.outPort[1], T2.inPort) annotation (Line(
           points={{10,13.4},{10,6}},
           color={0,0,0},
@@ -11593,9 +11581,9 @@ This is the same model as
           smooth=Smooth.Bezier));
       connect(step4.outPort[2], T5.inPort) annotation (Line(
           points={{11,-18.6},{11,-22},{15.7578,-22},{40,-22},{52,-22},{52,-10}},
-
           color={0,0,0},
           smooth=Smooth.Bezier));
+
       connect(T5.outPort, step1.inPort[1]) annotation (Line(
           points={{52,-1},{52,70.8145},{52,82},{38.4603,82},{4.02539,82},{-6,82},
               {-6,74}},
@@ -11604,7 +11592,7 @@ This is the same model as
       annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
               preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
             graphics));
-      end UnsafeParallel1;
+    end UnsafeParallel1;
 
     model UnsafeParallel2
       "Wrong Modelica_StateGraph2 where not all parallel paths are synchronized (gives translation error)"
@@ -11642,7 +11630,7 @@ This is the same model as
         annotation (Placement(transformation(extent={{-10,52},{-2,60}})));
       Modelica_StateGraph2.Transition T5(waitTime=1, delayedTransition=false)
         annotation (Placement(transformation(extent={{48,14},{56,6}})));
-      equation
+    equation
       connect(step3.outPort[1], T2.inPort) annotation (Line(
           points={{10,7.4},{10,0}},
           color={0,0,0},
@@ -11674,9 +11662,9 @@ This is the same model as
           smooth=Smooth.Bezier));
       connect(T5.outPort, step5.inPort[1]) annotation (Line(
           points={{52,15},{52,70},{52,90},{34,90},{9.11719,90},{-6,90},{-6,76}},
-
           color={0,0,0},
           smooth=Smooth.Bezier));
+
       connect(parallel.entry[1], step2.inPort[1]) annotation (Line(
           points={{-7.9,37.5},{-8,37.5},{-8,30},{-13.332,30},{-20,30},{-20,
               21.7832},{-20,16}},
@@ -11701,7 +11689,7 @@ This is the same model as
       annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
               preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
             graphics));
-      end UnsafeParallel2;
+    end UnsafeParallel2;
 
     model UnsafeParallel3
       "Wrong Modelica_StateGraph2 where not all parallel paths are synchronized (gives translation error)"
@@ -11741,7 +11729,7 @@ This is the same model as
         annotation (Placement(transformation(extent={{-10,52},{-2,60}})));
       Modelica_StateGraph2.Transition T5(waitTime=1, delayedTransition=false)
         annotation (Placement(transformation(extent={{48,14},{56,6}})));
-      equation
+    equation
       connect(step3.outPort[1], T2.inPort) annotation (Line(
           points={{10,13.4},{10,6}},
           color={0,0,0},
@@ -11782,9 +11770,9 @@ This is the same model as
           smooth=Smooth.Bezier));
       connect(parallel.entry[1], step2.inPort[1]) annotation (Line(
           points={{-7.9,37.5},{-8,37.5},{-8,30},{-13.1094,30},{-20,30},{-20,16}},
-
           color={0,0,0},
           smooth=Smooth.Bezier));
+
       connect(parallel.entry[2], step3.inPort[1]) annotation (Line(
           points={{-4.1,37.5},{-4,34},{-4,30},{3.55371,30},{9,30},{9,22}},
           color={0,0,0},
@@ -11802,7 +11790,7 @@ This is the same model as
       annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
               preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
             graphics));
-      end UnsafeParallel3;
+    end UnsafeParallel3;
 
     model UnsafeParallel4
       "Wrong Modelica_StateGraph2 where not all parallel paths are synchronized and a wrong initial step is added to compensate for this (gives an error during initialization)"
@@ -11842,7 +11830,7 @@ This is the same model as
         annotation (Placement(transformation(extent={{48,14},{56,6}})));
       Modelica_StateGraph2.Step step6(nOut=1, initialStep=true)
         annotation (Placement(transformation(extent={{-8,-32},{0,-24}})));
-      equation
+    equation
       connect(step3.outPort[1], T2.inPort) annotation (Line(
           points={{16,13.4},{16,8}},
           color={0,0,0},
@@ -11879,9 +11867,9 @@ This is the same model as
           smooth=Smooth.Bezier));
       connect(parallel.entry[1], step2.inPort[1]) annotation (Line(
           points={{-7.9,37.5},{-8,37.5},{-8,30},{-17.5391,30},{-30,30},{-30,16}},
-
           color={0,0,0},
           smooth=Smooth.Bezier));
+
       connect(parallel.entry[2], step3.inPort[1]) annotation (Line(
           points={{-4.1,37.5},{-4,34},{-4,30},{2.875,30},{16,30},{16,22}},
           color={0,0,0},
@@ -11898,7 +11886,7 @@ This is the same model as
       annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
               preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
             graphics));
-      end UnsafeParallel4;
+    end UnsafeParallel4;
 
     model UnsafeParallel5
       "Wrong Modelica_StateGraph2 where an initial step is placed in a parallel (gives translation error)"
@@ -11936,7 +11924,7 @@ This is the same model as
         annotation (Placement(transformation(extent={{-10,52},{-2,60}})));
       Modelica_StateGraph2.Transition T5(waitTime=1, delayedTransition=false)
         annotation (Placement(transformation(extent={{48,14},{56,6}})));
-      equation
+    equation
       connect(step3.outPort[1], T2.inPort) annotation (Line(
           points={{10,7.4},{10,0}},
           color={0,0,0},
@@ -11995,7 +11983,7 @@ This is the same model as
       annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
               preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
             graphics));
-      end UnsafeParallel5;
+    end UnsafeParallel5;
 
     model NoUnaryConnection1
       "Two steps are wrongly connected to the same outPort of a transition"
@@ -12016,7 +12004,7 @@ This is the same model as
         annotation (Placement(transformation(extent={{16,-38},{24,-30}})));
       Modelica_StateGraph2.Transition T3
         annotation (Placement(transformation(extent={{-24,-38},{-16,-30}})));
-      equation
+    equation
       connect(T1.outPort, step1.inPort[1]) annotation (Line(
           points={{0,9},{0,0},{-9.76563,0},{-20,0},{-20,-12}},
           color={0,0,0},
@@ -12051,7 +12039,7 @@ This is the same model as
       annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
               preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
             graphics));
-      end NoUnaryConnection1;
+    end NoUnaryConnection1;
 
     model NoUnaryConnection2
       "Two steps are wrongly connected to one element of an entry port"
@@ -12067,7 +12055,7 @@ This is the same model as
         annotation (Placement(transformation(extent={{-16,10},{-8,18}})));
       Modelica_StateGraph2.Step step2(nIn=1)
         annotation (Placement(transformation(extent={{8,10},{16,18}})));
-      equation
+    equation
       connect(step4.entry[1], step1.inPort[1]) annotation (Line(
           points={{0,34.3},{0,26},{-6,26},{-12,26},{-12,20.6719},{-12,18}},
           color={0,0,0},
@@ -12079,11 +12067,9 @@ This is the same model as
       annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
               preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
             graphics));
-      end NoUnaryConnection2;
-    end WrongStateGraphs;
-
+    end NoUnaryConnection2;
+  end WrongStateGraphs;
   end Examples;
-
 
 model Step "Step (optionally with initial step and/or activePort)"
   parameter Integer nIn(min=0) = 0 "Number of input connections"
@@ -12125,7 +12111,7 @@ protected
   Boolean inport_fire;
   Boolean outport_fire;
 
-  equation
+equation
   // set active state
   inport_fire = Modelica_StateGraph2.Blocks.BooleanFunctions.anyTrue(inPort.fire);
   outport_fire = Modelica_StateGraph2.Blocks.BooleanFunctions.anyTrue(outPort.fire);
@@ -12250,14 +12236,14 @@ In the following table different configurations of a Step are shown:
     </tr>
 
 <tr><td> Default step</td>
-    <td><img src=\"../Images/StateGraph/Elements/Step-default.png\"></td>
+    <td><img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/Step-default.png\"></td>
     <td> If the step is active, the public Step variable &quot;active&quot; is <b>true</b>
          otherwise, it is <b>false</b>. An active Step is visualized by a green
          fill color in diagram animation.</td>
     </tr>
 
 <tr><td> use_activePort = <b>true</b></td>
-    <td><img src=\"../Images/StateGraph/Elements/Step-use_activePort.png\"></td>
+    <td><img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/Step-use_activePort.png\"></td>
     <td>If the step is active, the connector &quot;activePort&quot; is <b>true</b>
         otherwise, it is <b>false</b> (the activePort is the small, violet, triangle
         at the rigth side of the Step icon). Actions may be triggered, e.g., by connecting block
@@ -12265,7 +12251,7 @@ In the following table different configurations of a Step are shown:
         to the activePort.</td></tr>
 
 <tr><td> initialStep = <b>true</b></td>
-    <td><img src=\"../Images/StateGraph/Elements/Step-initial.png\"></td>
+    <td><img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/Step-initial.png\"></td>
     <td> Exactly <u>one</u> Step or Parallel component in a StateGraph2 graph
          must have &quot;initialStep = <b>true</b>&quot;. At the first model evaluation
          during initialization, &quot;active&quot; is set to <b>true</b> for
@@ -12322,8 +12308,7 @@ in the tutorial.
         preserveAspectRatio=true,
         initialScale=0.04,
         grid={1,1}), graphics));
-  end Step;
-
+end Step;
 
 model Transition
   "Transition between steps (optionally with delayed transition and/or condition input port)"
@@ -12383,12 +12368,12 @@ protected
   Modelica.SIunits.Time t_start
     "Time instant at which the transition would fire, if waitTime would be zero";
   Modelica.Blocks.Interfaces.BooleanInput localCondition;
-  initial equation
+initial equation
   pre(enableFire) = false;
   if delayedTransition then
     pre(t_start) = 0;
   end if;
-  equation
+equation
   // Handle conditional conditionPort
   connect(conditionPort, localCondition);
   if not use_conditionPort then
@@ -12490,7 +12475,7 @@ protected
           smooth=Smooth.None)}),
     Documentation(info="<html>
 <p>
-<img src=\"../Images/StateGraph/Elements/SimpleStateGraph.png\" align=\"right\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/SimpleStateGraph.png\" align=\"right\">
 To define a possible change of states, a Transition is connected to the output of the preceding Step and to the input of the succeeding Step, see figure to the right, where Transition t1 defines the transition from Step s1 to Step s2. Note: A Transition has exactly one preceding and one succeeding Step. A Transition is said to be enabled if the preceding step is active. An enabled transition is said to be fireable when the Boolean condition defined in the parameter menu of the transition is evaluated to <b>true</b>. This condition is also called <u>Transition condition</u> and is displayed in the icon of the Transition (e.g., &quot;time &gt; 1&quot; is the condition of Transition t1). When parameter <u>use_conditionPort</u> is set, the Transition condition is alternatively defined by a Boolean signal that is connected to the enabled <u>conditionPort</u>.
 </p>
 
@@ -12510,26 +12495,26 @@ In the following table different configurations of a Transition are shown:
     <th>Description</th></tr>
 
 <tr><td>Default transition</td>
-    <td><img src=\"../Images/StateGraph/Elements/Transition-default.png\"></td>
+    <td><img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/Transition-default.png\"></td>
     <td>The transition fires when the preceding step is active
         and the expression &quot;condition&quot; in the parameter menu is <b>true</b>.</td>
     </tr>
 
 <tr><td>use_conditionPort = <b>true</b></td>
-    <td><img src=\"../Images/StateGraph/Elements/Transition-use_conditionPort.png\"></td>
+    <td><img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/Transition-use_conditionPort.png\"></td>
     <td>The transition fires when the preceding step is active
         and connector &quot;conditionPort&quot; is <b>true</b>.</td>
     </tr>
 
 <tr><td>delayedTransition = <b>true</b></td>
-    <td><img src=\"../Images/StateGraph/Elements/Transition-delayedTransition.png\"></td>
+    <td><img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/Transition-delayedTransition.png\"></td>
     <td>The transition fires after the delay time &quot;waitTime&quot; (here: 1.23 s),
         if the preceding step was active, and &quot;condition = <b>true</b>&quot;
         during the entire delay time.</td>
     </tr>
 
 <tr><td>use_firePort = <b>true</b></td>
-    <td><img src=\"../Images/StateGraph/Elements/Transition-use_firePort.png\"></td>
+    <td><img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/Transition-use_firePort.png\"></td>
     <td>Connector &quot;firePort&quot; is <b>true</b> when the transition fires.
         Actions may be triggered, e.g., by connecting block
         <a href=\"modelica://Modelica_StateGraph2.Blocks.MathBoolean.MultiSwitch\">MultiSwitch</a>
@@ -12538,7 +12523,7 @@ In the following table different configurations of a Transition are shown:
 
 <tr><td>loopCheck = <b>false</b><br>
         (in &quot;Advanced&quot; tab)</td>
-    <td><img src=\"../Images/StateGraph/Elements/Transition-noLoopCheck.png\"></td>
+    <td><img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/Transition-noLoopCheck.png\"></td>
     <td>It is <u>not</u> checked whether the loop in which this Transition
         is used, has at least one delayed transition.
         Use this option only, if you are completley sure that
@@ -12552,7 +12537,7 @@ In the following table different configurations of a Transition are shown:
 </blockquote>
 
 <p>
-<img src=\"../Images/StateGraph/Elements/SimpleInfiniteLoop.png\" align=\"right\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/SimpleInfiniteLoop.png\" align=\"right\">
 At an event instant, an iteration occurs, due to the Modelica semantics (= whenever a new event occurs, the model is re-evaluated). This means that Transitions keep firing along a connected graph, as long as the firing conditions are true. In principal, it is therefore possible that infinite event looping occurs.
 A simple example of this kind is shown in the figure to the right. Here, all Transition conditions are true and therefore all Transitions would fire forever at the initial time. This is, however, no valid StateGraph2 model and will result in a translation error, since it is required that a StateGraph2 model has at least one delayed Transition per loop.
 This means that one of T1, T2, or T3, must have parameter delayedTransition=<b>true</b>. Since event iteration stops at a delayed Transition, infinite event looping cannot occur. This also means that at one time instant every Transition can fire at most once and therefore the number of model evaluations at an event instant is bounded by the number of Transition components.
@@ -12577,8 +12562,7 @@ There are rare situations, where infinite event looping cannot occur even if the
         preserveAspectRatio=true,
         extent={{-100,-100},{100,100}},
         grid={1,1}), graphics));
-  end Transition;
-
+end Transition;
 
 model LoopBreakingTransition
   "Transition to break loops by introducing an artificial time delay (immediately fire and then wait)"
@@ -12644,7 +12628,7 @@ protected
     final loopCheck=false,
     final condition=true)
     annotation (Placement(transformation(extent={{5,-5},{-5,5}})));
-  equation
+equation
   fire = T1.fire;
   assert(waitTime >= 1e-8,
     "Parameter waitTime >= 1e-8 required, but waitTime = " + String(waitTime));
@@ -12759,9 +12743,9 @@ as shown in the following table:
     <th>Equivalent system</th>
     </tr>
 <tr><td align=\"center\" valign=\"middle\">
-    <img src=\"../Images/StateGraph/Elements/LoopBreakingTransition.png\"></td>
+    <img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/LoopBreakingTransition.png\"></td>
     <td>
-    <img src=\"../Images/StateGraph/Elements/LoopBreakingTransition-details.png\"></td>
+    <img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/LoopBreakingTransition-details.png\"></td>
     </tr>
 </table>
 </blockquote>
@@ -12777,21 +12761,21 @@ In the following table different configurations of a LoopBreakingTransition are 
     <th>Description</th></tr>
 
 <tr><td>Default transition</td>
-    <td><img src=\"../Images/StateGraph/Elements/LoopBreakingTransition-default.png\"></td>
+    <td><img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/LoopBreakingTransition-default.png\"></td>
     <td>The LoopBreakingTransition fires when the preceding step is active
         and the expression &quot;condition&quot; in the parameter menu is <b>true</b>.
         After a &quot;waitTime&quot; (here: 0.001&nbsp;s) the succeding step is activated.</td>
     </tr>
 
 <tr><td>use_conditionPort = <b>true</b></td>
-    <td><img src=\"../Images/StateGraph/Elements/LoopBreakingTransition-use_conditionPort.png\"></td>
+    <td><img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/LoopBreakingTransition-use_conditionPort.png\"></td>
     <td>The LoopBreakingTransition fires when the preceding step is active
         and connector &quot;conditionPort&quot; is <b>true</b>.
         After a &quot;waitTime&quot; (here: 0.001&nbsp;s) the succeding step is activated.</td>
     </tr>
 
 <tr><td>use_firePort = <b>true</b></td>
-    <td><img src=\"../Images/StateGraph/Elements/LoopBreakingTransition-use_firePort.png\"></td>
+    <td><img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/LoopBreakingTransition-use_firePort.png\"></td>
     <td>Connector &quot;firePort&quot; is <b>true</b> when the LoopBreakingTransition fires
         and the internal Step of this element is activated.
         Actions may be triggered, e.g., by connecting block
@@ -12807,8 +12791,7 @@ In the following table different configurations of a LoopBreakingTransition are 
         preserveAspectRatio=true,
         extent={{-100,-100},{100,100}},
         grid={1,1}), graphics));
-  end LoopBreakingTransition;
-
+end LoopBreakingTransition;
 
 model Parallel "Composite or parallel step"
   extends Modelica_StateGraph2.Internal.Interfaces.PartialParallelBase;
@@ -12819,8 +12802,8 @@ model Parallel "Composite or parallel step"
   Modelica_StateGraph2.Internal.Interfaces.Step_out outPort[nOut] if
     use_outPort "If enabled, port for one or more output transitions"
     annotation (Placement(iconTransformation(extent={{-15,-84},{15,-80}})));
-  Modelica_StateGraph2.Internal.Interfaces.Composite_suspend suspend[nSuspend]
-    if use_suspend "If enabled, port for zero, one or more suspend transitions"
+  Modelica_StateGraph2.Internal.Interfaces.Composite_suspend suspend[nSuspend] if
+       use_suspend "If enabled, port for zero, one or more suspend transitions"
     annotation (Placement(iconTransformation(extent={{-66,59},{-60,31}})));
   Modelica_StateGraph2.Internal.Interfaces.Composite_resume resume[nResume] if
     use_suspend "If enabled, port for zero, one or more resume transitions"
@@ -12839,7 +12822,7 @@ model Parallel "Composite or parallel step"
     "= true if Parallel component is active, otherwise it is not active"
     annotation (Placement(iconTransformation(extent={{60,-2.5},{65,2.5}})));
 
-  equation
+equation
   // Handle conditional connectors
   connect(inPort, local_inPort);
   connect(outPort, local_outPort);
@@ -12942,7 +12925,7 @@ is shown in the next Figure (component &quot;p&quot;):
 
 
 <blockquote>
-<img src=\"../Images/StateGraph/Elements/Parallel.png\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/Parallel.png\">
 </blockquote>
 
 <p>
@@ -12952,25 +12935,24 @@ In the following table different configurations of a Parallel component are show
 <blockquote>
 <table cellspacing=\"0\" cellpadding=\"4\" border=\"1\" width=\"400\">
 <tr><td>use_inPort=<b>true</b><br>&nbsp;<br>
-        <img src=\"../Images/StateGraph/Elements/Parallel-inPort.png\"></td>
+        <img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/Parallel-inPort.png\"></td>
     <td>use_inPort=<b>true</b><br>
         use_outPort=<b>true</b><br>&nbsp;<br>
-        <img src=\"../Images/StateGraph/Elements/Parallel-inPort-and-outPort.png\"></td>
+        <img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/Parallel-inPort-and-outPort.png\"></td>
     </tr>
 
 <tr><td>use_inPort=<b>true</b><br>
         use_suspend=<b>true</b><br>
         use_activePort=<b>true</b><br>&nbsp;<br>
-        <img src=\"../Images/StateGraph/Elements/Parallel-suspend-use_activePort.png\"></td>
+        <img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/Parallel-suspend-use_activePort.png\"></td>
     <td>initialStep=<b>true</b><br>&nbsp;<br>
-        <img src=\"../Images/StateGraph/Elements/Parallel-initialStep.png\"></td>
+        <img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/Parallel-initialStep.png\"></td>
     </tr>
 </table>
 </blockquote>
 
 </html>"));
-  end Parallel;
-
+end Parallel;
 
 partial model PartialParallel
   "Partial compont to construct a parallel submodel via inheritance"
@@ -12988,8 +12970,8 @@ partial model PartialParallel
   Modelica_StateGraph2.Internal.Interfaces.Composite_resume resume[nResume] if
     use_suspend "If enabled, port for zero, one or more resume transitions"
     annotation (Placement(iconTransformation(extent={{-208,-160},{-193,-80}})));
-  Modelica_StateGraph2.Internal.Interfaces.Composite_suspend suspend[nSuspend]
-    if use_suspend "If enabled, port for zero, one or more suspend transitions"
+  Modelica_StateGraph2.Internal.Interfaces.Composite_suspend suspend[nSuspend] if
+       use_suspend "If enabled, port for zero, one or more suspend transitions"
     annotation (Placement(iconTransformation(extent={{-216,160},{-200,80}})));
 
   Modelica.Blocks.Interfaces.BooleanOutput activePort=active if use_activePort
@@ -13003,7 +12985,7 @@ protected
   Modelica_StateGraph2.Internal.Interfaces.ExitPort exit[nExit] if use_outPort
     "If enabled, synchronization port for one or more branches (Step or Parallel components must be connected to this port)"
     annotation (Placement(transformation(extent={{-60,-110},{60,-100}})));
-  equation
+equation
   // Handle conditional connectors
   connect(inPort, local_inPort);
   connect(outPort, local_outPort);
@@ -13085,13 +13067,12 @@ The Figure below shows a component (&quot;s2&quot;) built from a PartialParallel
 </p>
 
 <blockquote>
-<img src=\"../Images/StateGraph/Elements/PartialParallel.png\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/PartialParallel.png\">
 </blockquote>
 
 
 </html>"));
-  end PartialParallel;
-
+end PartialParallel;
 
 package Blocks
   "Input/output blocks that are designed for StateGraph2 but shall be included in the Modelica Standard Library"
@@ -13112,7 +13093,7 @@ package Blocks
         annotation (Placement(transformation(extent={{-130,-15},{-100,15}})));
 
       Modelica.Blocks.Interfaces.BooleanOutput active2;
-      equation
+    equation
       if use_activePort then
         connect(activePort, active2);
       else
@@ -13131,71 +13112,71 @@ package Blocks
                     lineColor={0,0,0},
                     pattern=LinePattern.None,
                     fillPattern=FillPattern.Sphere)}));
-      end ShowValue;
+    end ShowValue;
 
     block And "Logical 'and': y = u[1] and u[2] and ... and u[nu]"
       extends Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO;
 
-      equation
+    equation
       y = Modelica_StateGraph2.Blocks.BooleanFunctions.allTrue(u);
       annotation (defaultComponentName="and1", Icon(graphics={Text(
                     extent={{-76,40},{60,-40}},
                     lineColor={0,0,0},
                     textString="and")}));
-      end And;
+    end And;
 
     block Or "Logical 'or': y = u[1] or u[2] or ... or u[nu]"
       extends Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO;
 
-      equation
+    equation
       y = Modelica_StateGraph2.Blocks.BooleanFunctions.anyTrue(u);
       annotation (defaultComponentName="or1", Icon(graphics={Text(
                     extent={{-80,40},{60,-40}},
                     lineColor={0,0,0},
                     textString="or")}));
-      end Or;
+    end Or;
 
     block Xor
       "Logical 'xor': y = oneTrue(u)  (y is true, if exactly one element of u is true, otherwise it is false)"
       extends Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO;
 
-      equation
+    equation
       y = Modelica_StateGraph2.Blocks.BooleanFunctions.oneTrue(u);
       annotation (defaultComponentName="xor1", Icon(graphics={Text(
                     extent={{-80,40},{60,-40}},
                     lineColor={0,0,0},
                     textString="xor")}));
-      end Xor;
+    end Xor;
 
     block Nand "Logical 'nand': y = not ( u[1] and u[2] and ... and u[nu] )"
       extends Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO;
 
-      equation
+    equation
       y = not Modelica_StateGraph2.Blocks.BooleanFunctions.allTrue(u);
       annotation (defaultComponentName="nand1", Icon(graphics={Text(
                     extent={{-80,40},{60,-40}},
                     lineColor={0,0,0},
                     textString="nand")}));
-      end Nand;
+    end Nand;
 
     block Nor "Logical 'nor': y = not ( u[1] or u[2] or ... or u[nu] )"
       extends Modelica_StateGraph2.Blocks.Interfaces.PartialBooleanMISO;
 
-      equation
+    equation
       y = not Modelica_StateGraph2.Blocks.BooleanFunctions.anyTrue(u);
       annotation (defaultComponentName="or1", Icon(graphics={Text(
                     extent={{-80,40},{60,-40}},
                     lineColor={0,0,0},
                     textString="nor")}));
-      end Nor;
+    end Nor;
 
     block RisingEdge
       "Output y is true, if the input u has a rising edge, otherwise it is false (y = edge(u))"
       parameter Boolean pre_u_start=false "Value of pre(u) at initial time";
       extends Interfaces.PartialBooleanSISO;
-      initial equation
+    initial equation
       pre(u) = pre_u_start;
-      equation
+    equation
       y = edge(u);
       annotation (
         defaultComponentName="rising1",
@@ -13209,7 +13190,7 @@ time instant. At all other time instants, y = <b>false</b>.
 </p>
 
 </html>"));
-      end RisingEdge;
+    end RisingEdge;
 
     block FallingEdge
       "Output y is true, if the input u has a falling edge, otherwise it is false (y = edge(not u))"
@@ -13217,9 +13198,9 @@ time instant. At all other time instants, y = <b>false</b>.
       extends Interfaces.PartialBooleanSISO;
     protected
       Boolean not_u=not u annotation (HideResult=true);
-      initial equation
+    initial equation
       pre(not_u) = not pre_u_start;
-      equation
+    equation
       y = edge(not_u);
       annotation (
         defaultComponentName="falling1",
@@ -13233,15 +13214,15 @@ time instant. At all other time instants, y = <b>false</b>.
 </p>
 
 </html>"));
-      end FallingEdge;
+    end FallingEdge;
 
     block ChangingEdge
       "Output y is true, if the input u has either a rising or a falling edge and otherwise it is false (y=change(u))"
       parameter Boolean pre_u_start=false "Value of pre(u) at initial time";
       extends Interfaces.PartialBooleanSISO;
-      initial equation
+    initial equation
       pre(u) = pre_u_start;
-      equation
+    equation
       y = change(u);
       annotation (
         defaultComponentName="changing1",
@@ -13259,7 +13240,7 @@ time instant. At all other time instants, y = <b>false</b>.
 </p>
 
 </html>"));
-      end ChangingEdge;
+    end ChangingEdge;
 
     block MultiSwitch
       "Set Boolean expression that is associated with the first active input signal"
@@ -13286,7 +13267,7 @@ time instant. At all other time instants, y = <b>false</b>.
 
     protected
       Integer firstActiveIndex;
-      equation
+    equation
       firstActiveIndex = BooleanFunctions.firstTrueIndex(u);
       y = if firstActiveIndex == 0 then (if use_pre_as_default then pre(y)
          else y_default) else expr[firstActiveIndex];
@@ -13342,7 +13323,7 @@ false, y is set to parameter \"y_default\" or to pre(y) depending on the paramet
 </pre>
 
 </html>"));
-      end MultiSwitch;
+    end MultiSwitch;
 
     block OnDelay
       "Delay a rising edge of the input, but do not delay a falling edge."
@@ -13352,10 +13333,10 @@ false, y is set to parameter \"y_default\" or to pre(y) depending on the paramet
     protected
       Boolean delaySignal(start=false, fixed=true);
       discrete Modelica.SIunits.Time t_next;
-      initial equation
+    initial equation
       pre(u) = false;
       pre(t_next) = time - 1;
-      algorithm
+    algorithm
       when u then
         delaySignal := true;
         t_next := time + delayTime;
@@ -13363,7 +13344,7 @@ false, y is set to parameter \"y_default\" or to pre(y) depending on the paramet
         delaySignal := false;
         t_next := time - 1;
       end when;
-      equation
+    equation
       if delaySignal then
         y = time >= t_next;
       else
@@ -13389,13 +13370,13 @@ is shown in the next figure.
 </p>
 
 <p><blockquote>
-<img src=\"../Images/StateGraph/Actions/OnDelay1.png\"><br>
-<img src=\"../Images/StateGraph/Actions/OnDelay2.png\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Actions/OnDelay1.png\"><br>
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Actions/OnDelay2.png\">
 </blockquote></p>
 
 </html>"));
-      end OnDelay;
-    end MathBoolean;
+    end OnDelay;
+  end MathBoolean;
 
   package MathInteger "Blocks with input and output signals of type Integer"
 
@@ -13413,7 +13394,7 @@ is shown in the next figure.
         "Number to be shown in diagram layer if use_numberPort = true"
         annotation (Placement(transformation(extent={{-130,-15},{-100,15}})));
       Modelica.Blocks.Interfaces.IntegerOutput number2;
-      equation
+    equation
       if use_numberPort then
         connect(numberPort, number2);
       else
@@ -13435,12 +13416,12 @@ is shown in the next figure.
                     extent={{-150,-50},{150,-70}},
                     lineColor={0,0,0},
                     textString="%number")}));
-      end ShowValue;
+    end ShowValue;
 
     block Sum "Sum of Integers: y = k[1]*u[1] + k[2]*u[2] + ... + k[n]*u[n]"
       extends Modelica_StateGraph2.Blocks.Interfaces.PartialIntegerMISO;
       parameter Integer k[nu]=fill(1, nu) "Input gains";
-      equation
+    equation
       y = k*u;
 
       annotation (Icon(graphics={Text(
@@ -13454,11 +13435,11 @@ is shown in the next figure.
                     fillColor={255,213,170},
                     fillPattern=FillPattern.Solid,
                     textString="+")}));
-      end Sum;
+    end Sum;
 
     block Product "Product of Integer: y = u[1]*u[2]* ... *u[n]"
       extends Modelica_StateGraph2.Blocks.Interfaces.PartialIntegerMISO;
-      equation
+    equation
       y = product(u);
 
       annotation (Icon(graphics={Text(
@@ -13467,7 +13448,7 @@ is shown in the next figure.
                     fillColor={255,213,170},
                     fillPattern=FillPattern.Solid,
                     textString="*")}));
-      end Product;
+    end Product;
 
     block MultiSwitch
       "Set Integer expression that is associated with the first active input signal"
@@ -13493,9 +13474,9 @@ is shown in the next figure.
 
     protected
       Integer firstActiveIndex;
-      initial equation
+    initial equation
       pre(y) = y_default;
-      equation
+    equation
       firstActiveIndex = BooleanFunctions.firstTrueIndex(u);
       y = if firstActiveIndex > 0 then expr[firstActiveIndex] else if
         use_pre_as_default then pre(y) else y_default;
@@ -13551,7 +13532,7 @@ false, y is set to parameter \"y_default\" or to pre(y) depending on the paramet
 </pre>
 
 </html>"));
-      end MultiSwitch;
+    end MultiSwitch;
 
     block TriggeredAdd
       "Add input to previous value of output, if rising edge of trigger port"
@@ -13593,9 +13574,9 @@ false, y is set to parameter \"y_default\" or to pre(y) depending on the paramet
       Modelica.Blocks.Interfaces.BooleanOutput local_reset
         annotation (HideResult=true);
       Modelica.Blocks.Interfaces.IntegerOutput local_set;
-      initial equation
+    initial equation
       pre(y) = y_start;
-      equation
+    equation
       if use_reset then
         connect(reset, local_reset);
         if use_set then
@@ -13640,8 +13621,8 @@ false, y is set to parameter \"y_default\" or to pre(y) depending on the paramet
                     extent={{-28,-62},{94,-86}},
                     lineColor={0,0,0},
                     textString="reset")}));
-      end TriggeredAdd;
-    end MathInteger;
+    end TriggeredAdd;
+  end MathInteger;
 
   package MathReal "Blocks with input and output signals of type Real"
     block ShowValue
@@ -13661,7 +13642,7 @@ false, y is set to parameter \"y_default\" or to pre(y) depending on the paramet
         "Number to be shown in diagram layer if use_numberPort = true"
         annotation (Placement(transformation(extent={{-130,-15},{-100,15}})));
       Modelica.Blocks.Interfaces.RealOutput number2;
-      equation
+    equation
       if use_numberPort then
         connect(numberPort, number2);
       else
@@ -13683,12 +13664,12 @@ false, y is set to parameter \"y_default\" or to pre(y) depending on the paramet
                     extent={{-150,-50},{150,-70}},
                     lineColor={0,0,0},
                     textString="%number")}));
-      end ShowValue;
+    end ShowValue;
 
     block Sum "Sum of Reals: y = k[1]*u[1] + k[2]*u[2] + ... + k[n]*u[n]"
       extends Modelica_StateGraph2.Blocks.Interfaces.PartialRealMISO;
       parameter Real k[nu]=fill(1, nu) "Input gains";
-      equation
+    equation
       y = k*u;
 
       annotation (Icon(graphics={Text(
@@ -13702,11 +13683,11 @@ false, y is set to parameter \"y_default\" or to pre(y) depending on the paramet
                     fillColor={255,213,170},
                     fillPattern=FillPattern.Solid,
                     textString="+")}));
-      end Sum;
+    end Sum;
 
     block Product "Product of Reals: y = u[1]*u[2]* ... *u[n]"
       extends Modelica_StateGraph2.Blocks.Interfaces.PartialRealMISO;
-      equation
+    equation
       y = product(u);
 
       annotation (Icon(graphics={Text(
@@ -13715,7 +13696,7 @@ false, y is set to parameter \"y_default\" or to pre(y) depending on the paramet
                     fillColor={255,213,170},
                     fillPattern=FillPattern.Solid,
                     textString="*")}));
-      end Product;
+    end Product;
 
     block MultiSwitch
       "Set Real expression that is associated with the first active input signal"
@@ -13741,9 +13722,9 @@ false, y is set to parameter \"y_default\" or to pre(y) depending on the paramet
 
     protected
       Integer firstActiveIndex;
-      initial equation
+    initial equation
       pre(u) = fill(false, nu);
-      equation
+    equation
       firstActiveIndex = BooleanFunctions.firstTrueIndex(u);
       y = if firstActiveIndex == 0 then y_default else expr[firstActiveIndex];
       annotation (
@@ -13793,9 +13774,9 @@ false, y is set to parameter \"y_default\":
 </pre>
 
 </html>"));
-      end MultiSwitch;
+    end MultiSwitch;
 
-    end MathReal;
+  end MathReal;
 
   package BooleanFunctions
     "Functions with Boolean inputs (shall be included in Modelica Standard Library)"
@@ -13804,14 +13785,14 @@ false, y is set to parameter \"y_default\":
       extends Modelica.Icons.Function;
       input Boolean b[:];
       output Boolean result;
-      algorithm
+    algorithm
       result := true;
       for i in 1:size(b, 1) loop
         result := result and b[i];
       end for;
       annotation (Documentation(info="<html>
 </html>"));
-      end allTrue;
+    end allTrue;
 
     function anyTrue
       "Returns true, if at least on element of the Boolean input vector is true ('or')"
@@ -13819,12 +13800,12 @@ false, y is set to parameter \"y_default\":
       extends Modelica.Icons.Function;
       input Boolean b[:];
       output Boolean result;
-      algorithm
+    algorithm
       result := false;
       for i in 1:size(b, 1) loop
         result := result or b[i];
       end for;
-      end anyTrue;
+    end anyTrue;
 
     function oneTrue
       "Returns true, if exactly one element of the Boolean input vector is true ('xor')"
@@ -13834,18 +13815,18 @@ false, y is set to parameter \"y_default\":
       output Boolean result;
     protected
       Integer count=0;
-      algorithm
+    algorithm
       for i in 1:size(b, 1) loop
         count := if b[i] then count + 1 else count;
       end for;
       result := count == 1;
-      end oneTrue;
+    end oneTrue;
 
     function firstTrueIndex
       "Returns the index of the first element of the Boolean vector that is true and returns 0, if no element is true"
       input Boolean b[:];
       output Integer index;
-      algorithm
+    algorithm
       index := 0;
       for i in 1:size(b, 1) loop
         if b[i] then
@@ -13853,8 +13834,8 @@ false, y is set to parameter \"y_default\":
           return;
         end if;
       end for;
-      end firstTrueIndex;
-    end BooleanFunctions;
+    end firstTrueIndex;
+  end BooleanFunctions;
 
   package Interactive "Interactive components"
 
@@ -13873,10 +13854,10 @@ false, y is set to parameter \"y_default\":
       Modelica.Blocks.Sources.BooleanTable table(table=buttonTimeTable);
       parameter Integer nReset=size(reset, 1);
       Boolean pre_reset[nReset];
-      initial equation
+    initial equation
       pre(pre_reset) = fill(false, nReset);
       pre(reset) = fill(false, nReset);
-      algorithm
+    algorithm
       pre_reset := pre(reset);
       when pre_reset then
         on := false;
@@ -13967,7 +13948,7 @@ This gives the following result:
     </tr>
 </table>
 </html>"));
-      end RadioButtonSource;
+    end RadioButtonSource;
 
     model TrigButton
       "Button that sets its output y to true when pressing starts and otherwise sets its output to false"
@@ -13980,7 +13961,7 @@ This gives the following result:
       Boolean buttonState(start=false, fixed=true) annotation (HideResult=false);
       Boolean pre_buttonState(start=false, fixed=true)
         annotation (HideResult=false);
-      equation
+    equation
       when pre(buttonState) then
         buttonState = false;
       end when;
@@ -14003,7 +13984,7 @@ This gives the following result:
           interaction={OnMouseDownSetBoolean(buttonState, true)}), Diagram(
             coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
                 100}}), graphics));
-      end TrigButton;
+    end TrigButton;
 
     model PressButton
       "Button that sets its output y to true when pressed down and changed to false when button is released"
@@ -14015,7 +13996,7 @@ This gives the following result:
 
     protected
       Boolean buttonState(start=false, fixed=true) annotation (HideResult=false);
-      equation
+    equation
 
       //Dummy equation to make model check
       when false then
@@ -14044,7 +14025,7 @@ This gives the following result:
               OnMouseUpSetBoolean(buttonState, false)}),
         Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
                 {100,100}}), graphics));
-      end PressButton;
+    end PressButton;
 
     model ToggleButton
       "Button that sets its value to the opposite of its previous value when pressed down and then keeps this value until pressed anew"
@@ -14052,7 +14033,7 @@ This gives the following result:
       Modelica.Blocks.Interfaces.BooleanOutput y annotation (Placement(
             transformation(extent={{90,-10},{110,10}}, rotation=0)));
 
-      equation
+    equation
       when false then
         y = false;
       end when;
@@ -14071,8 +14052,8 @@ This gives the following result:
                     lineColor={0,0,255},
                     textString="%label")},
           interaction={OnMouseDownSetBoolean(y, not y > 0.5)}));
-      end ToggleButton;
-    end Interactive;
+    end ToggleButton;
+  end Interactive;
 
   package Interfaces
     "Public interface definitions (shall be included in Modelica Standard Library)"
@@ -14192,7 +14173,7 @@ Connector with one input signal of type Boolean.
               fillColor=DynamicSelect({235,235,235}, if y > 0.5 then {0,255,0}
                    else {235,235,235}),
               fillPattern=FillPattern.Solid)}));
-      end PartialBooleanSISO;
+    end PartialBooleanSISO;
 
     partial block PartialIntegerSISO
       "Partial block with a IntegerInput and an IntegerOutput signal"
@@ -14224,7 +14205,7 @@ Connector with one input signal of type Boolean.
                     fillColor={255,213,170},
                     fillPattern=FillPattern.Solid,
                     borderPattern=BorderPattern.Raised)}));
-      end PartialIntegerSISO;
+    end PartialIntegerSISO;
 
     partial block PartialRealSISO
       "Partial block with a RealInput and an RealOutput signal"
@@ -14250,7 +14231,7 @@ Connector with one input signal of type Boolean.
                     fillColor={170,213,255},
                     fillPattern=FillPattern.Solid,
                     borderPattern=BorderPattern.Raised)}));
-      end PartialRealSISO;
+    end PartialRealSISO;
 
     partial block PartialBooleanMISO
       "Partial block with a BooleanVectorInput and a BooleanOutput signal"
@@ -14261,7 +14242,7 @@ Connector with one input signal of type Boolean.
         annotation (Placement(transformation(extent={{-120,70},{-80,-70}})));
       Modelica.Blocks.Interfaces.BooleanOutput y
         annotation (Placement(transformation(extent={{100,-20},{140,20}})));
-      initial equation
+    initial equation
       pre(u) = fill(false, nu);
       annotation (Diagram(coordinateSystem(
             preserveAspectRatio=true,
@@ -14286,7 +14267,7 @@ Connector with one input signal of type Boolean.
                     fillColor=DynamicSelect({235,235,235}, if y > 0.5 then {0,
                 255,0} else {235,235,235}),
                     fillPattern=FillPattern.Solid)}));
-      end PartialBooleanMISO;
+    end PartialBooleanMISO;
 
     partial block PartialIntegerMISO
       "Partial block with an IntegerVectorInput and an IntegerOutput signal"
@@ -14320,7 +14301,7 @@ Connector with one input signal of type Boolean.
                     fillColor={255,213,170},
                     borderPattern=BorderPattern.Raised,
                     fillPattern=FillPattern.Solid)}));
-      end PartialIntegerMISO;
+    end PartialIntegerMISO;
 
     partial block PartialRealMISO
       "Partial block with a RealVectorInput and a RealOutput signal"
@@ -14357,7 +14338,7 @@ Connector with one input signal of type Boolean.
                     fillColor={170,213,255},
                     borderPattern=BorderPattern.Raised,
                     fillPattern=FillPattern.Solid)}));
-      end PartialRealMISO;
+    end PartialRealMISO;
 
     partial block PartialTriggeredSet
       "Partial block to evaluate expression that is associated with the first input trigger signal (optionally with guard)"
@@ -14401,9 +14382,9 @@ Connector with one input signal of type Boolean.
 
     protected
       Boolean sampled annotation (HideResult=true);
-      initial equation
+    initial equation
       pre(sampled) = false;
-      equation
+    equation
       // Check that exactly only option is selected (radio buttons)
       assert(Modelica_StateGraph2.Blocks.BooleanFunctions.oneTrue({rising,
         changing,falling,active}),
@@ -14463,7 +14444,7 @@ Connector with one input signal of type Boolean.
         Documentation(info="<html>
 
 </html>"));
-      end PartialTriggeredSet;
+    end PartialTriggeredSet;
 
     record ActiveSetIntegerRecord
       "Record to define a \"active, integer\" pair, to associate an integer with an active flag"
@@ -14472,8 +14453,8 @@ Connector with one input signal of type Boolean.
       Boolean active=false "Active flag" annotation (Dialog);
       Integer expr=0 "y = if active then expr else y_default (time varying)"
         annotation (Dialog);
-      end ActiveSetIntegerRecord;
-    end Interfaces;
+    end ActiveSetIntegerRecord;
+  end Interfaces;
   annotation (Documentation(info="<html>
 <p>
 An important practical aspect of state machines is the ability to assign values and expressions to variables depending on the state of the machine. In StateGraph2, a number of graphical components have been added in this package (= Modelica_StateGraph2.Blocks)
@@ -14484,12 +14465,11 @@ in the tutorial, e.g., the example shown in the Figure below.
 </p>
 
 <blockquote>
-<img src=\"../Images/StateGraph/Elements/MultiSwitch.png\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/Elements/MultiSwitch.png\">
 </blockquote>
 
 </html>"));
-  end Blocks;
-
+end Blocks;
 
 package Internal "Internal utility models (should usually not be used by user)"
 
@@ -14505,11 +14485,11 @@ package Internal "Internal utility models (should usually not be used by user)"
         input Node node1;
         input Node node2;
         output Real residue[0];
-        algorithm
+      algorithm
         assert(node1.suspend == node2.suspend and node1.resume == node2.resume,
           "Internal error");
-        end equalityConstraint;
-      end Node;
+      end equalityConstraint;
+    end Node;
 
     connector Step_in_base "Input port of a step without icon"
       input Boolean fire "true, if transition fires and step is activated"
@@ -14534,7 +14514,7 @@ checkLoop=false in the Advanced tab of the Transition, provided you are
 absolutely sure that this cannot happen.
 ", HideResult=true);
 
-      end Step_in_base;
+    end Step_in_base;
 
     connector Step_out_base "Output port of a step without icon"
       output Boolean available
@@ -14557,7 +14537,7 @@ in order that infinite event looping cannot occur. Alternatively you can set
 checkLoop=false in the Advanced tab of the Transition, provided you are
 absolutely sure that this cannot happen.
 ", HideResult=true);
-      end Step_out_base;
+    end Step_out_base;
 
     connector Step_in "Input port of a step"
       extends Step_in_base;
@@ -14586,7 +14566,7 @@ absolutely sure that this cannot happen.
               extent={{47,58},{112,20}},
               lineColor={0,0,0},
               textString="%name")}));
-      end Step_in;
+    end Step_in;
 
     connector Step_out "Output port of a step"
       extends Step_out_base;
@@ -14617,7 +14597,7 @@ absolutely sure that this cannot happen.
               extent={{40,66},{116,30}},
               lineColor={0,0,0},
               textString="%name")}));
-      end Step_out;
+    end Step_out;
 
     connector Composite_resume "Resume port of a composite step"
       extends Step_in_base;
@@ -14635,7 +14615,7 @@ absolutely sure that this cannot happen.
               lineColor={0,0,0},
               fillColor={170,255,213},
               fillPattern=FillPattern.Solid)}));
-      end Composite_resume;
+    end Composite_resume;
 
     connector Composite_suspend "Suspend port of a Composite"
       extends Step_out_base;
@@ -14654,7 +14634,7 @@ absolutely sure that this cannot happen.
               smooth=Smooth.None,
               fillColor={170,255,213},
               fillPattern=FillPattern.Solid)}));
-      end Composite_suspend;
+    end Composite_suspend;
 
     connector Transition_in_base "Input port of a transition without an icon"
       input Boolean available
@@ -14679,7 +14659,7 @@ in order that infinite event looping cannot occur. Alternatively you can set
 checkLoop=false in the Advanced tab of the Transition, provided you are
 absolutely sure that this cannot happen.
 ", HideResult=true);
-      end Transition_in_base;
+    end Transition_in_base;
 
     connector Transition_out_base "Output port of a transition without icon"
       output Boolean fire
@@ -14704,7 +14684,7 @@ in order that infinite event looping cannot occur. Alternatively you can set
 checkLoop=false in the Advanced tab of the Transition, provided you are
 absolutely sure that this cannot happen.
 ", HideResult=true);
-      end Transition_out_base;
+    end Transition_out_base;
 
     connector Transition_in "Input port of a transition"
       extends Transition_in_base;
@@ -14729,7 +14709,7 @@ absolutely sure that this cannot happen.
         Documentation(info="<html>
 
 </html>"));
-      end Transition_in;
+    end Transition_in;
 
     connector Transition_out "Output port of a transition"
       extends Transition_out_base;
@@ -14756,7 +14736,7 @@ absolutely sure that this cannot happen.
         Documentation(info="<html>
 
 </html>"));
-      end Transition_out;
+    end Transition_out;
 
     connector EntryPort
       "Entry port of a composite, same as a transition outPort"
@@ -14783,7 +14763,7 @@ absolutely sure that this cannot happen.
         Documentation(info="<html>
 
   </html>"));
-      end EntryPort;
+    end EntryPort;
 
     connector ExitPort
       "Exit connector of a composite, same as transition inPort"
@@ -14813,7 +14793,7 @@ absolutely sure that this cannot happen.
 
   </html>"));
 
-      end ExitPort;
+    end ExitPort;
 
     partial block PartialParallelBase
       "Base class of a parallel component (including a composite step as special case)"
@@ -14896,7 +14876,7 @@ absolutely sure that this cannot happen.
 
       Boolean oldActive(start=initialStep, fixed=true)
         "Value of active when CompositeStep was aborted";
-      equation
+    equation
       if use_outPort then
         assert(nEntry >= nExit,
           "The number of entry branches is not greater or equal to the number of exit branches of a parallel step.");
@@ -15106,9 +15086,9 @@ Parallel splitting of execution path including special cases so that step is:
 autonomous, composed, parallel unsynchronized, parallel with synchronized outputs.
 </p>
 </html>"));
-      end PartialParallelBase;
+    end PartialParallelBase;
 
-    end Interfaces;
+  end Interfaces;
 
   package Utilities
     "Utility functions used to implement a Modelica_StateGraph2"
@@ -15118,10 +15098,10 @@ autonomous, composed, parallel unsynchronized, parallel with synchronized output
       output Boolean result;
     protected
       Integer dummy;
-      algorithm
+    algorithm
       dummy := 0;
       result := true;
-      end initializeLoopCheck;
+    end initializeLoopCheck;
 
     function propagateLoopCheck "Propagate flag to check loop"
       extends Modelica.Icons.Function;
@@ -15129,28 +15109,25 @@ autonomous, composed, parallel unsynchronized, parallel with synchronized output
       output Boolean result;
     protected
       Integer dummy;
-      algorithm
+    algorithm
       dummy := 0;
       result := true;
-      end propagateLoopCheck;
+    end propagateLoopCheck;
 
-    end Utilities;
-
-  end Internal;
-
+  end Utilities;
+end Internal;
 
 annotation (
-  uses(Modelica(version="3.2.1")),
+  uses(Modelica(version="3.2.2")),
   preferredView="info",
-  version="2.0.2",
+  version="2.0.3",
   versionBuild=1,
-  versionDate="2013-10-01",
-  dateModified="2013-10-01 15:20:00Z",
-  revisionId="$Id:: package.mo 7061 2013-10-01 13:37:34Z #$",
-  Dymola(checkSum="90067705:983447479"),
+  versionDate="2016-03-11",
+  dateModified="2017-03-23 08:40:00Z",
+  revisionId="$Id:: package.mo 9206 2016-03-11 14:02:41Z #$",
   Documentation(info="<html>
 <p>
-<img src=\"../Images/StateGraph/UsersGuide/StateGraphElements.png\" align=\"right\">
+<img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/UsersGuide/StateGraphElements.png\" align=\"right\">
 Library <b>Modelica_StateGraph2</b> is a <b>free</b> Modelica package providing
 components to model <b>discrete event</b>, <b>reactive</b> and
 <b>hybrid</b> systems in a convenient way with <b>deterministic hierarchical state diagrams</b>.
