@@ -15,6 +15,10 @@ This library is inspired by Grafcet/Sequential Function Charts (SFC), Statechart
 Download [Modelica_StateGraph2 v2.0.2 (2013-10-01)](../../archive/v2.0.2.zip)
 
 #### Release notes
+*  Version v2.0.4
+  * Uses Modelica Standard Library 3.2.3
+  *  Version v2.0.3
+  * Uses Modelica Standard Library 3.2.2
 *  [Version v2.0.2 (2013-10-01)](../../archive/v2.0.2.zip)
   * Uses Modelica Standard Library 3.2.1
 *  [Version v2.0.1 (2010-11-08)](../../archive/v2.0.1.zip)
