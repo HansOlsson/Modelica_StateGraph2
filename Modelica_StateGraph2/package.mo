@@ -1,5 +1,5 @@
 ﻿within ;
-package Modelica_StateGraph2 "Modelica_StateGraph2 (Version 2.0.3) - Modeling of continuous-time state machines"
+package Modelica_StateGraph2 "Modelica_StateGraph2 (Version 2.0.4) - Modeling of continuous-time state machines"
 
 package UsersGuide "User's Guide"
 
@@ -733,9 +733,14 @@ library:
   class ReleaseNotes "Release notes"
 
     annotation (Documentation(info="<html>
-<h4>Version 2.0.3, 2016-03-11</h4>
+<h4>Version 2.0.4, 2019-03-20</h4>
 <p>
 Uses Modelica Standard Library 3.2.3
+</p>
+
+<h4>Version 2.0.3, 2016-03-11</h4>
+<p>
+Uses Modelica Standard Library 3.2.2 Cleaned up links and file encoding
 </p>
 
 <h4>Version 2.0.2, 2013-10-01</h4>
@@ -15118,13 +15123,13 @@ autonomous, composed, parallel unsynchronized, parallel with synchronized output
 end Internal;
 
 annotation (
-  uses(Modelica(version="3.2.2")),
+  uses(Modelica(version="3.2.3")),
   preferredView="info",
-  version="2.0.3",
+  version="2.0.4",
   versionBuild=1,
-  versionDate="2016-03-11",
-  dateModified="2017-03-23 08:40:00Z",
-  revisionId="$Id:: package.mo 9206 2016-03-11 14:02:41Z #$",
+  versionDate="2019-03-20",
+  dateModified="2019-03-20 15:00:00Z",
+  revisionId="$Id::                                    ",
   Documentation(info="<html>
 <p>
 <img src=\"modelica://Modelica_StateGraph2/Resources/Images/StateGraph/UsersGuide/StateGraphElements.png\" align=\"right\">
