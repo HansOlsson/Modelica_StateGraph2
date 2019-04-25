@@ -2,7 +2,7 @@
 
 Free library providing components to model discrete event, reactive and hybrid systems in a convenient way with deterministic hierarchical state diagrams.
 
-*Warning: Modelica_StateGraph2 is not fully Modelica compliant and will never be, since a better solution is now available with Modelica 3.3*
+*Warning: Modelica_StateGraph2 is not fully Modelica compliant and might never be. Modelica 3.3 introduced state machines as a replacement for clocked systems. However, for non-clocked systems the situation is less clear. One possibility is that the some of the good ideas from this library are integrated in Modelica.StateGraph in a Modelica compliant way.*
 
 ## Library description
 
@@ -32,9 +32,9 @@ This Modelica package is free software and the use is completely at your own ris
 it can be redistributed and/or modified under the terms of the [Modelica License 2](https://modelica.org/licenses/ModelicaLicense2).
 
 ## Development and contribution
-Release manager: [Martin Otter](http://www.robotic.dlr.de/Martin.Otter)
+Release manager: Hans Olsson, previously [Martin Otter](http://www.robotic.dlr.de/Martin.Otter)
 
-You may report any issues with using the [Modelica Issue Tracker](https://trac.modelica.org/Modelica/newticket?component=_Modelica_StateGraph2).
+You may report any issues with using [GitHub Issue tracker](https://github.com/HansOlsson/Modelica_StateGraph2/issues).
 
 ## Acknowledgement
 Partial financial support by BMBF (BMBF Förderkennzeichen: 01IS07022) for this work with-in the ITEA2 project [EUROSYSLIB](https://modelica.org/publications/newsletters/2009-1/index_html#eurosyslib) is highly appreciated.
