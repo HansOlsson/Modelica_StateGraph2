@@ -2,7 +2,7 @@
 
 Free library providing components to model discrete event, reactive and hybrid systems in a convenient way with deterministic hierarchical state diagrams.
 
-*Warning: Modelica_StateGraph2 is not fully Modelica compliant and might never be. Modelica 3.3 introduced state machines as a replacement for clocked systems. However, for non-clocked systems the situation is less clear. One possibility is that the some of the good ideas from this library are integrated in Modelica.StateGraph in a Modelica compliant way.*
+*Warning: Modelica_StateGraph2 is not fully Modelica compliant and might never be. Modelica 3.3 introduced state machines as a replacement for clocked systems. However, for non-clocked systems the situation is less clear. One possibility is that some of the good ideas from this library are integrated in Modelica.StateGraph in a Modelica compliant way.*
 
 ## Library description
 
