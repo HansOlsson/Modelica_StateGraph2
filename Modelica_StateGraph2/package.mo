@@ -3438,8 +3438,8 @@ For this, set in Dymola in the command window:
                 rotation=0)));
       equation
         connect(level1.y, bus.level1) annotation (Line(
-            points={{-51.75,-53},{-34,-53},{-34,-2},{-30,-2},{-30,-1},{-32,-1},
-                {-32,0}},
+            points={{-51.75,-53},{-34,-53},{-34,-2},{-30,-2},{-30,-1},{-32.05,
+                -1},{-32.05,0.05}},
             color={0,0,127},
             smooth=Smooth.None), Text(
             string="%second",
@@ -3447,43 +3447,45 @@ For this, set in Dymola in the command window:
             extent={{6,3},{6,3}}));
 
         connect(level2.y, bus.level2) annotation (Line(
-            points={{-52.75,-71},{-32,-71},{-32,0}},
+            points={{-52.75,-71},{-32.05,-71},{-32.05,0.05}},
             color={0,0,127},
             smooth=Smooth.None), Text(
             string="%second",
             index=1,
             extent={{6,3},{6,3}}));
         connect(shut.on, bus.shut) annotation (Line(
-            points={{-59,-30},{-37,-30},{-37,-2},{-31,-2},{-31,0},{-32,0}},
+            points={{-59,-30},{-37,-30},{-37,-2},{-31,-2},{-31,0.05},{-32.05,
+                0.05}},
             color={255,0,255},
             smooth=Smooth.None), Text(
             string="%second",
             index=1,
             extent={{6,3},{6,3}}));
         connect(stop.on, bus.stop) annotation (Line(
-            points={{-59,0},{-32,0}},
+            points={{-59,0},{-46,0},{-46,0.05},{-32.05,0.05}},
             color={255,0,255},
             smooth=Smooth.None), Text(
             string="%second",
             index=1,
             extent={{6,3},{6,3}}));
         connect(start.on, bus.start) annotation (Line(
-            points={{-59,30},{-37,30},{-37,4},{-32,4},{-32,0}},
+            points={{-59,30},{-37,30},{-37,4},{-32.05,4},{-32.05,0.05}},
             color={255,0,255},
             smooth=Smooth.None), Text(
             string="%second",
             index=1,
             extent={{6,3},{6,3}}));
         connect(valve1.open, bus.valve1) annotation (Line(
-            points={{-6,72},{-6,2},{-33,2},{-33,0},{-32,0}},
+            points={{-6,72},{-6,2},{-33,2},{-33,0.05},{-32.05,0.05}},
             color={255,0,255},
             smooth=Smooth.None));
         connect(valve2.open, bus.valve2) annotation (Line(
-            points={{26,10},{5,10},{5,0},{-32,0}},
+            points={{26,10},{5,10},{5,0.05},{-32.05,0.05}},
             color={255,0,255},
             smooth=Smooth.None));
         connect(valve3.open, bus.valve3) annotation (Line(
-            points={{35,-62},{35,-20},{20,-20},{20,-2},{-31,-2},{-31,0},{-32,0}},
+            points={{35,-62},{35,-20},{20,-20},{20,-2},{-31,-2},{-31,0.05},{
+                -32.05,0.05}},
             color={255,0,255},
             smooth=Smooth.None));
 
@@ -4145,10 +4147,10 @@ This is the same model as
                 rotation=90,
                 origin={100,0})));
           Modelica.Blocks.Sources.BooleanExpression setValve1(y=makeProduct.valve1
-                 and bus.level1 <= 1.01*limit1)
+                 and shutStep.level1 <= 1.01*limit1)
             annotation (Placement(transformation(extent={{-52,68},{41,89}})));
           Modelica.Blocks.Sources.BooleanExpression setValve2(y=(makeProduct.valve2
-                 or shutStep.valve2) and bus.level2 <= 1.01*limit2)
+                 or shutStep.valve2) and shutStep.level2 <= 1.01*limit2)
             annotation (Placement(transformation(extent={{-53,51},{69,71}})));
           Modelica_StateGraph2.Blocks.MathBoolean.Or setValve3(nu=2)
             annotation (Placement(transformation(extent={{51,-62},{63,-50}})));
@@ -4259,21 +4261,21 @@ This is the same model as
               color={255,0,255},
               smooth=Smooth.None));
           connect(setValve3.y, bus.valve3) annotation (Line(
-              points={{64.2,-56},{96,-56},{96,-5},{100,-5},{100,0}},
+              points={{64.2,-56},{96,-56},{96,-5},{100.1,-5},{100.1,0.1}},
               color={255,0,255},
               smooth=Smooth.None), Text(
               string="%second",
               index=1,
               extent={{6,3},{6,3}}));
           connect(setValve1.y, bus.valve1) annotation (Line(
-              points={{45.65,78.5},{100,78.5},{100,0}},
+              points={{45.65,78.5},{100.1,78.5},{100.1,0.1}},
               color={255,0,255},
               smooth=Smooth.None), Text(
               string="%second",
               index=1,
               extent={{6,3},{6,3}}));
           connect(setValve2.y, bus.valve2) annotation (Line(
-              points={{75.1,61},{96,61},{96,3},{100,3},{100,0}},
+              points={{75.1,61},{96,61},{96,3},{100.1,3},{100.1,0.1}},
               color={255,0,255},
               smooth=Smooth.None), Text(
               string="%second",
@@ -4337,14 +4339,14 @@ This is the same model as
             waitTime=0.01,
             delayedTransition=false,
             use_conditionPort=false,
-            condition=bus.start)
+            condition=start)
             annotation (Placement(transformation(extent={{-24,60},{-16,68}})));
           Modelica_StateGraph2.Step fillTank1(
             nIn=1,
             nOut=1,
             use_activePort=true)
             annotation (Placement(transformation(extent={{-24,46},{-16,54}})));
-          Modelica_StateGraph2.Transition T2(condition=bus.level1 > limit1)
+          Modelica_StateGraph2.Transition T2(condition=level1 > limit1)
             annotation (Placement(transformation(extent={{-24,32},{-16,40}})));
           Modelica_StateGraph2.Step wait1(nIn=1, nOut=1)
             annotation (Placement(transformation(extent={{-24,16},{-16,24}})));
@@ -4356,7 +4358,7 @@ This is the same model as
           Modelica_StateGraph2.Transition T3(delayedTransition=true, waitTime=
                 waitTime)
             annotation (Placement(transformation(extent={{-24,1},{-16,9}})));
-          Modelica_StateGraph2.Transition T4(condition=bus.level1 < minLevel)
+          Modelica_StateGraph2.Transition T4(condition=level1 < minLevel)
             annotation (Placement(transformation(extent={{-24,-27},{-16,-19}})));
           Modelica_StateGraph2.Step wait2(nIn=1, nOut=1) annotation (Placement(
                 transformation(extent={{-24,-40},{-16,-32}})));
@@ -4368,7 +4370,7 @@ This is the same model as
             nOut=1,
             use_activePort=true) annotation (Placement(transformation(extent={{
                     -24,-70},{-16,-62}})));
-          Modelica_StateGraph2.Transition T6(condition=bus.level2 < minLevel)
+          Modelica_StateGraph2.Transition T6(condition=level2 < minLevel)
             annotation (Placement(transformation(extent={{-24,-84},{-16,-76}})));
           Modelica.Blocks.Interfaces.BooleanOutput valve1
             "Value of Boolean output" annotation (Placement(transformation(
@@ -4384,6 +4386,14 @@ This is the same model as
                     50},{220,70}})));
           Modelica_StateGraph2.Blocks.MathBoolean.Or or1(nu=2)
             annotation (Placement(transformation(extent={{45,54},{57,66}})));
+          Modelica.Blocks.Interfaces.RealOutput level1
+            annotation (Placement(transformation(extent={{71,-31},{91,-11}})));
+          Modelica.Blocks.Interfaces.RealOutput level2
+            annotation (Placement(transformation(extent={{71,-55},{91,-35}})));
+          Modelica.Blocks.Interfaces.BooleanOutput start
+            "Value of Boolean output" annotation (Placement(transformation(
+                  extent={{71,-85},{91,-65}}), iconTransformation(extent={{200,
+                    50},{220,70}})));
         equation
           connect(fillTank1.outPort[1], T2.inPort) annotation (Line(
               points={{-20,45.4},{-20,40}},
@@ -4463,6 +4473,24 @@ This is the same model as
                   {21,35.1527},{21,57.9},{45,57.9}},
               color={255,0,255},
               smooth=Smooth.Bezier));
+          connect(level1, bus.level1) annotation (Line(points={{81,-21},{56,-21},
+                  {56,0.1},{100.1,0.1}}, color={0,0,127}), Text(
+              string="%second",
+              index=1,
+              extent={{-6,3},{-6,3}},
+              horizontalAlignment=TextAlignment.Right));
+          connect(level2, bus.level2) annotation (Line(points={{81,-45},{56,-45},
+                  {56,0.1},{100.1,0.1}}, color={0,0,127}), Text(
+              string="%second",
+              index=1,
+              extent={{-6,3},{-6,3}},
+              horizontalAlignment=TextAlignment.Right));
+          connect(start, bus.start) annotation (Line(points={{81,-75},{50,-75},
+                  {50,0.1},{100.1,0.1}}, color={255,0,255}), Text(
+              string="%second",
+              index=1,
+              extent={{-6,3},{-6,3}},
+              horizontalAlignment=TextAlignment.Right));
           annotation (Icon(coordinateSystem(preserveAspectRatio=true, extent={{
                     -200,-200},{200,200}}), graphics={Text(
                             extent={{130,118},{182,94}},
@@ -4482,7 +4510,7 @@ This is the same model as
                             textString="valves")}), Diagram(coordinateSystem(
                 preserveAspectRatio=true,
                 extent={{-100,-100},{100,100}},
-                grid={1,1}), graphics));
+                grid={1,1})));
         end MakeProduct;
 
         model ShutStep
@@ -4510,7 +4538,7 @@ This is the same model as
             use_activePort=true)
             annotation (Placement(transformation(extent={{-20,52},{-12,60}})));
           Modelica_StateGraph2.Transition T13(delayedTransition=false,
-              condition=bus.level1 < minLevel)
+              condition=level1 < minLevel)
             annotation (Placement(transformation(extent={{-20,37},{-12,45}})));
           Modelica_StateGraph2.Step shutTank2(
             nIn=1,
@@ -4523,7 +4551,7 @@ This is the same model as
           Modelica_StateGraph2.Step tank2Empty(nIn=1, nOut=1)
             annotation (Placement(transformation(extent={{16,19},{24,27}})));
           Modelica_StateGraph2.Transition T11(delayedTransition=false,
-              condition=bus.level2 < minLevel)
+              condition=level2 < minLevel)
             annotation (Placement(transformation(extent={{16,37},{24,45}})));
           Modelica.Blocks.Interfaces.BooleanOutput valve2
             "Value of Boolean output" annotation (Placement(transformation(
@@ -4533,6 +4561,10 @@ This is the same model as
             "Value of Boolean output" annotation (Placement(transformation(
                   extent={{100,40},{120,60}}), iconTransformation(extent={{200,
                     68},{220,88}})));
+          Modelica.Blocks.Interfaces.RealOutput level1
+            annotation (Placement(transformation(extent={{70,-35},{90,-15}})));
+          Modelica.Blocks.Interfaces.RealOutput level2
+            annotation (Placement(transformation(extent={{70,-56},{90,-36}})));
         equation
           connect(shutTank1.outPort[1], T13.inPort) annotation (Line(
               points={{-16,51.4},{-16,45}},
@@ -4577,10 +4609,22 @@ This is the same model as
                   60,50},{65.4199,50},{110,50}},
               color={255,0,255},
               smooth=Smooth.Bezier));
+          connect(level1, bus.level1) annotation (Line(points={{80,-25},{53,-25},
+                  {53,0.1},{100.1,0.1}}, color={0,0,127}), Text(
+              string="%second",
+              index=1,
+              extent={{-6,3},{-6,3}},
+              horizontalAlignment=TextAlignment.Right));
+          connect(level2, bus.level2) annotation (Line(points={{80,-46},{52,-46},
+                  {52,0.1},{100.1,0.1}}, color={0,0,127}), Text(
+              string="%second",
+              index=1,
+              extent={{-6,3},{-6,3}},
+              horizontalAlignment=TextAlignment.Right));
           annotation (Diagram(coordinateSystem(
                 preserveAspectRatio=true,
                 extent={{-100,-100},{100,100}},
-                grid={1,1}), graphics), Icon(coordinateSystem(
+                grid={1,1})),           Icon(coordinateSystem(
                   preserveAspectRatio=true, extent={{-200,-200},{200,200}}),
                 graphics={Text(
                             extent={{132,146},{184,122}},
