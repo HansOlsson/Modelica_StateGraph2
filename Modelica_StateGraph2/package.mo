@@ -3535,15 +3535,15 @@ This is the same model as
             height=4,
             nPorts=2,
             portsData={Modelica.Fluid.Vessels.BaseClasses.VesselPortsData(
-                          diameter=0.2,
-                          height=4,
-                          zeta_out=0,
-                          zeta_in=1),
+                        diameter=0.2,
+                        height=4,
+                        zeta_out=0,
+                        zeta_in=1),
                 Modelica.Fluid.Vessels.BaseClasses.VesselPortsData(
-                          diameter=0.2,
-                          height=0,
-                          zeta_out=0,
-                          zeta_in=1)},
+                        diameter=0.2,
+                        height=0.01,
+                        zeta_out=0,
+                        zeta_in=1)},
             T_start=system.T_ambient,
             energyDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial,
             massDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial)
