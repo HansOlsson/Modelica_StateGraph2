@@ -1,5 +1,5 @@
 ﻿within ;
-package Modelica_StateGraph2 "Modelica_StateGraph2 (Version 2.0.4) - Modeling of continuous-time state machines"
+package Modelica_StateGraph2 "Modelica_StateGraph2 (Version 2.0.5) - Modeling of continuous-time state machines"
 
 package UsersGuide "User's Guide"
 
@@ -733,37 +733,20 @@ library:
   class ReleaseNotes "Release notes"
 
     annotation (Documentation(info="<html>
+<h4>Version 2.0.5, 2020-03-24</h4>
+<p>Uses Modelica Standard Library 3.2.3. Resolved <a href=\"https://github.com/HansOlsson/Modelica_StateGraph2/issues/9\">tank example failing</a>, <a href=\"https://github.com/HansOlsson/Modelica_StateGraph2/issues/8\">corrected handling of node</a>, and <a href=\"https://github.com/HansOlsson/Modelica_StateGraph2/issues/1\">corrected some parts that were non-compliant</a>.</p>
+<p> This should be backward compatible with the previous version, as changes were only in internal components and examples. </p>
 <h4>Version 2.0.4, 2019-03-20</h4>
-<p>
-Uses Modelica Standard Library 3.2.3
-</p>
-
+<p>Uses Modelica Standard Library 3.2.3 </p>
 <h4>Version 2.0.3, 2016-03-11</h4>
-<p>
-Uses Modelica Standard Library 3.2.2 Cleaned up links and file encoding
-</p>
-
+<p>Uses Modelica Standard Library 3.2.2 Cleaned up links and file encoding </p>
 <h4>Version 2.0.2, 2013-10-01</h4>
-<p>
-Uses Modelica Standard Library 3.2.1
-</p>
-
-
+<p>Uses Modelica Standard Library 3.2.1 </p>
 <h4>Version 2.0.1, 2010-11-08</h4>
-<p>
-Uses Modelica Standard Library 3.2
-</p>
-
+<p>Uses Modelica Standard Library 3.2 </p>
 <h4>Version 2.0, 2009-08-10</h4>
-<p>
-First version of the Modelica_StateGraph2 library based on
-Modelica.StateGraph and the prototype ModeGraph library from
-Martin Malmheden. The changes with respect to Modelica.StateGraph (version 1)
-are summarized <a href=\"modelica://Modelica_StateGraph2.UsersGuide.ComparisonWithStateGraph1\">here</a>.
-</p>
-
-</html>
-"));
+<p>First version of the Modelica_StateGraph2 library based on Modelica.StateGraph and the prototype ModeGraph library from Martin Malmheden. The changes with respect to Modelica.StateGraph (version 1) are summarized <a href=\"modelica://Modelica_StateGraph2.UsersGuide.ComparisonWithStateGraph1\">here</a>. </p>
+</html>"));
   end ReleaseNotes;
 
   class Literature "Literature"
@@ -12154,7 +12137,7 @@ protected
   Boolean oldActive(start=initialStep, fixed=true)
     "Value of active when CompositeStep was aborted";
 
-  Modelica_StateGraph2.Internal.Interfaces.Node node
+  Internal.Interfaces.ConnectorNode connectorNode
     "Handles rootID as well as suspend and resume transitions from a Modelica_StateGraph2";
 
   Boolean inport_fire;
@@ -12164,19 +12147,20 @@ equation
   // set active state
   inport_fire = Modelica_StateGraph2.Blocks.BooleanFunctions.anyTrue(inPort.fire);
   outport_fire = Modelica_StateGraph2.Blocks.BooleanFunctions.anyTrue(outPort.fire);
-  newActive = if node.resume then oldActive else inport_fire or (active and
-    not outport_fire) and not node.suspend;
+  newActive =if connectorNode.node.resume then oldActive else inport_fire or (active
+     and not outport_fire) and not connectorNode.node.suspend;
   active = pre(newActive);
 
   // Remember state for suspend action
-  when node.suspend then
+  when connectorNode.node.suspend then
     oldActive = active;
   end when;
 
   // Report state to output transitions
   for i in 1:nOut loop
-    outPort[i].available = if i == 1 then active and not node.suspend else
-      outPort[i - 1].available and not outPort[i - 1].fire and not node.suspend;
+    outPort[i].available =if i == 1 then active and not connectorNode.node.suspend
+       else outPort[i - 1].available and not outPort[i - 1].fire and not
+      connectorNode.node.suspend;
   end for;
 
   inPort.checkUnaryConnection = fill(true, nIn);
@@ -12187,12 +12171,12 @@ equation
   // Handle initial step and propagate node information from inPort to node
 
   for i in 1:nIn loop
-    Connections.branch(inPort[i].node, node);
-    inPort[i].node = node;
+    Connections.branch(inPort[i].node, connectorNode.node);
+    inPort[i].node =connectorNode.node;
   end for;
 
   if initialStep then
-    Connections.uniqueRoot(node, "
+    Connections.uniqueRoot(connectorNode.node, "
 The StateGraph has a wrong connection structure. Reasons:
 (1) The StateGraph is initialized at two different locations (initial steps or entry ports).
 (2) A transition is made wrongly out of a Parallel component.
@@ -12200,23 +12184,23 @@ The StateGraph has a wrong connection structure. Reasons:
 All these cases are not allowed.
 ");
 
-    node.suspend = false;
-    node.resume = false;
+    connectorNode.node.suspend = false;
+    connectorNode.node.resume = false;
   else
     // Check that connections to the connector are correct
     assert(nIn > 0, "Step is not reachable since it has no input transition");
 
     // In order that check works (nIn=0), provide the missing equations
     if nIn == 0 then
-      node.suspend = false;
-      node.resume = false;
+      connectorNode.node.suspend = false;
+      connectorNode.node.resume = false;
     end if;
   end if;
 
   // Propagate node information from node to outPort
   for i in 1:nOut loop
-    Connections.branch(node, outPort[i].node);
-    outPort[i].node = node;
+    Connections.branch(connectorNode.node, outPort[i].node);
+    outPort[i].node =connectorNode.node;
   end for;
 
   // Check that all graph connectors are connected
@@ -14540,6 +14524,15 @@ package Internal "Internal utility models (should usually not be used by user)"
       end equalityConstraint;
     end Node;
 
+    connector ConnectorNode
+      Modelica_StateGraph2.Internal.Interfaces.Node node;
+      annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
+            coordinateSystem(preserveAspectRatio=false)),
+        Documentation(info="<html>
+<p>For placing the overdetermined connector records inside a connector as required in Modelica 3.4.</p>
+</html>"));
+    end ConnectorNode;
+
     connector Step_in_base "Input port of a step without icon"
       input Boolean fire "true, if transition fires and step is activated"
         annotation (HideResult=true);
@@ -14891,7 +14884,7 @@ absolutely sure that this cannot happen.
     protected
       parameter Integer nExit2=if use_outPort then nExit else 0;
       parameter Integer nMinBranches=min(nEntry, nExit);
-      Node node
+      ConnectorNode connectorNode
         "Node of Parallel component to handle rootIDs from inPort to outPort transitions";
 
       Boolean newActive(start=initialStep, fixed=true)
@@ -14942,7 +14935,7 @@ absolutely sure that this cannot happen.
         finished = outport_fire;
       end when;
 
-      when node.suspend then
+      when connectorNode.node.suspend then
         oldActive = active;
       end when;
 
@@ -15046,35 +15039,35 @@ All these cases are not allowed.
       end for;
 
       if initialStep then
-        Connections.uniqueRoot(node, "uniqueRoot Error in Parallel");
-        node.resume = false;
-        node.suspend = false;
+        Connections.uniqueRoot(connectorNode.node, "uniqueRoot Error in Parallel");
+        connectorNode.node.resume = false;
+        connectorNode.node.suspend = false;
       else
         // In order that check works (nIn=0), provide the missing equations
         if nIn == 0 and nResume == 0 then
-          node.resume = false;
-          node.suspend = false;
+          connectorNode.node.resume = false;
+          connectorNode.node.suspend = false;
         end if;
       end if;
 
       for i in 1:nIn loop
-        Connections.branch(local_inPort[i].node, node);
-        local_inPort[i].node = node;
+        Connections.branch(local_inPort[i].node, connectorNode.node);
+        local_inPort[i].node =connectorNode.node;
       end for;
 
       for i in 1:nResume loop
-        Connections.branch(local_resume[i].node, node);
-        local_resume[i].node = node;
+        Connections.branch(local_resume[i].node, connectorNode.node);
+        local_resume[i].node =connectorNode.node;
       end for;
 
       for i in 1:nOut loop
-        Connections.branch(node, local_outPort[i].node);
-        local_outPort[i].node = node;
+        Connections.branch(connectorNode.node, local_outPort[i].node);
+        local_outPort[i].node =connectorNode.node;
       end for;
 
       for i in 1:nSuspend loop
-        Connections.branch(node, local_suspend[i].node);
-        local_suspend[i].node = node;
+        Connections.branch(connectorNode.node, local_suspend[i].node);
+        local_suspend[i].node =connectorNode.node;
       end for;
 
       // Check loops of Modelica_StateGraph2
@@ -15169,10 +15162,10 @@ end Internal;
 annotation (
   uses(Modelica(version="3.2.3")),
   preferredView="info",
-  version="2.0.4",
+  version="2.0.5",
   versionBuild=1,
-  versionDate="2019-03-20",
-  dateModified="2019-03-20 15:00:00Z",
+  versionDate="2020-03-24",
+  dateModified="2020-03-24 15:00:00Z",
   revisionId="$Id::                                    ",
   Documentation(info="<html>
 <p>
