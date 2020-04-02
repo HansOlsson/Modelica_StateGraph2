@@ -15,16 +15,18 @@ This library is inspired by Grafcet/Sequential Function Charts (SFC), Statechart
 Download [Modelica_StateGraph2 v2.0.4 (2019-03-20)](https://github.com/HansOlsson/Modelica_StateGraph2/releases/download/v2.0.4/Modelica_StateGraph2-release.zip)
 
 #### Release notes
+*  Version v2.0.5
+   * Some minor fixes. Be closer to standard Modelica and avoid problematic example.
 *  Version v2.0.4
-  * Uses Modelica Standard Library 3.2.3
-  *  Version v2.0.3
-  * Uses Modelica Standard Library 3.2.2
+   * Uses Modelica Standard Library 3.2.3
+*  Version v2.0.3
+   * Uses Modelica Standard Library 3.2.2
 *  [Version v2.0.2 (2013-10-01)](../../archive/v2.0.2.zip)
-  * Uses Modelica Standard Library 3.2.1
+   * Uses Modelica Standard Library 3.2.1
 *  [Version v2.0.1 (2010-11-08)](../../archive/v2.0.1.zip)
-  * Uses Modelica Standard Library 3.2
+   * Uses Modelica Standard Library 3.2
 *  [Version v2.0 (2009-08-10)](../../archive/v2.0.1.zip)
-  * First version of the `Modelica_StateGraph2` library based on `Modelica.StateGraph` and the prototype `ModeGraph` library from Martin Malmheden.
+   * First version of the `Modelica_StateGraph2` library based on `Modelica.StateGraph` and the prototype `ModeGraph` library from Martin Malmheden.
 
 ## License
 
