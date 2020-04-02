@@ -17,7 +17,7 @@ Download [Modelica_StateGraph2 v2.0.5 (2020-04-02)](https://github.com/HansOlsso
 #### Release notes
 *  Version v2.0.5 (2020-04-02)
    * Some minor fixes. Be closer to standard Modelica and avoid problematic example.
-*  [Version v2.0.4](https://github.com/HansOlsson/Modelica_StateGraph2/releases/download/v2.0.4/Modelica_StateGraph2-release.zip)
+*  [Version v2.0.4 (2019-03-20)](https://github.com/HansOlsson/Modelica_StateGraph2/releases/download/v2.0.4/Modelica_StateGraph2-release.zip)
    * Uses Modelica Standard Library 3.2.3 
 *  Version v2.0.3
    * Uses Modelica Standard Library 3.2.2
