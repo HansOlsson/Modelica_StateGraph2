@@ -1543,7 +1543,7 @@ end UsersGuide;
         nOut=1,
         initialStep=true)
         annotation (Placement(transformation(extent={{-4,44},{4,52}})));
-      Modelica_StateGraph2.Transition T1(condition=time > 2)
+      Modelica_StateGraph2.Transition T1(condition=time >= 2)
         annotation (Placement(transformation(extent={{-4,26},{4,34}})));
       Modelica_StateGraph2.Step step2(nIn=1, nOut=1)
         annotation (Placement(transformation(extent={{-4,10},{4,18}})));
@@ -1600,7 +1600,7 @@ end UsersGuide;
                          nIn=2, nOut=1)
           annotation (Placement(transformation(extent={{-4,6},{4,14}})));
         Modelica_StateGraph2.Transition T1(
-                      condition=time > 2)
+                      condition=time >= 2)
           annotation (Placement(transformation(extent={{-4,-12},{4,-4}})));
         Modelica_StateGraph2.Step step2(
                    nIn=1, nOut=1)
@@ -1676,7 +1676,7 @@ end UsersGuide;
         nOut=1)
           annotation (Placement(transformation(extent={{-4,44},{4,52}})));
         Modelica_StateGraph2.Transition T1(
-                      use_conditionPort=false, condition=time > 2)
+                      use_conditionPort=false, condition=time >= 2)
           annotation (Placement(transformation(extent={{-4,26},{4,34}})));
         Modelica_StateGraph2.Step step2(
           use_activePort=true,
@@ -1745,7 +1745,7 @@ end UsersGuide;
         nOut=1)
           annotation (Placement(transformation(extent={{-4,44},{4,52}})));
         Modelica_StateGraph2.Transition T1(
-                      use_conditionPort=false, condition=time > 2)
+                      use_conditionPort=false, condition=time >= 2)
           annotation (Placement(transformation(extent={{-4,26},{4,34}})));
         Modelica_StateGraph2.Step step2(
           use_activePort=true,
@@ -1864,12 +1864,12 @@ end UsersGuide;
                            initialStep=true, nOut=1)
           annotation (Placement(transformation(extent={{6,46},{14,54}})));
         Modelica_StateGraph2.Transition T1(
-                      condition=time > 1)
+                      condition=time >= 1)
           annotation (Placement(transformation(extent={{6,32},{14,40}})));
         Modelica_StateGraph2.Step step2(           nIn=1, nOut=1)
           annotation (Placement(transformation(extent={{6,16},{14,24}})));
         Modelica_StateGraph2.Transition T2(
-                      condition=time > 2)
+                      condition=time >= 2)
           annotation (Placement(transformation(extent={{6,2},{14,10}})));
         Modelica_StateGraph2.Step step3(           nIn=1)
           annotation (Placement(transformation(extent={{6,-12},{14,-4}})));
@@ -1930,8 +1930,8 @@ end UsersGuide;
         Modelica_StateGraph2.Transition T3(
                       delayedTransition=true, waitTime=1)
           annotation (Placement(transformation(extent={{56,4},{64,-4}})));
-        Modelica_StateGraph2.Transition T4(           condition=time > 3.5 and
-            time <= 4.5)
+        Modelica_StateGraph2.Transition T4(           condition=time >= 3.5 and
+            time < 4.5)
           annotation (Placement(transformation(extent={{-64,2},{-56,10}})));
         Modelica_StateGraph2.Step step5(           nOut=1, nIn=1)
           annotation (Placement(transformation(extent={{-64,-14},{-56,-6}})));
@@ -1945,7 +1945,7 @@ end UsersGuide;
           annotation (Placement(transformation(extent={{-4,-42},{4,-34}})));
         Modelica_StateGraph2.Transition T7(    waitTime=1,
           delayedTransition=false,
-          condition=time > 2.5 and time < 4.5)
+          condition=time >= 2.5 and time < 4.5)
           annotation (Placement(transformation(extent={{22,12},{30,4}})));
       equation
         connect(parallel.entry[1], step3.inPort[1]) annotation (Line(
@@ -2032,7 +2032,7 @@ end UsersGuide;
                       delayedTransition=true, waitTime=1)
           annotation (Placement(transformation(extent={{36,32},{44,24}})));
         Modelica_StateGraph2.Transition T4(
-                      condition=time > 3.5 and time <= 4.5)
+                      condition=time >= 3.5 and time < 4.5)
           annotation (Placement(transformation(extent={{-52,40},{-44,48}})));
         Modelica_StateGraph2.Step step5(
                    nIn=1, nOut=1)
@@ -2211,7 +2211,7 @@ end UsersGuide;
                       delayedTransition=true, waitTime=1)
           annotation (Placement(transformation(extent={{46,4},{54,-4}})));
         Modelica_StateGraph2.Transition T4(
-                      condition=time > 2.5 and time <= 4)
+                      condition=time >= 2.5 and time < 4)
           annotation (Placement(transformation(extent={{-76,34},{-68,26}})));
         Modelica_StateGraph2.Step step5(
                    nIn=1, nOut=1)
@@ -3187,7 +3187,7 @@ end UsersGuide;
         Modelica_StateGraph2.Transition T7(
           waitTime=1,
           delayedTransition=false,
-          condition=time > 2.5 and time < 4.5)
+          condition=time >= 2.5 and time < 4.5)
           annotation (Placement(transformation(extent={{24,14},{32,6}})));
       equation
           connect(step3.outPort[1], T2.inPort) annotation (Line(
@@ -11021,7 +11021,7 @@ This is the same model as
         nOut=1,
         initialStep=true)
         annotation (Placement(transformation(extent={{-44,28},{-36,36}})));
-      Modelica_StateGraph2.Transition T1(condition=time > 2)
+      Modelica_StateGraph2.Transition T1(condition=time >= 2)
         annotation (Placement(transformation(extent={{-44,10},{-36,18}})));
       Modelica_StateGraph2.Step step2(nIn=1, nOut=1)
         annotation (Placement(transformation(extent={{-44,-6},{-36,2}})));
@@ -11115,8 +11115,8 @@ This is the same model as
           color={0,0,0},
           smooth=Smooth.Bezier));
       connect(T8.outPort, initialStep.inPort[3]) annotation (Line(
-          points={{42,35},{42,50},{24.716,50},{-23.069,50},{-38.6667,50},{-38.6667,
-              36}},
+          points={{42,35},{42,50},{24.716,50},{-23.069,50},{-38.6667,50},{
+              -38.6667,36}},
           color={0,0,0},
           smooth=Smooth.Bezier));
       annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
@@ -11278,7 +11278,7 @@ This is the same model as
         nOut=1,
         initialStep=false)
         annotation (Placement(transformation(extent={{-4,44},{4,52}})));
-      Modelica_StateGraph2.Transition T1(condition=time > 2)
+      Modelica_StateGraph2.Transition T1(condition=time >= 2)
         annotation (Placement(transformation(extent={{-4,26},{4,34}})));
       Modelica_StateGraph2.Step step2(nIn=1, nOut=1)
         annotation (Placement(transformation(extent={{-4,10},{4,18}})));
@@ -11346,7 +11346,7 @@ This is the same model as
         annotation (Placement(transformation(extent={{-4,4},{4,12}})));
       Modelica_StateGraph2.Step step4(nOut=1, nIn=1)
         annotation (Placement(transformation(extent={{-4,-12},{4,-4}})));
-      Modelica_StateGraph2.Transition T4(condition=time > 2.5 and time <= 4)
+      Modelica_StateGraph2.Transition T4(condition=time >= 2.5 and time < 4)
         annotation (Placement(transformation(
             extent={{-4,4},{4,-4}},
             rotation=180,
