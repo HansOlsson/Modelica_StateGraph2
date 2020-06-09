@@ -1,5 +1,5 @@
 ﻿within ;
-package Modelica_StateGraph2 "Modelica_StateGraph2 (Version 2.0.5) - Modeling of continuous-time state machines"
+package Modelica_StateGraph2 "Modelica_StateGraph2 (Version 2.1.0) - Modeling of continuous-time state machines"
 
 package UsersGuide "User's Guide"
 
@@ -733,6 +733,10 @@ library:
   class ReleaseNotes "Release notes"
 
     annotation (Documentation(info="<html>
+<h4>Version 2.1.0, 2020-06-04</h4>
+<p>Uses Modelica Standard Library 4.0.0, and has proper time events in Examples.</p>
+<p>This should be backward compatible with the previous version, as changes are automatic conversion and corrections of 
+examples that should not impact the results. </p>
 <h4>Version 2.0.5, 2020-03-24</h4>
 <p>Uses Modelica Standard Library 3.2.3. Resolved <a href=\"https://github.com/HansOlsson/Modelica_StateGraph2/issues/9\">tank example failing</a>, <a href=\"https://github.com/HansOlsson/Modelica_StateGraph2/issues/8\">corrected handling of node</a>, and <a href=\"https://github.com/HansOlsson/Modelica_StateGraph2/issues/1\">corrected some parts that were non-compliant</a>.</p>
 <p> This should be backward compatible with the previous version, as changes were only in internal components and examples. </p>
@@ -3619,15 +3623,15 @@ This is the same model as
 
         model TankController1
           "Controller 1 for tank system (using expressions to control the valves)"
-          extends Modelica.Blocks.Interfaces.BlockIcon;
-          parameter Modelica.SIunits.Height limit1(min=0) = 0.98
+          extends Modelica.Blocks.Icons.Block;
+          parameter Modelica.Units.SI.Height limit1(min=0) = 0.98
             "Maximum level of tank 1";
-          parameter Modelica.SIunits.Height limit2(min=0) = 0.98
+          parameter Modelica.Units.SI.Height limit2(min=0) = 0.98
             "Maximum level of tank 2";
-          parameter Modelica.SIunits.Height minLevel(min=0) = 0.01
+          parameter Modelica.Units.SI.Height minLevel(min=0) = 0.01
             "Minimum fill level of a tank";
 
-          parameter Modelica.SIunits.Time waitTime=3
+          parameter Modelica.Units.SI.Time waitTime=3
             "Wait time to newly open a valve";
 
           Modelica.Blocks.Interfaces.BooleanInput start annotation (Placement(
@@ -4065,14 +4069,14 @@ This is the same model as
 
         model TankController2
           "Controller 2 for tank system (using expressions to control the valves)"
-          extends Modelica.Blocks.Interfaces.BlockIcon;
-          parameter Modelica.SIunits.Height limit1(min=0) = 0.98
+          extends Modelica.Blocks.Icons.Block;
+          parameter Modelica.Units.SI.Height limit1(min=0) = 0.98
             "Maximum level of tank 1";
-          parameter Modelica.SIunits.Height limit2(min=0) = 0.98
+          parameter Modelica.Units.SI.Height limit2(min=0) = 0.98
             "Maximum level of tank 2";
-          parameter Modelica.SIunits.Height minLevel(min=0) = 0.01
+          parameter Modelica.Units.SI.Height minLevel(min=0) = 0.01
             "Minimum fill level of a tank";
-          parameter Modelica.SIunits.Time waitTime=3
+          parameter Modelica.Units.SI.Time waitTime=3
             "Wait time to newly open a valve";
 
           Modelica_StateGraph2.Step stopStep1(nIn=1, nOut=2)
@@ -4300,13 +4304,13 @@ This is the same model as
             final use_outPort=false,
             nEntry=1,
             nExit=1);
-          parameter Modelica.SIunits.Height limit1(min=0) = 0.98
+          parameter Modelica.Units.SI.Height limit1(min=0) = 0.98
             "Maximum level of tank 1";
-          parameter Modelica.SIunits.Height limit2(min=0) = 0.98
+          parameter Modelica.Units.SI.Height limit2(min=0) = 0.98
             "Maximum level of tank 2";
-          parameter Modelica.SIunits.Height minLevel(min=0) = 0.01
+          parameter Modelica.Units.SI.Height minLevel(min=0) = 0.01
             "Minimum fill level of a tank";
-          parameter Modelica.SIunits.Time waitTime=3
+          parameter Modelica.Units.SI.Time waitTime=3
             "Wait time to newly open a valve";
 
           SignalBus bus annotation (Placement(transformation(
@@ -4505,7 +4509,7 @@ This is the same model as
             final use_outPort=true,
             final nEntry=2,
             final nExit=2);
-          parameter Modelica.SIunits.Height minLevel(min=0) = 0.01
+          parameter Modelica.Units.SI.Height minLevel(min=0) = 0.01
             "Minimum fill level of a tank";
 
           SignalBus bus annotation (Placement(transformation(
@@ -4632,8 +4636,8 @@ This is the same model as
           Boolean start annotation (HideResult=false);
           Boolean stop annotation (HideResult=false);
           Boolean shut annotation (HideResult=false);
-          Modelica.SIunits.Length level1 annotation (HideResult=false);
-          Modelica.SIunits.Length level2 annotation (HideResult=false);
+          Modelica.Units.SI.Length level1 annotation (HideResult=false);
+          Modelica.Units.SI.Length level2 annotation (HideResult=false);
 
           annotation (Icon(graphics={Rectangle(
                             extent={{0,0},{0,0}},
@@ -12360,9 +12364,9 @@ model Transition
     Evaluate=true,
     HideResult=true,
     choices(__Dymola_checkBox=true));
-  parameter Modelica.SIunits.Time waitTime=0
-    "Wait time before transition fires (> 0 required)"
-    annotation (Dialog(enable=delayedTransition));
+    parameter Modelica.Units.SI.Time waitTime=0
+      "Wait time before transition fires (> 0 required)"
+      annotation (Dialog(enable=delayedTransition));
 
   parameter Boolean use_firePort=false "= true, if firePort enabled"
     annotation (
@@ -12397,9 +12401,9 @@ model Transition
   output Boolean enableFire "= true, if firing condition is true";
 
 protected
-  constant Modelica.SIunits.Time minimumWaitTime=100*Modelica.Constants.eps;
-  Modelica.SIunits.Time t_start
-    "Time instant at which the transition would fire, if waitTime would be zero";
+    constant Modelica.Units.SI.Time minimumWaitTime=100*Modelica.Constants.eps;
+    Modelica.Units.SI.Time t_start
+      "Time instant at which the transition would fire, if waitTime would be zero";
   Modelica.Blocks.Interfaces.BooleanInput localCondition;
 initial equation
   pre(enableFire) = false;
@@ -12616,8 +12620,8 @@ model LoopBreakingTransition
     "Fire condition (time varying Boolean expression)"
     annotation (Dialog(enable=not use_conditionPort));
 
-  parameter Modelica.SIunits.Time waitTime(min=1e-8) = 0.001
-    "Time to wait in internal step after transition fired";
+    parameter Modelica.Units.SI.Time waitTime(min=1e-8) = 0.001
+      "Time to wait in internal step after transition fired";
 
   Modelica_StateGraph2.Internal.Interfaces.Transition_in inPort
     "Input port of transition (exactly one connection to this port is required)"
@@ -13361,11 +13365,11 @@ false, y is set to parameter \"y_default\" or to pre(y) depending on the paramet
     block OnDelay
       "Delay a rising edge of the input, but do not delay a falling edge."
       extends Interfaces.PartialBooleanSISO;
-      parameter Modelica.SIunits.Time delayTime "Delay time";
+      parameter Modelica.Units.SI.Time delayTime "Delay time";
 
     protected
       Boolean delaySignal(start=false, fixed=true);
-      discrete Modelica.SIunits.Time t_next;
+      discrete Modelica.Units.SI.Time t_next;
     initial equation
       pre(u) = false;
       pre(t_next) = time - 1;
@@ -13874,7 +13878,7 @@ false, y is set to parameter \"y_default\":
 
     block RadioButtonSource "Boolean signal source that mimis a radio button"
 
-      parameter Modelica.SIunits.Time buttonTimeTable[:]
+      parameter Modelica.Units.SI.Time buttonTimeTable[:]
         "Time instants where button is pressed";
       input Boolean reset[:]={false}
         "Reset button to false, if an element of reset becomes true"
@@ -14409,7 +14413,7 @@ Connector with one input signal of type Boolean.
         choices(__Dymola_checkBox=true));
       input Boolean guard=true "y not changing, if guard=false (time varying)"
         annotation (Dialog(group="Other options", enable=use_guard));
-      parameter Modelica.SIunits.Time samplePeriod=0
+      parameter Modelica.Units.SI.Time samplePeriod=0
         "Sample period if active=true (only temporarily)"
         annotation (Dialog(group="Other options", enable=active));
 
@@ -15160,10 +15164,9 @@ autonomous, composed, parallel unsynchronized, parallel with synchronized output
 end Internal;
 
 annotation (
-  uses(Modelica(version="3.2.3")),
+  uses(Modelica(version="4.0.0")),
   preferredView="info",
-  version="2.0.5",
-  versionBuild=1,
+  version="2.1.0",
   versionDate="2020-03-24",
   dateModified="2020-03-24 15:00:00Z",
   revisionId="$Id::                                    ",
@@ -15213,7 +15216,7 @@ For an introduction, have especially a look at:
 </ul>
 
 <p>
-This library is implemented with Modelica 3.1 and utilizes non-standard extensions to Modelica 3.1 as summarized
+This library was implemented with Modelica 3.1, and utilizes non-standard extensions to Modelica 3.4 as summarized
 <a href=\"modelica://Modelica_StateGraph2.UsersGuide.UsedModelicaExtensions\">here</a>.
 </p>
 
@@ -15234,5 +15237,6 @@ or at
 http://www.Modelica.org/licenses/ModelicaLicense2</a>.</i>
 </p>
 
-</html>"));
+</html>"),
+    conversion(noneFromVersion="2.0.5"));
 end Modelica_StateGraph2;
