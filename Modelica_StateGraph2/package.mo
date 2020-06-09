@@ -15167,8 +15167,8 @@ annotation (
   uses(Modelica(version="4.0.0")),
   preferredView="info",
   version="2.1.0",
-  versionDate="2020-03-24",
-  dateModified="2020-03-24 15:00:00Z",
+  versionDate="2020-06-06",
+  dateModified="2020-06-04 15:00:00Z",
   revisionId="$Id::                                    ",
   Documentation(info="<html>
 <p>
