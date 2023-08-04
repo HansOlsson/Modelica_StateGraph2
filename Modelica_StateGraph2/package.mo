@@ -12408,7 +12408,7 @@ protected
 initial equation
   pre(enableFire) = false;
   if delayedTransition then
-    pre(t_start) = 0;
+    pre(t_start) = time;
   end if;
 equation
   // Handle conditional conditionPort
