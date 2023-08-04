@@ -1,4 +1,4 @@
-﻿within ;
+within ;
 package Modelica_StateGraph2 "Modelica_StateGraph2 (Version 2.1.0) - Modeling of continuous-time state machines"
 
 package UsersGuide "User's Guide"
@@ -12408,7 +12408,7 @@ protected
 initial equation
   pre(enableFire) = false;
   if delayedTransition then
-    pre(t_start) = 0;
+    pre(t_start) = time;
   end if;
 equation
   // Handle conditional conditionPort
