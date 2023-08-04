@@ -1,4 +1,4 @@
-﻿within ;
+within ;
 package Modelica_StateGraph2 "Modelica_StateGraph2 (Version 2.1.0) - Modeling of continuous-time state machines"
 
 package UsersGuide "User's Guide"
