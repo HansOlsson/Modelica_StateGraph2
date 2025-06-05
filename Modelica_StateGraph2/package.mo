@@ -1,5 +1,5 @@
 within ;
-package Modelica_StateGraph2 "Modelica_StateGraph2 (Version 2.1.0) - Modeling of continuous-time state machines"
+package Modelica_StateGraph2 "Modelica_StateGraph2 (Version 2.1.1) - Modeling of continuous-time state machines"
 
 package UsersGuide "User's Guide"
 
@@ -733,6 +733,9 @@ library:
   class ReleaseNotes "Release notes"
 
     annotation (Documentation(info="<html>
+<h4>Version 2.1.1, 2025-06-05</h4>
+<p>Uses Modelica Standard Library 4.1.0.</p>
+<p>This should be backward compatible with the previous version, as there are no other changes. </p>
 <h4>Version 2.1.0, 2020-06-04</h4>
 <p>Uses Modelica Standard Library 4.0.0, and has proper time events in Examples.</p>
 <p>This should be backward compatible with the previous version, as changes are automatic conversion and corrections of 
@@ -15164,11 +15167,11 @@ autonomous, composed, parallel unsynchronized, parallel with synchronized output
 end Internal;
 
 annotation (
-  uses(Modelica(version="4.0.0")),
+  uses(Modelica(version="4.1.0")),
   preferredView="info",
-  version="2.1.0",
-  versionDate="2020-06-06",
-  dateModified="2020-06-04 15:00:00Z",
+  version="2.1.1",
+  versionDate="2025-06-05",
+  dateModified="2025-06-05 17:00:00Z",
   revisionId="$Id::                                    ",
   Documentation(info="<html>
 <p>
@@ -15238,5 +15241,5 @@ http://www.Modelica.org/licenses/ModelicaLicense2</a>.</i>
 </p>
 
 </html>"),
-    conversion(noneFromVersion="2.0.5"));
+    conversion(noneFromVersion="2.0.5", noneFromVersion="2.1.0"));
 end Modelica_StateGraph2;
