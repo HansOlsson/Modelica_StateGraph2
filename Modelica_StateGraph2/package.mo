@@ -11847,7 +11847,8 @@ This is the same model as
               preserveAspectRatio=true, extent={{-100,-100},{100,100}})),
         Documentation(info="<html>
 This model may contain a logic error.
-It will translate and simulate without errors and <a href=\\\"modelica:/Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.WristWatch\\\">WristWatch</a> has similar constructs.
+However, it will translate and simulate without errors and <a href=\\\"modelica:/Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.WristWatch\\\">WristWatch</a> has similar constructs.
+
 </html>"));
     end UnsafeParallel3;
 
