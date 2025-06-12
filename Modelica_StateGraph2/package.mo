@@ -11016,7 +11016,11 @@ This is the same model as
       connect(T3.outPort, step1.inPort[1]) annotation (Line(
           points={{6,5},{6,38},{6,50},{-6,50},{-20,50},{-20,38}},
           color={0,0,0},
-          smooth=Smooth.Bezier));
+        smooth=Smooth.Bezier));
+      annotation (experiment(StopTime=2),
+        TestCase(shouldPass=false),
+        Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
+                -100},{100,100}})));
     end SimpleInfiniteLoop;
 
     model SeveralInfiniteLoops
@@ -11126,8 +11130,10 @@ This is the same model as
               -38.6667,36}},
           color={0,0,0},
           smooth=Smooth.Bezier));
-      annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
-                -100},{100,100}}), graphics));
+      annotation (experiment(StopTime=2),
+        TestCase(shouldPass=false),
+        Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
+                -100},{100,100}})));
     end SeveralInfiniteLoops;
 
     model InfiniteLoop
@@ -11194,8 +11200,10 @@ This is the same model as
           points={{-6,-26.6},{-6,-44.0625}},
           color={0,0,0},
           smooth=Smooth.Bezier));
-      annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
-                -100},{100,100}}), graphics));
+      annotation (experiment(StopTime=2),
+        TestCase(shouldPass=false),
+        Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
+                -100},{100,100}})));
     end InfiniteLoop;
 
     model ParallelWithInfiniteLoop
@@ -11274,8 +11282,10 @@ This is the same model as
           points={{16,-24.6},{16,-32},{10.2306,-32},{1.9,-32},{1.9,-42.0625}},
           color={0,0,0},
           smooth=Smooth.Bezier));
-      annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
-                -100},{100,100}}), graphics));
+      annotation (experiment(StopTime=2),
+        TestCase(shouldPass=false),
+        Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
+        -100},{100,100}}), graphics));
     end ParallelWithInfiniteLoop;
 
     model NoInitialStep "An initial step is missing"
@@ -11323,10 +11333,10 @@ This is the same model as
               {0,52}},
           color={0,0,0},
           smooth=Smooth.Bezier));
-      annotation (
-        __Dymola_inhibitCheck=true,
+      annotation (experiment(StopTime=2),
+        TestCase(shouldPass=false),
         Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
-                {100,100}}), graphics),
+                {100,100}})),
         Documentation(info="<html>
 
 </html>"));
@@ -11413,9 +11423,10 @@ This is the same model as
               36},{1,26}},
           color={0,0,0},
           smooth=Smooth.Bezier));
-      annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
-              preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
-            graphics));
+      annotation (experiment(StopTime=2),
+        TestCase(shouldPass=false),
+        Diagram(coordinateSystem(
+              preserveAspectRatio=true, extent={{-100,-100},{100,100}})));
     end AutonomousWithSuspendAndNoInitialStep;
 
     model TwoInitialSteps
@@ -11467,9 +11478,10 @@ This is the same model as
               50},{-20,38}},
           color={0,0,0},
           smooth=Smooth.Bezier));
-      annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
-              preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
-            graphics));
+      annotation (experiment(StopTime=2),
+        TestCase(shouldPass=false),
+        Diagram(coordinateSystem(
+              preserveAspectRatio=true, extent={{-100,-100},{100,100}})));
     end TwoInitialSteps;
 
     model ParallelWithTwoInitialSteps
@@ -11535,9 +11547,10 @@ This is the same model as
           points={{-20,-0.6},{-20,-8}},
           color={0,0,0},
           smooth=Smooth.Bezier));
-      annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
-              preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
-            graphics));
+      annotation (experiment(StopTime=2),
+        TestCase(shouldPass=false),
+        Diagram(coordinateSystem(
+              preserveAspectRatio=true, extent={{-100,-100},{100,100}})));
     end ParallelWithTwoInitialSteps;
 
     model UnsafeParallel1
@@ -11628,9 +11641,11 @@ This is the same model as
               {-6,74}},
           color={0,0,0},
           smooth=Smooth.Bezier));
-      annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
-              preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
-            graphics));
+      annotation (
+        experiment(StopTime=2),
+        TestCase(shouldPass=false),
+        Diagram(coordinateSystem(
+              preserveAspectRatio=true, extent={{-100,-100},{100,100}})));
     end UnsafeParallel1;
 
     model UnsafeParallel2
@@ -11725,9 +11740,10 @@ This is the same model as
           color={0,0,0},
           smooth=Smooth.Bezier));
 
-      annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
-              preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
-            graphics));
+      annotation (experiment(StopTime=2),
+        TestCase(shouldPass=false),
+        Diagram(coordinateSystem(
+              preserveAspectRatio=true, extent={{-100,-100},{100,100}})));
     end UnsafeParallel2;
 
     model UnsafeParallel3
@@ -11826,9 +11842,9 @@ This is the same model as
               {-6,-44.0625}},
           color={0,0,0},
           smooth=Smooth.Bezier));
-      annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
-              preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
-            graphics));
+      annotation (experiment(StopTime=2),
+        Diagram(coordinateSystem(
+              preserveAspectRatio=true, extent={{-100,-100},{100,100}})));
     end UnsafeParallel3;
 
     model UnsafeParallel4
@@ -11922,9 +11938,10 @@ This is the same model as
           points={{-4,-32.6},{-4,-32},{-4.1,-32},{-4.1,-44.0625}},
           color={0,0,0},
           smooth=Smooth.Bezier));
-      annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
-              preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
-            graphics));
+      annotation (experiment(StopTime=2),
+        TestCase(shouldPass=false),
+        Diagram(coordinateSystem(
+              preserveAspectRatio=true, extent={{-100,-100},{100,100}})));
     end UnsafeParallel4;
 
     model UnsafeParallel5
@@ -12019,9 +12036,10 @@ This is the same model as
           color={0,0,0},
           smooth=Smooth.Bezier));
 
-      annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
-              preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
-            graphics));
+      annotation (experiment(StopTime=2),
+        TestCase(shouldPass=false),
+        Diagram(coordinateSystem(
+              preserveAspectRatio=true, extent={{-100,-100},{100,100}})));
     end UnsafeParallel5;
 
     model NoUnaryConnection1
@@ -12075,9 +12093,10 @@ This is the same model as
               {-1,46},{-1,36}},
           color={0,0,0},
           smooth=Smooth.Bezier));
-      annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
-              preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
-            graphics));
+      annotation (experiment(StopTime=2),
+        TestCase(shouldPass=false),
+        Diagram(coordinateSystem(
+              preserveAspectRatio=true, extent={{-100,-100},{100,100}})));
     end NoUnaryConnection1;
 
     model NoUnaryConnection2
@@ -12103,9 +12122,10 @@ This is the same model as
           points={{0,34.3},{0,26},{6.43359,26},{12,26},{12,20.4453},{12,18}},
           color={0,0,0},
           smooth=Smooth.Bezier));
-      annotation (__Dymola_inhibitCheck=true, Diagram(coordinateSystem(
-              preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
-            graphics));
+      annotation (experiment(StopTime=2),
+        TestCase(shouldPass=false),
+        Diagram(coordinateSystem(
+              preserveAspectRatio=true, extent={{-100,-100},{100,100}})));
     end NoUnaryConnection2;
   end WrongStateGraphs;
   end Examples;
