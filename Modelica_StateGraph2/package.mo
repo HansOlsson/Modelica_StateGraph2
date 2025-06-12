@@ -11747,7 +11747,7 @@ This is the same model as
     end UnsafeParallel2;
 
     model UnsafeParallel3
-      "Wrong Modelica_StateGraph2 where not all parallel paths are synchronized (gives translation error)"
+      "Problematic Modelica_StateGraph2 where not all parallel paths are synchronized"
       extends Modelica.Icons.Example;
 
       Parallel parallel(
@@ -11844,7 +11844,11 @@ This is the same model as
           smooth=Smooth.Bezier));
       annotation (experiment(StopTime=2),
         Diagram(coordinateSystem(
-              preserveAspectRatio=true, extent={{-100,-100},{100,100}})));
+              preserveAspectRatio=true, extent={{-100,-100},{100,100}})),
+        Documentation(info="<html>
+This model may contain a logic error.
+It will translate and simulate without errors and <a href=\\\"modelica:/Modelica_StateGraph2.Examples.Applications.HarelsWristWatch.WristWatch\\\">WristWatch</a> has similar constructs.
+</html>"));
     end UnsafeParallel3;
 
     model UnsafeParallel4
