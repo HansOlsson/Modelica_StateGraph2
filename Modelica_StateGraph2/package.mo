@@ -4305,8 +4305,7 @@ This is the same model as
             final use_suspend=true,
             final use_activePort=false,
             final use_outPort=false,
-            nEntry=1,
-            nExit=1);
+            nEntry=1);
           parameter Modelica.Units.SI.Height limit1(min=0) = 0.98
             "Maximum level of tank 1";
           parameter Modelica.Units.SI.Height limit2(min=0) = 0.98
@@ -7210,12 +7209,12 @@ This is the same model as
             smooth=Smooth.Bezier));
 
         connect(light_off.activePort, set_illumination.u[1]) annotation (Line(
-            points={{244.72,10},{244.72,10},{332,10},{358.5,10},{358.5,30}},
+            points={{244.72,10},{244.72,10},{332,10},{370.75,10},{370.75,20}},
             color={255,0,255},
             smooth=Smooth.Bezier));
 
         connect(set_illumination.y, watchDisplay.illumination) annotation (Line(
-            points={{360,71},{360,260},{194,260},{168,260},{168,242}},
+            points={{370,61},{370,260},{194,260},{168,260},{168,242}},
             color={255,127,0},
             smooth=Smooth.Bezier));
 
@@ -7280,8 +7279,8 @@ This is the same model as
             color={255,0,255},
             smooth=Smooth.Bezier));
         connect(set_illumination.u[2], light_on.activePort) annotation (Line(
-            points={{361.5,30},{361.5,-0.527344},{361.5,-30},{330.936,-30},{
-                244.72,-30}},
+            points={{369.25,20},{369.25,-0.527344},{369.25,-30},{330.936,-30},{
+                  244.72,-30}},
             color={255,0,255},
             smooth=Smooth.Bezier));
 
@@ -9110,22 +9109,23 @@ This is the same model as
             color={255,0,255},
             smooth=Smooth.Bezier));
         connect(update2_hour.activePort, quantity2.u[1]) annotation (Line(
-            points={{-15.28,50},{-15.28,50},{-8.23785,50},{9,50},{9,34},{9.2,34}},
+            points={{-15.28,50},{-15.28,50},{-8.23785,50},{9,50},{9,40},{13.4,
+                  40}},
             color={255,0,255},
             smooth=Smooth.Bezier));
 
         connect(update2_ten_min.activePort, quantity2.u[2]) annotation (Line(
-            points={{-15.28,10},{-12,10},{-12,14.5645},{-12,39.184},{-12,48},{-3.01563,
-                48},{8,48},{8,34}},
+            points={{-15.28,10},{-12,10},{-12,14.5645},{-12,39.184},{-12,48},{
+                  -3.01563,48},{14,48},{14,40}},
             color={255,0,255},
             smooth=Smooth.Bezier));
         connect(update2_min.activePort, quantity2.u[3]) annotation (Line(
             points={{-15.28,-30},{-10,-30},{-10,-21.6616},{-10,34.1992},{-10,46},
-                {-1.40313,46},{6.8,46},{6.8,34}},
+                  {-1.40313,46},{14.6,46},{14.6,40}},
             color={255,0,255},
             smooth=Smooth.Bezier));
         connect(alarm2_setting.u, quantity2.y) annotation (Line(
-            points={{8,3.2},{8,4.75},{8,4.75},{8,6.3},{8,9.4},{8,9.4}},
+            points={{8,3.2},{8,4.75},{8,4.75},{8,6.3},{8,15.4},{14,15.4}},
             color={255,127,0},
             smooth=Smooth.Bezier));
         connect(alarm2_setting.trigger, update2_d.firePort) annotation (Line(
@@ -9148,21 +9148,21 @@ This is the same model as
             color={255,0,255},
             smooth=Smooth.Bezier));
         connect(alarm1_setting.u, quantity1.y) annotation (Line(
-            points={{200,1.2},{200,7.4}},
+            points={{200,1.2},{200,8},{200,13.4},{206,13.4}},
             color={255,127,0},
             smooth=Smooth.Bezier));
         connect(quantity1.u[1], update1_hour.activePort) annotation (Line(
-            points={{201.2,32},{201,32},{201,50},{181.829,50},{174.72,50}},
+            points={{205.4,38},{201,38},{201,50},{181.829,50},{174.72,50}},
             color={255,0,255},
             smooth=Smooth.Bezier));
         connect(update1_ten_min.activePort, quantity1.u[2]) annotation (Line(
             points={{174.72,10},{182,10},{182,19.5371},{182,36.7983},{182,48},{
-                191.053,48},{200,48},{200,32}},
+                  191.053,48},{206,48},{206,38}},
             color={255,0,255},
             smooth=Smooth.Bezier));
         connect(update1_min.activePort, quantity1.u[3]) annotation (Line(
             points={{174.72,-30},{184,-30},{184,-19.8917},{184,36.3516},{184,46},
-                {191.805,46},{198.8,46},{198.8,32}},
+                  {191.805,46},{206.6,46},{206.6,38}},
             color={255,0,255},
             smooth=Smooth.Bezier));
         connect(update1_d.firePort, alarm1_setting.trigger) annotation (Line(
@@ -9456,17 +9456,17 @@ This is the same model as
         connect(reg.activePort, select_display_of_time_or_lap_time.u[1])
           annotation (Line(
             points={{-25.28,0},{-22,0},{-22,-4.3262},{-22,-10},{-32.1074,-10},{
-                -60.704,-10},{-74.5,-10},{-74.5,2.5}},
+                  -60.704,-10},{-57,-10},{-57,-12}},
             color={255,0,255},
             smooth=Smooth.Bezier));
         connect(lap.activePort, select_display_of_time_or_lap_time.u[2])
           annotation (Line(
-            points={{-33.72,-40},{-49.6295,-40},{-72.5,-40},{-72.5,2.5}},
+            points={{-33.72,-40},{-49.6295,-40},{-58,-40},{-58,-12}},
             color={255,0,255},
             smooth=Smooth.Bezier));
         connect(select_display_of_time_or_lap_time.y, signalBus.stopwatch_time)
           annotation (Line(
-            points={{-72.5,61.95},{-72.5,78},{-80,78},{-80,80}},
+            points={{-58,47.45},{-58,78},{-80,78},{-80,80}},
             color={255,127,0},
             smooth=Smooth.Bezier), Text(
             string="%second",
@@ -9510,7 +9510,7 @@ This is the same model as
         connect(zero.activePort, select_display_of_time_or_lap_time.u[3])
           annotation (Line(
             points={{4.72,50},{10,50},{10,43.1094},{10,2},{10,-8},{0.498854,-8},
-                {-59.4941,-8},{-70.5,-8},{-70.5,2.5}},
+                  {-59.4941,-8},{-59,-8},{-59,-12}},
             color={255,0,255},
             smooth=Smooth.Bezier));
         annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={
@@ -11353,7 +11353,7 @@ This is the same model as
         use_suspend=true,
         nSuspend=1,
         nResume=1,
-        nExit=2,
+        nExit=0,
         use_outPort=false,
         use_inPort=false)
         annotation (Placement(transformation(extent={{-38,-48},{38,52}})));
