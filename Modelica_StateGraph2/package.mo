@@ -8350,7 +8350,7 @@ This is the same model as
                   {-160,-100},{160,100}}), graphics), Icon(coordinateSystem(
                 preserveAspectRatio=true, extent={{-200,-200},{200,200}}),
               graphics={Bitmap(extent={{-160,-160},{160,160}}, fileName=
-                "Images/StateGraph/Examples/Regular_sm.png")}));
+                "modelica:/Modelica_StateGraph2/Resources/Images/StateGraph/Examples/Regular_sm.png")}));
       end Regular;
 
       model Out
@@ -9193,7 +9193,7 @@ This is the same model as
                   {-240,-100},{240,100}}), graphics), Icon(coordinateSystem(
                 preserveAspectRatio=true, extent={{-200,-200},{200,200}}),
               graphics={Bitmap(extent={{-190,-192},{192,190}}, fileName=
-                "Images/StateGraph/Examples/Out_sm.png")}));
+                "modelica:/Modelica_StateGraph2/Resources/Images/StateGraph/Examples/Out_sm.png")}));
       end Out;
 
       model Stopwatch
@@ -9492,7 +9492,7 @@ This is the same model as
                   {-100,-100},{100,100}}), graphics), Icon(coordinateSystem(
                 preserveAspectRatio=true, extent={{-200,-200},{200,200}}),
               graphics={Bitmap(extent={{-180,-180},{180,180}}, fileName=
-                "Images/StateGraph/Examples/stopwatch_sm.png")}));
+                "modelica:/Modelica_StateGraph2/Resources/Images/StateGraph/Examples/stopwatch_sm.png")}));
       end Stopwatch;
 
       package Utilities
