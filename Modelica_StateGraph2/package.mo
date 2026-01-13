@@ -487,7 +487,7 @@ on the master thesis of Isolde Dressler
 <p>
 In the following figure the top level of the model is shown.
 This model is available from
-<a href=\"Modelica_StateGraph2.Examples.Applications.ControlledTanks.ControlledTanks1\">here</a>.
+<a href=\"modelica://Modelica_StateGraph2.Examples.Applications.ControlledTanks.ControlledTanks1\">here</a>.
 </p>
 
 <blockquote>
@@ -581,7 +581,7 @@ step \"shutTank2\" is active. Otherwise, valve3 is closed.
 
 <p>
 An alternative implementation of the tank controller is available from
-<a href=\"Modelica_StateGraph2.Examples.Applications.ControlledTanks.ControlledTanks2\">here</a>.
+<a href=\"modelica://Modelica_StateGraph2.Examples.Applications.ControlledTanks.ControlledTanks2\">here</a>.
 The differences to the implementation shown above are:
 </p>
 
@@ -4026,47 +4026,31 @@ This is the same model as
                 extent={{-100,-100},{100,100}},
                 grid={1,1}), graphics={Text(
                             extent={{-100,68},{-32,54}},
-                            lineColor={0,0,0},
-                            fillColor={0,0,0},
-                            fillPattern=FillPattern.Solid,
+                            textColor={0,0,0},
                             textString="start"),Text(
                             extent={{-100,6},{-32,-8}},
-                            lineColor={0,0,0},
-                            fillColor={0,0,0},
-                            fillPattern=FillPattern.Solid,
+                            textColor={0,0,0},
                             textString="stop"),Text(
                             extent={{-100,-54},{-32,-68}},
-                            lineColor={0,0,0},
-                            fillColor={0,0,0},
-                            fillPattern=FillPattern.Solid,
+                            textColor={0,0,0},
                             textString="shut"),Text(
                             extent={{-94,-82},{-18,-96}},
-                            lineColor={0,0,0},
-                            fillColor={0,0,0},
-                            fillPattern=FillPattern.Solid,
+                            textColor={0,0,0},
                             textString="level1"),Text(
                             extent={{24,-84},{96,-98}},
-                            lineColor={0,0,0},
-                            fillColor={0,0,0},
-                            fillPattern=FillPattern.Solid,
+                            textColor={0,0,0},
                             textString="level2"),Text(
                             extent={{31,68},{99,54}},
-                            lineColor={0,0,0},
-                            fillColor={0,0,0},
-                            fillPattern=FillPattern.Solid,
+                            textColor={0,0,0},
                             textString="valve1"),Text(
                             extent={{33,9},{101,-5}},
-                            lineColor={0,0,0},
-                            fillColor={0,0,0},
-                            fillPattern=FillPattern.Solid,
+                            textColor={0,0,0},
                             textString="valve2"),Text(
                             extent={{34,-53},{102,-67}},
-                            lineColor={0,0,0},
-                            fillColor={0,0,0},
-                            fillPattern=FillPattern.Solid,
+                            textColor={0,0,0},
                             textString="valve3"),Text(
                             extent={{-33,18},{31,-32}},
-                            lineColor={0,0,255},
+                            textColor={0,0,255},
                             textString="1")}));
         end TankController1;
 
@@ -4295,7 +4279,7 @@ This is the same model as
                 extent={{-100,-100},{100,120}},
                 grid={1,1}), graphics={Text(
                             extent={{-33,18},{31,-32}},
-                            lineColor={0,0,255},
+                            textColor={0,0,255},
                             textString="2")}));
         end TankController2;
 
@@ -4483,19 +4467,19 @@ This is the same model as
           annotation (Icon(coordinateSystem(preserveAspectRatio=true, extent={{
                     -200,-200},{200,200}}), graphics={Text(
                             extent={{130,118},{182,94}},
-                            lineColor={0,0,0},
+                            textColor={0,0,0},
                             textString="2"),Text(
                             extent={{130,70},{182,46}},
-                            lineColor={0,0,0},
+                            textColor={0,0,0},
                             textString="3"),Text(
                             extent={{128,170},{180,146}},
-                            lineColor={0,0,0},
+                            textColor={0,0,0},
                             textString="1"),Text(
                             extent={{-174,16},{148,-34}},
-                            lineColor={0,0,0},
+                            textColor={0,0,0},
                             textString="MakeProduct"),Text(
                             extent={{-22,124},{120,96}},
-                            lineColor={0,0,0},
+                            textColor={0,0,0},
                             textString="valves")}), Diagram(coordinateSystem(
                 preserveAspectRatio=true,
                 extent={{-100,-100},{100,100}},
@@ -4617,16 +4601,16 @@ This is the same model as
                   preserveAspectRatio=true, extent={{-200,-200},{200,200}}),
                 graphics={Text(
                             extent={{132,146},{184,122}},
-                            lineColor={0,0,0},
+                            textColor={0,0,0},
                             textString="2"),Text(
                             extent={{136,88},{188,64}},
-                            lineColor={0,0,0},
+                            textColor={0,0,0},
                             textString="3"),Text(
                             extent={{-166,26},{156,-22}},
-                            lineColor={0,0,0},
+                            textColor={0,0,0},
                             textString="ShutStep"),Text(
                             extent={{-2,120},{140,92}},
-                            lineColor={0,0,0},
+                            textColor={0,0,0},
                             textString="valves")}));
         end ShutStep;
 
@@ -4788,28 +4772,28 @@ This is the same model as
               extent={{-160,-160},{160,160}},
               initialScale=0.1), graphics={Text(
                         extent={{-114,30},{-114,22}},
-                        lineColor={0,0,0},
+                        textColor={0,0,0},
                         textString="Next.Ready"),Text(
                         extent={{-110,64},{-110,56}},
-                        lineColor={0,0,0},
+                        textColor={0,0,0},
                         textString="Next.Idle"),Text(
                         extent={{-120,46},{-120,38}},
-                        lineColor={0,0,0},
+                        textColor={0,0,0},
                         textString="Next.Transport"),Text(
                         extent={{124,30},{124,22}},
-                        lineColor={0,0,0},
+                        textColor={0,0,0},
                         textString="Prev.Transport off"),Text(
                         extent={{108,44},{108,36}},
-                        lineColor={0,0,0},
+                        textColor={0,0,0},
                         textString="Prev.Idle"),Text(
                         extent={{112,58},{112,50}},
-                        lineColor={0,0,0},
+                        textColor={0,0,0},
                         textString="Prev.Ready"),Text(
                         extent={{-18,-6},{-18,-14}},
-                        lineColor={0,0,0},
+                        textColor={0,0,0},
                         textString="Robot.StartWork"),Text(
                         extent={{78,-6},{78,-14}},
-                        lineColor={0,0,0},
+                        textColor={0,0,0},
                         textString="Robot.WorkDone")}));
       end MainSimple;
 
@@ -4988,22 +4972,22 @@ This is the same model as
               extent={{-160,-160},{160,160}},
               initialScale=0.1), graphics={Text(
                         extent={{-124,48},{-124,40}},
-                        lineColor={0,0,0},
+                        textColor={0,0,0},
                         textString="Next.Ready"),Text(
                         extent={{-120,82},{-120,74}},
-                        lineColor={0,0,0},
+                        textColor={0,0,0},
                         textString="Next.Idle"),Text(
                         extent={{-130,64},{-130,56}},
-                        lineColor={0,0,0},
+                        textColor={0,0,0},
                         textString="Next.Transport"),Text(
                         extent={{144,-30},{144,-38}},
-                        lineColor={0,0,0},
+                        textColor={0,0,0},
                         textString="Prev.Transport off"),Text(
                         extent={{128,-16},{128,-24}},
-                        lineColor={0,0,0},
+                        textColor={0,0,0},
                         textString="Prev.Idle"),Text(
                         extent={{132,-2},{132,-10}},
-                        lineColor={0,0,0},
+                        textColor={0,0,0},
                         textString="Prev.Ready")}));
       end MainExtended;
 
@@ -5113,9 +5097,7 @@ This is the same model as
                                 fillColor={255,255,255},
                                 fillPattern=FillPattern.Solid),Text(
                                 extent={{-58,100},{54,46}},
-                                lineColor={0,0,0},
-                                fillColor={255,255,255},
-                                fillPattern=FillPattern.Solid,
+                                textColor={0,0,0},
                                 textString="Start"),Rectangle(
                                 extent={{-100,46},{100,-46}},
                                 lineColor={95,95,95},
@@ -5174,9 +5156,7 @@ This is the same model as
                                 fillColor={255,255,255},
                                 fillPattern=FillPattern.Solid),Text(
                                 extent={{-54,100},{56,38}},
-                                lineColor={0,0,0},
-                                fillColor={255,255,255},
-                                fillPattern=FillPattern.Solid,
+                                textColor={0,0,0},
                                 textString="End"),Rectangle(
                                 extent={{-100,46},{100,-46}},
                                 lineColor={95,95,95},
@@ -5390,10 +5370,10 @@ This is the same model as
             annotation (Diagram(coordinateSystem(preserveAspectRatio=true,
                     extent={{-100,-100},{100,100}}), graphics={Text(
                                 extent={{-196,64},{-116,46}},
-                                lineColor={0,0,0},
+                                textColor={0,0,0},
                                 textString="Motor"),Text(
                                 extent={{-96,78},{-64,68}},
-                                lineColor={0,0,0},
+                                textColor={0,0,0},
                                 textString="Motor")}), Icon(coordinateSystem(
                     preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
                   graphics={Rectangle(
@@ -5630,7 +5610,7 @@ This is the same model as
             annotation (Diagram(coordinateSystem(preserveAspectRatio=true,
                     extent={{-100,-100},{100,100}}), graphics={Text(
                                 extent={{-96,-16},{-64,-26}},
-                                lineColor={0,0,0},
+                                textColor={0,0,0},
                                 textString="Motor")}), Icon(coordinateSystem(
                     preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
                   graphics={Rectangle(
@@ -7419,24 +7399,19 @@ This is the same model as
           Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-400,-300},
                   {400,300}}), graphics={Text(
                         extent={{-308,240},{-308,220}},
-                        lineColor={0,0,0},
-                        lineThickness=0.5,
+                        textColor={0,0,0},
                         textString="Alarm 1 on"),Text(
                         extent={{-308,220},{-308,200}},
-                        lineColor={0,0,0},
-                        lineThickness=0.5,
+                        textColor={0,0,0},
                         textString="Alarm 2 on"),Text(
                         extent={{-304,200},{-304,180}},
-                        lineColor={0,0,0},
-                        lineThickness=0.5,
+                        textColor={0,0,0},
                         textString="Chime on"),Text(
                         extent={{-324,180},{-324,160}},
-                        lineColor={0,0,0},
-                        lineThickness=0.5,
+                        textColor={0,0,0},
                         textString="Alarm 1 beeps"),Text(
                         extent={{-324,160},{-324,140}},
-                        lineColor={0,0,0},
-                        lineThickness=0.5,
+                        textColor={0,0,0},
                         textString="Alarm 2 beeps")}),
           experiment(StopTime=200, Interval=0.01),
           Documentation(info="<html>
@@ -8373,8 +8348,8 @@ This is the same model as
         annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={
                   {-160,-100},{160,100}}), graphics), Icon(coordinateSystem(
                 preserveAspectRatio=true, extent={{-200,-200},{200,200}}),
-              graphics={Bitmap(extent={{-160,160},{160,-160}}, fileName=
-                "Images/StateGraph/Examples/Regular_sm.png")}));
+              graphics={Bitmap(extent={{-160,-160},{160,160}}, fileName=
+                "modelica:/Modelica_StateGraph2/Resources/Images/StateGraph/Examples/Regular_sm.png")}));
       end Regular;
 
       model Out
@@ -9217,8 +9192,8 @@ This is the same model as
         annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={
                   {-240,-100},{240,100}}), graphics), Icon(coordinateSystem(
                 preserveAspectRatio=true, extent={{-200,-200},{200,200}}),
-              graphics={Bitmap(extent={{-190,190},{192,-192}}, fileName=
-                "Images/StateGraph/Examples/Out_sm.png")}));
+              graphics={Bitmap(extent={{-190,-192},{192,190}}, fileName=
+                "modelica:/Modelica_StateGraph2/Resources/Images/StateGraph/Examples/Out_sm.png")}));
       end Out;
 
       model Stopwatch
@@ -9516,8 +9491,8 @@ This is the same model as
         annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={
                   {-100,-100},{100,100}}), graphics), Icon(coordinateSystem(
                 preserveAspectRatio=true, extent={{-200,-200},{200,200}}),
-              graphics={Bitmap(extent={{-180,180},{180,-180}}, fileName=
-                "Images/StateGraph/Examples/stopwatch_sm.png")}));
+              graphics={Bitmap(extent={{-180,-180},{180,180}}, fileName=
+                "modelica:/Modelica_StateGraph2/Resources/Images/StateGraph/Examples/stopwatch_sm.png")}));
       end Stopwatch;
 
       package Utilities
@@ -9596,18 +9571,13 @@ This is the same model as
                             pattern=LinePattern.None,
                             fillPattern=FillPattern.Solid),Text(
                             extent={{-580,-180},{-400,180}},
-                            lineColor={0,0,255},
-                            fillColor={127,255,255},
-                            fillPattern=FillPattern.Solid,
+                            textColor={0,0,255},
                             textString=DynamicSelect("0", realString(
                               mod(large_digit1, 10),
                               1,
                               integer(precision)))),Text(
                             extent={{-198,200},{2,-200}},
-                            lineColor={0,0,255},
-                            pattern=LinePattern.None,
-                            fillColor={127,191,255},
-                            fillPattern=FillPattern.Solid,
+                            textColor={0,0,255},
                             textString=":"),Rectangle(
                             extent={{-400,200},{-200,-200}},
                             fillColor=DynamicSelect({127,191,255}, dispColour),
@@ -9615,9 +9585,7 @@ This is the same model as
                             pattern=LinePattern.None,
                             fillPattern=FillPattern.Solid),Text(
                             extent={{-380,-180},{-200,180}},
-                            lineColor={0,0,255},
-                            fillColor={127,255,255},
-                            fillPattern=FillPattern.Solid,
+                            textColor={0,0,255},
                             textString=DynamicSelect("0", realString(
                               mod(large_digit2, 10),
                               1,
@@ -9628,9 +9596,7 @@ This is the same model as
                             pattern=LinePattern.None,
                             fillPattern=FillPattern.Solid),Text(
                             extent={{20,-180},{200,180}},
-                            lineColor={0,0,255},
-                            fillColor={127,255,255},
-                            fillPattern=FillPattern.Solid,
+                            textColor={0,0,255},
                             textString=DynamicSelect("0", realString(
                               mod(large_digit3, 10),
                               1,
@@ -9641,9 +9607,7 @@ This is the same model as
                             pattern=LinePattern.None,
                             fillPattern=FillPattern.Solid),Text(
                             extent={{220,-180},{400,180}},
-                            lineColor={0,0,255},
-                            fillColor={127,255,255},
-                            fillPattern=FillPattern.Solid,
+                            textColor={0,0,255},
                             textString=DynamicSelect("0", realString(
                               mod(large_digit4, 10),
                               1,
@@ -9654,9 +9618,7 @@ This is the same model as
                             pattern=LinePattern.None,
                             fillPattern=FillPattern.Solid),Text(
                             extent={{410,-190},{590,-10}},
-                            lineColor={0,0,255},
-                            fillColor={127,255,255},
-                            fillPattern=FillPattern.Solid,
+                            textColor={0,0,255},
                             textString=DynamicSelect("0", if small_digit > 0
                      then realString(
                               small_digit,
@@ -9668,9 +9630,7 @@ This is the same model as
                             pattern=LinePattern.None,
                             fillPattern=FillPattern.Solid),Text(
                             extent={{404,10},{584,190}},
-                            lineColor={0,0,255},
-                            fillColor={127,255,255},
-                            fillPattern=FillPattern.Solid,
+                            textColor={0,0,255},
                             textString=if text_digit == 1 then "Mo" else if
                     text_digit == 2 then "Tu" else if text_digit == 3 then "We"
                      else if text_digit == 4 then "Th" else if text_digit == 5
@@ -10192,10 +10152,10 @@ This is the same model as
                             fillColor={175,175,175},
                             fillPattern=FillPattern.Solid),Text(
                             extent={{-4,110},{-4,32}},
-                            lineColor={95,95,95},
+                            textColor={95,95,95},
                             textString="Display"),Text(
                             extent={{-2,6},{-2,-72}},
-                            lineColor={95,95,95},
+                            textColor={95,95,95},
                             textString="Decoder")}),
             Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
                     {100,100}}), graphics),
@@ -10396,10 +10356,10 @@ This is the same model as
                             fillColor={175,175,175},
                             fillPattern=FillPattern.Solid),Text(
                             extent={{0,80},{0,20}},
-                            lineColor={95,95,95},
+                            textColor={95,95,95},
                             textString="Alarm"),Text(
                             extent={{0,0},{0,-60}},
-                            lineColor={95,95,95},
+                            textColor={95,95,95},
                             textString="Trigger")}),
             Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
                     {100,100}}), graphics),
@@ -10590,10 +10550,10 @@ This is the same model as
                             fillColor={175,175,175},
                             fillPattern=FillPattern.Solid),Text(
                             extent={{0,60},{0,20}},
-                            lineColor={95,95,95},
+                            textColor={95,95,95},
                             textString="Watch"),Text(
                             extent={{0,0},{0,-40}},
-                            lineColor={95,95,95},
+                            textColor={95,95,95},
                             textString="Controller")}),
             Documentation(info="<html>
 <p>The watch controller contains the clock functionality, gathering of stopwatch signals, time settings and modes from different parts of the wristwatch that are gathered, grouped together and finally decoded into outputs to the LED display.</p>
@@ -10954,16 +10914,16 @@ This is the same model as
       annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
                 -100},{100,100}}), graphics={Text(
                     extent={{-74,94},{-74,82}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString="Process 1"),Text(
                     extent={{76,94},{76,82}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString="Process 2"),Text(
                     extent={{0,80},{0,68}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString="Resource 1"),Text(
                     extent={{0,-6},{0,-18}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString="Resource 2")}), experiment(StopTime=10));
     end Deadlock;
 
@@ -12342,7 +12302,7 @@ in the tutorial.
         Text(
           extent={{15,118},{470,193}},
           textString="%name",
-          lineColor={0,0,255}),
+          textColor={0,0,255}),
         Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,0},
@@ -12485,7 +12445,7 @@ equation
         Text(
           visible=delayedTransition,
           extent={{-200,10},{200,-10}},
-          lineColor={255,0,0},
+          textColor={255,0,0},
           textString="%waitTime",
           origin={210,-70},
           rotation=0),
@@ -12508,7 +12468,7 @@ equation
         Text(
           extent={{-150,-15},{150,15}},
           textString="%name",
-          lineColor={0,0,255},
+          textColor={0,0,255},
           origin={160,75},
           rotation=0),
         Rectangle(
@@ -12521,7 +12481,7 @@ equation
         Text(
           visible=not use_conditionPort,
           extent={{-300,-15},{300,15}},
-          lineColor=DynamicSelect({128,128,128}, if condition > 0.5 then {0,255,
+          textColor=DynamicSelect({128,128,128}, if condition > 0.5 then {0,255,
               0} else {128,128,128}),
           textString="%condition",
           origin={-155,-3},
@@ -12529,9 +12489,7 @@ equation
         Text(
           visible=not loopCheck,
           extent={{10,-60},{400,-80}},
-          lineColor={255,0,0},
-          fillColor={170,255,213},
-          fillPattern=FillPattern.Solid,
+          textColor={255,0,0},
           textString="no check"),
         Line(
           visible=not loopCheck,
@@ -12742,7 +12700,7 @@ equation
         grid={1,1}), graphics={
         Text(
           extent={{-200,10},{200,-10}},
-          lineColor={255,0,0},
+          textColor={255,0,0},
           textString="%waitTime",
           origin={220,-110},
           rotation=0),
@@ -12751,7 +12709,7 @@ equation
         Text(
           extent={{-150,-15},{150,15}},
           textString="%name",
-          lineColor={0,0,255},
+          textColor={0,0,255},
           origin={150,105},
           rotation=0),
         Rectangle(
@@ -12764,7 +12722,7 @@ equation
         Text(
           visible=not use_conditionPort,
           extent={{-300,-15},{300,15}},
-          lineColor=DynamicSelect({128,128,128}, if condition > 0.5 then {0,255,
+          textColor=DynamicSelect({128,128,128}, if condition > 0.5 then {0,255,
               0} else {128,128,128}),
           textString="%condition",
           origin={-153,49},
@@ -12905,10 +12863,10 @@ equation
         initialScale=1,
         grid={0.5,0.5}), graphics={Text(
             extent={{4,73},{15,70}},
-            lineColor={0,0,0},
+            textColor={0,0,0},
             textString="entry"),Text(
             extent={{3,-70},{14,-73}},
-            lineColor={0,0,0},
+            textColor={0,0,0},
             textString="exit")}),
     Icon(coordinateSystem(
         extent={{-60,-80},{60,80}},
@@ -12924,28 +12882,28 @@ equation
           lineThickness=0.5),
         Text(
           extent={{1,78.5},{60,73.5}},
-          lineColor={0,0,255},
+          textColor={0,0,255},
           textString="%name"),
         Text(
           extent={{-30,75},{-5,74}},
-          lineColor={0,0,0},
+          textColor={0,0,0},
           textString="entry"),
         Text(
           visible=use_outPort,
           extent={{-25,-76},{-5,-77}},
-          lineColor={0,0,0},
+          textColor={0,0,0},
           textString="exit"),
         Text(
           visible=use_suspend,
           extent={{-20,1},{20,-1}},
-          lineColor={0,0,0},
+          textColor={0,0,0},
           textString="suspend",
           origin={-56,45},
           rotation=-90),
         Text(
           visible=use_suspend,
           extent={{-20,1},{20,-1}},
-          lineColor={0,0,0},
+          textColor={0,0,0},
           origin={-53,-45},
           rotation=-90,
           textString="resume"),
@@ -13080,22 +13038,19 @@ equation
           lineThickness=0.5),
         Text(
           extent={{54,231},{400,210}},
-          lineColor={0,0,255},
-          fillPattern=FillPattern.Solid,
+          textColor={0,0,255},
           textString="%name"),
         Text(
           visible=use_suspend,
           extent={{-36,11},{122,-3}},
-          lineColor={0,0,0},
-          fillPattern=FillPattern.Solid,
+          textColor={0,0,0},
           textString="suspend",
           origin={-179,160},
           rotation=270),
         Text(
           visible=use_suspend,
           extent={{-110,9},{42,-5}},
-          lineColor={0,0,0},
-          fillPattern=FillPattern.Solid,
+          textColor={0,0,0},
           origin={-173,-154},
           rotation=270,
           textString="resume"),
@@ -13169,7 +13124,7 @@ package Blocks
                 -100},{100,100}}), graphics={Text(
                     visible=not use_activePort,
                     extent={{-188,-60},{62,-80}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString="%active"),Ellipse(
                     extent={{-100,-40},{-20,40}},
                     fillColor=DynamicSelect({235,235,235}, if active2 > 0.5
@@ -13186,7 +13141,7 @@ package Blocks
       y = Modelica_StateGraph2.Blocks.BooleanFunctions.allTrue(u);
       annotation (defaultComponentName="and1", Icon(graphics={Text(
                     extent={{-76,40},{60,-40}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString="and")}));
     end And;
 
@@ -13197,7 +13152,7 @@ package Blocks
       y = Modelica_StateGraph2.Blocks.BooleanFunctions.anyTrue(u);
       annotation (defaultComponentName="or1", Icon(graphics={Text(
                     extent={{-80,40},{60,-40}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString="or")}));
     end Or;
 
@@ -13209,7 +13164,7 @@ package Blocks
       y = Modelica_StateGraph2.Blocks.BooleanFunctions.oneTrue(u);
       annotation (defaultComponentName="xor1", Icon(graphics={Text(
                     extent={{-80,40},{60,-40}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString="xor")}));
     end Xor;
 
@@ -13220,7 +13175,7 @@ package Blocks
       y = not Modelica_StateGraph2.Blocks.BooleanFunctions.allTrue(u);
       annotation (defaultComponentName="nand1", Icon(graphics={Text(
                     extent={{-80,40},{60,-40}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString="nand")}));
     end Nand;
 
@@ -13231,7 +13186,7 @@ package Blocks
       y = not Modelica_StateGraph2.Blocks.BooleanFunctions.anyTrue(u);
       annotation (defaultComponentName="or1", Icon(graphics={Text(
                     extent={{-80,40},{60,-40}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString="nor")}));
     end Nor;
 
@@ -13348,24 +13303,22 @@ time instant. At all other time instants, y = <b>false</b>.
             grid={1,1}), graphics={Text(
                     visible=not use_pre_as_default,
                     extent={{-100,-60},{300,-90}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString="else: %y_default"),Text(
                     visible=use_pre_as_default,
                     extent={{-100,-60},{300,-90}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString="else: pre(y)"),Text(
                     extent={{-99,99},{300,59}},
                     textString="%name",
-                    lineColor={0,0,255}),Rectangle(
+                    textColor={0,0,255}),Rectangle(
                     extent={{-100,-51},{300,50}},
                     lineColor={255,127,0},
                     fillColor={210,210,210},
                     fillPattern=FillPattern.Solid,
                     borderPattern=BorderPattern.Raised),Text(
                     extent={{-84,16},{273,-15}},
-                    lineColor={0,0,0},
-                    fillColor={255,246,238},
-                    fillPattern=FillPattern.Solid,
+                    textColor={0,0,0},
                     textString="%expr"),Ellipse(
                     extent={{275,8},{289,-6}},
                     lineColor=DynamicSelect({235,235,235}, if y > 0.5 then {0,
@@ -13418,7 +13371,7 @@ false, y is set to parameter \"y_default\" or to pre(y) depending on the paramet
       annotation (Icon(graphics={
             Text(
               extent={{-250,-120},{250,-150}},
-              lineColor={0,0,0},
+              textColor={0,0,0},
               textString="%delayTime s"),
             Line(points={{-80,-66},{-60,-66},{-60,-22},{38,-22},{38,-66},{66,-66}},
                 color={0,0,0}),
@@ -13479,7 +13432,7 @@ is shown in the next figure.
                     0))),Text(
                     visible=not use_numberPort,
                     extent={{-150,-50},{150,-70}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString="%number")}));
     end ShowValue;
 
@@ -13491,14 +13444,10 @@ is shown in the next figure.
 
       annotation (Icon(graphics={Text(
                     extent={{-200,-110},{200,-140}},
-                    lineColor={0,0,0},
-                    fillColor={255,213,170},
-                    fillPattern=FillPattern.Solid,
+                    textColor={0,0,0},
                     textString="%k"),Text(
                     extent={{-72,68},{92,-68}},
-                    lineColor={0,0,0},
-                    fillColor={255,213,170},
-                    fillPattern=FillPattern.Solid,
+                    textColor={0,0,0},
                     textString="+")}));
     end Sum;
 
@@ -13509,9 +13458,7 @@ is shown in the next figure.
 
       annotation (Icon(graphics={Text(
                     extent={{-74,50},{94,-94}},
-                    lineColor={0,0,0},
-                    fillColor={255,213,170},
-                    fillPattern=FillPattern.Solid,
+                    textColor={0,0,0},
                     textString="*")}));
     end Product;
 
@@ -13556,18 +13503,18 @@ is shown in the next figure.
             extent={{-100,-100},{300,100}},
             grid={1,1}), graphics={Text(
                     extent={{310,-25},{410,-45}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString=realString(
                       y,
                       1,
                       0)),Text(
                     visible=not use_pre_as_default,
                     extent={{-100,-60},{300,-90}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString="else: %y_default"),Text(
                     visible=use_pre_as_default,
                     extent={{-100,-50},{300,-80}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString="else: pre(y)"),Rectangle(
                     extent={{-100,-40},{300,40}},
                     lineColor={0,0,0},
@@ -13576,11 +13523,9 @@ is shown in the next figure.
                     borderPattern=BorderPattern.Raised),Text(
                     extent={{-100,90},{300,50}},
                     textString="%name",
-                    lineColor={0,0,255}),Text(
+                    textColor={0,0,255}),Text(
                     extent={{-80,15},{290,-15}},
-                    lineColor={0,0,0},
-                    fillColor={255,246,238},
-                    fillPattern=FillPattern.Solid,
+                    textColor={0,0,0},
                     textString="%expr")}),
         Documentation(info="<html>
 <p>
@@ -13684,7 +13629,7 @@ false, y is set to parameter \"y_default\" or to pre(y) depending on the paramet
                     smooth=Smooth.None),Text(
                     visible=use_reset,
                     extent={{-28,-62},{94,-86}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString="reset")}));
     end TriggeredAdd;
   end MathInteger;
@@ -13727,7 +13672,7 @@ false, y is set to parameter \"y_default\" or to pre(y) depending on the paramet
                     integer(precision)))),Text(
                     visible=not use_numberPort,
                     extent={{-150,-50},{150,-70}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString="%number")}));
     end ShowValue;
 
@@ -13739,14 +13684,10 @@ false, y is set to parameter \"y_default\" or to pre(y) depending on the paramet
 
       annotation (Icon(graphics={Text(
                     extent={{-200,-110},{200,-140}},
-                    lineColor={0,0,0},
-                    fillColor={255,213,170},
-                    fillPattern=FillPattern.Solid,
+                    textColor={0,0,0},
                     textString="%k"),Text(
                     extent={{-72,68},{92,-68}},
-                    lineColor={0,0,0},
-                    fillColor={255,213,170},
-                    fillPattern=FillPattern.Solid,
+                    textColor={0,0,0},
                     textString="+")}));
     end Sum;
 
@@ -13757,9 +13698,7 @@ false, y is set to parameter \"y_default\" or to pre(y) depending on the paramet
 
       annotation (Icon(graphics={Text(
                     extent={{-74,50},{94,-94}},
-                    lineColor={0,0,0},
-                    fillColor={255,213,170},
-                    fillPattern=FillPattern.Solid,
+                    textColor={0,0,0},
                     textString="*")}));
     end Product;
 
@@ -13808,22 +13747,20 @@ false, y is set to parameter \"y_default\" or to pre(y) depending on the paramet
                     fillPattern=FillPattern.Solid,
                     borderPattern=BorderPattern.Raised),Text(
                     extent={{-86,16},{295,-17}},
-                    lineColor={0,0,0},
-                    fillColor={255,246,238},
-                    fillPattern=FillPattern.Solid,
+                    textColor={0,0,0},
                     textString="%expr"),Text(
                     extent={{310,-25},{410,-45}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString=DynamicSelect(" ", realString(
                       y,
                       1,
                       integer(precision)))),Text(
                     extent={{-100,-60},{300,-90}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString="else: %y_default"),Text(
                     extent={{-100,100},{300,60}},
                     textString="%name",
-                    lineColor={0,0,255})}),
+                    textColor={0,0,255})}),
         Documentation(info="<html>
 <p>
 The block has a vector of Boolean input signals u[nu] and a vector of
@@ -13945,7 +13882,7 @@ false, y is set to parameter \"y_default\":
                     lineColor={128,128,128},
                     lineThickness=0.5),Text(
                     extent={{-100,-35},{100,35}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString="%name")},
           interaction={OnMouseDownSetBoolean(on, true)}),
         Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
@@ -14044,7 +13981,7 @@ This gives the following result:
                     lineColor={128,128,128},
                     lineThickness=2),Text(
                     extent={{-80,-40},{80,40}},
-                    lineColor={0,0,255},
+                    textColor={0,0,255},
                     textString="%label")},
           interaction={OnMouseDownSetBoolean(buttonState, true)}), Diagram(
             coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
@@ -14084,7 +14021,7 @@ This gives the following result:
                     lineColor={128,128,128},
                     lineThickness=2),Text(
                     extent={{-80,-40},{80,40}},
-                    lineColor={0,0,255},
+                    textColor={0,0,255},
                     textString="%label")},
           interaction={OnMouseDownSetBoolean(buttonState, true),
               OnMouseUpSetBoolean(buttonState, false)}),
@@ -14114,7 +14051,7 @@ This gives the following result:
                     lineColor={128,128,128},
                     lineThickness=4),Text(
                     extent={{-80,-40},{80,40}},
-                    lineColor={0,0,255},
+                    textColor={0,0,255},
                     textString="%label")},
           interaction={OnMouseDownSetBoolean(y, not y > 0.5)}));
     end ToggleButton;
@@ -14139,7 +14076,7 @@ This gives the following result:
           extent={{-100,-100},{100,100}},
           grid={1,1}), graphics={Text(
                   extent={{-10,85},{-10,60}},
-                  lineColor={255,0,255},
+                  textColor={255,0,255},
                   textString="%name"),Ellipse(
                   extent={{-50,50},{50,-50}},
                   lineColor={255,0,255},
@@ -14167,7 +14104,7 @@ Connector with one input signal of type Boolean.
           extent={{-100,-100},{100,100}},
           grid={1,1}), graphics={Text(
                   extent={{-10,85},{-10,60}},
-                  lineColor={255,128,0},
+                  textColor={255,128,0},
                   textString="%name"),Ellipse(
                   extent={{-50,50},{50,-50}},
                   lineColor={255,128,0},
@@ -14194,7 +14131,7 @@ Connector with one input signal of type Boolean.
           extent={{-100,-100},{100,100}},
           grid={1,1}), graphics={Text(
                   extent={{-10,85},{-10,60}},
-                  lineColor={0,0,127},
+                  textColor={0,0,127},
                   textString="%name"),Ellipse(
                   extent={{-50,50},{50,-50}},
                   lineColor={0,0,127},
@@ -14224,7 +14161,7 @@ Connector with one input signal of type Boolean.
             Text(
               extent={{-250,170},{250,110}},
               textString="%name",
-              lineColor={0,0,255}),
+              textColor={0,0,255}),
             Rectangle(
               extent={{-100,100},{100,-100}},
               lineColor={0,0,0},
@@ -14257,14 +14194,14 @@ Connector with one input signal of type Boolean.
             grid={1,1},
             initialScale=0.06), graphics={Text(
                     extent={{110,-50},{250,-70}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString=DynamicSelect(" ", realString(
                       y,
                       1,
                       0))),Text(
                     extent={{-250,170},{250,110}},
                     textString="%name",
-                    lineColor={0,0,255}),Rectangle(
+                    textColor={0,0,255}),Rectangle(
                     extent={{-100,100},{100,-100}},
                     lineColor={0,0,0},
                     fillColor={255,213,170},
@@ -14290,7 +14227,7 @@ Connector with one input signal of type Boolean.
             initialScale=0.06), graphics={Text(
                     extent={{-250,170},{250,110}},
                     textString="%name",
-                    lineColor={0,0,255}),Rectangle(
+                    textColor={0,0,255}),Rectangle(
                     extent={{-100,100},{100,-100}},
                     lineColor={0,0,0},
                     fillColor={170,213,255},
@@ -14320,7 +14257,7 @@ Connector with one input signal of type Boolean.
             initialScale=0.06), graphics={Text(
                     extent={{-250,170},{250,110}},
                     textString="%name",
-                    lineColor={0,0,255}),Rectangle(
+                    textColor={0,0,255}),Rectangle(
                     extent={{-100,100},{100,-100}},
                     lineColor={0,0,0},
                     fillColor={215,215,215},
@@ -14353,14 +14290,14 @@ Connector with one input signal of type Boolean.
             grid={1,1},
             initialScale=0.06), graphics={Text(
                     extent={{110,-50},{250,-70}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString=DynamicSelect(" ", realString(
                       y,
                       1,
                       0))),Text(
                     extent={{-250,170},{250,110}},
                     textString="%name",
-                    lineColor={0,0,255}),Rectangle(
+                    textColor={0,0,255}),Rectangle(
                     extent={{-100,100},{100,-100}},
                     lineColor={255,137,0},
                     fillColor={255,213,170},
@@ -14390,14 +14327,14 @@ Connector with one input signal of type Boolean.
             grid={1,1},
             initialScale=0.06), graphics={Text(
                     extent={{110,-50},{250,-70}},
-                    lineColor={0,0,0},
+                    textColor={0,0,0},
                     textString=DynamicSelect(" ", realString(
                       y,
                       1,
                       integer(precision)))),Text(
                     extent={{-250,170},{250,110}},
                     textString="%name",
-                    lineColor={0,0,255}),Rectangle(
+                    textColor={0,0,255}),Rectangle(
                     extent={{-100,100},{100,-100}},
                     lineColor={255,137,0},
                     fillColor={170,213,255},
@@ -14471,12 +14408,11 @@ Connector with one input signal of type Boolean.
                     borderPattern=BorderPattern.Raised),Text(
                     visible=use_guard,
                     extent={{-100,-60},{300,-90}},
-                    lineColor={255,0,255},
-                    fillPattern=FillPattern.Solid,
+                    textColor={255,0,255},
                     textString="%guard"),Text(
                     extent={{-99,100},{300,60}},
                     textString="%name",
-                    lineColor={0,0,255}),Line(
+                    textColor={0,0,255}),Line(
                     visible=rising,
                     points={{-82,-17},{-63,-17},{-63,16},{-41,16}},
                     color={255,0,255},
@@ -14638,7 +14574,7 @@ absolutely sure that this cannot happen.
               fillPattern=FillPattern.Solid),
             Text(
               extent={{47,58},{112,20}},
-              lineColor={0,0,0},
+              textColor={0,0,0},
               textString="%name")}));
     end Step_in;
 
@@ -14669,7 +14605,7 @@ absolutely sure that this cannot happen.
               fillPattern=FillPattern.Solid),
             Text(
               extent={{40,66},{116,30}},
-              lineColor={0,0,0},
+              textColor={0,0,0},
               textString="%name")}));
     end Step_out;
 
@@ -14778,7 +14714,7 @@ absolutely sure that this cannot happen.
               fillColor={215,215,215},
               fillPattern=FillPattern.Solid), Text(
               extent={{51,22},{134,-16}},
-              lineColor={0,0,0},
+              textColor={0,0,0},
               textString="%name")}),
         Documentation(info="<html>
 
@@ -14805,7 +14741,7 @@ absolutely sure that this cannot happen.
               fillColor={215,215,215},
               fillPattern=FillPattern.Solid), Text(
               extent={{44,100},{138,68}},
-              lineColor={0,0,0},
+              textColor={0,0,0},
               textString="%name")}),
         Documentation(info="<html>
 
